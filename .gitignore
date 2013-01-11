@@ -1,0 +1,10 @@
+.DS_Store
+*.iml
+*.ipr
+*.iws
+*.orig
+target
+.springBeans
+.settings/
+.project
+.classpath
