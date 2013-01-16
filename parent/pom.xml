@@ -513,13 +513,13 @@
 	</build>
 	
 	<repositories>
-			<repository>
-				<id>spring-libs-release</id>
-				<url>http://repo.springsource.org/libs-release</url>
-				<snapshots>
-					<enabled>false</enabled>
-				</snapshots>
-			</repository>
+		<repository>
+			<id>spring-libs-release</id>
+			<url>http://repo.springsource.org/libs-release</url>
+			<snapshots>
+				<enabled>false</enabled>
+			</snapshots>
+		</repository>
 	</repositories>
 	
 	<pluginRepositories>
