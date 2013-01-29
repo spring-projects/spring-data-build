@@ -97,7 +97,6 @@
 
 		<!-- Additional properties required to be set by child projects -->
 		<!-- dist.key: the distribution key (e.g. DATACMNS) -->
-		<!-- schema.key: the key to be used for schema folder (e.g. jpa for spring-data-jpa) -->
 
 		<!-- Additional properties required to be set in settings.xml -->
 		<!-- dist.accessKey -->
@@ -446,7 +445,7 @@
 										<includes>*.xsd</includes>
 										<serverId>static-dot-s2</serverId>
 										<url>scp://static.springsource.org</url>
-										<toDir>/var/www/domains/springsource.org/www/htdocs/autorepo/schema/${dist.id}/${project.version}/${schema.key}</toDir>
+										<toDir>/var/www/domains/springsource.org/www/htdocs/autorepo/schema/${dist.id}/${project.version}</toDir>
 										<optimize>true</optimize>
 									</configuration>
 								</execution>

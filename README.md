@@ -39,8 +39,6 @@ The following dependencies are pre-configured.
 - Test dependencies: JUnit / Hamcrest / Mockito
 - Dependency versions for commonly used dependencies
 
-The projects need to define a property `${schema.key}` to define the abbreviated key to be used for schema upload, e.g. `jpa` for `spring-data-jpa`.
-
 ### Single project setup
 
 If the client project is a project consisting of a single project only all that needs to be done is declaring the parent project:
