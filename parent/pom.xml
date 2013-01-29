@@ -477,17 +477,19 @@
 		</profile>
 		
 		<profile>
-			<id>multimodule</id>
-			<activation>
-				<property>
-					<name>project.type</name>
-					<value>multi</value>
-				</property>
-			</activation>
+			<id>milestone</id>
 			<properties>
-				<project.root>${basedir}/..</project.root>
+				<dist.type>milestone</dist.type>
 			</properties>
 		</profile>
+		
+		<profile>
+			<id>release</id>
+			<properties>
+				<dist.type>release</dist.type>
+			</properties>
+		</profile>
+		
 	</profiles>
 	
 	<dependencies>
