@@ -85,7 +85,23 @@
 		<project.type>single</project.type>
 		<project.root>${basedir}</project.root>
 		<source.level>1.5</source.level>
-		<dist.name>${project.artifactId}</dist.name>
+
+		<dist.id>${project.artifactId}</dist.id>
+		<dist.name>${project.name}</dist.name>
+		<dist.releaseType>snapshot</dist.releaseType>
+		<dist.bucketName>dist.springframework.org</dist.bucketName>
+		<dist.assemblyName>${dist.id}-${project.version}</dist.assemblyName>
+		<dist.fileName>${dist.assemblyName}.zip</dist.fileName>
+		<dist.filePath>${project.build.directory}/${dist.assemblyName}-distribution.zip</dist.filePath>
+		<dist.version>${project.version}</dist.version>
+
+		<!-- Additional properties required to be set by child projects -->
+		<!-- dist.key: the distribution key (e.g. DATACMNS) -->
+		<!-- schema.key: the key to be used for schema folder (e.g. jpa for spring-data-jpa) -->
+
+		<!-- Additional properties required to be set in settings.xml -->
+		<!-- dist.accessKey -->
+		<!-- dist.secretKey -->
 		
 		<aspectj>1.7.1</aspectj>
 		<cdi>1.0</cdi>
@@ -221,7 +237,7 @@
 												<include name="**/*.pdf" />
 											</fileset>
 										</copy>
-										<move file="${project.basedir}/target/site/reference/pdf/index.pdf" tofile="${project.basedir}/target/site/reference/pdf/${dist.name}-reference.pdf" />
+										<move file="${project.basedir}/target/site/reference/pdf/index.pdf" tofile="${project.basedir}/target/site/reference/pdf/${dist.dist}-reference.pdf" />
 									</postProcess>
 								</configuration>
 							</execution>
@@ -318,6 +334,18 @@
 					<plugin>
 						<artifactId>maven-antrun-plugin</artifactId>
 						<version>1.7</version>
+						<dependencies>
+							<dependency>
+								<groupId>org.springframework.build</groupId>
+								<artifactId>org.springframework.build.aws.ant</artifactId>
+								<version>3.0.6.RELEASE</version>
+							</dependency>
+							<dependency>
+								<groupId>org.jets3t</groupId>
+								<artifactId>com.springsource.org.jets3t</artifactId>
+								<version>0.8.1</version>
+							</dependency>
+						</dependencies>
 						<executions>
 							<execution>
 								<phase>process-resources</phase>
@@ -335,8 +363,24 @@
 									<goal>run</goal>
 								</goals>
 							</execution>
+							<execution>
+								<id>upload-distribution</id>
+								<phase>deploy</phase>
+								<goals>
+									<goal>run</goal>
+								</goals>
+								<configuration>
+									<target>
+										<ant antfile="${shared.resources}/ant/upload-dist.xml">
+											<target name="upload-distribution"/>
+										</ant>
+									</target>
+								</configuration>
+							</execution>
 						</executions>
+
 					</plugin>
+
 				</plugins>
 				
 				<pluginManagement>
@@ -359,12 +403,74 @@
 									<configuration>
 										<descriptors>
 											<descriptor>${shared.resources}/assemblies/distribution-${project.type}.xml</descriptor>
-											<descriptor>${shared.resources}/assemblies/site.xml</descriptor>
-										</descriptors>										
+										</descriptors>
+										<finalName>${dist.assemblyName}</finalName>
+									</configuration>
+								</execution>
+								<execution>
+									<id>static</id>
+									<goals>
+										<goal>single</goal>
+									</goals>
+									<phase>package</phase>
+									<configuration>
+										<descriptors>
+											<descriptor>${shared.resources}/assemblies/static-resources.xml</descriptor>
+										</descriptors>
+										<finalName>static-resources</finalName>
+										<appendAssemblyId>false</appendAssemblyId>
 									</configuration>
 								</execution>
 							</executions>
 						</plugin>
+
+						<plugin>
+							<groupId>org.codehaus.mojo</groupId>
+							<artifactId>wagon-maven-plugin</artifactId>
+							<version>1.0-beta-4</version>
+							<configuration>
+								<fromDir>${project.build.directory}</fromDir>
+							</configuration>
+							<executions>
+
+								<!-- Upload namespace XSDs -->
+
+								<execution>
+									<id>upload-schema</id>
+									<phase>deploy</phase>
+									<goals>
+										<goal>upload</goal>
+									</goals>
+									<configuration>
+										<fromDir>${project.build.directory}/schemas</fromDir>
+										<includes>*.xsd</includes>
+										<serverId>static-dot-s2</serverId>
+										<url>scp://static.springsource.org</url>
+										<toDir>/var/www/domains/springsource.org/www/htdocs/autorepo/schema/${dist.id}/${project.version}/${schema.key}</toDir>
+										<optimize>true</optimize>
+									</configuration>
+								</execution>
+
+								<!-- Distribute static resources -->
+
+								<execution>
+									<id>upload-static-resources</id>
+									<phase>deploy</phase>
+									<goals>
+										<goal>upload</goal>
+									</goals>
+									<configuration>
+										<fromDir>${project.build.directory}/static-resources</fromDir>
+										<includes>**</includes>
+										<serverId>static-dot-s2</serverId>
+										<url>scp://static.springsource.org</url>
+										<toDir>/var/www/domains/springsource.org/www/htdocs/autorepo/docs/${dist.id}/${project.version}</toDir>
+										<optimize>true</optimize>
+									</configuration>
+								</execution>
+							</executions>
+				        </plugin>
+
 					</plugins>
 				</pluginManagement>
 			</build>
@@ -446,6 +552,15 @@
 	</dependencies>
 	
 	<build>
+
+		<extensions>
+	   		<extension>
+				<groupId>org.apache.maven.wagon</groupId>
+				<artifactId>wagon-ssh</artifactId>
+				<version>2.3</version>
+			</extension>
+	   	</extensions>
+
 		<plugins>
 			
 			<plugin>
@@ -509,6 +624,15 @@
 				</executions>
 			</plugin>
 			
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-deploy-plugin</artifactId>
+				<version>2.7</version>
+				<configuration>
+					<skip>true</skip>
+				</configuration>
+			</plugin>
+
 		</plugins>
 	</build>
 	

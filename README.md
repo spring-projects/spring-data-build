@@ -4,7 +4,9 @@ This repository contains common infrastructure to be used by Spring Data modules
 
 The parent project can be eased for either a single-module Maven project or a multi-module one. Each of the setups requires a slightly different setup of the project.
 
-## General setup
+## Project setup
+
+### General setup
 
 The parent project configures the following aspects of the project build:
 
@@ -37,7 +39,9 @@ The following dependencies are pre-configured.
 - Test dependencies: JUnit / Hamcrest / Mockito
 - Dependency versions for commonly used dependencies
 
-## Single project setup
+The projects need to define a property `${schema.key}` to define the abbreviated key to be used for schema upload, e.g. `jpa` for `spring-data-jpa`.
+
+### Single project setup
 
 If the client project is a project consisting of a single project only all that needs to be done is declaring the parent project:
 
@@ -49,25 +53,35 @@ If the client project is a project consisting of a single project only all that 
 </parent>
 ```
     
-Be sure to adapt the version number to the latest release version. The second and already last step of the setup is to activate the assembly plugin in the build section:
+Be sure to adapt the version number to the latest release version. The second and already last step of the setup is to activate the assembly and wagon plugin in the build section:
 
 ```xml
 <plugin>
 	<groupId>org.apache.maven.plugins</groupId>
 	<artifactId>maven-assembly-plugin</artifactId>
 </plugin>
+<plugin>
+	<groupId>org.codehaus.mojo</groupId>
+	<artifactId>wagon-maven-plugin</artifactId>
+</plugin>
 ```
 	
 As an example have a look at the build of [Spring Data JPA](http://github.com/SpringSource/spring-data-jpa).
 
-## Multi project setup
+### Multi project setup
 	
 A multi module setup requires slightly more setup and some structure being set up. 
 
 - The root `pom.xml` needs to configure the `project.type` property to `multi`.
 - Docbook documentation sources need to be in the root project.
 - The assembly needs to be build in a dedicated sub-module (e.g. `distribution`), declare the assembly plugin (see single project setup) in that submodule and reconfigure the `project.root` property in that module to `${basedir}/..`.
+- Configure `${dist.id}` to the basic artifact id (e.g. `spring-data-mongodb`) as this will serve as file name for distribution artifacts, static resources etc.
 
 As an example have a look at the build of [Spring Data MongoDB](http://github.com/SpringSource/spring-data-mongodb).
 
-	
+## Build configuration
+
+- Configure "Artifactory Maven 3" task
+- Goals to execute `clean (dependency:tree) install`
+- Configure "Alternative Maven Tasks and Options" to `clean (dependency:tree) install -Pdistribute`
+- A nightly build can then use `clean (dependency:tree) deploy -Pdistribute` to publish 
