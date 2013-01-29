@@ -374,6 +374,7 @@
 											<target name="upload-distribution"/>
 										</ant>
 									</target>
+									<failOnError>false</failOnError>
 								</configuration>
 							</execution>
 						</executions>
