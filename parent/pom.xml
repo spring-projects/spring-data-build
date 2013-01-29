@@ -442,7 +442,7 @@
 										<goal>upload</goal>
 									</goals>
 									<configuration>
-										<fromDir>${project.build.directory}/schemas</fromDir>
+										<fromDir>${project.root}/target/schemas</fromDir>
 										<includes>*.xsd</includes>
 										<serverId>static-dot-s2</serverId>
 										<url>scp://static.springsource.org</url>
