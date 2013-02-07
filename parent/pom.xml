@@ -190,6 +190,7 @@
 							<execution>
 								<goals>
 									<goal>aggregate</goal>
+									<goal>jar</goal>
 								</goals>
 								<phase>package</phase>
 							</execution>
