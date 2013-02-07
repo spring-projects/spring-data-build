@@ -27,7 +27,7 @@
 	<parent>
 		<groupId>org.springframework.data.build</groupId>
 		<artifactId>spring-data-build</artifactId>
-		<version>1.0.0.BUILD-SNAPSHOT</version>
+		<version>1.0.0.RELEASE</version>
 		<relativePath>../pom.xml</relativePath>     
 	</parent>
 
@@ -371,7 +371,7 @@
 								<configuration>
 									<target>
 										<ant antfile="${shared.resources}/ant/upload-dist.xml">
-											<target name="upload-distribution"/>
+											<target name="upload-distribution" />
 										</ant>
 									</target>
 									<failOnError>false</failOnError>
