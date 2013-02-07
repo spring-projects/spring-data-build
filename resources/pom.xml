@@ -9,6 +9,7 @@
 		<groupId>org.springframework.data.build</groupId>
 		<artifactId>spring-data-build</artifactId>
 		<version>1.0.0.BUILD-SNAPSHOT</version>
+		<relativePath>../pom.xml</relativePath>
 	</parent>
 
 	<name>Spring Data Build - Common resources</name>
@@ -37,5 +38,5 @@
 			</plugin>
 		</plugins>
 	</build>
-	
+
 </project>
