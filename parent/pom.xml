@@ -480,14 +480,14 @@
 		<profile>
 			<id>milestone</id>
 			<properties>
-				<dist.type>milestone</dist.type>
+				<dist.releaseType>milestone</dist.releaseType>
 			</properties>
 		</profile>
 		
 		<profile>
 			<id>release</id>
 			<properties>
-				<dist.type>release</dist.type>
+				<dist.releaseType>release</dist.releaseType>
 			</properties>
 		</profile>
 		
