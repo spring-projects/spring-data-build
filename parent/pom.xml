@@ -222,7 +222,7 @@
 						<artifactId>docbkx-maven-plugin</artifactId>
 						<version>2.0.14</version>
 						<executions>
-						
+
 							<!-- Configuration for PDF creation -->
 							<execution>
 								<id>pdf</id>
@@ -231,6 +231,8 @@
 								</goals>
 								<phase>package</phase>
 								<configuration>
+									<admonGraphicsPath>${shared.resources}/docbkx/images/</admonGraphicsPath>
+									<imgSrcPath>${shared.resources}/docbkx/</imgSrcPath>
 									<postProcess>
 										<copy todir="${project.basedir}/target/site/reference">
 											<fileset dir="${project.basedir}/target/docbkx">
@@ -241,7 +243,7 @@
 									</postProcess>
 								</configuration>
 							</execution>
-							
+
 							<!-- Configuration for single-page HTML configuration -->
 							<execution>
 								<id>html-single</id>
@@ -251,7 +253,8 @@
 								<phase>package</phase>
 								<configuration>
 									<targetDirectory>${basedir}/target/docbkx/htmlsingle</targetDirectory>
-									<htmlCustomization>${shared.resources}/docbkx/xsl/html-singlepage.xsl</htmlCustomization> 
+									<htmlCustomization>${shared.resources}/docbkx/xsl/html-singlepage.xsl</htmlCustomization>
+									<imgSrcPath>images/</imgSrcPath>
 									<postProcess>
 										<copy todir="${project.basedir}/target/site/reference/htmlsingle">
 											<fileset dir="${project.basedir}/target/docbkx/htmlsingle">
@@ -269,7 +272,7 @@
 									</postProcess>
 								</configuration>
 							</execution>
-							
+
 							<!-- Configuration for chunked HTML generation -->
 							<execution>
 								<id>html</id>
@@ -281,6 +284,7 @@
 									<chunkedOutput>true</chunkedOutput>
 									<targetDirectory>${basedir}/target/docbkx/html</targetDirectory>
 									<htmlCustomization>${shared.resources}/docbkx/xsl/html-multipage.xsl</htmlCustomization>
+									<imgSrcPath>images/</imgSrcPath>
 									<postProcess>
 										<copy todir="${project.basedir}/target/site/reference/html">
 											<fileset dir="${project.basedir}/target/docbkx/html/index">
@@ -298,6 +302,7 @@
 									</postProcess>
 								</configuration>
 							</execution>
+
 						</executions>
 						
 						<dependencies>
@@ -347,7 +352,29 @@
 							</dependency>
 						</dependencies>
 						<executions>
+							
 							<execution>
+								<id>copy-documentation-images</id>
+								<phase>process-resources</phase>
+								<configuration>
+									<target>
+										<copy todir="${shared.resources}/docbkx/images">
+											<fileset dir="${basedir}/src/docbkx" erroronmissingdir="false">
+												<include name="**/*.jpg" />
+												<include name="**/*.gif" />
+												<include name="**/*.png" />
+											</fileset>
+											<flattenmapper />
+										</copy>
+									</target>
+								</configuration>
+								<goals>
+									<goal>run</goal>
+								</goals>
+							</execution>
+							
+							<execution>
+								<id>collect-schema-files</id>
 								<phase>process-resources</phase>
 								<configuration>
 									<target>
