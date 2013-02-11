@@ -73,7 +73,7 @@ A multi module setup requires slightly more setup and some structure being set u
 - The root `pom.xml` needs to configure the `project.type` property to `multi`.
 - Docbook documentation sources need to be in the root project.
 - The assembly needs to be build in a dedicated sub-module (e.g. `distribution`), declare the assembly plugin (see single project setup) in that submodule and reconfigure the `project.root` property in that module to `${basedir}/..`.
-- Configure `${dist.id}` to the basic artifact id (e.g. `spring-data-mongodb`) as this will serve as file name for distribution artifacts, static resources etc.
+- Configure `${dist.id}` in the root project to the basic artifact id (e.g. `spring-data-mongodb`) as this will serve as file name for distribution artifacts, static resources etc. It will default to the artifact id and thus usually resolve to a `…-parent` if not configured properly.
 
 As an example have a look at the build of [Spring Data MongoDB](http://github.com/SpringSource/spring-data-mongodb).
 
