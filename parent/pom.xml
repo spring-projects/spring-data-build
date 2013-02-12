@@ -232,7 +232,7 @@
 								<phase>package</phase>
 								<configuration>
 									<admonGraphicsPath>${shared.resources}/docbkx/images/</admonGraphicsPath>
-									<imgSrcPath>${shared.resources}/docbkx/</imgSrcPath>
+									<imgSrcPath>${basedir}/src/docbkx/</imgSrcPath>
 									<postProcess>
 										<copy todir="${project.basedir}/target/site/reference">
 											<fileset dir="${project.basedir}/target/docbkx">
