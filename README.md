@@ -80,6 +80,5 @@ As an example have a look at the build of [Spring Data MongoDB](http://github.co
 ## Build configuration
 
 - Configure "Artifactory Maven 3" task
-- Goals to execute `clean (dependency:tree) install`
-- Configure "Alternative Maven Tasks and Options" to `clean (dependency:tree) install -Pdistribute`
-- A nightly build can then use `clean (dependency:tree) deploy -Pdistribute` to publish 
+- Goals to execute `clean (dependency:tree) install -Pci`
+- A nightly build can then use `clean (dependency:tree) deploy -Pdistribute` to publish static resources and reference documentation
