@@ -102,13 +102,13 @@
 		<!-- dist.accessKey -->
 		<!-- dist.secretKey -->
 		
-		<aspectj>1.7.1</aspectj>
+		<aspectj>1.7.2</aspectj>
 		<cdi>1.0</cdi>
 		<hamcrest>1.3</hamcrest>
 		<jodatime>2.1</jodatime>
 		<junit>4.11</junit>
-		<logback>1.0.6</logback>
-		<mockito>1.9.0</mockito>
+		<logback>1.0.11</logback>
+		<mockito>1.9.5</mockito>
 		<querydsl>3.0.0</querydsl>
 		<slf4j>1.7.1</slf4j>
 		<spring>3.1.4.RELEASE</spring>
