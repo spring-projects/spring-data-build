@@ -84,7 +84,7 @@
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<project.type>single</project.type>
 		<project.root>${basedir}</project.root>
-		<source.level>1.5</source.level>
+		<source.level>1.6</source.level>
 
 		<dist.id>${project.artifactId}</dist.id>
 		<dist.name>${project.name}</dist.name>
