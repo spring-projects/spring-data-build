@@ -402,6 +402,7 @@
 											</fileset>
 											<flattenmapper />
 										</copy>
+										<touch file="${project.build.directory}/schemas/.autoschemaln" />
 									</target>
 								</configuration>
 								<goals>
@@ -489,7 +490,7 @@
 									</goals>
 									<configuration>
 										<fromDir>${project.root}/target/schemas</fromDir>
-										<includes>*.xsd</includes>
+										<includes>*.xsd,.autoschemaln</includes>
 										<serverId>static-dot-s2</serverId>
 										<url>scp://static.springsource.org</url>
 										<toDir>/var/www/domains/springsource.org/www/htdocs/autorepo/schema/${dist.id}/${project.version}</toDir>
