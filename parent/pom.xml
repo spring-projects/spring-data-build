@@ -536,6 +536,23 @@
 				<dist.releaseType>release</dist.releaseType>
 			</properties>
 		</profile>
+
+		<profile>
+			<id>spring4</id>
+			<properties>
+				<spring>4.0.0.BUILD-SNAPSHOT</spring>
+			</properties>
+
+			<repositories>
+				<repository>
+					<id>spring-libs-snapshot</id>
+					<url>http://repo.springsource.org/libs-snapshot</url>
+					<snapshots>
+						<enabled>false</enabled>
+					</snapshots>
+				</repository>
+			</repositories>
+		</profile>
 		
 	</profiles>
 	
