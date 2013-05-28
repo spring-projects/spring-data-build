@@ -109,7 +109,7 @@
 		<junit>4.11</junit>
 		<logback>1.0.11</logback>
 		<mockito>1.9.5</mockito>
-		<querydsl>3.1.1</querydsl>
+		<querydsl>3.2.0</querydsl>
 		<slf4j>1.7.1</slf4j>
 		<spring>3.1.4.RELEASE</spring>
 		<spring30>3.0.7.RELEASE</spring30>
