@@ -402,7 +402,7 @@
 											</fileset>
 											<flattenmapper />
 										</copy>
-										<touch file="${project.build.directory}/schemas/.autoschemaln" />
+										<touch file="${project.build.directory}/schemas/.autoschemaln" mkdirs="true" />
 									</target>
 								</configuration>
 								<goals>
