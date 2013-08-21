@@ -37,7 +37,7 @@
 	<inceptionYear>2011-2013</inceptionYear>
 	
 	<organization>
-		<name>SpringSource</name>
+		<name>Pivotal</name>
 		<url>http://www.springsource.org</url>
 	</organization>
 	
@@ -45,9 +45,9 @@
 		<developer>
 			<id>ogierke</id>
 			<name>Oliver Gierke</name>
-			<email>ogierke at vmware.com</email>
-			<organization>SpringSource</organization>
-			<organizationUrl>http://www.springsource.com</organizationUrl>
+			<email>ogierke at gopivotal.com</email>
+			<organization>Pivotal</organization>
+			<organizationUrl>http://www.gopivotal.com</organizationUrl>
 			<roles>
 				<role>Project lead</role>
 			</roles>
@@ -60,7 +60,7 @@
 			<name>Apache License, Version 2.0</name>
 			<url>http://www.apache.org/licenses/LICENSE-2.0</url>
 			<comments>
-			Copyright 2010 the original author or authors.
+			Copyright 2008-2013 the original author or authors.
 			 
 			Licensed under the Apache License, Version 2.0 (the "License");
 			you may not use this file except in compliance with the License.
@@ -179,20 +179,6 @@
 			</dependencies>
 			
 			<build>
-
-				<!--
-					Configures the folder defined in ${shared.resources} as additional source folder.
-				-->
-			
-				<resources>
-					<resource>
-						<directory>${basedir}/src/main/resources</directory>
-					</resource>
-					<resource>
-						<directory>${shared.resources}</directory>
-						<filtering>true</filtering>
-					</resource>
-				</resources>
 			
 				<plugins>
 				
@@ -553,10 +539,7 @@
 			<repositories>
 				<repository>
 					<id>spring-libs-snapshot</id>
-					<url>http://repo.springsource.org/libs-snapshot</url>
-					<snapshots>
-						<enabled>false</enabled>
-					</snapshots>
+					<url>http://repo.springsource.org/libs-snapshot-local</url>
 				</repository>
 			</repositories>
 		</profile>
