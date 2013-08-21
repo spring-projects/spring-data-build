@@ -121,6 +121,13 @@
 	<profiles>
 
 		<profile>
+			<id>spring32</id>
+			<properties>
+				<spring>3.2.4.RELEASE</spring>
+			</properties>
+		</profile>
+
+		<profile>
 
 			<!-- Profile to be run on the CI server, JARs JavaDocs -->
 
