@@ -112,20 +112,12 @@
 		<mockito>1.9.5</mockito>
 		<querydsl>3.2.3</querydsl>
 		<slf4j>1.7.1</slf4j>
-		<spring>3.1.4.RELEASE</spring>
-		<spring30>3.0.7.RELEASE</spring30>
+		<spring>3.2.4.RELEASE</spring>
 		<webbeans>1.1.7</webbeans>
 
 	</properties>
 	
 	<profiles>
-
-		<profile>
-			<id>spring32</id>
-			<properties>
-				<spring>3.2.4.RELEASE</spring>
-			</properties>
-		</profile>
 
 		<profile>
 
@@ -172,7 +164,7 @@
 				<dependency>
 					<groupId>org.springframework.data.build</groupId>
 					<artifactId>spring-data-build-resources</artifactId>
-					<version>1.2.0.RELEASE</version>
+					<version>1.3.0.BUILD-SNAPSHOT</version>
 					<scope>provided</scope>
 					<type>zip</type>
 				</dependency>
