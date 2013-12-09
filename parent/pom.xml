@@ -535,6 +535,19 @@
 				</repository>
 			</repositories>
 		</profile>
+
+		<profile>
+			<id>querydsl-next</id>
+			<properties>
+				<querydsl>3.3.0.BUILD-SNAPSHOT</querydsl>
+			</properties>
+			<repositories>
+				<repository>
+					<id>oss-nexus-snapshots</id>
+					<url>http://oss.sonatype.org/content/repositories/snapshots</url>
+				</repository>
+			</repositories>
+		</profile>
 		
 	</profiles>
 	
