@@ -112,7 +112,7 @@
 		<mockito>1.9.5</mockito>
 		<querydsl>3.2.3</querydsl>
 		<slf4j>1.7.1</slf4j>
-		<spring>3.2.5.RELEASE</spring>
+		<spring>3.2.6.RELEASE</spring>
 		<webbeans>1.1.7</webbeans>
 
 	</properties>
