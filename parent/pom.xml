@@ -80,6 +80,7 @@
 	
 	<properties>
 		
+		<bundlor.enabled>true</bundlor.enabled>
 		<bundlor.failOnWarnings>true</bundlor.failOnWarnings>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<project.type>single</project.type>
@@ -679,6 +680,7 @@
 				<artifactId>com.springsource.bundlor.maven</artifactId>
 				<version>1.0.0.RELEASE</version>
 				<configuration>
+					<enabled>${bundlor.enabled}</enabled>
 					<failOnWarnings>${bundlor.failOnWarnings}</failOnWarnings>
 				</configuration>
 				<executions>
