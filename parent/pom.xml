@@ -559,6 +559,18 @@
 		
 	</profiles>
 	
+	<dependencyManagement>
+        <dependencies>
+            <dependency>
+                <groupId>org.springframework</groupId>
+                <artifactId>spring-framework-bom</artifactId>
+                <version>${spring}</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+        </dependencies>
+    </dependencyManagement>
+	
 	<dependencies>
 	
 		<!-- Test -->
@@ -593,7 +605,6 @@
 		<dependency>
 			<groupId>org.springframework</groupId>
 			<artifactId>spring-test</artifactId>
-			<version>${spring}</version>
 			<scope>test</scope>
 		</dependency>
 		
