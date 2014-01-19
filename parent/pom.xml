@@ -524,9 +524,9 @@
 		</profile>
 
 		<profile>
-			<id>spring4</id>
+			<id>spring4-next</id>
 			<properties>
-				<spring>4.0.0.BUILD-SNAPSHOT</spring>
+				<spring>4.0.1.BUILD-SNAPSHOT</spring>
 			</properties>
 
 			<repositories>
@@ -535,6 +535,13 @@
 					<url>http://repo.springsource.org/libs-snapshot-local</url>
 				</repository>
 			</repositories>
+		</profile>
+
+		<profile>
+			<id>spring4</id>
+			<properties>
+				<spring>4.0.0.RELEASE</spring>
+			</properties>
 		</profile>
 
 		<profile>
