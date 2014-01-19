@@ -82,3 +82,9 @@ As an example have a look at the build of [Spring Data MongoDB](http://github.co
 - Configure "Artifactory Maven 3" task
 - Goals to execute `clean (dependency:tree) install -Pci`
 - A nightly build can then use `clean (dependency:tree) deploy -Pdistribute` to publish static resources and reference documentation
+
+## Additional build profiles
+
+- `spring4` - Configures the Spring version to be used to be the latest 4.x release version.
+- `spring4-next` - Configures the Spring version to be used to be the next 4.x snapshot version.
+- `querydsl-next` - Configures the Querydsl version to be used to be the next available snapshot version.
