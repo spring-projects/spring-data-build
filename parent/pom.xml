@@ -107,6 +107,7 @@
 		<aspectj>1.7.2</aspectj>
 		<cdi>1.0</cdi>
 		<hamcrest>1.3</hamcrest>
+		<jackson>2.3.0</jackson>
 		<jodatime>2.1</jodatime>
 		<junit>4.11</junit>
 		<logback>1.0.11</logback>
