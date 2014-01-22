@@ -529,6 +529,15 @@
 				<spring>4.0.1.BUILD-SNAPSHOT</spring>
 			</properties>
 
+			<dependencies>
+				<dependency>
+					<groupId>javax.servlet</groupId>
+					<artifactId>javax.servlet-api</artifactId>
+					<version>3.0.1</version>
+					<scope>test</scope>
+				</dependency>
+			</dependencies>
+
 			<repositories>
 				<repository>
 					<id>spring-libs-snapshot</id>
@@ -542,6 +551,15 @@
 			<properties>
 				<spring>4.0.0.RELEASE</spring>
 			</properties>
+
+			<dependencies>
+				<dependency>
+					<groupId>javax.servlet</groupId>
+					<artifactId>javax.servlet-api</artifactId>
+					<version>3.0.1</version>
+					<scope>test</scope>
+				</dependency>
+			</dependencies>
 		</profile>
 
 		<profile>
