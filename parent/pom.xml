@@ -525,7 +525,26 @@
 		</profile>
 
 		<profile>
+
+			<id>spring32-next</id>
+
+			<properties>
+				<spring>3.2.7.BUILD-SNAPSHOT</spring>
+			</properties>
+
+			<repositories>
+				<repository>
+					<id>spring-libs-snapshot</id>
+					<url>http://repo.springsource.org/libs-snapshot</url>
+				</repository>
+			</repositories>
+
+		</profile>
+
+		<profile>
+
 			<id>spring4-next</id>
+
 			<properties>
 				<spring>4.0.1.BUILD-SNAPSHOT</spring>
 			</properties>
@@ -542,13 +561,16 @@
 			<repositories>
 				<repository>
 					<id>spring-libs-snapshot</id>
-					<url>http://repo.springsource.org/libs-snapshot-local</url>
+					<url>http://repo.springsource.org/libs-snapshot</url>
 				</repository>
 			</repositories>
+
 		</profile>
 
 		<profile>
+
 			<id>spring4</id>
+
 			<properties>
 				<spring>4.0.0.RELEASE</spring>
 			</properties>
@@ -561,6 +583,7 @@
 					<scope>test</scope>
 				</dependency>
 			</dependencies>
+
 		</profile>
 
 		<profile>
