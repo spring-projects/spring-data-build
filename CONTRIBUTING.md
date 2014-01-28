@@ -19,14 +19,19 @@ public void yourTestMethod() { … }
 ```
 
 - Make sure you added yourself as author in the headers of the classes you touched. Amend the date range in the Apache license header if needed. For new types, add the license header (copy from another file and set the current year only).
-- The commit message should follow the following style
+- The commit message should follow the following style:
+    - First line starts with the ticket id.
+    - Separate ticket id and summary with a dash.
+    - Finish summary with a dot.
+    - In the description, don't use single line breaks. No manual wrapping. Separate paragraphs by a blank line.
+    - Add related references at the very bottom (also see the section on pull requests below).
 
 ```
 DATA…-??? - Summary of the commit (try to stay under 80 characters).
 
 Additional explanations if necessary.
 
-See also: DATA…-??? (optionally refer to related tickets)
+See also: DATA…-???. (optionally refer to related tickets)
 ```
 
 - Make sure you provide your full name and an email address registered with your GitHub account. If you're a first-time submitter, make sure you have completed the [Contributor's License Agreement form](https://support.springsource.com/spring_committer_signup).
@@ -52,6 +57,7 @@ This section contains some advanced information, mainly targeted at developers o
 This section contains some stuff that the IDE formatters do not enforce. Try to keep track of those as well
 
 - Make sure, your IDE uses `.*` imports for all static ones.
+- Eclipse users should activate Save Actions to format sources on save, organize imports and also enable the standard set of
 - For methods only consisting of a single line, don't use any blank lines around the line of code. For methods consisting of more than one line of code, have a blank line after the method signature.
 
 ## Handling pull requests
@@ -73,3 +79,5 @@ curl $PULL_REQUEST_URL.patch | git am --ignore-whitespace
 
 Original pull request: #??.
 ```
+
+Important pieces here: colon and the sence completed with a dot.
