@@ -47,7 +47,7 @@ If the client project is a project consisting of a single project only all that 
 <parent>
 	<groupId>org.springframework.data.build</groupId>
 	<artifactId>spring-data-parent</artifactId>
-	<version>1.0.0.RELEASE</version>
+	<version>1.3.0.RELEASE</version>
 </parent>
 ```
     
@@ -85,6 +85,11 @@ As an example have a look at the build of [Spring Data MongoDB](http://github.co
 
 ## Additional build profiles
 
+- `ci` - Packages the JavaDoc as JAR for distribution (needs to be active on the CI server to make sure we distribute JavaDoc as JAR).
+- `distribute` - Creates Docbook documentation, assembles the distribution zip, etc.
+- `milestone` - Configures the binary distribution to upload to the milestone S3 repository.
+- `release` - Configures the binary distribution to upload to the release S3 repository.
+- `spring32-next` - Configures the Spring version to be used to be the next 3.2.x snapshot version.
 - `spring4` - Configures the Spring version to be used to be the latest 4.x release version.
 - `spring4-next` - Configures the Spring version to be used to be the next 4.x snapshot version.
 - `querydsl-next` - Configures the Querydsl version to be used to be the next available snapshot version.
