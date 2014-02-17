@@ -1,41 +1,42 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 
-    <modelVersion>4.0.0</modelVersion>
-    <groupId>org.springframework.data.build</groupId>
-    <artifactId>spring-data-build</artifactId>
-    <version>1.2.1.BUILD-SNAPSHOT</version>
-    <packaging>pom</packaging>
+	<modelVersion>4.0.0</modelVersion>
+	<groupId>org.springframework.data.build</groupId>
+	<artifactId>spring-data-build</artifactId>
+	<version>1.2.1.BUILD-SNAPSHOT</version>
+	<packaging>pom</packaging>
 
-    <name>Spring Data Build</name>
-    <description>Modules to centralize common resources and configuration for Spring Data Maven builds.</description>
-    <url>https://github.com/SpringData/spring-data-build</url>
-    
-    <organization>
-		<name>SpringSource</name>
-		<url>http://www.springsource.org</url>
+	<name>Spring Data Build</name>
+	<description>Modules to centralize common resources and configuration for Spring Data Maven builds.</description>
+	<url>https://github.com/SpringData/spring-data-build</url>
+	
+	<organization>
+		<name>Pivotal Software, Inc.</name>
+		<url>http://www.spring.io</url>
 	</organization>
 
-    <modules>
-        <module>resources</module>
-        <module>parent</module>
-    </modules>
-    
-    <developers>
+	<modules>
+		<module>resources</module>
+		<module>parent</module>
+		<module>bom</module>
+	</modules>
+	
+	<developers>
 		<developer>
 			<id>ogierke</id>
 			<name>Oliver Gierke</name>
-			<email>ogierke at vmware.com</email>
-			<organization>SpringSource</organization>
-			<organizationUrl>http://www.springsource.com</organizationUrl>
+			<email>ogierke at gopivotal.com</email>
+			<organization>Pivotal Software, Inc.</organization>
+			<organizationUrl>http://www.spring.io</organizationUrl>
 			<roles>
 				<role>Project lead</role>
 			</roles>
 			<timezone>+1</timezone>
 		</developer>
 	</developers>
-    
-    <licenses>
+	
+	<licenses>
 		<license>
 			<name>Apache License, Version 2.0</name>
 			<url>http://www.apache.org/licenses/LICENSE-2.0</url>
@@ -46,7 +47,7 @@
 			you may not use this file except in compliance with the License.
 			You may obtain a copy of the License at
 			
-			     http://www.apache.org/licenses/LICENSE-2.0
+				 http://www.apache.org/licenses/LICENSE-2.0
 			
 			Unless required by applicable law or agreed to in writing, software
 			distributed under the License is distributed on an "AS IS" BASIS,
@@ -59,14 +60,14 @@
 	</licenses>
 	
 	<scm>
-        <url>https://github.com/SpringSource/spring-data-build</url>
-        <connection>scm:git:git://github.com/SpringSource/spring-data-build.git</connection>
-        <developerConnection>scm:git:ssh://git@github.com:SpringSource/spring-data-build.git</developerConnection>
-    </scm>
-    
-    <issueManagement>
-        <system>GitHub</system>
-        <url>https://github.com/SpringSource/spring-data-build/issues</url>
-    </issueManagement>
-    
+		<url>https://github.com/SpringSource/spring-data-build</url>
+		<connection>scm:git:git://github.com/SpringSource/spring-data-build.git</connection>
+		<developerConnection>scm:git:ssh://git@github.com:SpringSource/spring-data-build.git</developerConnection>
+	</scm>
+	
+	<issueManagement>
+		<system>GitHub</system>
+		<url>https://github.com/SpringSource/spring-data-build/issues</url>
+	</issueManagement>
+	
 </project>
