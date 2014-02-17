@@ -19,6 +19,7 @@
 	<modules>
 		<module>resources</module>
 		<module>parent</module>
+		<module>bom</module>
 	</modules>
 	
 	<developers>
