@@ -116,7 +116,6 @@
 		<slf4j>1.7.6</slf4j>
 		<spring>3.2.8.RELEASE</spring>
 		<webbeans>1.2.1</webbeans>
-
 	</properties>
 	
 	<profiles>
@@ -736,9 +735,9 @@
 			</plugin>
 			
 			<plugin>
-				<groupId>com.springsource.bundlor</groupId>
-				<artifactId>com.springsource.bundlor.maven</artifactId>
-				<version>1.0.0.RELEASE</version>
+				<groupId>org.eclipse.virgo.bundlor</groupId>
+				<artifactId>org.eclipse.virgo.bundlor.maven</artifactId>
+				<version>1.1.2.RELEASE</version>
 				<configuration>
 					<enabled>${bundlor.enabled}</enabled>
 					<failOnWarnings>${bundlor.failOnWarnings}</failOnWarnings>
@@ -801,6 +800,16 @@
 		<pluginRepository>
 			<id>spring-plugins-release</id>
 			<url>http://repo.spring.io/plugins-release</url>
+		</pluginRepository>
+		<pluginRepository>
+			<id>eclipse.virgo.build.bundles.release</id>
+			<name>Eclipse Virgo Build</name>
+			<url>http://build.eclipse.org/rt/virgo/maven/bundles/release</url>
+		</pluginRepository>
+		<pluginRepository>
+			<id>com.springsource.repository.bundles.external</id>
+			<name>SpringSource Enterprise Bundle Repository - External Bundle Releases</name>
+			<url>http://repository.springsource.com/maven/bundles/external</url>
 		</pluginRepository>
 	</pluginRepositories>
 
