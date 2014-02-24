@@ -90,7 +90,7 @@ under the License.
 									<xsl:if test="position() > 1">
 										<xsl:text>, </xsl:text>
 									</xsl:if>
-									<xsl:value-of select="."/>
+									<xsl:value-of select="firstname"/><xsl:text>&#160;</xsl:text><xsl:value-of select="surname"/>
 								</xsl:for-each>
 							</fo:block>
 
