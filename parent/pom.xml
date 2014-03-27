@@ -546,7 +546,7 @@
 			<id>spring4-next</id>
 
 			<properties>
-				<spring>4.0.3.BUILD-SNAPSHOT</spring>
+				<spring>4.0.4.BUILD-SNAPSHOT</spring>
 			</properties>
 
 			<dependencies>
@@ -572,7 +572,7 @@
 			<id>spring4</id>
 
 			<properties>
-				<spring>4.0.2.RELEASE</spring>
+				<spring>4.0.3.RELEASE</spring>
 			</properties>
 
 			<dependencies>
