@@ -570,6 +570,10 @@
 		<profile>
 
 			<id>spring4</id>
+			
+			<activation>
+				<jdk>1.8</jdk>
+			</activation>
 
 			<properties>
 				<spring>4.0.3.RELEASE</spring>
