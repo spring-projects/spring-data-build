@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 
-	<!-- 
+	<!--
 	
 	Global parent pom.xml for Spring Data modules to inherit from.
 	
 	- Shared resources are pulled in from the spring-data-build-resources dependency (images, CSS, XSLTs for documentation generation)
 	- Renders reference documentation from Docbook file named index.xml within src/docbkx
-	- In the "distribute" profile, two assemblies are generated: 
+	- In the "distribute" profile, two assemblies are generated:
 	  - one to be published on the download portal (incl. binaries, sources, javadoc (jarred and browsable), reference documentation in pdf, html and html single page)
 	  - one to be uploaded to static.springsource.org (incl. javadoc (browsable), reference docs as described before)
 	
@@ -33,12 +33,12 @@
 
 	<name>Spring Data Build - General parent module</name>
 	<description>Global parent pom.xml to be used by Spring Data modules</description>
-	<url>http://www.springsource.org/spring-data</url>
-	<inceptionYear>2011-2013</inceptionYear>
+	<url>http://www.spring.io/spring-data</url>
+	<inceptionYear>2011-2014</inceptionYear>
 	
 	<organization>
-		<name>Pivotal</name>
-		<url>http://www.springsource.org</url>
+		<name>Pivotal Software, Inc.</name>
+		<url>http://www.spring.io</url>
 	</organization>
 	
 	<developers>
@@ -46,7 +46,7 @@
 			<id>ogierke</id>
 			<name>Oliver Gierke</name>
 			<email>ogierke at gopivotal.com</email>
-			<organization>Pivotal</organization>
+			<organization>Pivotal Software, Inc.</organization>
 			<organizationUrl>http://www.gopivotal.com</organizationUrl>
 			<roles>
 				<role>Project lead</role>
@@ -61,7 +61,7 @@
 			<url>http://www.apache.org/licenses/LICENSE-2.0</url>
 			<comments>
 			Copyright 2008-2013 the original author or authors.
-			 
+			
 			Licensed under the Apache License, Version 2.0 (the "License");
 			you may not use this file except in compliance with the License.
 			You may obtain a copy of the License at
@@ -107,7 +107,7 @@
 		<aspectj>1.7.4</aspectj>
 		<cdi>1.0</cdi>
 		<hamcrest>1.3</hamcrest>
-		<jackson>2.3.1</jackson>
+		<jackson>2.3.2</jackson>
 		<jodatime>2.3</jodatime>
 		<junit>4.11</junit>
 		<logback>1.1.1</logback>
@@ -166,7 +166,7 @@
 				<dependency>
 					<groupId>org.springframework.data.build</groupId>
 					<artifactId>spring-data-build-resources</artifactId>
-					<version>1.3.0.RELEASE</version>
+					<version>1.4.0.M1</version>
 					<scope>provided</scope>
 					<type>zip</type>
 				</dependency>
