@@ -1,0 +1,53 @@
+Spring Data Build - Changelog
+=============================
+
+Changes in version 1.3.2.RELEASE (2014-04-16)
+---------------------------------------------
+* #62 - Release 1.3.2.
+* #61 - Invalid artifact identifiers for Spring Data REST in BOM.
+
+Changes in version 1.4.0.M1 (2014-04-16)
+----------------------------------------
+* #60 - Upgrade to Querydsl 3.3.2.
+* #59 - Upgrade Spring 4.x profiles to lates releases.
+* #58 - Release 1.4 M1.
+
+Changes in version 1.3.1.RELEASE (2014-04-16)
+---------------------------------------------
+* #57 - Release 1.3.1.
+
+Changes in version 1.3.0.RELEASE (2014-04-16)
+---------------------------------------------
+* #54 - DATAJPA-470, DATAMONG0-856 - Only render first- and surname of authors.
+* #53 - Upgrade to latest Spring releases.
+* #51 - Add CSS for custom JavaDoc styles.
+* #50 - Add BOM for Spring Data modules.
+* #49 - Upgrade to Maven dependency plugin 2.8 to ensure Maven 3.1 compatibility.
+* #48 - Upgrade to Querydsl 3.3.1.
+* #47 - Upgrade to Slf4j version to 1.7.6.
+* #46 - Update versions of Spring profiles to latest reflect latest releases.
+* #45 - Document necessity of CI profile for release builds.
+* #31 - Release 1.3 GA.
+
+Changes in version 1.3.0.RC1 (2014-04-16)
+-----------------------------------------
+* #44 - Add build profile for next Spring 3.2.x version.
+* #43 - Upgrade to Spring 3.2.7.
+* #42 - Add property for Jackson 2 version.
+* #41 - Fix repository declarations.
+* #40 - Improve Spring 4 build profiles.
+* #39 - Allow completely disabling Bundlor.
+* #38 - Use Spring Framework BOM to fix versions of Spring dependencies.
+* #37 - Add contribution guidelines.
+* #36 - Upgrade to OpenWebBeans 1.2.1.
+* #35 - Upgrade to latest Querydsl 3.3.x.
+* #34 - Upgrade to Spring 3.2.6.
+* #33 - Add profile to allow building against the latest Querydsl.
+* #30 - Release 1.3 RC1.
+
+Changes in version 1.3.0.M1 (2014-04-16)
+----------------------------------------
+* #29 - Add formatter configuration for SD projects.
+* #28 - Release 1.3 M1.
+* #27 - Introduce shell script to automatically create issue branches and update pom versions.
+* #26 - Upgrade Spring baseline to latest 3.2.x.
