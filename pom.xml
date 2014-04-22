@@ -18,6 +18,7 @@
 
 	<modules>
 		<module>resources</module>
+		<module>java8</module>
 		<module>parent</module>
 		<module>bom</module>
 	</modules>
