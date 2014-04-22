@@ -2,45 +2,45 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 
 	<!--
-	
+
 	Global parent pom.xml for Spring Data modules to inherit from.
-	
+
 	- Shared resources are pulled in from the spring-data-build-resources dependency (images, CSS, XSLTs for documentation generation)
 	- Renders reference documentation from Docbook file named index.xml within src/docbkx
 	- In the "distribute" profile, two assemblies are generated:
 	  - one to be published on the download portal (incl. binaries, sources, javadoc (jarred and browsable), reference documentation in pdf, html and html single page)
 	  - one to be uploaded to static.springsource.org (incl. javadoc (browsable), reference docs as described before)
-	
+
 	Preconfigures the following:
-	
+
 	- Logging dependencies: SLF4j + Commons Logging bridge and Logback as test dependency
 	- Test dependencies: JUnit / Hamcrest / Mockito
 	- Dependency versions for commonly used dependencies
-	
+
 	-->
 
 	<modelVersion>4.0.0</modelVersion>
-	
+
 	<artifactId>spring-data-parent</artifactId>
 	<packaging>pom</packaging>
-	
+
 	<parent>
 		<groupId>org.springframework.data.build</groupId>
 		<artifactId>spring-data-build</artifactId>
 		<version>1.4.0.BUILD-SNAPSHOT</version>
-		<relativePath>../pom.xml</relativePath>     
+		<relativePath>../pom.xml</relativePath>
 	</parent>
 
 	<name>Spring Data Build - General parent module</name>
 	<description>Global parent pom.xml to be used by Spring Data modules</description>
 	<url>http://www.spring.io/spring-data</url>
 	<inceptionYear>2011-2014</inceptionYear>
-	
+
 	<organization>
 		<name>Pivotal Software, Inc.</name>
 		<url>http://www.spring.io</url>
 	</organization>
-	
+
 	<developers>
 		<developer>
 			<id>ogierke</id>
@@ -54,20 +54,20 @@
 			<timezone>+1</timezone>
 		</developer>
 	</developers>
-	
+
 	<licenses>
 		<license>
 			<name>Apache License, Version 2.0</name>
 			<url>http://www.apache.org/licenses/LICENSE-2.0</url>
 			<comments>
 			Copyright 2008-2013 the original author or authors.
-			
+
 			Licensed under the Apache License, Version 2.0 (the "License");
 			you may not use this file except in compliance with the License.
 			You may obtain a copy of the License at
-			
+
 				 http://www.apache.org/licenses/LICENSE-2.0
-			
+
 			Unless required by applicable law or agreed to in writing, software
 			distributed under the License is distributed on an "AS IS" BASIS,
 			WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or
@@ -77,9 +77,9 @@
 			</comments>
 		</license>
 	</licenses>
-	
+
 	<properties>
-		
+
 		<bundlor.enabled>true</bundlor.enabled>
 		<bundlor.failOnWarnings>true</bundlor.failOnWarnings>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
@@ -102,7 +102,7 @@
 		<!-- Additional properties required to be set in settings.xml -->
 		<!-- dist.accessKey -->
 		<!-- dist.secretKey -->
-		
+
 		<apt>1.1.1</apt>
 		<aspectj>1.7.4</aspectj>
 		<cdi>1.0</cdi>
@@ -118,7 +118,7 @@
 		<webbeans>1.2.2</webbeans>
 
 	</properties>
-	
+
 	<profiles>
 
 		<profile>
@@ -157,11 +157,11 @@
 			-->
 
 			<id>distribute</id>
-			
+
 			<properties>
 				<shared.resources>${project.build.directory}/shared-resources</shared.resources>
 			</properties>
-			
+
 			<dependencies>
 				<dependency>
 					<groupId>org.springframework.data.build</groupId>
@@ -171,11 +171,11 @@
 					<type>zip</type>
 				</dependency>
 			</dependencies>
-			
+
 			<build>
-			
+
 				<plugins>
-				
+
 					<!--
 						Unpacks the content of spring-data-build-resources into the shared resources folder.
 					-->
@@ -204,7 +204,7 @@
 					<!--
 						Configures JavaDoc generation.
 					-->
-				
+
 					<plugin>
 						<groupId>org.apache.maven.plugins</groupId>
 						<artifactId>maven-javadoc-plugin</artifactId>
@@ -218,11 +218,11 @@
 							</execution>
 						</executions>
 					</plugin>
-		
+
 					<!--
 						Renders reference documentation from Docbook sources.
 					-->
-						
+
 					<plugin>
 						<groupId>com.agilejava.docbkx</groupId>
 						<artifactId>docbkx-maven-plugin</artifactId>
@@ -310,7 +310,7 @@
 							</execution>
 
 						</executions>
-						
+
 						<dependencies>
 							<dependency>
 								<groupId>org.docbook</groupId>
@@ -319,7 +319,7 @@
 								<scope>runtime</scope>
 							</dependency>
 						</dependencies>
-						
+
 						<!-- Common Docbook configuration -->
 						<configuration>
 							<includes>index.xml</includes>
@@ -336,8 +336,8 @@
 							</entities>
 						</configuration>
 					</plugin>
-					
-					<!-- 
+
+					<!--
 						Copies all namespaces schemas to target/schemas flatten the directory structure.
 						Depended on by the site.xml assembly descriptor.
 					-->
@@ -358,7 +358,7 @@
 							</dependency>
 						</dependencies>
 						<executions>
-							
+
 							<execution>
 								<id>copy-documentation-images</id>
 								<phase>process-resources</phase>
@@ -378,7 +378,7 @@
 									<goal>run</goal>
 								</goals>
 							</execution>
-							
+
 							<execution>
 								<id>collect-schema-files</id>
 								<phase>process-resources</phase>
@@ -416,12 +416,12 @@
 					</plugin>
 
 				</plugins>
-				
+
 				<pluginManagement>
 					<plugins>
-					
-						<!-- 
-							Creates two zip files for download as well as API and reference documentation distribution. 
+
+						<!--
+							Creates two zip files for download as well as API and reference documentation distribution.
 						-->
 						<plugin>
 							<groupId>org.apache.maven.plugins</groupId>
@@ -509,14 +509,14 @@
 				</pluginManagement>
 			</build>
 		</profile>
-		
+
 		<profile>
 			<id>milestone</id>
 			<properties>
 				<dist.releaseType>milestone</dist.releaseType>
 			</properties>
 		</profile>
-		
+
 		<profile>
 			<id>release</id>
 			<properties>
@@ -602,9 +602,9 @@
 				</repository>
 			</repositories>
 		</profile>
-		
+
 	</profiles>
-	
+
 	<dependencyManagement>
 		<dependencies>
 			<dependency>
@@ -616,9 +616,9 @@
 			</dependency>
 		</dependencies>
 	</dependencyManagement>
-	
+
 	<dependencies>
-	
+
 		<!-- Test -->
 		<dependency>
 			<groupId>org.hamcrest</groupId>
@@ -626,34 +626,34 @@
 			<version>${hamcrest}</version>
 			<scope>test</scope>
 		</dependency>
-		
+
 		<dependency>
 			<groupId>org.hamcrest</groupId>
 			<artifactId>hamcrest-core</artifactId>
 			<version>${hamcrest}</version>
 			<scope>test</scope>
 		</dependency>
-		
+
 		<dependency>
 			<groupId>junit</groupId>
 			<artifactId>junit</artifactId>
 			<version>${junit}</version>
 			<scope>test</scope>
 		</dependency>
-		
+
 		<dependency>
 			<groupId>org.mockito</groupId>
 			<artifactId>mockito-core</artifactId>
 			<version>${mockito}</version>
 			<scope>test</scope>
 		</dependency>
-		
+
 		<dependency>
 			<groupId>org.springframework</groupId>
 			<artifactId>spring-test</artifactId>
 			<scope>test</scope>
 		</dependency>
-		
+
 		<!-- Logging -->
 		<dependency>
 			<groupId>org.slf4j</groupId>
@@ -674,9 +674,9 @@
 			<version>${logback}</version>
 			<scope>test</scope>
 		</dependency>
-		
+
 	</dependencies>
-	
+
 	<build>
 
 		<extensions>
@@ -694,9 +694,9 @@
 				<artifactId>maven-dependency-plugin</artifactId>
 				<version>2.8</version>
 			</plugin>
-			
+
 			<plugin>
-				<groupId>org.apache.maven.plugins</groupId>
+	            <groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-compiler-plugin</artifactId>
 				<version>3.1</version>
 				<configuration>
@@ -716,7 +716,7 @@
 					</includes>
 				</configuration>
 			</plugin>
-			
+
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-jar-plugin</artifactId>
@@ -725,7 +725,7 @@
 					<useDefaultManifestFile>true</useDefaultManifestFile>
 				</configuration>
 			</plugin>
-			
+
 			<plugin>
 				<artifactId>maven-source-plugin</artifactId>
 				<version>2.1.2</version>
@@ -738,7 +738,7 @@
 					</execution>
 				</executions>
 			</plugin>
-			
+
 			<plugin>
 				<groupId>com.springsource.bundlor</groupId>
 				<artifactId>com.springsource.bundlor.maven</artifactId>
@@ -778,7 +778,7 @@
 					</links>
 				</configuration>
 			</plugin>
-			
+
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-deploy-plugin</artifactId>
@@ -790,7 +790,7 @@
 
 		</plugins>
 	</build>
-	
+
 	<repositories>
 		<repository>
 			<id>spring-libs-release</id>
@@ -800,7 +800,7 @@
 			</snapshots>
 		</repository>
 	</repositories>
-	
+
 	<pluginRepositories>
 		<pluginRepository>
 			<id>spring-plugins-release</id>
