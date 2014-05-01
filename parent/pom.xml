@@ -535,7 +535,7 @@
 			<repositories>
 				<repository>
 					<id>spring-libs-snapshot</id>
-					<url>http://repo.springsource.org/libs-snapshot</url>
+					<url>http://repo.spring.io/libs-snapshot</url>
 				</repository>
 			</repositories>
 
@@ -546,7 +546,7 @@
 			<id>spring4-next</id>
 
 			<properties>
-				<spring>4.0.4.BUILD-SNAPSHOT</spring>
+				<spring>4.0.5.BUILD-SNAPSHOT</spring>
 			</properties>
 
 			<dependencies>
@@ -561,7 +561,7 @@
 			<repositories>
 				<repository>
 					<id>spring-libs-snapshot</id>
-					<url>http://repo.springsource.org/libs-snapshot</url>
+					<url>http://repo.spring.io/libs-snapshot</url>
 				</repository>
 			</repositories>
 
@@ -570,13 +570,13 @@
 		<profile>
 
 			<id>spring4</id>
-			
+
 			<activation>
 				<jdk>1.8</jdk>
 			</activation>
 
 			<properties>
-				<spring>4.0.3.RELEASE</spring>
+				<spring>4.0.4.RELEASE</spring>
 			</properties>
 
 			<dependencies>
