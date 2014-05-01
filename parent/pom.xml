@@ -115,7 +115,7 @@
 		<querydsl>3.3.2</querydsl>
 		<slf4j>1.7.6</slf4j>
 		<spring>3.2.8.RELEASE</spring>
-		<webbeans>1.2.2</webbeans>
+		<webbeans>1.2.3</webbeans>
 
 	</properties>
 
