@@ -112,7 +112,7 @@
 		<junit>4.11</junit>
 		<logback>1.1.2</logback>
 		<mockito>1.9.5</mockito>
-		<querydsl>3.3.2</querydsl>
+		<querydsl>3.3.3</querydsl>
 		<slf4j>1.7.6</slf4j>
 		<spring>3.2.8.RELEASE</spring>
 		<webbeans>1.2.3</webbeans>
@@ -593,7 +593,7 @@
 		<profile>
 			<id>querydsl-next</id>
 			<properties>
-				<querydsl>3.3.3.BUILD-SNAPSHOT</querydsl>
+				<querydsl>3.3.4.BUILD-SNAPSHOT</querydsl>
 			</properties>
 			<repositories>
 				<repository>
