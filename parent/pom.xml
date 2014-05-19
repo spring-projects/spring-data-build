@@ -113,9 +113,9 @@
 		<logback>1.1.2</logback>
 		<mockito>1.9.5</mockito>
 		<querydsl>3.3.3</querydsl>
-		<slf4j>1.7.6</slf4j>
+		<slf4j>1.7.7</slf4j>
 		<spring>3.2.8.RELEASE</spring>
-		<webbeans>1.2.3</webbeans>
+		<webbeans>1.2.4</webbeans>
 
 	</properties>
 
