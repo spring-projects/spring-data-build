@@ -543,6 +543,29 @@
 
 		<profile>
 
+			<id>spring4</id>
+
+			<activation>
+				<jdk>1.8</jdk>
+			</activation>
+
+			<properties>
+				<spring>4.0.4.RELEASE</spring>
+			</properties>
+
+			<dependencies>
+				<dependency>
+					<groupId>javax.servlet</groupId>
+					<artifactId>javax.servlet-api</artifactId>
+					<version>3.0.1</version>
+					<scope>test</scope>
+				</dependency>
+			</dependencies>
+
+		</profile>
+
+		<profile>
+
 			<id>spring4-next</id>
 
 			<properties>
@@ -564,29 +587,6 @@
 					<url>http://repo.spring.io/libs-snapshot</url>
 				</repository>
 			</repositories>
-
-		</profile>
-
-		<profile>
-
-			<id>spring4</id>
-
-			<activation>
-				<jdk>1.8</jdk>
-			</activation>
-
-			<properties>
-				<spring>4.0.4.RELEASE</spring>
-			</properties>
-
-			<dependencies>
-				<dependency>
-					<groupId>javax.servlet</groupId>
-					<artifactId>javax.servlet-api</artifactId>
-					<version>3.0.1</version>
-					<scope>test</scope>
-				</dependency>
-			</dependencies>
 
 		</profile>
 
