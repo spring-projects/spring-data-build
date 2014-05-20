@@ -4,7 +4,7 @@
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>org.springframework.data.build</groupId>
 	<artifactId>spring-data-build</artifactId>
-	<version>1.4.0.RELEASE</version>
+	<version>1.4.1.BUILD-SNAPSHOT</version>
 	<packaging>pom</packaging>
 
 	<name>Spring Data Build</name>
@@ -42,7 +42,7 @@
 			<name>Apache License, Version 2.0</name>
 			<url>http://www.apache.org/licenses/LICENSE-2.0</url>
 			<comments>
-			Copyright 2010 the original author or authors.
+			Copyright 2010-2014 the original author or authors.
 			 
 			Licensed under the Apache License, Version 2.0 (the "License");
 			you may not use this file except in compliance with the License.
