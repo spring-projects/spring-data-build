@@ -114,7 +114,7 @@
 		<mockito>1.9.5</mockito>
 		<querydsl>3.3.3</querydsl>
 		<slf4j>1.7.7</slf4j>
-		<spring>3.2.8.RELEASE</spring>
+		<spring>3.2.9.RELEASE</spring>
 		<webbeans>1.2.4</webbeans>
 
 	</properties>
@@ -529,7 +529,7 @@
 			<id>spring32-next</id>
 
 			<properties>
-				<spring>3.2.9.BUILD-SNAPSHOT</spring>
+				<spring>3.2.10.BUILD-SNAPSHOT</spring>
 			</properties>
 
 			<repositories>
@@ -544,10 +544,6 @@
 		<profile>
 
 			<id>spring4</id>
-
-			<activation>
-				<jdk>1.8</jdk>
-			</activation>
 
 			<properties>
 				<spring>4.0.4.RELEASE</spring>
