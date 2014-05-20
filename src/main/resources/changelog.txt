@@ -1,6 +1,15 @@
 Spring Data Build - Changelog
 =============================
 
+Changes in version 1.4.0.RELEASE (2014-05-20)
+---------------------------------------------
+* #74 - Upgrade to Spring 3.2.9.
+* #73 - Upgrade to latest Slf4j and OpenWebbeans.
+* #71 - Switch order of Spring 4 and Spring 4 Next profile.
+* #70 - Upgrade to Querydsl 3.3.3.
+* #55 - Release 1.4 GA.
+
+
 Changes in version 1.4.0.RC1 (2014-05-02)
 -----------------------------------------
 * #68 - Upgrade Spring 4 profile to Spring 4.0.4.
