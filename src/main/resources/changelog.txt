@@ -1,6 +1,14 @@
 Spring Data Build - Changelog
 =============================
 
+Changes in version 1.3.3.RELEASE (2014-06-18)
+---------------------------------------------
+- #82 - Backport JavaDoc updated to 1.3.x.
+- #75 - Release 1.3.3.
+- #72 - Backport switching the order of Spring 4 and Spring 4 Next profile.
+- #69 - Back-port Spring 4 profile upgrade.
+
+
 Changes in version 1.4.0.RELEASE (2014-05-20)
 ---------------------------------------------
 * #74 - Upgrade to Spring 3.2.9.
