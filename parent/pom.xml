@@ -114,7 +114,7 @@
 		<mockito>1.9.5</mockito>
 		<querydsl>3.4.0</querydsl>
 		<slf4j>1.7.7</slf4j>
-		<spring>3.2.9.RELEASE</spring>
+		<spring>4.0.5.RELEASE</spring>
 		<webbeans>1.2.4</webbeans>
 
 	</properties>
@@ -526,11 +526,20 @@
 
 		<profile>
 
-			<id>spring32-next</id>
+			<id>spring4-next</id>
 
 			<properties>
-				<spring>3.2.10.BUILD-SNAPSHOT</spring>
+				<spring>4.0.6.BUILD-SNAPSHOT</spring>
 			</properties>
+
+			<dependencies>
+				<dependency>
+					<groupId>javax.servlet</groupId>
+					<artifactId>javax.servlet-api</artifactId>
+					<version>3.0.1</version>
+					<scope>test</scope>
+				</dependency>
+			</dependencies>
 
 			<repositories>
 				<repository>
@@ -543,29 +552,10 @@
 
 		<profile>
 
-			<id>spring4</id>
+			<id>spring41-next</id>
 
 			<properties>
-				<spring>4.0.4.RELEASE</spring>
-			</properties>
-
-			<dependencies>
-				<dependency>
-					<groupId>javax.servlet</groupId>
-					<artifactId>javax.servlet-api</artifactId>
-					<version>3.0.1</version>
-					<scope>test</scope>
-				</dependency>
-			</dependencies>
-
-		</profile>
-
-		<profile>
-
-			<id>spring4-next</id>
-
-			<properties>
-				<spring>4.0.5.BUILD-SNAPSHOT</spring>
+				<spring>4.1.0.BUILD-SNAPSHOT</spring>
 			</properties>
 
 			<dependencies>
