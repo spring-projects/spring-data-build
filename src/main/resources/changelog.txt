@@ -1,6 +1,20 @@
 Spring Data Build - Changelog
 =============================
 
+Changes in version 1.5.0.M1 (2014-07-10)
+----------------------------------------
+* #94 - Upgrade to Spring 4.0.6.RELEASE.
+* #92 - Upgrade to Jackson 2.4.1.
+* #91 - Upgrade to AspectJ 1.8.1.
+* #89 - Release 1.5 M1.
+* #84 - Include all of the release train's modules in the bom.
+* #83 - Upgrade to Querydsl 3.4.0.
+* #79 - Update JavaDoc plugin references to dependency JavaDocs.
+* #78 - Update build plugins to the latest versions.
+* #77 - Upgrade to Spring 4.
+* #76 - Upgrade to Querydsl 3.3.4.
+
+
 Changes in version 1.4.1.RELEASE (2014-06-30)
 ---------------------------------------------
 * #87 - Backport build plugin upgrades.
