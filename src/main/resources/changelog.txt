@@ -1,6 +1,13 @@
 Spring Data Build - Changelog
 =============================
 
+Changes in version 1.4.2.RELEASE (2014-07-28)
+---------------------------------------------
+* #96 - Upgrade to Spring 3.2.10.
+* #93 - Backport AspectJ 1.8.1 upgrade.
+* #88 - Release 1.4.2.
+
+
 Changes in version 1.4.1.RELEASE (2014-06-30)
 ---------------------------------------------
 * #87 - Backport build plugin upgrades.
