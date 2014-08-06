@@ -143,7 +143,6 @@
 						</executions>
 					</plugin>
 
-
 				</plugins>
 			</build>
 
@@ -722,6 +721,34 @@
 				<version>2.5</version>
 			</extension>
 		</extensions>
+
+		<!--
+			Default versioned declarations of managed plugins
+			to be overridden when the distribute profile is active.
+			If this section was missing, Maven would complain about
+			missing version numbers for executions without the
+			profile active.
+		-->
+
+		<pluginManagement>
+
+			<plugins>
+
+				<plugin>
+					<groupId>org.codehaus.mojo</groupId>
+					<artifactId>wagon-maven-plugin</artifactId>
+					<version>1.0-beta-5</version>
+				</plugin>
+
+				<plugin>
+					<groupId>org.asciidoctor</groupId>
+					<artifactId>asciidoctor-maven-plugin</artifactId>
+					<version>0.1.4</version>
+				</plugin>
+
+			</plugins>
+
+		</pluginManagement>
 
 		<plugins>
 
