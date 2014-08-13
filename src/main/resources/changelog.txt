@@ -1,6 +1,15 @@
 Spring Data Build - Changelog
 =============================
 
+Changes in version 1.5.0.RC1 (2014-08-13)
+-----------------------------------------
+* #99 - Upgrade MAven APT plugin to 1.1.2.
+* #98 - Add <pluginManagement /> section to remove warnings in non-profile execution.
+* #97 - Add build infrastructure for Asciidoctor.
+* #95 - Release 1.5 RC1.
+* #90 - Upgrade to Querydsl 3.4.2.
+
+
 Changes in version 1.5.0.M1 (2014-07-10)
 ----------------------------------------
 * #94 - Upgrade to Spring 4.0.6.RELEASE.
