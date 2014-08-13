@@ -331,13 +331,13 @@
 								<phase>generate-resources</phase>
 								<configuration>
 									<target>
-										<copy todir="${project.root}/target/site/reference/htmlsingle">
+										<copy todir="${project.root}/target/site/reference/html">
 											<fileset dir="${shared.resources}/asciidoc" erroronmissingdir="false">
 												<include name="**/*.css"/>
 											</fileset>
 											<flattenmapper/>
 										</copy>
-										<copy todir="${project.root}/target/site/reference/htmlsingle/images">
+										<copy todir="${project.root}/target/site/reference/html/images">
 											<fileset dir="${basedir}/src/main/asciidoc" erroronmissingdir="false">
 												<include name="**/*.png"/>
 												<include name="**/*.gif"/>
@@ -432,7 +432,7 @@
 									<configuration>
 										<backend>html5</backend>
 										<sourceHighlighter>prettify</sourceHighlighter>
-										<outputDirectory>${project.root}/target/site/reference/htmlsingle</outputDirectory>
+										<outputDirectory>${project.root}/target/site/reference/html</outputDirectory>
 										<attributes>
 											<linkcss>true</linkcss>
 											<numbered>true</numbered>
