@@ -251,36 +251,6 @@
 								</configuration>
 							</execution>
 
-							<!-- Configuration for chunked HTML generation -->
-							<execution>
-								<id>html</id>
-								<goals>
-									<goal>generate-html</goal>
-								</goals>
-								<phase>package</phase>
-								<configuration>
-									<chunkedOutput>true</chunkedOutput>
-									<targetDirectory>${project.build.directory}/docbkx/html</targetDirectory>
-									<htmlCustomization>${shared.resources}/docbkx/xsl/html-multipage.xsl</htmlCustomization>
-									<imgSrcPath>images/</imgSrcPath>
-									<postProcess>
-										<copy todir="${project.build.directory}/site/reference/html">
-											<fileset dir="${project.build.directory}/docbkx/html/index">
-												<include name="**/*.html"/>
-											</fileset>
-										</copy>
-										<copy todir="${project.build.directory}/site/reference/html">
-											<fileset dir="${shared.resources}/docbkx">
-												<include name="**/*.css"/>
-												<include name="**/*.png"/>
-												<include name="**/*.gif"/>
-												<include name="**/*.jpg"/>
-											</fileset>
-										</copy>
-									</postProcess>
-								</configuration>
-							</execution>
-
 						</executions>
 
 						<dependencies>
@@ -420,7 +390,7 @@
 						<plugin>
 							<groupId>org.asciidoctor</groupId>
 							<artifactId>asciidoctor-maven-plugin</artifactId>
-							<version>0.1.4</version>
+							<version>1.5.0</version>
 							<executions>
 
 								<execution>
@@ -438,7 +408,6 @@
 											<numbered>true</numbered>
 											<icons>font</icons>
 											<sectanchors>true</sectanchors>
-											<stylesheet>spring.css</stylesheet>
 										</attributes>
 									</configuration>
 								</execution>
