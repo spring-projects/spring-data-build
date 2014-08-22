@@ -409,6 +409,7 @@
 											<icons>font</icons>
 											<sectanchors>true</sectanchors>
 											<stylesheet>spring.css</stylesheet>
+											<toclevels>3</toclevels>
 										</attributes>
 									</configuration>
 								</execution>
