@@ -408,6 +408,7 @@
 											<numbered>true</numbered>
 											<icons>font</icons>
 											<sectanchors>true</sectanchors>
+											<stylesheet>spring.css</stylesheet>
 										</attributes>
 									</configuration>
 								</execution>
