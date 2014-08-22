@@ -83,25 +83,9 @@
 		<bundlor.enabled>true</bundlor.enabled>
 		<bundlor.failOnWarnings>true</bundlor.failOnWarnings>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-		<project.type>single</project.type>
 		<project.root>${basedir}</project.root>
 		<source.level>1.6</source.level>
-
 		<dist.id>${project.artifactId}</dist.id>
-		<dist.name>${project.name}</dist.name>
-		<dist.releaseType>snapshot</dist.releaseType>
-		<dist.bucketName>dist.springframework.org</dist.bucketName>
-		<dist.assemblyName>${dist.id}-${project.version}</dist.assemblyName>
-		<dist.fileName>${dist.assemblyName}.zip</dist.fileName>
-		<dist.filePath>${project.build.directory}/${dist.assemblyName}-distribution.zip</dist.filePath>
-		<dist.version>${project.version}</dist.version>
-
-		<!-- Additional properties required to be set by child projects -->
-		<!-- dist.key: the distribution key (e.g. DATACMNS) -->
-
-		<!-- Additional properties required to be set in settings.xml -->
-		<!-- dist.accessKey -->
-		<!-- dist.secretKey -->
 
 		<apt>1.1.2</apt>
 		<aspectj>1.8.1</aspectj>
@@ -282,18 +266,6 @@
 					<plugin>
 						<artifactId>maven-antrun-plugin</artifactId>
 						<version>1.7</version>
-						<dependencies>
-							<dependency>
-								<groupId>org.springframework.build</groupId>
-								<artifactId>org.springframework.build.aws.ant</artifactId>
-								<version>3.0.6.RELEASE</version>
-							</dependency>
-							<dependency>
-								<groupId>org.jets3t</groupId>
-								<artifactId>com.springsource.org.jets3t</artifactId>
-								<version>0.8.1</version>
-							</dependency>
-						</dependencies>
 						<executions>
 
 							<execution>
@@ -358,21 +330,6 @@
 								<goals>
 									<goal>run</goal>
 								</goals>
-							</execution>
-							<execution>
-								<id>upload-distribution</id>
-								<phase>deploy</phase>
-								<goals>
-									<goal>run</goal>
-								</goals>
-								<configuration>
-									<target>
-										<ant antfile="${shared.resources}/ant/upload-dist.xml">
-											<target name="upload-distribution"/>
-										</ant>
-									</target>
-									<failOnError>false</failOnError>
-								</configuration>
 							</execution>
 						</executions>
 
@@ -449,19 +406,6 @@
 							<version>2.4</version>
 							<executions>
 								<execution>
-									<id>distribution</id>
-									<goals>
-										<goal>single</goal>
-									</goals>
-									<phase>package</phase>
-									<configuration>
-										<descriptors>
-											<descriptor>${shared.resources}/assemblies/distribution-${project.type}.xml</descriptor>
-										</descriptors>
-										<finalName>${dist.assemblyName}</finalName>
-									</configuration>
-								</execution>
-								<execution>
 									<id>static</id>
 									<goals>
 										<goal>single</goal>
@@ -528,20 +472,6 @@
 					</plugins>
 				</pluginManagement>
 			</build>
-		</profile>
-
-		<profile>
-			<id>milestone</id>
-			<properties>
-				<dist.releaseType>milestone</dist.releaseType>
-			</properties>
-		</profile>
-
-		<profile>
-			<id>release</id>
-			<properties>
-				<dist.releaseType>release</dist.releaseType>
-			</properties>
 		</profile>
 
 		<profile>

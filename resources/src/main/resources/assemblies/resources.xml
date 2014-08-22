@@ -2,8 +2,8 @@
 <component xmlns="http://maven.apache.org/plugins/maven-assembly-plugin/component/1.1.2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/plugins/maven-assembly-plugin/component/1.1.2 http://maven.apache.org/xsd/component-1.1.2.xsd">
 	<fileSets>
 		<fileSet>
-			<!-- 
-				Adds readme and other textfiles to the root of the distribution archive. 
+			<!--
+				Adds readme and other textfiles to the root of the distribution archive.
 			-->
 			<directory>${project.root}/src/main/resources</directory>
 			<includes>
@@ -16,16 +16,16 @@
 			<lineEnding>dos</lineEnding>
 		</fileSet>
 		<fileSet>
-			<!-- 
-				Adds reference manual (html and pdf) to the distribution archive 
-				under the 'docs/reference' directory see pom.xml 'maven-javadoc-plugin' declaration. 
+			<!--
+				Adds reference manual (html and pdf) to the distribution archive
+				under the 'docs/reference' directory see pom.xml 'maven-javadoc-plugin' declaration.
 			-->
 			<directory>${project.root}/target/site/reference</directory>
 			<outputDirectory>docs/reference</outputDirectory>
 		</fileSet>
 		<fileSet>
-			<!-- 
-				Adds javadoc html to the distribution archive under the 'docs/javadoc' 
+			<!--
+				Adds javadoc html to the distribution archive under the 'docs/javadoc'
 				directory see pom.xml 'maven-javadoc-plugin' declaration.
 			-->
 			<directory>${project.root}/target/site/apidocs</directory>
