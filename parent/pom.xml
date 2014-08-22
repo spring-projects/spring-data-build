@@ -145,6 +145,8 @@
 
 			<properties>
 				<shared.resources>${project.build.directory}/shared-resources</shared.resources>
+				<maven.install.skip>true</maven.install.skip>
+				<skipTests>true</skipTests>
 			</properties>
 
 			<dependencies>
