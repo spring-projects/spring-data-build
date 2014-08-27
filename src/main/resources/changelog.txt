@@ -1,6 +1,11 @@
 Spring Data Build - Changelog
 =============================
 
+Changes in version 1.4.4.RELEASE (2014-08-27)
+---------------------------------------------
+* #103 - Release 1.4.4.
+
+
 Changes in version 1.4.2.RELEASE (2014-07-28)
 ---------------------------------------------
 * #96 - Upgrade to Spring 3.2.10.
