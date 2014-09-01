@@ -113,6 +113,7 @@
 
 			<build>
 				<plugins>
+
 					<plugin>
 						<groupId>org.apache.maven.plugins</groupId>
 						<artifactId>maven-javadoc-plugin</artifactId>
@@ -737,6 +738,7 @@
 					<stylesheetfile>${shared.resources}/javadoc/spring-javadoc.css</stylesheetfile>
 					<!-- copies doc-files subdirectory which contains image resources -->
 					<docfilessubdirs>true</docfilessubdirs>
+					<additionalparam>-Xdoclint:none</additionalparam>
 					<links>
 						<link>http://docs.spring.io/spring/docs/3.2.x/javadoc-api/</link>
 						<link>http://docs.spring.io/spring-data/data-commons/docs/current/api/</link>
