@@ -10,7 +10,7 @@
 	<name>Spring Data Build</name>
 	<description>Modules to centralize common resources and configuration for Spring Data Maven builds.</description>
 	<url>https://github.com/SpringData/spring-data-build</url>
-	
+
 	<organization>
 		<name>Pivotal Software, Inc.</name>
 		<url>http://www.spring.io</url>
@@ -18,11 +18,10 @@
 
 	<modules>
 		<module>resources</module>
-		<module>java8</module>
 		<module>parent</module>
 		<module>bom</module>
 	</modules>
-	
+
 	<developers>
 		<developer>
 			<id>ogierke</id>
@@ -36,20 +35,20 @@
 			<timezone>+1</timezone>
 		</developer>
 	</developers>
-	
+
 	<licenses>
 		<license>
 			<name>Apache License, Version 2.0</name>
 			<url>http://www.apache.org/licenses/LICENSE-2.0</url>
 			<comments>
 			Copyright 2010 the original author or authors.
-			 
+
 			Licensed under the Apache License, Version 2.0 (the "License");
 			you may not use this file except in compliance with the License.
 			You may obtain a copy of the License at
-			
+
 				 http://www.apache.org/licenses/LICENSE-2.0
-			
+
 			Unless required by applicable law or agreed to in writing, software
 			distributed under the License is distributed on an "AS IS" BASIS,
 			WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or
@@ -59,16 +58,16 @@
 			</comments>
 		</license>
 	</licenses>
-	
+
 	<scm>
 		<url>https://github.com/SpringSource/spring-data-build</url>
 		<connection>scm:git:git://github.com/SpringSource/spring-data-build.git</connection>
 		<developerConnection>scm:git:ssh://git@github.com:SpringSource/spring-data-build.git</developerConnection>
 	</scm>
-	
+
 	<issueManagement>
 		<system>GitHub</system>
 		<url>https://github.com/SpringSource/spring-data-build/issues</url>
 	</issueManagement>
-	
+
 </project>
