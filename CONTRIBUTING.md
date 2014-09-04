@@ -44,13 +44,16 @@ This section contains some advanced information, mainly targeted at developers o
 
 - Fix bugs in master first, if it's reasonable to port the fix back into a bugfix branch, try to do so with cherry picking.
 - Try to keep the lifespan of a feature branch as short as possible. For simple bug fixes they should only be used for code review in pull requests.
-- On longer running feature branches, don't pull changes that were made to master in the meantime. Instead, rebase the feature branch onto current master, sorting out issues and making sure the branch will fast-forward merge eventually. 
+- On longer running feature branches, don't pull changes that were made to master in the meantime. Instead, rebase the feature branch onto current master, sorting out issues and making sure the branch will fast-forward merge eventually.
 
 ## Change tracking
 
 - Make sure you don't commit without referring to a ticket. If we have a rather general task to work on, create a ticket for it and commit against that one.
 - Try to resolve a ticket in a single commit. I.e. don't have separate commits for the fix and the test cases. When polishing pull requests requires some more effort, have a separate commit to clearly document the polishing (and attribute the efforts to you).
 - We usually use feature branches to work on tickets and potentially let multiple people work on a feature. There's a [new-issue-branch script](https://github.com/spring-projects/spring-data-build/tree/master/etc/scripts) available that sets up a feature branch for you, and adds a commit changing the Maven version numbers so that the branch builds can still publish snapshot artifacts but don't interfere with each other.
+- Follow the commit message style described in [quickstart]. Especially the summary line should adhere to the style documented there.
+- After pushing fixes to the remote repository, mark the tickets as resolved in JIRA and set the fixed versions according to which branches you pushed to.
+- Avoid merge commits as they just tend to make it hard to understand what comes from where. Using the ticket identifier in the summary line will allow us to keep track fo commits belonging together.
 
 ## Code style
 
