@@ -1,6 +1,19 @@
 Spring Data Build - Changelog
 =============================
 
+Changes in version 1.5.0.RELEASE (2014-09-05)
+---------------------------------------------
+* #109 - Improve CONTRIBUTING.md.
+* #108 - Upgrade to Spring 4.0.7.
+* #107 - Remove custom JDK 8 faking build infrastructure.
+* #106 - General dependency upgrades.
+* #105 - Release 1.5 GA.
+* #104 - Upgrade to Querydsl 3.4.3.
+* #102 - Improve distribution build.
+* #101 - Remove distribution ZIPs.
+* #100 - Improve reference documentation build.
+
+
 Changes in version 1.5.0.RC1 (2014-08-13)
 -----------------------------------------
 * #99 - Upgrade MAven APT plugin to 1.1.2.
