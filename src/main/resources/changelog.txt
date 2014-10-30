@@ -1,6 +1,12 @@
 Spring Data Build - Changelog
 =============================
 
+Changes in version 1.5.1.RELEASE (2014-10-30)
+---------------------------------------------
+* #112 - Release 1.5.1 (Evans SR1).
+* #111 - Backport update of spring41-next profile.
+
+
 Changes in version 1.5.0.RELEASE (2014-09-05)
 ---------------------------------------------
 * #109 - Improve CONTRIBUTING.md.
