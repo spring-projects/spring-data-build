@@ -508,7 +508,7 @@
 			<id>spring41-next</id>
 
 			<properties>
-				<spring>4.1.0.BUILD-SNAPSHOT</spring>
+				<spring>4.1.2.BUILD-SNAPSHOT</spring>
 			</properties>
 
 			<dependencies>
