@@ -98,7 +98,7 @@
 		<mockito>1.9.5</mockito>
 		<querydsl>3.4.3</querydsl>
 		<slf4j>1.7.7</slf4j>
-		<spring>4.0.7.RELEASE</spring>
+		<spring>4.0.8.RELEASE</spring>
 		<webbeans>1.2.6</webbeans>
 
 	</properties>
@@ -482,7 +482,7 @@
 			<id>spring4-next</id>
 
 			<properties>
-				<spring>4.0.8.BUILD-SNAPSHOT</spring>
+				<spring>4.0.9.BUILD-SNAPSHOT</spring>
 			</properties>
 
 			<dependencies>
