@@ -393,6 +393,11 @@
 								<doctype>book</doctype>
 								<attributes>
 									<version>${project.version}</version>
+									<projectName>${project.name}</projectName>
+									<projectVersion>${project.version}</projectVersion>
+									<aspectjVersion>${aspectj}</aspectjVersion>
+									<querydslVersion>${querydsl}</querydslVersion>
+									<springVersion>${spring}</springVersion>
 									<allow-uri-read>true</allow-uri-read>
 									<sectids>false</sectids>
 								</attributes>
