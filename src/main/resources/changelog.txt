@@ -1,6 +1,18 @@
 Spring Data Build - Changelog
 =============================
 
+Changes in version 1.6.0.M1 (2014-12-01)
+----------------------------------------
+* #128 - Upgrade to Querydsl 3.6.0.
+* #127 - Add build profile for current Spring 4.1.
+* #121 - Switch to HTTPS for repository declarations.
+* #119 - Upgrade dependencies for the 1.6.x branch (Fowler).
+* #115 - Upgrade to Spring 4.0.8.
+* #114 - Provide asciidoc attributes for project information.
+* #113 - Release 1.6 M1 (Fowler).
+* #110 - Update spring41-next profile.
+
+
 Changes in version 1.5.1.RELEASE (2014-10-30)
 ---------------------------------------------
 * #112 - Release 1.5.1 (Evans SR1).
