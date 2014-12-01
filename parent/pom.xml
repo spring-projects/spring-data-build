@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?>
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 
 	<!--
@@ -154,7 +154,7 @@
 				<dependency>
 					<groupId>org.springframework.data.build</groupId>
 					<artifactId>spring-data-build-resources</artifactId>
-					<version>1.6.0.M1</version>
+					<version>1.6.0.BUILD-SNAPSHOT</version>
 					<scope>provided</scope>
 					<type>zip</type>
 				</dependency>
@@ -230,10 +230,10 @@
 									<postProcess>
 										<copy todir="${project.build.directory}/site/reference">
 											<fileset dir="${project.build.directory}/docbkx">
-												<include name="**/*.pdf" />
+												<include name="**/*.pdf"/>
 											</fileset>
 										</copy>
-										<move file="${project.build.directory}/site/reference/pdf/index.pdf" tofile="${project.basedir}/target/site/reference/pdf/${dist.id}-reference.pdf" />
+										<move file="${project.build.directory}/site/reference/pdf/index.pdf" tofile="${project.basedir}/target/site/reference/pdf/${dist.id}-reference.pdf"/>
 									</postProcess>
 								</configuration>
 							</execution>
@@ -278,17 +278,17 @@
 									<target>
 										<copy todir="${project.root}/target/site/reference/html">
 											<fileset dir="${shared.resources}/asciidoc" erroronmissingdir="false">
-												<include name="**/*.css" />
+												<include name="**/*.css"/>
 											</fileset>
-											<flattenmapper />
+											<flattenmapper/>
 										</copy>
 										<copy todir="${project.root}/target/site/reference/html/images">
 											<fileset dir="${basedir}/src/main/asciidoc" erroronmissingdir="false">
-												<include name="**/*.png" />
-												<include name="**/*.gif" />
-												<include name="**/*.jpg" />
+												<include name="**/*.png"/>
+												<include name="**/*.gif"/>
+												<include name="**/*.jpg"/>
 											</fileset>
-											<flattenmapper />
+											<flattenmapper/>
 										</copy>
 									</target>
 								</configuration>
@@ -304,11 +304,11 @@
 									<target>
 										<copy todir="${shared.resources}/docbkx/images">
 											<fileset dir="${basedir}/src/docbkx" erroronmissingdir="false">
-												<include name="**/*.jpg" />
-												<include name="**/*.gif" />
-												<include name="**/*.png" />
+												<include name="**/*.jpg"/>
+												<include name="**/*.gif"/>
+												<include name="**/*.png"/>
 											</fileset>
-											<flattenmapper />
+											<flattenmapper/>
 										</copy>
 									</target>
 								</configuration>
@@ -324,9 +324,9 @@
 									<target>
 										<copy todir="${project.build.directory}/schemas">
 											<fileset dir="${basedir}" erroronmissingdir="false">
-												<include name="**/src/main/resources/**/config/spring-*.xsd" />
+												<include name="**/src/main/resources/**/config/spring-*.xsd"/>
 											</fileset>
-											<flattenmapper />
+											<flattenmapper/>
 										</copy>
 									</target>
 								</configuration>
