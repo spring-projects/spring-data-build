@@ -1,6 +1,6 @@
 # Spring Data Build Infrastructure
 
-This repository contains common infrastructure to be used by Spring Data modules that build with Maven. It consists of a *resources* project that bundles up resources that are needed during the build like XSLT stylesheets for reference documentation generation and the according CSS and images. The second project is *parent* that can be used as parent project to pre-configure core dependencies, properties, reference documentation generation and most important of all the appropriate distribution assembly.
+This repository contains common infrastructure to be used by Spring Data modules that build with Maven. It consists of a *resources* project that bundles up resources that are needed during the build CSS for reference documentation generation and JavaDoc. The second project is *parent* that can be used as parent project to pre-configure core dependencies, properties, reference documentation generation and most important of all the appropriate distribution assembly.
 
 The parent project can be eased for either a single-module Maven project or a multi-module one. Each of the setups requires a slightly different setup of the project.
 
@@ -13,25 +13,18 @@ The parent project configures the following aspects of the project build:
 Shared resources are pulled in from the `spring-data-build-resources` dependency (images, CSS, XSLTs for documentation generation). Renders reference documentation from Docbook file named `index.xml` within `src/docbkx`. In the `distribute` profile, two assemblies are generated: A ZIP to be uploaded to static.springsource.org (incl. javadoc (browsable), reference docs as described before) with the following content:
 
 ```
-+ schemas -> containing all XSD namespace schemas
 - changelog.txt
 - license.txt
 - notice.txt
 - readme.txt
-+ docs
-  + reference -> Docbook generated reference documentation
++ reference -> Docbook generated reference documentation
   + html
-  + htmlsingle
   + pdf
+  + epub
 + api -> JavaDoc
 ```
 
-A second ZIP is generated to be uploaded to S3 to automatically make it into the downloads section on the Spring website. It contains the same content as listed above plus the following:
-
-```
-+ src -> Sources packaged into a JAR
-+ dist -> Binary JARs
-```
+A second ZIP is generated to be uploaded to static.springsource.org to contain all Spring namespace XSDs.
   
 The following dependencies are pre-configured.
   
@@ -47,7 +40,7 @@ If the client project is a project consisting of a single project only all that 
 <parent>
 	<groupId>org.springframework.data.build</groupId>
 	<artifactId>spring-data-parent</artifactId>
-	<version>1.3.0.RELEASE</version>
+	<version>${most-recent-release-version}</version>
 </parent>
 ```
     
@@ -89,7 +82,7 @@ As an example have a look at the build of [Spring Data MongoDB](http://github.co
 - `distribute` - Creates Docbook documentation, assembles the distribution zip, etc.
 - `milestone` - Configures the binary distribution to upload to the milestone S3 repository.
 - `release` - Configures the binary distribution to upload to the release S3 repository.
-- `spring32-next` - Configures the Spring version to be used to be the next 3.2.x snapshot version.
-- `spring4` - Configures the Spring version to be used to be the latest 4.x release version.
-- `spring4-next` - Configures the Spring version to be used to be the next 4.x snapshot version.
+- `spring4-next` - Configures the Spring version to be used to be the next 4.0.x snapshot version.
+- `spring41` - Configures the Spring version to be used to be the latest 4.1.x release version.
+- `spring41-next` - Configures the Spring version to be used to be the next 4.1.x release version.
 - `querydsl-next` - Configures the Querydsl version to be used to be the next available snapshot version.
