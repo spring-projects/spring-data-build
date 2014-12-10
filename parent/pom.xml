@@ -6,9 +6,8 @@
 	Global parent pom.xml for Spring Data modules to inherit from.
 
 	- Shared resources are pulled in from the spring-data-build-resources dependency (images, CSS, XSLTs for documentation generation)
-	- Renders reference documentation from Docbook file named index.xml within src/docbkx
-	- In the "distribute" profile, two assemblies are generated:
-	  - one to be published on the download portal (incl. binaries, sources, javadoc (jarred and browsable), reference documentation in pdf, html and html single page)
+	- Renders reference documentation from Asciidoctor file named index.adoc within src/main/asciidoc
+	- In the "distribute" profile, an assembly is generated:
 	  - one to be uploaded to static.springsource.org (incl. javadoc (browsable), reference docs as described before)
 
 	Preconfigures the following:
@@ -45,9 +44,9 @@
 		<developer>
 			<id>ogierke</id>
 			<name>Oliver Gierke</name>
-			<email>ogierke at gopivotal.com</email>
+			<email>ogierke at pivotal.io</email>
 			<organization>Pivotal Software, Inc.</organization>
-			<organizationUrl>http://www.gopivotal.com</organizationUrl>
+			<organizationUrl>http://www.spring.io</organizationUrl>
 			<roles>
 				<role>Project lead</role>
 			</roles>
@@ -208,60 +207,6 @@
 					</plugin>
 
 					<!--
-						Renders reference documentation from Docbook sources.
-					-->
-
-					<plugin>
-						<groupId>com.agilejava.docbkx</groupId>
-						<artifactId>docbkx-maven-plugin</artifactId>
-						<version>2.0.14</version>
-						<executions>
-
-							<!-- Configuration for PDF creation -->
-							<execution>
-								<id>pdf</id>
-								<goals>
-									<goal>generate-pdf</goal>
-								</goals>
-								<phase>package</phase>
-								<configuration>
-									<admonGraphicsPath>${shared.resources}/docbkx/images/</admonGraphicsPath>
-									<imgSrcPath>${basedir}/src/docbkx/</imgSrcPath>
-									<postProcess>
-										<copy todir="${project.build.directory}/site/reference">
-											<fileset dir="${project.build.directory}/docbkx">
-												<include name="**/*.pdf"/>
-											</fileset>
-										</copy>
-										<move file="${project.build.directory}/site/reference/pdf/index.pdf" tofile="${project.basedir}/target/site/reference/pdf/${dist.id}-reference.pdf"/>
-									</postProcess>
-								</configuration>
-							</execution>
-
-						</executions>
-
-						<dependencies>
-							<dependency>
-								<groupId>org.docbook</groupId>
-								<artifactId>docbook-xml</artifactId>
-								<version>4.4</version>
-								<scope>runtime</scope>
-							</dependency>
-						</dependencies>
-
-						<!-- Common Docbook configuration -->
-						<configuration>
-							<sourceDirectory>${project.build.directory}/generated-docs</sourceDirectory>
-							<includes>index.xml</includes>
-							<xincludeSupported>true</xincludeSupported>
-							<chunkedOutput>false</chunkedOutput>
-							<foCustomization>${shared.resources}/docbkx/xsl/pdf.xsl</foCustomization>
-							<useExtensions>1</useExtensions>
-							<highlightSource>1</highlightSource>
-						</configuration>
-					</plugin>
-
-					<!--
 						Copies all namespaces schemas to target/schemas flatten the directory structure.
 						Depended on by the site.xml assembly descriptor.
 					-->
@@ -298,26 +243,6 @@
 							</execution>
 
 							<execution>
-								<id>copy-documentation-images</id>
-								<phase>process-resources</phase>
-								<configuration>
-									<target>
-										<copy todir="${shared.resources}/docbkx/images">
-											<fileset dir="${basedir}/src/docbkx" erroronmissingdir="false">
-												<include name="**/*.jpg"/>
-												<include name="**/*.gif"/>
-												<include name="**/*.png"/>
-											</fileset>
-											<flattenmapper/>
-										</copy>
-									</target>
-								</configuration>
-								<goals>
-									<goal>run</goal>
-								</goals>
-							</execution>
-
-							<execution>
 								<id>collect-schema-files</id>
 								<phase>process-resources</phase>
 								<configuration>
@@ -334,6 +259,21 @@
 									<goal>run</goal>
 								</goals>
 							</execution>
+
+							<execution>
+								<id>rename-reference-docs</id>
+								<phase>process-resources</phase>
+								<configuration>
+									<target>
+										<copy file="${project.build.directory}/generated-docs/index.pdf" tofile="${project.basedir}/target/site/reference/pdf/${dist.id}-reference.pdf"/>
+										<copy file="${project.build.directory}/generated-docs/index.epub" tofile="${project.basedir}/target/site/reference/epub/${dist.id}-reference.epub"/>
+									</target>
+								</configuration>
+								<goals>
+									<goal>run</goal>
+								</goals>
+							</execution>
+
 						</executions>
 
 					</plugin>
@@ -351,6 +291,23 @@
 							<groupId>org.asciidoctor</groupId>
 							<artifactId>asciidoctor-maven-plugin</artifactId>
 							<version>1.5.0</version>
+							<dependencies>
+								<dependency>
+									<groupId>org.asciidoctor</groupId>
+									<artifactId>asciidoctorj</artifactId>
+									<version>1.5.2</version>
+								</dependency>
+								<dependency>
+									<groupId>org.asciidoctor</groupId>
+									<artifactId>asciidoctorj-pdf</artifactId>
+									<version>1.5.0-alpha.6</version>
+								</dependency>
+								<dependency>
+									<groupId>org.asciidoctor</groupId>
+									<artifactId>asciidoctorj-epub3</artifactId>
+									<version>1.5.0-alpha.4</version>
+								</dependency>
+							</dependencies>
 							<executions>
 
 								<execution>
@@ -361,27 +318,39 @@
 									</goals>
 									<configuration>
 										<backend>html5</backend>
-										<sourceHighlighter>prettify</sourceHighlighter>
 										<outputDirectory>${project.root}/target/site/reference/html</outputDirectory>
+										<sectids>false</sectids>
+										<sourceHighlighter>prettify</sourceHighlighter>
 										<attributes>
 											<linkcss>true</linkcss>
-											<numbered>true</numbered>
 											<icons>font</icons>
 											<sectanchors>true</sectanchors>
 											<stylesheet>spring.css</stylesheet>
-											<toclevels>3</toclevels>
 										</attributes>
 									</configuration>
 								</execution>
 
 								<execution>
-									<id>docbook</id>
+									<id>epub</id>
 									<phase>generate-resources</phase>
 									<goals>
 										<goal>process-asciidoc</goal>
 									</goals>
 									<configuration>
-										<backend>docbook5</backend>
+										<backend>epub3</backend>
+										<sourceHighlighter>coderay</sourceHighlighter>
+									</configuration>
+								</execution>
+
+								<execution>
+									<id>pdf</id>
+									<phase>generate-resources</phase>
+									<goals>
+										<goal>process-asciidoc</goal>
+									</goals>
+									<configuration>
+										<backend>pdf</backend>
+										<sourceHighlighter>coderay</sourceHighlighter>
 									</configuration>
 								</execution>
 
@@ -399,7 +368,8 @@
 									<querydslVersion>${querydsl}</querydslVersion>
 									<springVersion>${spring}</springVersion>
 									<allow-uri-read>true</allow-uri-read>
-									<sectids>false</sectids>
+									<toclevels>3</toclevels>
+									<numbered>true</numbered>
 								</attributes>
 							</configuration>
 
@@ -660,7 +630,7 @@
 			</plugin>
 
 			<plugin>
-	            <groupId>org.apache.maven.plugins</groupId>
+				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-compiler-plugin</artifactId>
 				<version>3.1</version>
 				<configuration>
