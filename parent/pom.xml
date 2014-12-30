@@ -114,7 +114,7 @@
 		<mockito>1.9.5</mockito>
 		<querydsl>3.3.4</querydsl>
 		<slf4j>1.7.7</slf4j>
-		<spring>3.2.12.RELEASE</spring>
+		<spring>3.2.13.RELEASE</spring>
 		<webbeans>1.2.6</webbeans>
 
 	</properties>
@@ -530,7 +530,7 @@
 			<id>spring32-next</id>
 
 			<properties>
-				<spring>3.2.13.BUILD-SNAPSHOT</spring>
+				<spring>3.2.14.BUILD-SNAPSHOT</spring>
 			</properties>
 
 			<repositories>
