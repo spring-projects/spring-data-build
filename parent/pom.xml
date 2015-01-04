@@ -98,6 +98,7 @@
 		<querydsl>3.6.0</querydsl>
 		<slf4j>1.7.7</slf4j>
 		<spring>4.0.8.RELEASE</spring>
+		<threetenbp>1.2</threetenbp>
 		<webbeans>1.2.6</webbeans>
 
 	</properties>
