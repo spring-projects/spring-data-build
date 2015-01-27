@@ -1,6 +1,15 @@
 Spring Data Build - Changelog
 =============================
 
+Changes in version 1.4.5.RELEASE (2015-01-27)
+---------------------------------------------
+* #136 - Release 1.4.5 (Dijkstra SR5).
+* #134 - Upgrade to Spring 3.2.13.
+* #131 - Upgrade build profiles after Spring 4.1.3 release.
+* #123 - Switch to HTTPS for repository declarations.
+* #116 - Upgrade dependencies for the 1.4.x branch (Dijkstra).
+
+
 Changes in version 1.6.0.M1 (2014-12-01)
 ----------------------------------------
 * #128 - Upgrade to Querydsl 3.6.0.
