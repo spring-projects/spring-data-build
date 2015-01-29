@@ -265,8 +265,8 @@
 								<phase>process-resources</phase>
 								<configuration>
 									<target>
-										<copy file="${project.build.directory}/generated-docs/index.pdf" tofile="${project.basedir}/target/site/reference/pdf/${dist.id}-reference.pdf"/>
-										<copy file="${project.build.directory}/generated-docs/index.epub" tofile="${project.basedir}/target/site/reference/epub/${dist.id}-reference.epub"/>
+										<copy file="${project.build.directory}/generated-docs/index.pdf" tofile="${project.root}/target/site/reference/pdf/${dist.id}-reference.pdf" failonerror="false" />
+										<copy file="${project.build.directory}/generated-docs/index.epub" tofile="${project.root}/target/site/reference/epub/${dist.id}-reference.epub" failonerror="false" />
 									</target>
 								</configuration>
 								<goals>
