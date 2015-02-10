@@ -511,7 +511,7 @@
 		<profile>
 			<id>querydsl-next</id>
 			<properties>
-				<querydsl>3.6.1.BUILD-SNAPSHOT</querydsl>
+				<querydsl>3.6.2.BUILD-SNAPSHOT</querydsl>
 			</properties>
 			<repositories>
 				<repository>
