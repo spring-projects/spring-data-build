@@ -493,6 +493,23 @@
 		</profile>
 
 		<profile>
+
+			<id>spring42-next</id>
+
+			<properties>
+				<spring>4.2.0.BUILD-SNAPSHOT</spring>
+			</properties>
+
+			<repositories>
+				<repository>
+					<id>spring-libs-snapshot</id>
+					<url>http://repo.spring.io/libs-snapshot</url>
+				</repository>
+			</repositories>
+
+		</profile>
+
+		<profile>
 			<id>querydsl-next</id>
 			<properties>
 				<querydsl>3.6.1.BUILD-SNAPSHOT</querydsl>
