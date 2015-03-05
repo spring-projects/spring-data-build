@@ -33,7 +33,7 @@
 	<name>Spring Data Build - General parent module</name>
 	<description>Global parent pom.xml to be used by Spring Data modules</description>
 	<url>http://www.spring.io/spring-data</url>
-	<inceptionYear>2011-2014</inceptionYear>
+	<inceptionYear>2011-2015</inceptionYear>
 
 	<organization>
 		<name>Pivotal Software, Inc.</name>
@@ -154,7 +154,7 @@
 				<dependency>
 					<groupId>org.springframework.data.build</groupId>
 					<artifactId>spring-data-build-resources</artifactId>
-					<version>1.6.0.BUILD-SNAPSHOT</version>
+					<version>1.6.0.RC1</version>
 					<scope>provided</scope>
 					<type>zip</type>
 				</dependency>
@@ -266,8 +266,8 @@
 								<phase>process-resources</phase>
 								<configuration>
 									<target>
-										<copy file="${project.build.directory}/generated-docs/index.pdf" tofile="${project.root}/target/site/reference/pdf/${dist.id}-reference.pdf" failonerror="false" />
-										<copy file="${project.build.directory}/generated-docs/index.epub" tofile="${project.root}/target/site/reference/epub/${dist.id}-reference.epub" failonerror="false" />
+										<copy failonerror="false" file="${project.build.directory}/generated-docs/index.pdf" tofile="${project.root}/target/site/reference/pdf/${dist.id}-reference.pdf"/>
+										<copy failonerror="false" file="${project.build.directory}/generated-docs/index.epub" tofile="${project.root}/target/site/reference/epub/${dist.id}-reference.epub"/>
 									</target>
 								</configuration>
 								<goals>
