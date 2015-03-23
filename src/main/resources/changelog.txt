@@ -1,6 +1,11 @@
 Spring Data Build - Changelog
 =============================
 
+Changes in version 1.6.0.RELEASE (2015-03-23)
+---------------------------------------------
+* #153 - Release 1.6 GA (Fowler).
+
+
 Changes in version 1.6.0.RC1 (2015-03-05)
 -----------------------------------------
 * #151 - Upgrade to Querydsl 3.6.2.
