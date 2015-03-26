@@ -470,7 +470,7 @@
 			<id>spring41</id>
 
 			<properties>
-				<spring>4.1.5.RELEASE</spring>
+				<spring>4.1.6.RELEASE</spring>
 			</properties>
 
 		</profile>
@@ -480,7 +480,7 @@
 			<id>spring41-next</id>
 
 			<properties>
-				<spring>4.1.6.BUILD-SNAPSHOT</spring>
+				<spring>4.1.7.BUILD-SNAPSHOT</spring>
 			</properties>
 
 			<repositories>
