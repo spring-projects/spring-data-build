@@ -97,7 +97,7 @@
 		<mockito>1.10.19</mockito>
 		<querydsl>3.6.2</querydsl>
 		<slf4j>1.7.10</slf4j>
-		<spring>4.0.9.RELEASE</spring>
+		<spring>4.1.6.RELEASE</spring>
 		<threetenbp>1.2</threetenbp>
 		<webbeans>1.2.7</webbeans>
 
@@ -446,33 +446,6 @@
 					</plugins>
 				</pluginManagement>
 			</build>
-		</profile>
-
-		<profile>
-
-			<id>spring4-next</id>
-
-			<properties>
-				<spring>4.0.9.BUILD-SNAPSHOT</spring>
-			</properties>
-
-			<repositories>
-				<repository>
-					<id>spring-libs-snapshot</id>
-					<url>http://repo.spring.io/libs-snapshot</url>
-				</repository>
-			</repositories>
-
-		</profile>
-
-		<profile>
-
-			<id>spring41</id>
-
-			<properties>
-				<spring>4.1.6.RELEASE</spring>
-			</properties>
-
 		</profile>
 
 		<profile>
