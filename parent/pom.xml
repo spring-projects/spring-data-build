@@ -101,6 +101,8 @@
 		<threetenbp>1.2</threetenbp>
 		<webbeans>1.2.7</webbeans>
 
+		<releasetrain>Fowler-BUILD-SNAPSHOT</releasetrain>
+
 	</properties>
 
 	<profiles>
@@ -363,6 +365,7 @@
 									<aspectjVersion>${aspectj}</aspectjVersion>
 									<querydslVersion>${querydsl}</querydslVersion>
 									<springVersion>${spring}</springVersion>
+									<releasetrainVersion>${releasetrain}</releasetrainVersion>
 									<allow-uri-read>true</allow-uri-read>
 									<toclevels>3</toclevels>
 									<numbered>true</numbered>
