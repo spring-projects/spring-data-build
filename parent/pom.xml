@@ -547,7 +547,7 @@
 			<id>spring4</id>
 
 			<properties>
-				<spring>4.0.8.RELEASE</spring>
+				<spring>4.0.9.RELEASE</spring>
 			</properties>
 
 			<dependencies>
@@ -558,32 +558,6 @@
 					<scope>test</scope>
 				</dependency>
 			</dependencies>
-
-		</profile>
-
-		<profile>
-
-			<id>spring4-next</id>
-
-			<properties>
-				<spring>4.0.9.BUILD-SNAPSHOT</spring>
-			</properties>
-
-			<dependencies>
-				<dependency>
-					<groupId>javax.servlet</groupId>
-					<artifactId>javax.servlet-api</artifactId>
-					<version>3.0.1</version>
-					<scope>test</scope>
-				</dependency>
-			</dependencies>
-
-			<repositories>
-				<repository>
-					<id>spring-libs-snapshot</id>
-					<url>http://repo.spring.io/libs-snapshot</url>
-				</repository>
-			</repositories>
 
 		</profile>
 
@@ -635,7 +609,7 @@
 		<profile>
 			<id>querydsl-next</id>
 			<properties>
-				<querydsl>3.6.1.BUILD-SNAPSHOT</querydsl>
+				<querydsl>3.6.2.BUILD-SNAPSHOT</querydsl>
 			</properties>
 			<repositories>
 				<repository>
