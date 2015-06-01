@@ -121,6 +121,14 @@
 				<artifactId>spring-data-solr</artifactId>
 				<version>1.5.0.BUILD-SNAPSHOT</version>
 			</dependency>
+
+			<!-- Spring Data KeyValue -->
+			<dependency>
+				<groupId>org.springframework.data</groupId>
+				<artifactId>spring-data-keyvalue</artifactId>
+				<version>1.0.0.BUILD-SNAPSHOT</version>
+			</dependency>
+
 		</dependencies>
 	</dependencyManagement>
 
