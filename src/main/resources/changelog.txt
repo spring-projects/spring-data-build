@@ -1,6 +1,24 @@
 Spring Data Build - Changelog
 =============================
 
+Changes in version 1.7.0.M1 (2015-06-02)
+----------------------------------------
+* #177 - Add Key/Value module to BOM.
+* #176 - General dependency upgrades.
+* #174 - Upgrade to Querydsl 3.6.4.
+* #173 - Introduce property for Apache Commons IO.
+* #165 - Expose release train version for Asciidoctor build.
+* #164 - Add LICENSE file to repository.
+* #163 - Add Spring Data REST HAL browser module to BOM.
+* #162 - Add property for Guava version.
+* #161 - Upgrade to RxJava 1.0.9.
+* #160 - Add version property for RxJava.
+* #159 - Upgrade to Spring 4.1 as project baseline.
+* #158 - Release 1.7 M1 (Gosling).
+* #157 - Upgrade Spring 4.1 build profile to 4.1.6.
+* #156 - Upgrade Spring 4.1 build profile to 4.1.6.
+
+
 Changes in version 1.6.0.RELEASE (2015-03-23)
 ---------------------------------------------
 * #153 - Release 1.6 GA (Fowler).
