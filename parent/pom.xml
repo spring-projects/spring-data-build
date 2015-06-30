@@ -155,7 +155,7 @@
 				<dependency>
 					<groupId>org.springframework.data.build</groupId>
 					<artifactId>spring-data-build-resources</artifactId>
-					<version>1.5.3.BUILD-SNAPSHOT</version>
+					<version>1.5.3.RELEASE</version>
 					<scope>provided</scope>
 					<type>zip</type>
 				</dependency>
@@ -267,8 +267,8 @@
 								<phase>process-resources</phase>
 								<configuration>
 									<target>
-										<copy file="${project.build.directory}/generated-docs/index.pdf" tofile="${project.root}/target/site/reference/pdf/${dist.id}-reference.pdf" failonerror="false" />
-										<copy file="${project.build.directory}/generated-docs/index.epub" tofile="${project.root}/target/site/reference/epub/${dist.id}-reference.epub" failonerror="false" />
+										<copy failonerror="false" file="${project.build.directory}/generated-docs/index.pdf" tofile="${project.root}/target/site/reference/pdf/${dist.id}-reference.pdf"/>
+										<copy failonerror="false" file="${project.build.directory}/generated-docs/index.epub" tofile="${project.root}/target/site/reference/epub/${dist.id}-reference.epub"/>
 									</target>
 								</configuration>
 								<goals>
