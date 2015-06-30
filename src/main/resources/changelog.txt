@@ -9,6 +9,18 @@ Changes in version 1.4.6.RELEASE (2015-07-01)
 * #148 - Release 1.4.6 (Dijkstra SR6).
 
 
+Changes in version 1.5.3.RELEASE (2015-07-01)
+---------------------------------------------
+* #169 - Remove build profile for Spring 4.0.next as it's end of life effectively.
+* #167 - Expose release train version for Asciidoctor build.
+* #155 - Upgrade Spring 4.1 build profile to 4.1.6.
+* #147 - Upgrade Spring 4.1 build profile to 4.1.5.
+* #145 - Upgrade Querydsl-next build profile.
+* #144 - Add build profiles for Spring 4.2.
+* #141 - Release 1.5.3 (Evans SR3).
+* #140 - Backport documentation build fixes for multi-module builds.
+
+
 Changes in version 1.6.1.RELEASE (2015-06-30)
 ---------------------------------------------
 * #181 - Release 1.6.1 (Fowler SR1).
