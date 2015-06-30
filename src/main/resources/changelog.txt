@@ -1,6 +1,15 @@
 Spring Data Build - Changelog
 =============================
 
+Changes in version 1.6.1.RELEASE (2015-06-30)
+---------------------------------------------
+* #181 - Release 1.6.1 (Fowler SR1).
+* #178 - Downgrade Querydsl dependency to 3.6.3 to be able to build against Hibernate 3.
+* #175 - Upgrade to Querydsl 3.6.4.
+* #168 - Remove build profile for Spring 4.0.next as it's end of life effectively.
+* #166 - Expose release train version for Asciidoctor build.
+
+
 Changes in version 1.6.0.RELEASE (2015-03-23)
 ---------------------------------------------
 * #153 - Release 1.6 GA (Fowler).
