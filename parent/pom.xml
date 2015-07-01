@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?>
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 
 	<!--
@@ -167,7 +167,7 @@
 				<dependency>
 					<groupId>org.springframework.data.build</groupId>
 					<artifactId>spring-data-build-resources</artifactId>
-					<version>1.4.6.RELEASE</version>
+					<version>1.4.7.BUILD-SNAPSHOT</version>
 					<scope>provided</scope>
 					<type>zip</type>
 				</dependency>
@@ -243,10 +243,10 @@
 									<postProcess>
 										<copy todir="${project.basedir}/target/site/reference">
 											<fileset dir="${project.basedir}/target/docbkx">
-												<include name="**/*.pdf" />
+												<include name="**/*.pdf"/>
 											</fileset>
 										</copy>
-										<move file="${project.basedir}/target/site/reference/pdf/index.pdf" tofile="${project.basedir}/target/site/reference/pdf/${dist.id}-reference.pdf" />
+										<move file="${project.basedir}/target/site/reference/pdf/index.pdf" tofile="${project.basedir}/target/site/reference/pdf/${dist.id}-reference.pdf"/>
 									</postProcess>
 								</configuration>
 							</execution>
@@ -265,15 +265,15 @@
 									<postProcess>
 										<copy todir="${project.basedir}/target/site/reference/htmlsingle">
 											<fileset dir="${project.basedir}/target/docbkx/htmlsingle">
-												<include name="**/*.html" />
+												<include name="**/*.html"/>
 											</fileset>
 										</copy>
 										<copy todir="${project.basedir}/target/site/reference/htmlsingle">
 											<fileset dir="${shared.resources}/docbkx">
-												<include name="**/*.css" />
-												<include name="**/*.png" />
-												<include name="**/*.gif" />
-												<include name="**/*.jpg" />
+												<include name="**/*.css"/>
+												<include name="**/*.png"/>
+												<include name="**/*.gif"/>
+												<include name="**/*.jpg"/>
 											</fileset>
 										</copy>
 									</postProcess>
@@ -295,15 +295,15 @@
 									<postProcess>
 										<copy todir="${project.basedir}/target/site/reference/html">
 											<fileset dir="${project.basedir}/target/docbkx/html/index">
-												<include name="**/*.html" />
+												<include name="**/*.html"/>
 											</fileset>
 										</copy>
 										<copy todir="${project.basedir}/target/site/reference/html">
 											<fileset dir="${shared.resources}/docbkx">
-												<include name="**/*.css" />
-												<include name="**/*.png" />
-												<include name="**/*.gif" />
-												<include name="**/*.jpg" />
+												<include name="**/*.css"/>
+												<include name="**/*.png"/>
+												<include name="**/*.gif"/>
+												<include name="**/*.jpg"/>
 											</fileset>
 										</copy>
 									</postProcess>
@@ -367,11 +367,11 @@
 									<target>
 										<copy todir="${shared.resources}/docbkx/images">
 											<fileset dir="${basedir}/src/docbkx" erroronmissingdir="false">
-												<include name="**/*.jpg" />
-												<include name="**/*.gif" />
-												<include name="**/*.png" />
+												<include name="**/*.jpg"/>
+												<include name="**/*.gif"/>
+												<include name="**/*.png"/>
 											</fileset>
-											<flattenmapper />
+											<flattenmapper/>
 										</copy>
 									</target>
 								</configuration>
@@ -387,9 +387,9 @@
 									<target>
 										<copy todir="${project.build.directory}/schemas">
 											<fileset dir="${basedir}" erroronmissingdir="false">
-												<include name="**/src/main/resources/**/config/spring-*.xsd" />
+												<include name="**/src/main/resources/**/config/spring-*.xsd"/>
 											</fileset>
-											<flattenmapper />
+											<flattenmapper/>
 										</copy>
 									</target>
 								</configuration>
@@ -406,7 +406,7 @@
 								<configuration>
 									<target>
 										<ant antfile="${shared.resources}/ant/upload-dist.xml">
-											<target name="upload-distribution" />
+											<target name="upload-distribution"/>
 										</ant>
 									</target>
 									<failOnError>false</failOnError>
