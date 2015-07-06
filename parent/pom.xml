@@ -100,7 +100,7 @@
 		<querydsl>3.6.4</querydsl>
 		<rxjava>1.0.11</rxjava>
 		<slf4j>1.7.12</slf4j>
-		<spring>4.1.6.RELEASE</spring>
+		<spring>4.1.7.RELEASE</spring>
 		<threetenbp>1.2</threetenbp>
 		<webbeans>1.2.8</webbeans>
 
