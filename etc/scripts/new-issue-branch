@@ -5,9 +5,16 @@
 # 
 # executing new-issue-branch.sh DATACMNS-42 
 # will create a new (local) branch issue/DATACMNS-42
+USAGE="$0 <ticket_id> [--online]"
+if [ $# -lt 1 ]; then echo -e "ERROR: ticket_id required. \n$USAGE" >&2; exit 1; fi
+if [ $# -gt 2 ]; then echo -e "ERROR: Two arguments maximum.\n$USAGE" >&2; exit 1; fi
 
 TICKET_ID=${1:?"TICKET_ID Parameter is missing!"}
-OLD_VERSION_TMP=$(mvn -o org.apache.maven.plugins:maven-help-plugin:2.1.1:evaluate -Dexpression=project.version | grep -Ev '^\[.*')
+
+MAVEN_FLAGS="-o"
+if [ $# -eq 2 ] && [ $2 = "--online" ]; then MAVEN_FLAGS=""; fi
+
+OLD_VERSION_TMP=$(mvn $MAVEN_FLAGS org.apache.maven.plugins:maven-help-plugin:2.1.1:evaluate -Dexpression=project.version | grep -Ev '^\[.*')
 
 OLD_POM_VERSION=${OLD_VERSION_TMP:?"Could not extract current project version from pom.xml"}
 
@@ -19,7 +26,7 @@ echo "Creating feature branch $TICKET_ID: $OLD_POM_VERSION -> $NEW_POM_VERSION"
 
 echo "Stashing potential intermediate changes..." && git stash\
 && git checkout -b $ISSUE_BRANCH\
-&& mvn -o -q versions:set -DgenerateBackupPoms=false -DnewVersion=$NEW_POM_VERSION\
+&& $(mvn $MAVEN_FLAGS -q versions:set -DgenerateBackupPoms=false -DnewVersion=$NEW_POM_VERSION)\
 && ( \
       (\
          git commit -am "$TICKET_ID - Prepare branch"\
