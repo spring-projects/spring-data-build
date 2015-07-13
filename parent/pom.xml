@@ -476,7 +476,7 @@
 			<id>spring42</id>
 
 			<properties>
-				<spring>4.2.0.RC1</spring>
+				<spring>4.2.0.RC2</spring>
 			</properties>
 
 			<repositories>
