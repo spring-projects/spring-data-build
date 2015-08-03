@@ -87,18 +87,18 @@
 		<dist.id>${project.artifactId}</dist.id>
 
 		<apt>1.1.3</apt>
-		<aspectj>1.8.5</aspectj>
+		<aspectj>1.8.6</aspectj>
 		<cdi>1.0</cdi>
 		<commons-io>2.4</commons-io>
-		<guava>17.0</guava>
+		<guava>18.0</guava>
 		<hamcrest>1.3</hamcrest>
-		<jackson>2.5.1</jackson>
+		<jackson>2.6.0</jackson>
 		<jodatime>2.8.1</jodatime>
 		<junit>4.12</junit>
 		<logback>1.1.3</logback>
 		<mockito>1.10.19</mockito>
-		<querydsl>3.6.4</querydsl>
-		<rxjava>1.0.11</rxjava>
+		<querydsl>3.6.6</querydsl>
+		<rxjava>1.0.13</rxjava>
 		<slf4j>1.7.12</slf4j>
 		<spring>4.1.7.RELEASE</spring>
 		<threetenbp>1.3</threetenbp>
@@ -218,8 +218,8 @@
 					-->
 
 					<plugin>
+						<groupId>org.apache.maven.plugins</groupId>
 						<artifactId>maven-antrun-plugin</artifactId>
-						<version>1.7</version>
 						<executions>
 
 							<execution>
@@ -296,12 +296,11 @@
 						<plugin>
 							<groupId>org.asciidoctor</groupId>
 							<artifactId>asciidoctor-maven-plugin</artifactId>
-							<version>1.5.2</version>
 							<dependencies>
 								<dependency>
 									<groupId>org.asciidoctor</groupId>
 									<artifactId>asciidoctorj-pdf</artifactId>
-									<version>1.5.0-alpha.6</version>
+									<version>1.5.0-alpha.8</version>
 								</dependency>
 								<dependency>
 									<groupId>org.asciidoctor</groupId>
@@ -383,7 +382,6 @@
 						<plugin>
 							<groupId>org.apache.maven.plugins</groupId>
 							<artifactId>maven-assembly-plugin</artifactId>
-							<version>2.4</version>
 							<executions>
 								<execution>
 									<id>static</id>
@@ -405,7 +403,6 @@
 						<plugin>
 							<groupId>org.codehaus.mojo</groupId>
 							<artifactId>wagon-maven-plugin</artifactId>
-							<version>1.0-beta-5</version>
 							<configuration>
 								<fromDir>${project.build.directory}</fromDir>
 							</configuration>
@@ -622,15 +619,75 @@
 			<plugins>
 
 				<plugin>
-					<groupId>org.codehaus.mojo</groupId>
-					<artifactId>wagon-maven-plugin</artifactId>
-					<version>1.0-beta-5</version>
+					<groupId>com.springsource.bundlor</groupId>
+					<artifactId>com.springsource.bundlor.maven</artifactId>
+					<version>1.0.0.RELEASE</version>
 				</plugin>
 
 				<plugin>
 					<groupId>org.asciidoctor</groupId>
 					<artifactId>asciidoctor-maven-plugin</artifactId>
-					<version>0.1.4</version>
+					<version>1.5.2.1</version>
+				</plugin>
+
+				<plugin>
+					<groupId>org.apache.maven.plugins</groupId>
+					<artifactId>maven-antrun-plugin</artifactId>
+					<version>1.8</version>
+				</plugin>
+
+				<plugin>
+					<groupId>org.apache.maven.plugins</groupId>
+					<artifactId>maven-assembly-plugin</artifactId>
+					<version>2.5.5</version>
+				</plugin>
+
+				<plugin>
+					<groupId>org.apache.maven.plugins</groupId>
+					<artifactId>maven-compiler-plugin</artifactId>
+					<version>3.3</version>
+				</plugin>
+
+				<plugin>
+					<groupId>org.apache.maven.plugins</groupId>
+					<artifactId>maven-dependency-plugin</artifactId>
+					<version>2.10</version>
+				</plugin>
+
+				<plugin>
+					<groupId>org.apache.maven.plugins</groupId>
+					<artifactId>maven-deploy-plugin</artifactId>
+					<version>2.8.2</version>
+				</plugin>
+
+				<plugin>
+					<groupId>org.apache.maven.plugins</groupId>
+					<artifactId>maven-jar-plugin</artifactId>
+					<version>2.6</version>
+				</plugin>
+
+				<plugin>
+					<groupId>org.apache.maven.plugins</groupId>
+					<artifactId>maven-javadoc-plugin</artifactId>
+					<version>2.10.3</version>
+				</plugin>
+
+				<plugin>
+					<groupId>org.apache.maven.plugins</groupId>
+					<artifactId>maven-source-plugin</artifactId>
+					<version>2.4</version>
+				</plugin>
+
+				<plugin>
+					<groupId>org.apache.maven.plugins</groupId>
+					<artifactId>maven-surefire-plugin</artifactId>
+					<version>2.18.1</version>
+				</plugin>
+
+				<plugin>
+					<groupId>org.codehaus.mojo</groupId>
+					<artifactId>wagon-maven-plugin</artifactId>
+					<version>1.0</version>
 				</plugin>
 
 			</plugins>
@@ -642,13 +699,11 @@
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-dependency-plugin</artifactId>
-				<version>2.8</version>
 			</plugin>
 
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-compiler-plugin</artifactId>
-				<version>3.1</version>
 				<configuration>
 					<source>${source.level}</source>
 					<target>${source.level}</target>
@@ -658,7 +713,6 @@
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-surefire-plugin</artifactId>
-				<version>2.17</version>
 				<configuration>
 					<useFile>false</useFile>
 					<includes>
@@ -670,15 +724,14 @@
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-jar-plugin</artifactId>
-				<version>2.4</version>
 				<configuration>
 					<useDefaultManifestFile>true</useDefaultManifestFile>
 				</configuration>
 			</plugin>
 
 			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-source-plugin</artifactId>
-				<version>2.2.1</version>
 				<executions>
 					<execution>
 						<id>attach-sources</id>
@@ -692,7 +745,6 @@
 			<plugin>
 				<groupId>com.springsource.bundlor</groupId>
 				<artifactId>com.springsource.bundlor.maven</artifactId>
-				<version>1.0.0.RELEASE</version>
 				<configuration>
 					<enabled>${bundlor.enabled}</enabled>
 					<failOnWarnings>${bundlor.failOnWarnings}</failOnWarnings>
@@ -710,7 +762,6 @@
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-javadoc-plugin</artifactId>
-				<version>2.9.1</version>
 				<configuration>
 					<breakiterator>true</breakiterator>
 					<header>${project.name}</header>
@@ -733,7 +784,6 @@
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-deploy-plugin</artifactId>
-				<version>2.8.1</version>
 				<configuration>
 					<skip>true</skip>
 				</configuration>
