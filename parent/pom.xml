@@ -473,7 +473,7 @@
 			<id>spring42</id>
 
 			<properties>
-				<spring>4.2.0.RC3</spring>
+				<spring>4.2.0.RELEASE</spring>
 			</properties>
 
 			<repositories>
@@ -497,7 +497,7 @@
 			<id>spring42-next</id>
 
 			<properties>
-				<spring>4.2.0.BUILD-SNAPSHOT</spring>
+				<spring>4.2.1.BUILD-SNAPSHOT</spring>
 			</properties>
 
 			<repositories>
@@ -512,7 +512,7 @@
 		<profile>
 			<id>querydsl-next</id>
 			<properties>
-				<querydsl>3.6.2.BUILD-SNAPSHOT</querydsl>
+				<querydsl>3.6.7.BUILD-SNAPSHOT</querydsl>
 			</properties>
 			<repositories>
 				<repository>
