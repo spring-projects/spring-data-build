@@ -1,6 +1,13 @@
 Spring Data Build - Changelog
 =============================
 
+Changes in version 1.7.0.RELEASE (2015-09-01)
+---------------------------------------------
+* #194 - Introduce property for Spring HATEOAS version.
+* #193 - Release 1.7 GA (Gosling).
+* #192 - Update dependency versions in build profiles.
+
+
 Changes in version 1.7.0.RC1 (2015-08-04)
 -----------------------------------------
 * #191 - Upgrade dependencies for Gosling RC1.
