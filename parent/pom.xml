@@ -455,25 +455,18 @@
 			<id>spring41</id>
 
 			<properties>
-				<spring>4.1.6.RELEASE</spring>
+				<spring>4.1.7.RELEASE</spring>
 			</properties>
 
 		</profile>
 
 		<profile>
 
-			<id>spring41-next</id>
+			<id>spring42</id>
 
 			<properties>
-				<spring>4.1.7.BUILD-SNAPSHOT</spring>
+				<spring>4.2.1.RELEASE</spring>
 			</properties>
-
-			<repositories>
-				<repository>
-					<id>spring-libs-snapshot</id>
-					<url>http://repo.spring.io/libs-snapshot</url>
-				</repository>
-			</repositories>
 
 		</profile>
 
@@ -482,7 +475,7 @@
 			<id>spring42-next</id>
 
 			<properties>
-				<spring>4.2.0.BUILD-SNAPSHOT</spring>
+				<spring>4.2.2.BUILD-SNAPSHOT</spring>
 			</properties>
 
 			<repositories>
@@ -497,7 +490,7 @@
 		<profile>
 			<id>querydsl-next</id>
 			<properties>
-				<querydsl>3.6.2.BUILD-SNAPSHOT</querydsl>
+				<querydsl>3.6.9.BUILD-SNAPSHOT</querydsl>
 			</properties>
 			<repositories>
 				<repository>
