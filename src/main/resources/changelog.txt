@@ -1,6 +1,12 @@
 Spring Data Build - Changelog
 =============================
 
+Changes in version 1.5.4.RELEASE (2015-10-14)
+---------------------------------------------
+* #198 - Upgrade build profiles for Evans.
+* #197 - Release 1.5.4 (Evans SR4).
+
+
 Changes in version 1.7.0.RELEASE (2015-09-01)
 ---------------------------------------------
 * #194 - Introduce property for Spring HATEOAS version.
