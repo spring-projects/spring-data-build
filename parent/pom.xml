@@ -155,7 +155,7 @@
 				<dependency>
 					<groupId>org.springframework.data.build</groupId>
 					<artifactId>spring-data-build-resources</artifactId>
-					<version>1.5.4.BUILD-SNAPSHOT</version>
+					<version>1.5.4.RELEASE</version>
 					<scope>provided</scope>
 					<type>zip</type>
 				</dependency>
