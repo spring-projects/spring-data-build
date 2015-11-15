@@ -1,6 +1,13 @@
 Spring Data Build - Changelog
 =============================
 
+Changes in version 1.7.1.RELEASE (2015-11-15)
+---------------------------------------------
+* #201 - Release 1.7.1 (Gosling).
+* #199 - Upgrade to Spring Framework 4.1.8.
+* #195 - Upgrade to Querydsl 3.6.8.
+
+
 Changes in version 1.5.4.RELEASE (2015-10-14)
 ---------------------------------------------
 * #198 - Upgrade build profiles for Evans.
