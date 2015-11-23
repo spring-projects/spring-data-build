@@ -9,7 +9,7 @@
 
 	<name>Spring Data Build</name>
 	<description>Modules to centralize common resources and configuration for Spring Data Maven builds.</description>
-	<url>https://github.com/SpringData/spring-data-build</url>
+	<url>https://github.com/spring-projects/spring-data-build</url>
 
 	<organization>
 		<name>Pivotal Software, Inc.</name>
