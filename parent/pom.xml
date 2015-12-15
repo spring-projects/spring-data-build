@@ -474,22 +474,8 @@
 			<id>spring42</id>
 
 			<properties>
-				<spring>4.2.2.RELEASE</spring>
+				<spring>4.2.3.RELEASE</spring>
 			</properties>
-
-			<repositories>
-				<repository>
-					<id>spring-libs-milestone</id>
-					<url>http://repo.spring.io/libs-milestone</url>
-				</repository>
-			</repositories>
-
-			<pluginRepositories>
-				<pluginRepository>
-					<id>spring-libs-milestone</id>
-					<url>http://repo.spring.io/libs-milestone</url>
-				</pluginRepository>
-			</pluginRepositories>
 
 		</profile>
 
@@ -498,7 +484,7 @@
 			<id>spring42-next</id>
 
 			<properties>
-				<spring>4.2.3.BUILD-SNAPSHOT</spring>
+				<spring>4.2.4.BUILD-SNAPSHOT</spring>
 			</properties>
 
 			<repositories>
