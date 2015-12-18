@@ -1,6 +1,11 @@
 Spring Data Build - Changelog
 =============================
 
+Changes in version 1.7.2.RELEASE (2015-12-18)
+---------------------------------------------
+* #207 - Release 1.7.2 (Gosling).
+
+
 Changes in version 1.7.1.RELEASE (2015-11-15)
 ---------------------------------------------
 * #201 - Release 1.7.1 (Gosling).
