@@ -101,14 +101,14 @@
 	</profiles>
 
 	<scm>
-		<url>https://github.com/SpringSource/spring-data-build</url>
-		<connection>scm:git:git://github.com/SpringSource/spring-data-build.git</connection>
-		<developerConnection>scm:git:ssh://git@github.com:SpringSource/spring-data-build.git</developerConnection>
+		<url>https://github.com/spring-projects/spring-data-build</url>
+		<connection>scm:git:git://github.com/spring-projects/spring-data-build.git</connection>
+		<developerConnection>scm:git:ssh://git@github.com:spring-projects/spring-data-build.git</developerConnection>
 	</scm>
 
 	<issueManagement>
 		<system>GitHub</system>
-		<url>https://github.com/SpringSource/spring-data-build/issues</url>
+		<url>https://github.com/spring-projects/spring-data-build/issues</url>
 	</issueManagement>
 
 	<pluginRepositories>
