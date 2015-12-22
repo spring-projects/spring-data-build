@@ -15,7 +15,7 @@
 
 	<name>Spring Data Release Train - BOM</name>
 	<description>Bill of materials to make sure a consistent set of versions is used for Spring Data modules.</description>
-	<url>https://github.com/SpringData/spring-data-build</url>
+	<url>https://github.com/spring-projects/spring-data-build</url>
 
 	<dependencyManagement>
 		<dependencies>
