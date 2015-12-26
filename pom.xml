@@ -63,15 +63,6 @@
 		<profile>
 			<id>release</id>
 
-			<properties>
-				<artifactory.server></artifactory.server>
-				<artifactory.username></artifactory.username>
-				<artifactory.password></artifactory.password>
-				<artifactory.staging-repository></artifactory.staging-repository>
-				<artifactory.build-name></artifactory.build-name>
-				<artifactory.build-number></artifactory.build-number>
-			</properties>
-
 			<build>
 				<plugins>
 					<plugin>
@@ -90,15 +81,15 @@
 										<includeEnvVars>false</includeEnvVars>
 									</artifactory>
 									<publisher>
-										<contextUrl>${artifactory.server}</contextUrl>
-										<username>${artifactory.username}</username>
-										<password>${artifactory.password}</password>
-										<repoKey>${artifactory.staging-repository}</repoKey>
-										<snapshotRepoKey>${artifactory.staging-repository}</snapshotRepoKey>
+										<contextUrl>{{artifactory.server}}</contextUrl>
+										<username>{{artifactory.username}}</username>
+										<password>{{artifactory.password}}</password>
+										<repoKey>{{artifactory.staging-repository}}</repoKey>
+										<snapshotRepoKey>{{artifactory.staging-repository}}</snapshotRepoKey>
 									</publisher>
 									<buildInfo>
-										<buildName>${artifactory.build-name}</buildName>
-										<buildNumber>${artifactory.build-number}</buildNumber>
+										<buildName>{{artifactory.build-name}}</buildName>
+										<buildNumber>{{artifactory.build-number}}</buildNumber>
 									</buildInfo>
 								</configuration>
 							</execution>
