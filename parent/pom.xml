@@ -332,12 +332,12 @@
 								<dependency>
 									<groupId>org.asciidoctor</groupId>
 									<artifactId>asciidoctorj-pdf</artifactId>
-									<version>1.5.0-alpha.8</version>
+									<version>1.5.0-alpha.11</version>
 								</dependency>
 								<dependency>
 									<groupId>org.asciidoctor</groupId>
 									<artifactId>asciidoctorj-epub3</artifactId>
-									<version>1.5.0-alpha.4</version>
+									<version>1.5.0-alpha.6</version>
 								</dependency>
 							</dependencies>
 							<executions>
@@ -653,7 +653,7 @@
 				<plugin>
 					<groupId>org.asciidoctor</groupId>
 					<artifactId>asciidoctor-maven-plugin</artifactId>
-					<version>1.5.2.1</version>
+					<version>1.5.3</version>
 				</plugin>
 
 				<plugin>
