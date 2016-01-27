@@ -536,6 +536,23 @@
 		</profile>
 
 		<profile>
+
+			<id>spring43-next</id>
+
+			<properties>
+				<spring>4.3.0.BUILD-SNAPSHOT</spring>
+			</properties>
+
+			<repositories>
+				<repository>
+					<id>spring-libs-snapshot</id>
+					<url>http://repo.spring.io/libs-snapshot</url>
+				</repository>
+			</repositories>
+
+		</profile>
+
+		<profile>
 			<id>querydsl-next</id>
 			<properties>
 				<querydsl>4.0.7.BUILD-SNAPSHOT</querydsl>
