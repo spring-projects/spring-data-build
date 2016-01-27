@@ -478,6 +478,14 @@
 							</executions>
 						</plugin>
 
+						<plugin>
+							<groupId>org.apache.maven.plugins</groupId>
+							<artifactId>maven-deploy-plugin</artifactId>
+							<configuration>
+								<skip>true</skip>
+							</configuration>
+						</plugin>
+
 					</plugins>
 				</pluginManagement>
 			</build>
@@ -804,14 +812,6 @@
 						<link>http://docs.spring.io/spring-data/data-commons/docs/current/api/</link>
 						<link>http://docs.oracle.com/javase/6/docs/api</link>
 					</links>
-				</configuration>
-			</plugin>
-
-			<plugin>
-				<groupId>org.apache.maven.plugins</groupId>
-				<artifactId>maven-deploy-plugin</artifactId>
-				<configuration>
-					<skip>true</skip>
 				</configuration>
 			</plugin>
 
