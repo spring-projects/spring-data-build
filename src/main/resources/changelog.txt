@@ -1,6 +1,31 @@
 Spring Data Build - Changelog
 =============================
 
+Changes in version 1.8.0.M1 (2016-02-12)
+----------------------------------------
+* #226 - Upgrade to new major versions for Couchbase and Neo4j.
+* #224 - Add code of conduct.
+* #221 - Introduce profile for builds against Spring 4.3 snapshots.
+* #220 - Only disable the deployment in the distribution profile.
+* #219 - Update releasetrain property.
+* #217 - Upgrade to latest Asciidoctor plugins.
+* #216 - Release 1.8 M1 (Hopper).
+* #214 - Upgrade to Spring 4.1.9.
+* #213 - Fix url pointing to the project.
+* #212 - Add Artifactory instance as plugin repository to root pom.
+* #211 - Add Spring Data Envers to release train.
+* #210 - Move to Spring Data Solr 2.0.
+* #206 - Upgrade spring42 build profile to Spring 4.2.3.
+* #205 - Add Lombok as build dependency.
+* #204 - Add build profile for SonarCube to include code coverage plugin.
+* #203 - Fix broken url.
+* #202 - Upgrade to Querydsl 4.
+* #200 - Upgrade to Spring Framework 4.1.8.
+* #196 - Upgrade to Querydsl 3.6.8.
+* #185 - #184 - Fix new-branch script.
+* #184 - Fix new-branch script.
+
+
 Changes in version 1.7.2.RELEASE (2015-12-18)
 ---------------------------------------------
 * #207 - Release 1.7.2 (Gosling).
