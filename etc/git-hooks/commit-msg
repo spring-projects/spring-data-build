@@ -1,0 +1,32 @@
+#!/bin/sh
+#
+# A hook to validate the commit message and checking whether the referenced
+# ticket exists. This script runs only on systems that provide gnu-tools/curl.
+# However the required commit message format is:
+#
+# ----------
+# DATA…-??? - Summary of the commit (try to stay under 80 characters).
+# 
+# Additional explanations if necessary.
+# 
+# See also: DATA…-???. (optionally refer to related tickets)
+# ----------
+
+JIRA_URL="https://jira.spring.io"
+
+firstline=`cat $1|head -1`
+formatcount=`echo $firstline|grep -Ec '([A-Z0-9])*-\d+ \- .*\.'`
+if [ $formatcount -lt 1 ] ; then
+  echo "Wrong commit message format: DATA…-??? - Summary of the commit." >&2
+  echo "Message: ${firstline}" >&2
+  exit 1
+fi
+echo "Valid format. Checking ticket..."
+
+ticketnumber=`echo $firstline| sed -n 's/^\([A-Z]*-[0-9]*\).*$/\1/p'`
+curl --silent -f ${JIRA_URL}/rest/api/2/issue/${ticketnumber} > /dev/null
+if [ $? -gt 0 ] ; then
+  echo "Cannot find referenced ticket ${ticketnumber}. >&2
+  exit 1
+fi
+echo "Valid commit message for ticket ${ticketnumber}."
