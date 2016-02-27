@@ -555,7 +555,7 @@
 		<profile>
 			<id>querydsl-next</id>
 			<properties>
-				<querydsl>4.0.7.BUILD-SNAPSHOT</querydsl>
+				<querydsl>4.0.9.BUILD-SNAPSHOT</querydsl>
 			</properties>
 			<repositories>
 				<repository>
