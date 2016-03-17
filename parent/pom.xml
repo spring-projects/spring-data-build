@@ -493,23 +493,6 @@
 
 		<profile>
 
-			<id>spring41-next</id>
-
-			<properties>
-				<spring>4.1.9.BUILD-SNAPSHOT</spring>
-			</properties>
-
-			<repositories>
-				<repository>
-					<id>spring-libs-snapshot</id>
-					<url>http://repo.spring.io/libs-snapshot</url>
-				</repository>
-			</repositories>
-
-		</profile>
-
-		<profile>
-
 			<id>spring42-next</id>
 
 			<properties>
