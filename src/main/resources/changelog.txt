@@ -1,6 +1,15 @@
 Spring Data Build - Changelog
 =============================
 
+Changes in version 1.8.0.RC1 (2016-03-18)
+-----------------------------------------
+* #233 - Release 1.8 RC1 (Hopper).
+* #232 - Remove spring41-next build profile.
+* #231 - Upgrade to latest Querydsl.
+* #230 - Upgrade to Spring 4.2.
+* #227 - Downgrade Jackson baseline to 2.6.
+
+
 Changes in version 1.7.4.RELEASE (2016-02-23)
 ---------------------------------------------
 * #225 - Release 1.7.4 (Gosling SR4).
