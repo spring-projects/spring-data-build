@@ -1,6 +1,11 @@
 Spring Data Build - Changelog
 =============================
 
+Changes in version 1.8.1.RELEASE (2016-04-06)
+---------------------------------------------
+* #238 - Release 1.8.1 (Hopper SR1).
+
+
 Changes in version 1.8.0.RELEASE (2016-04-06)
 ---------------------------------------------
 * #237 - Upgrade to Querydsl 4.1.
