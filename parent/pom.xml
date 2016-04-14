@@ -498,6 +498,23 @@
 
 		<profile>
 
+			<id>spring43</id>
+
+			<properties>
+				<spring>4.3.0.RC1</spring>
+			</properties>
+
+			<repositories>
+				<repository>
+					<id>spring-libs-milestone</id>
+					<url>http://repo.spring.io/libs-milestone</url>
+				</repository>
+			</repositories>
+
+		</profile>
+
+		<profile>
+
 			<id>spring43-next</id>
 
 			<properties>
