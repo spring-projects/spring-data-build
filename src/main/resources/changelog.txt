@@ -1,6 +1,12 @@
 Spring Data Build - Changelog
 =============================
 
+Changes in version 1.8.2.RELEASE (2016-06-15)
+---------------------------------------------
+* #242 - Add build profile for released Spring 4.3 version.
+* #240 - Release 1.8.2 (Hopper SR2).
+
+
 Changes in version 1.8.1.RELEASE (2016-04-06)
 ---------------------------------------------
 * #238 - Release 1.8.1 (Hopper SR1).
