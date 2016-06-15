@@ -4,13 +4,13 @@
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>org.springframework.data</groupId>
 	<artifactId>spring-data-releasetrain</artifactId>
-	<version>Hopper-SR2</version>
+	<version>Hopper-BUILD-SNAPSHOT</version>
 	<packaging>pom</packaging>
 
 	<parent>
 		<groupId>org.springframework.data.build</groupId>
 		<artifactId>spring-data-build</artifactId>
-		<version>1.8.2.RELEASE</version>
+		<version>1.8.3.BUILD-SNAPSHOT</version>
 	</parent>
 
 	<name>Spring Data Release Train - BOM</name>
