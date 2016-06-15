@@ -108,7 +108,7 @@
 		<threetenbp>1.3.1</threetenbp>
 		<webbeans>1.2.8</webbeans>
 
-		<releasetrain>Hopper-SR2</releasetrain>
+		<releasetrain>Hopper-BUILD-SNAPSHOT</releasetrain>
 
 	</properties>
 
