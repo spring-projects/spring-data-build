@@ -44,7 +44,8 @@ Additional explanations if necessary.
 See also: DATA…-???. (optionally refer to related tickets)
 ----
 
-* Make sure you provide your full name and an email address registered with your GitHub account. If you're a first-time submitter, make sure you have completed the https://support.springsource.com/spring_committer_signup[Contributor's License Agreement form].
+* Make sure you provide your full name and an email address registered with your GitHub account. 
+If you're a first-time submitter, make sure you have signed the https://cla.pivotal.io/sign/spring[Contributor License Agreement].
 
 [[advanced]]
 == Advanced
@@ -80,7 +81,7 @@ This section contains some stuff that the IDE formatters do not enforce. Try to 
 === Handling pull requests
 
 * Be polite. It might be the first time someone contributes to an OpenSource project so we should forgive violations to the contribution guidelines. Use some gut feeling to find out in how far it makes sense to ask the reporter to fix stuff or just go ahead and add a polishing commit yourself.
-* The information we need from contributors are: their full name, an email address they have associated with their Github account, the confirmation number of the CLA (for the first contribution). Especially the first one probably needs to be asked for as people sometimes just use some alias in their GitHub account.
+* Before we accept a non-trivial patch or pull request we will need you to https://cla.pivotal.io/sign/spring[sign the Contributor License Agreement]. Signing the contributor’s agreement does not grant anyone commit rights to the main repository, but it does mean that we can accept your contributions, and you will get an author credit if we do. If you forget to do so, you'll be reminded when you submit a pull request.
 * If you decide to merge stuff back make sure that all the infrastructure requirements are met (set up a JIRA ticket to commit against if necessary, etc.).
 * Before merging stuff back into master, make sure you rebase the branch. We generally do not allow merge commits, so a merge should always be fast-forward. The ticket IDs and the timestamps give enough tracking information already.
 * The simplest way to merge back a pull request submitted by someone external is `curl`ing the patch into `git am`. You can then polish it by either adding a commit or amending the provided commit. Make sure you keep the original author when amending.
