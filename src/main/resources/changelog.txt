@@ -1,6 +1,17 @@
 Spring Data Build - Changelog
 =============================
 
+Changes in version 1.9.0.M1 (2016-07-27)
+----------------------------------------
+* #261 - Add property for JSR-303 API.
+* #257 - Upgrade Spring build profiles to build against 5.0 snapshots.
+* #255 - Upgrade Spring dependencies and build profiles after 4.3.1 and 4.2.7 release.
+* #252 - Add version placeholder for JSON Path.
+* #249 - Update Spring build profiles.
+* #241 - Add build profile for released Spring 4.3 version.
+* #239 - Release 1.9 M1 (Ingalls).
+
+
 Changes in version 1.8.2.RELEASE (2016-06-15)
 ---------------------------------------------
 * #242 - Add build profile for released Spring 4.3 version.
