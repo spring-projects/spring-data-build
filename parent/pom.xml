@@ -101,7 +101,7 @@
 		<lombok>1.16.10</lombok>
 		<mockito>1.10.19</mockito>
 		<querydsl>4.1.3</querydsl>
-		<reactor>3.0.0.RC1</reactor>
+		<reactor>3.0.0.RC2</reactor>
 		<rxjava>1.1.8</rxjava>
 		<slf4j>1.7.21</slf4j>
 		<spring>5.0.0.M1</spring>
