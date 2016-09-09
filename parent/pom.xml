@@ -495,10 +495,10 @@
 
 		<profile>
 
-			<id>spring42-next</id>
+			<id>spring43-next</id>
 
 			<properties>
-				<spring>4.2.8.BUILD-SNAPSHOT</spring>
+				<spring>4.3.3.BUILD-SNAPSHOT</spring>
 			</properties>
 
 			<repositories>
@@ -512,26 +512,16 @@
 
 		<profile>
 
-			<id>spring43</id>
+			<id>spring5</id>
 
 			<properties>
-				<spring>4.3.2.RELEASE</spring>
-			</properties>
-
-		</profile>
-
-		<profile>
-
-			<id>spring43-next</id>
-
-			<properties>
-				<spring>4.3.3.BUILD-SNAPSHOT</spring>
+				<spring>5.0.0.M1</spring>
 			</properties>
 
 			<repositories>
 				<repository>
-					<id>spring-libs-snapshot</id>
-					<url>http://repo.spring.io/libs-snapshot</url>
+					<id>spring-libs-milestone</id>
+					<url>http://repo.spring.io/libs-milestone</url>
 				</repository>
 			</repositories>
 
