@@ -1,6 +1,13 @@
 Spring Data Build - Changelog
 =============================
 
+Changes in version 1.7.5.RELEASE (2016-09-20)
+---------------------------------------------
+* #265 - Update Spring 4.3 build profile after 4.3.2 release.
+* #244 - Release 1.7.5 (Gosling SR5).
+* #243 - Add build profile for released Spring 4.3 version.
+
+
 Changes in version 1.8.3.RELEASE (2016-09-20)
 ---------------------------------------------
 * #272 - Upgrade to Spring Framework 4.2.8.
