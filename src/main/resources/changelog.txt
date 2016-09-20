@@ -1,6 +1,16 @@
 Spring Data Build - Changelog
 =============================
 
+Changes in version 1.8.3.RELEASE (2016-09-20)
+---------------------------------------------
+* #272 - Upgrade to Spring Framework 4.2.8.
+* #264 - Update Spring 4.3 build profile after 4.3.2 release.
+* #258 - Add build profile for Spring 5.0 snapshots.
+* #256 - Upgrade Spring dependencies and build profiles after 4.3.1 and 4.2.7 release.
+* #253 - Upgrade Spring build profiles after 4.3 GA release.
+* #250 - Release 1.8.3 (Hopper SR3).
+
+
 Changes in version 1.9.0.M1 (2016-07-27)
 ----------------------------------------
 * #261 - Add property for JSR-303 API.
