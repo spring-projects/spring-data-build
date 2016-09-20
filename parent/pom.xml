@@ -93,19 +93,19 @@
 		<commons-io>2.4</commons-io>
 		<guava>19.0</guava>
 		<hamcrest>1.3</hamcrest>
-		<jackson>2.6.6</jackson>
-		<jacoco>0.7.6.201602180812</jacoco>
+		<jackson>2.6.7</jackson>
+		<jacoco>0.7.7.201606060606</jacoco>
 		<jodatime>2.9.4</jodatime>
 		<junit>4.12</junit>
 		<logback>1.1.7</logback>
-		<lombok>1.16.8</lombok>
+		<lombok>1.16.10</lombok>
 		<mockito>1.10.19</mockito>
-		<querydsl>4.1.2</querydsl>
-		<rxjava>1.1.5</rxjava>
+		<querydsl>4.1.4</querydsl>
+		<rxjava>1.1.10</rxjava>
 		<slf4j>1.7.21</slf4j>
 		<spring>4.2.8.RELEASE</spring>
 		<spring-hateoas>0.20.0.RELEASE</spring-hateoas>
-		<threetenbp>1.3.1</threetenbp>
+		<threetenbp>1.3.2</threetenbp>
 		<webbeans>1.2.8</webbeans>
 
 		<releasetrain>Hopper-BUILD-SNAPSHOT</releasetrain>
