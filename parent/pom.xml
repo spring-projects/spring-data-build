@@ -103,6 +103,7 @@
 		<querydsl>4.1.3</querydsl>
 		<reactor>3.0.1.RELEASE</reactor>
 		<rxjava>1.1.8</rxjava>
+		<rxjava2>2.0.0-RC2</rxjava2>
 		<slf4j>1.7.21</slf4j>
 		<spring>5.0.0.M1</spring>
 		<spring-hateoas>0.21.0.RELEASE</spring-hateoas>
