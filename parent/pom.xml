@@ -101,7 +101,7 @@
 		<lombok>1.16.10</lombok>
 		<mockito>1.10.19</mockito>
 		<querydsl>4.1.4</querydsl>
-		<rxjava>1.1.10</rxjava>
+		<rxjava>1.1.9</rxjava>
 		<slf4j>1.7.21</slf4j>
 		<spring>4.2.8.RELEASE</spring>
 		<spring-hateoas>0.20.0.RELEASE</spring-hateoas>
