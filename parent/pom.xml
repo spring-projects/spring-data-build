@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?>
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 
 	<!--
@@ -105,7 +105,7 @@
 		<threetenbp>1.3.2</threetenbp>
 		<webbeans>1.2.8</webbeans>
 
-		<releasetrain>Gosling-SR6</releasetrain>
+		<releasetrain>Gosling-BUILD-SNAPSHOT</releasetrain>
 
 	</properties>
 
@@ -160,7 +160,7 @@
 				<dependency>
 					<groupId>org.springframework.data.build</groupId>
 					<artifactId>spring-data-build-resources</artifactId>
-					<version>1.7.6.RELEASE</version>
+					<version>1.7.7.BUILD-SNAPSHOT</version>
 					<scope>provided</scope>
 					<type>zip</type>
 				</dependency>
@@ -230,17 +230,17 @@
 									<target>
 										<copy todir="${project.root}/target/site/reference/html">
 											<fileset dir="${shared.resources}/asciidoc" erroronmissingdir="false">
-												<include name="**/*.css" />
+												<include name="**/*.css"/>
 											</fileset>
-											<flattenmapper />
+											<flattenmapper/>
 										</copy>
 										<copy todir="${project.root}/target/site/reference/html/images">
 											<fileset dir="${basedir}/src/main/asciidoc" erroronmissingdir="false">
-												<include name="**/*.png" />
-												<include name="**/*.gif" />
-												<include name="**/*.jpg" />
+												<include name="**/*.png"/>
+												<include name="**/*.gif"/>
+												<include name="**/*.jpg"/>
 											</fileset>
-											<flattenmapper />
+											<flattenmapper/>
 										</copy>
 									</target>
 								</configuration>
@@ -256,9 +256,9 @@
 									<target>
 										<copy todir="${project.build.directory}/schemas">
 											<fileset dir="${basedir}" erroronmissingdir="false">
-												<include name="**/src/main/resources/**/config/spring-*.xsd" />
+												<include name="**/src/main/resources/**/config/spring-*.xsd"/>
 											</fileset>
-											<flattenmapper />
+											<flattenmapper/>
 										</copy>
 									</target>
 								</configuration>
@@ -272,8 +272,8 @@
 								<phase>process-resources</phase>
 								<configuration>
 									<target>
-										<copy failonerror="false" file="${project.build.directory}/generated-docs/index.pdf" tofile="${project.root}/target/site/reference/pdf/${dist.id}-reference.pdf" />
-										<copy failonerror="false" file="${project.build.directory}/generated-docs/index.epub" tofile="${project.root}/target/site/reference/epub/${dist.id}-reference.epub" />
+										<copy failonerror="false" file="${project.build.directory}/generated-docs/index.pdf" tofile="${project.root}/target/site/reference/pdf/${dist.id}-reference.pdf"/>
+										<copy failonerror="false" file="${project.build.directory}/generated-docs/index.epub" tofile="${project.root}/target/site/reference/epub/${dist.id}-reference.epub"/>
 									</target>
 								</configuration>
 								<goals>
