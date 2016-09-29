@@ -1,6 +1,11 @@
 Spring Data Build - Changelog
 =============================
 
+Changes in version 1.7.6.RELEASE (2016-09-29)
+---------------------------------------------
+* #280 - Release 1.7.6 (Gosling SR6).
+
+
 Changes in version 1.7.5.RELEASE (2016-09-20)
 ---------------------------------------------
 * #265 - Update Spring 4.3 build profile after 4.3.2 release.
