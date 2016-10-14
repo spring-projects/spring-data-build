@@ -498,7 +498,7 @@
 			<id>spring43-next</id>
 
 			<properties>
-				<spring>4.3.3.BUILD-SNAPSHOT</spring>
+				<spring>4.3.4.BUILD-SNAPSHOT</spring>
 			</properties>
 
 			<repositories>
