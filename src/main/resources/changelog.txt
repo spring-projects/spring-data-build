@@ -1,6 +1,11 @@
 Spring Data Build - Changelog
 =============================
 
+Changes in version 1.8.5.RELEASE (2016-11-03)
+---------------------------------------------
+* #283 - Release 1.8.5 (Hopper SR5).
+
+
 Changes in version 1.8.4.RELEASE (2016-09-29)
 ---------------------------------------------
 * #281 - Downgrade RxJava to 1.1.9 to avoid conflicts with Reactor 3.
