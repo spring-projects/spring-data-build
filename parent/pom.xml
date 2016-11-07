@@ -104,7 +104,7 @@
 		<reactor>3.0.3.RELEASE</reactor>
 		<rxjava>1.2.1</rxjava>
 		<rxjava-reactive-streams>1.2.0</rxjava-reactive-streams>
-		<rxjava2>2.0.0-RC5</rxjava2>
+		<rxjava2>2.0.0</rxjava2>
 		<slf4j>1.7.21</slf4j>
 		<spring>5.0.0.M2</spring>
 		<spring-hateoas>0.21.0.RELEASE</spring-hateoas>
