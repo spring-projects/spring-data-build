@@ -1,6 +1,32 @@
 Spring Data Build - Changelog
 =============================
 
+Changes in version 2.0.0.M1 (2016-11-23)
+----------------------------------------
+* #291 - Upgrade to Spring 5.0 M3.
+* #290 - Upgrade to RxJava 2 2.0 GA.
+* #289 - Upgrade to Project Reactor 3.0.3.
+* #286 - Upgrade to RxJava2 2.0.0-RC5.
+* #285 - Upgrade to RxJava1 1.2.1.
+* #284 - Add version placeholder for RxJava1 ReactiveStreams adapter.
+* #279 - Downgrade RxJava dependency to 1.1.9 due to breaking changes in 1.2.0.
+* #278 - Upgrade to Spring 5.0 M2.
+* #277 - Upgrade to RxJava 1.2.0.
+* #276 - Upgrade to Reactor 3.0.2.
+* #275 - Add version placeholder for RxJava2.
+* #273 - Upgrade to Reactor 3.0.1.
+* #269 - Upgrade to Reactor 3.0 RC2.
+* #267 - Upgrade to Spring Framework 5.0 M1.
+* #260 - Add property for JSR-303 API.
+* #259 - Upgrade to Spring 5.0 snapshots.
+* #254 - Upgrade to AssertJ 3.5.1.
+* #251 - Upgrade to Mockito 2.0.
+* #248 - Upgrade to Reactor 2.5.0.M4.
+* #247 - Add AssertJ as testing dependency.
+* #246 - Prepare branch for 2.0 development.
+* #245 - Release 2.0 M1 (Kay).
+
+
 Changes in version 1.9.0.M1 (2016-07-27)
 ----------------------------------------
 * #261 - Add property for JSR-303 API.
