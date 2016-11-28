@@ -104,7 +104,7 @@
 		<querydsl>4.1.3</querydsl>
 		<rxjava>1.1.8</rxjava>
 		<slf4j>1.7.21</slf4j>
-		<spring>4.3.3.RELEASE</spring>
+		<spring>4.3.4.RELEASE</spring>
 		<spring-hateoas>0.22.0.BUILD-SNAPSHOT</spring-hateoas>
 		<threetenbp>1.3.2</threetenbp>
 		<validation>1.0.0.GA</validation>
@@ -498,7 +498,7 @@
 			<id>spring43-next</id>
 
 			<properties>
-				<spring>4.3.4.BUILD-SNAPSHOT</spring>
+				<spring>4.3.5.BUILD-SNAPSHOT</spring>
 			</properties>
 
 			<repositories>
@@ -515,7 +515,7 @@
 			<id>spring5</id>
 
 			<properties>
-				<spring>5.0.0.M1</spring>
+				<spring>5.0.0.M3</spring>
 			</properties>
 
 			<repositories>
