@@ -513,7 +513,7 @@
 			<id>spring43</id>
 
 			<properties>
-				<spring>4.3.2.RELEASE</spring>
+				<spring>4.3.4.RELEASE</spring>
 			</properties>
 
 		</profile>
@@ -523,7 +523,7 @@
 			<id>spring43-next</id>
 
 			<properties>
-				<spring>4.3.3.BUILD-SNAPSHOT</spring>
+				<spring>4.3.5.BUILD-SNAPSHOT</spring>
 			</properties>
 
 			<repositories>
@@ -540,7 +540,7 @@
 			<id>spring5</id>
 
 			<properties>
-				<spring>5.0.0.M1</spring>
+				<spring>5.0.0.M3</spring>
 			</properties>
 
 			<repositories>
@@ -572,7 +572,7 @@
 		<profile>
 			<id>querydsl-next</id>
 			<properties>
-				<querydsl>4.1.0.BUILD-SNAPSHOT</querydsl>
+				<querydsl>4.1.5.BUILD-SNAPSHOT</querydsl>
 			</properties>
 			<repositories>
 				<repository>
