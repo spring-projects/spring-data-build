@@ -95,19 +95,19 @@
 		<guava>19.0</guava>
 		<hamcrest>1.3</hamcrest>
 		<jackson>2.8.5</jackson>
-		<jacoco>0.7.7.201606060606</jacoco>
-		<jodatime>2.9.6</jodatime>
+		<jacoco>0.7.8</jacoco>
+		<jodatime>2.9.7</jodatime>
 		<jsonpath>2.2.0</jsonpath>
 		<junit>4.12</junit>
-		<logback>1.1.7</logback>
+		<logback>1.1.8</logback>
 		<lombok>1.16.12</lombok>
 		<mockito>1.10.19</mockito>
 		<querydsl>4.1.4</querydsl>
 		<rxjava>1.2.3</rxjava>
-		<slf4j>1.7.21</slf4j>
-		<spring>4.3.4.RELEASE</spring>
-		<spring-hateoas>0.22.0.BUILD-SNAPSHOT</spring-hateoas>
-		<threetenbp>1.3.2</threetenbp>
+		<slf4j>1.7.22</slf4j>
+		<spring>4.3.5.RELEASE</spring>
+		<spring-hateoas>0.23.0.RELEASE</spring-hateoas>
+		<threetenbp>1.3.3</threetenbp>
 		<validation>1.0.0.GA</validation>
 		<webbeans>1.2.8</webbeans>
 
