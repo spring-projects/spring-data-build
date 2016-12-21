@@ -1,6 +1,13 @@
 Spring Data Build - Changelog
 =============================
 
+Changes in version 1.8.6.RELEASE (2016-12-21)
+---------------------------------------------
+* #296 - Update target for static resource distribution.
+* #295 - Update core dependencies.
+* #288 - Release 1.8.6 (Hopper SR6).
+
+
 Changes in version 1.9.0.RC1 (2016-12-21)
 -----------------------------------------
 * #304 - Add build profile for pre-release checks.
