@@ -1,6 +1,20 @@
 Spring Data Build - Changelog
 =============================
 
+Changes in version 1.9.0.RC1 (2016-12-21)
+-----------------------------------------
+* #304 - Add build profile for pre-release checks.
+* #303 - Fix Asciidoctor Maven plugin version.
+* #301 - Add Spring Data LDAP to BOM (Ingalls).
+* #294 - Update to Spring 4.3.4.
+* #293 - Update target for static resource distribution.
+* #271 - Upgrade to Spring HATEOAS 0.22.
+* #270 - Upgrade to Spring 4.3.
+* #268 - Upgrade to Jackson 2.8.
+* #263 - Update Spring 4.3 build profile after 4.3.2 release.
+* #262 - Release 1.9 RC1 (Ingalls).
+
+
 Changes in version 2.0.0.M1 (2016-11-23)
 ----------------------------------------
 * #291 - Upgrade to Spring 5.0 M3.
