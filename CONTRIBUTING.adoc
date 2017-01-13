@@ -20,10 +20,7 @@ For the impatient, if you want to submit a quick pull request:
 
 [source, java]
 ----
-/**
- * @see DATA…-???
- */
-@Test
+@Test // DATA…-???
 public void yourTestMethod() { … }
 ----
 
@@ -100,4 +97,4 @@ curl $PULL_REQUEST_URL.patch | git am --ignore-whitespace
 Original pull request: #??.
 ----
 
-Important pieces here: colon and the sence completed with a dot.
+Important pieces here: colon and the sentence completed with a dot.
