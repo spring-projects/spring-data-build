@@ -1,6 +1,11 @@
 Spring Data Build - Changelog
 =============================
 
+Changes in version 1.9.0.RELEASE (2017-01-26)
+---------------------------------------------
+* #307 - Release 1.9 GA (Ingalls).
+
+
 Changes in version 1.8.6.RELEASE (2016-12-21)
 ---------------------------------------------
 * #296 - Update target for static resource distribution.
