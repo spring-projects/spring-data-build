@@ -33,7 +33,7 @@
 	<name>Spring Data Build - General parent module</name>
 	<description>Global parent pom.xml to be used by Spring Data modules</description>
 	<url>http://www.spring.io/spring-data</url>
-	<inceptionYear>2011-2015</inceptionYear>
+	<inceptionYear>2011</inceptionYear>
 
 	<organization>
 		<name>Pivotal Software, Inc.</name>
