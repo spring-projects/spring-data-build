@@ -1,6 +1,26 @@
 Spring Data Build - Changelog
 =============================
 
+Changes in version 2.0.0.M2 (2017-04-04)
+----------------------------------------
+* #328 - Upgrade to Reactor 3.0.6.
+* #327 - Update dependencies and plugins.
+* #326 - Upgrade to RxJava2 2.0.8.
+* #325 - Upgrade to RxJava 1.2.9.
+* #324 - Switch to Spring Framework 5.0 M5.
+* #323 - Upgrade Mockito to 2.x.
+* #321 - Provide importorder file, remove IntelliJ formatter jar and provide guidance for IntelliJ users.
+* #320 - Upgrade to latest reactive dependencies.
+* #314 - Upgrade to Lombok 1.16.14.
+* #305 - Add build profile for pre-release checks.
+* #302 - Add Spring Data LDAP to BOM (Kay).
+* #300 - Upgrade to Spring 5.0 SNAPSHOT.
+* #299 - Upgrade to Spring HATEOAS 0.23.
+* #298 - Update target for static resource distribution.
+* #292 - Release 2.0 M2 (Kay).
+* #251 - Upgrade to Mockito 2.
+
+
 Changes in version 1.8.8.RELEASE (2017-03-02)
 ---------------------------------------------
 * #309 - Release 1.8.8 (Hopper SR8).
