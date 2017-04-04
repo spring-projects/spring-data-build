@@ -112,7 +112,7 @@
 		<validation>1.1.0.Final</validation>
 		<webbeans>1.2.8</webbeans>
 
-		<releasetrain>Kay-M2</releasetrain>
+		<releasetrain>Kay-BUILD-SNAPSHOT</releasetrain>
 
 	</properties>
 
