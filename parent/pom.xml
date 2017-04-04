@@ -101,7 +101,7 @@
 		<lombok>1.16.16</lombok>
 		<mockito>2.7.21</mockito>
 		<querydsl>4.1.4</querydsl>
-		<reactor>3.0.5.RELEASE</reactor>
+		<reactor>3.0.6.RELEASE</reactor>
 		<rxjava>1.2.9</rxjava>
 		<rxjava-reactive-streams>1.2.1</rxjava-reactive-streams>
 		<rxjava2>2.0.8</rxjava2>
