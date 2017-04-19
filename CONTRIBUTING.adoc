@@ -41,7 +41,7 @@ Additional explanations if necessary.
 See also: DATA…-???. (optionally refer to related tickets)
 ----
 
-* Make sure you provide your full name and an email address registered with your GitHub account. 
+* Make sure you provide your full name and an email address registered with your GitHub account.
 If you're a first-time submitter, make sure you have signed the https://cla.pivotal.io/sign/spring[Contributor License Agreement].
 
 [[advanced]]
