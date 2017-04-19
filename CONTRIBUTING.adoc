@@ -56,6 +56,12 @@ This section contains some advanced information, mainly targeted at developers o
 * Try to keep the lifespan of a feature branch as short as possible. For simple bug fixes they should only be used for code review in pull requests.
 * On longer running feature branches, don't pull changes that were made to master in the meantime. Instead, rebase the feature branch onto current master, sorting out issues and making sure the branch will fast-forward merge eventually.
 
+[[advanced.dependency-management]]
+=== Dependency management
+* When upgrading dependencies of a project, make sure you apply the following rules:
+** For service releases of a release train only upgrades to bugfix versions are allowed. I.e. if a GA release of a release train included a dependency in version 2.6.2, you must only upgrade to 2.6.x versions. Upgrading to 2.7 is *not allowed*.
+** During the milestone phase of a new release train, upgrade to the latest version of a dependency unless compatibility with a former version is required. Upgrades to new major versions are allowed, too, but consider ways to support multiple major versions for one release train to allow a smoother transition.
+
 [[advanced.change-tracking]]
 === Change tracking
 
