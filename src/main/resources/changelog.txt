@@ -1,6 +1,13 @@
 Spring Data Build - Changelog
 =============================
 
+Changes in version 1.8.9.RELEASE (2017-04-19)
+---------------------------------------------
+* #337 - Upgrade Spring 4.3 build profile to 4.3.8.
+* #335 - Upgrade Spring 4.3.next profile to 4.3.8 snapshots.
+* #319 - Release 1.8.9 (Hopper SR9).
+
+
 Changes in version 1.9.2.RELEASE (2017-04-19)
 ---------------------------------------------
 * #336 - Upgrade to Spring Framework 4.3.8.
