@@ -33,7 +33,7 @@
 	<name>Spring Data Build - General parent module</name>
 	<description>Global parent pom.xml to be used by Spring Data modules</description>
 	<url>http://www.spring.io/spring-data</url>
-	<inceptionYear>2011-2015</inceptionYear>
+	<inceptionYear>2011</inceptionYear>
 
 	<organization>
 		<name>Pivotal Software, Inc.</name>
@@ -59,7 +59,7 @@
 			<name>Apache License, Version 2.0</name>
 			<url>http://www.apache.org/licenses/LICENSE-2.0</url>
 			<comments>
-			Copyright 2008-2016 the original author or authors.
+			Copyright 2008-2017 the original author or authors.
 
 			Licensed under the Apache License, Version 2.0 (the "License");
 			you may not use this file except in compliance with the License.
