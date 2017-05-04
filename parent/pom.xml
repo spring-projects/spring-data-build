@@ -482,6 +482,8 @@
 							<artifactId>wagon-maven-plugin</artifactId>
 							<configuration>
 								<fromDir>${project.build.directory}</fromDir>
+								<serverId>static-dot-s2</serverId>
+								<url>scp://docs.af.pivotal.io</url>
 							</configuration>
 							<executions>
 
@@ -496,8 +498,6 @@
 									<configuration>
 										<fromDir>${project.root}/target/schemas</fromDir>
 										<includes>*.xsd,.autoschemaln</includes>
-										<serverId>static-dot-s2</serverId>
-										<url>scp://docs.af.pivotal.io</url>
 										<toDir>/var/www/domains/spring.io/www/htdocs/autorepo/schema/${dist.id}/${project.version}</toDir>
 										<optimize>true</optimize>
 									</configuration>
@@ -514,12 +514,26 @@
 									<configuration>
 										<fromDir>${project.build.directory}/static-resources</fromDir>
 										<includes>**</includes>
-										<serverId>static-dot-s2</serverId>
-										<url>scp://docs.af.pivotal.io</url>
 										<toDir>/var/www/domains/spring.io/www/htdocs/autorepo/docs/${dist.id}/${project.version}</toDir>
 										<optimize>true</optimize>
 									</configuration>
 								</execution>
+
+								<!-- Makes sure resources can be overriden by others -->
+								<execution>
+									<id>make-resources-group-writable</id>
+									<phase>deploy</phase>
+									<goals>
+										<goal>sshexec</goal>
+									</goals>
+									<configuration>
+										<commands>
+											<command>find /var/www/domains/spring.io/www/htdocs/autorepo/schema/${dist.id}/${project.version}/ ! -perm -g=w -exec chmod g+w {} \;</command>
+											<command>find /var/www/domains/spring.io/www/htdocs/autorepo/docs/${dist.id}/${project.version}/ ! -perm -g=w -exec chmod g+w {} \;</command>
+										</commands>
+									</configuration>
+								</execution>
+
 							</executions>
 						</plugin>
 
