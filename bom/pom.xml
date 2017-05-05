@@ -53,15 +53,10 @@
 				<version>3.0.0.BUILD-SNAPSHOT</version>
 			</dependency>
 
-			<!-- Spring Data Gemfire / Geode -->
+			<!-- Spring Data Gemfire -->
 			<dependency>
 				<groupId>org.springframework.data</groupId>
 				<artifactId>spring-data-gemfire</artifactId>
-				<version>2.0.0.BUILD-SNAPSHOT</version>
-			</dependency>
-			<dependency>
-				<groupId>org.springframework.data</groupId>
-				<artifactId>spring-data-geode</artifactId>
 				<version>2.0.0.BUILD-SNAPSHOT</version>
 			</dependency>
 
