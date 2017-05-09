@@ -1,6 +1,25 @@
 Spring Data Build - Changelog
 =============================
 
+Changes in version 2.0.0.M3 (2017-05-09)
+----------------------------------------
+* #357 - Upgrade to Spring Framework 5.0 RC1.
+* #356 - Upgrade to RxJava2 2.1.0.
+* #355 - Upgrade to RxJava 1.3.0.
+* #354 - Postpone Spring Data for Apache Geode addition to release train.
+* #351 - Make sure that static resources uploaded are overwritable by group.
+* #350 - Add Spring Data for Apache Geode to BOM.
+* #347 - Upgrade to AsciidoctorJ PDF 1.5 alpha 15.
+* #344 - Upgrade Wagon SSH extension to 2.12.
+* #343 - Upgrade to Project Reactor 3.1 M1.
+* #333 - Upgraded to Reactor 3.1.0.BUILD-SNAPSHOT.
+* #332 - Remove reference to JCL via Slf4j.
+* #331 - Upgrade to Spring 5 snapshots.
+* #330 - Release 2.0 M3 (Kay).
+* #329 - Add Spring Data Geode to SD Build Release BOM.
+* #311 - Set inception year in pom.xml to 2011.
+
+
 Changes in version 1.8.10.RELEASE (2017-04-19)
 ----------------------------------------------
 * #339 - Release 1.8.10 (Hopper SR10).
