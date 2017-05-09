@@ -4,13 +4,13 @@
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>org.springframework.data</groupId>
 	<artifactId>spring-data-releasetrain</artifactId>
-	<version>Kay-BUILD-SNAPSHOT</version>
+	<version>Kay-M3</version>
 	<packaging>pom</packaging>
 
 	<parent>
 		<groupId>org.springframework.data.build</groupId>
 		<artifactId>spring-data-build</artifactId>
-		<version>2.0.0.BUILD-SNAPSHOT</version>
+		<version>2.0.0.M3</version>
 	</parent>
 
 	<name>Spring Data Release Train - BOM</name>
