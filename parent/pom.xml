@@ -554,7 +554,8 @@
 			<id>spring5</id>
 
 			<properties>
-				<spring>5.0.0.M3</spring>
+				<spring>5.0.0.RC1</spring>
+				<jackson>2.9.0.pr3</jackson>
 			</properties>
 
 			<repositories>
@@ -572,6 +573,7 @@
 
 			<properties>
 				<spring>5.0.0.BUILD-SNAPSHOT</spring>
+				<jackson>2.9.0.pr3</jackson>
 			</properties>
 
 			<repositories>
