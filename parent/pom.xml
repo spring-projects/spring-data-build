@@ -526,10 +526,24 @@
 									<goals>
 										<goal>sshexec</goal>
 									</goals>
-									<configuration>
+									<configuration> <!-- Prevent reformatting, wrap with CDATA -->
 										<commands>
-											<command>find /var/www/domains/spring.io/www/htdocs/autorepo/schema/${dist.id}/${project.version}/ ! -perm -g=w -exec chmod g+w {} \;</command>
-											<command>find /var/www/domains/spring.io/www/htdocs/autorepo/docs/${dist.id}/${project.version}/ ! -perm -g=w -exec chmod g+w {} \;</command>
+											<command>
+												<![CDATA[
+													 if [ -d /var/www/domains/spring.io/www/htdocs/autorepo/schema/${dist.id}/${project.version}/ ]
+													 then
+														find /var/www/domains/spring.io/www/htdocs/autorepo/schema/${dist.id}/${project.version}/ ! -perm -g=w -exec chmod g+w {} \;
+													 fi
+													]]>
+											</command>
+											<command>
+												<![CDATA[
+													 if [ -d /var/www/domains/spring.io/www/htdocs/autorepo/docs/${dist.id}/${project.version}/ ]
+													 then
+														find /var/www/domains/spring.io/www/htdocs/autorepo/docs/${dist.id}/${project.version}/ ! -perm -g=w -exec chmod g+w {} \;
+													 fi
+													]]>
+											</command>
 										</commands>
 									</configuration>
 								</execution>
