@@ -1,6 +1,17 @@
 Spring Data Build - Changelog
 =============================
 
+Changes in version 1.8.11.RELEASE (2017-06-07)
+----------------------------------------------
+* #366 - Upgrade to latest bugfix dependencies.
+* #364 - Distribution build fails on absent remote schema/documentation directories.
+* #360 - Update Spring 5 build profile to RC1.
+* #353 - Make sure that static resources uploaded are overwritable by group.
+* #349 - Upgrade to AsciidoctorJ PDF 1.5 alpha 15.
+* #346 - Upgrade Wagon SSH extension to 2.12.
+* #341 - Release 1.8.11 (Hopper SR11).
+
+
 Changes in version 2.0.0.M3 (2017-05-09)
 ----------------------------------------
 * #357 - Upgrade to Spring Framework 5.0 RC1.
