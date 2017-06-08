@@ -11,7 +11,15 @@ if [ $# -gt 1 ]; then echo -e "ERROR: One argument maximum.\n$USAGE" >&2; exit 1
 
 TICKET_ID=${1:?"TICKET_ID Parameter is missing!"}
 
-OLD_VERSION_TMP=$(mvn org.apache.maven.plugins:maven-help-plugin:2.1.1:evaluate -Dexpression=project.version | grep -Ev '^\[.*')
+# Warmup the maven plugins before actually using them (avoids "Downloading" messages getting in variables)
+echo "Warming up the Maven plugins..."
+mvn -q org.apache.maven.plugins:maven-help-plugin:2.1.1:evaluate -Dexpression=project.version
+mvn -q versions:help
+
+# Now use the plugins to roll the version
+
+echo "Looking up the current version..."
+OLD_VERSION_TMP=$(mvn -o org.apache.maven.plugins:maven-help-plugin:2.1.1:evaluate -Dexpression=project.version | grep -Ev '^\[.*')
 
 OLD_POM_VERSION=${OLD_VERSION_TMP:?"Could not extract current project version from pom.xml"}
 
@@ -23,7 +31,7 @@ echo "Creating feature branch $TICKET_ID: $OLD_POM_VERSION -> $NEW_POM_VERSION"
 
 echo "Stashing potential intermediate changes..." && git stash\
 && git checkout -b $ISSUE_BRANCH\
-&& $(mvn $MAVEN_FLAGS -q versions:set -DgenerateBackupPoms=false -DnewVersion=$NEW_POM_VERSION)\
+&& $(mvn -o $MAVEN_FLAGS -q versions:set -DgenerateBackupPoms=false -DnewVersion=$NEW_POM_VERSION)\
 && ( \
       (\
          git commit -am "$TICKET_ID - Prepare branch"\
