@@ -371,13 +371,8 @@
 							<dependencies>
 								<dependency>
 									<groupId>org.asciidoctor</groupId>
-									<artifactId>asciidoctorj</artifactId>
-									<version>1.5.4.1</version>
-								</dependency>
-								<dependency>
-									<groupId>org.asciidoctor</groupId>
 									<artifactId>asciidoctorj-pdf</artifactId>
-									<version>1.5.0-alpha.15</version>
+									<version>1.5.0-alpha.14</version>
 								</dependency>
 								<dependency>
 									<groupId>org.asciidoctor</groupId>
