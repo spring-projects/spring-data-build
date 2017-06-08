@@ -111,7 +111,7 @@
 		<validation>1.0.0.GA</validation>
 		<webbeans>1.2.8</webbeans>
 
-		<releasetrain>Ingalls-BUILD-SNAPSHOT</releasetrain>
+		<releasetrain>Ingalls-SR4</releasetrain>
 
 	</properties>
 
@@ -231,7 +231,7 @@
 				<dependency>
 					<groupId>org.springframework.data.build</groupId>
 					<artifactId>spring-data-build-resources</artifactId>
-					<version>1.9.4.BUILD-SNAPSHOT</version>
+					<version>1.9.4.RELEASE</version>
 					<scope>provided</scope>
 					<type>zip</type>
 				</dependency>
