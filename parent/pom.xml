@@ -581,7 +581,7 @@
 			<id>spring5</id>
 
 			<properties>
-				<spring>5.0.0.RC1</spring>
+				<spring>5.0.0.RC2</spring>
 				<jackson>2.9.0.pr3</jackson>
 			</properties>
 
