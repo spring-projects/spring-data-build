@@ -1,6 +1,17 @@
 Spring Data Build - Changelog
 =============================
 
+Changes in version 2.0.0.M4 (2017-06-14)
+----------------------------------------
+* #380 - Dependency upgrades for Kay M4.
+* #379 - Upgrade to Spring 5 RC2.
+* #378 - Upgrade to Spring 5 snapshots.
+* #363 - Distribution build fails on absent remote schema/documentation directories.
+* #362 - Upgrade to Reactor 3.1 M2.
+* #361 - Remove spring-cql from bill of materials.
+* #358 - Release 2.0 M4 (Kay).
+
+
 Changes in version 1.9.4.RELEASE (2017-06-08)
 ---------------------------------------------
 * #372 - Upgrade to latest bugfix dependencies.
