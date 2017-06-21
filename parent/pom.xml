@@ -97,6 +97,7 @@
 		<jodatime>2.9.9</jodatime>
 		<jsonpath>2.2.0</jsonpath>
 		<junit>4.12</junit>
+		<kotlin>1.1.2-5</kotlin>
 		<logback>1.2.2</logback>
 		<lombok>1.16.16</lombok>
 		<mockito>2.8.9</mockito>
@@ -111,8 +112,6 @@
 		<threetenbp>1.3.5</threetenbp>
 		<validation>1.1.0.Final</validation>
 		<webbeans>1.2.8</webbeans>
-
-		<kotlin>1.1.2-3</kotlin>
 
 		<releasetrain>Kay-BUILD-SNAPSHOT</releasetrain>
 
