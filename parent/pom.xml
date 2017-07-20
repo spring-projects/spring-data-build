@@ -541,7 +541,7 @@
 			<id>spring43</id>
 
 			<properties>
-				<spring>4.3.8.RELEASE</spring>
+				<spring>4.3.10.RELEASE</spring>
 			</properties>
 
 		</profile>
@@ -551,7 +551,7 @@
 			<id>spring43-next</id>
 
 			<properties>
-				<spring>4.3.9.BUILD-SNAPSHOT</spring>
+				<spring>4.3.11.BUILD-SNAPSHOT</spring>
 			</properties>
 
 			<repositories>
