@@ -1,6 +1,15 @@
 Spring Data Build - Changelog
 =============================
 
+Changes in version 1.9.5.RELEASE (2017-07-24)
+---------------------------------------------
+* #389 - Upgrade to Spring 4.3.10.
+* #381 - Upgrade build profile for Spring Framework 5 after RC2.
+* #377 - Upgrade to Jackson 2.8.9.
+* #374 - Downgrade to asciidoctor-maven-plugin 1.5.0-alpha.14.
+* #373 - Release 1.9.5 (Ingalls SR5).
+
+
 Changes in version 2.0.0.M4 (2017-06-14)
 ----------------------------------------
 * #380 - Dependency upgrades for Kay M4.
