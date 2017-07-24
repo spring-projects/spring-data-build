@@ -29,54 +29,54 @@
 			<dependency>
 				<groupId>org.springframework.data</groupId>
 				<artifactId>spring-data-cassandra</artifactId>
-				<version>1.5.5.RELEASE</version>
+				<version>1.5.6.BUILD-SNAPSHOT</version>
 			</dependency>
 
 			<!-- Spring Data Commons -->
 			<dependency>
 				<groupId>org.springframework.data</groupId>
 				<artifactId>spring-data-commons</artifactId>
-				<version>1.13.5.RELEASE</version>
+				<version>1.13.6.BUILD-SNAPSHOT</version>
 			</dependency>
 
 			<!-- Spring Data Couchbase -->
 			<dependency>
 				<groupId>org.springframework.data</groupId>
 				<artifactId>spring-data-couchbase</artifactId>
-				<version>2.2.5.RELEASE</version>
+				<version>2.2.6.BUILD-SNAPSHOT</version>
 			</dependency>
 
 			<!-- Spring Data Elasticsearch -->
 			<dependency>
 				<groupId>org.springframework.data</groupId>
 				<artifactId>spring-data-elasticsearch</artifactId>
-				<version>2.1.5.RELEASE</version>
+				<version>2.1.6.BUILD-SNAPSHOT</version>
 			</dependency>
 
 			<!-- Spring Data Gemfire -->
 			<dependency>
 				<groupId>org.springframework.data</groupId>
 				<artifactId>spring-data-gemfire</artifactId>
-				<version>1.9.5.RELEASE</version>
+				<version>1.9.6.BUILD-SNAPSHOT</version>
 			</dependency>
 
 			<!-- Spring Data JPA -->
 			<dependency>
 				<groupId>org.springframework.data</groupId>
 				<artifactId>spring-data-jpa</artifactId>
-				<version>1.11.5.RELEASE</version>
+				<version>1.11.6.BUILD-SNAPSHOT</version>
 			</dependency>
 
 			<!-- Spring Data MongoDB -->
 			<dependency>
 				<groupId>org.springframework.data</groupId>
 				<artifactId>spring-data-mongodb</artifactId>
-				<version>1.10.5.RELEASE</version>
+				<version>1.10.6.BUILD-SNAPSHOT</version>
 			</dependency>
 			<dependency>
 				<groupId>org.springframework.data</groupId>
 				<artifactId>spring-data-mongodb-cross-store</artifactId>
-				<version>1.10.5.RELEASE</version>
+				<version>1.10.6.BUILD-SNAPSHOT</version>
 			</dependency>
 			<dependency>
 				<groupId>org.springframework.data</groupId>
@@ -88,59 +88,59 @@
 			<dependency>
 				<groupId>org.springframework.data</groupId>
 				<artifactId>spring-data-neo4j</artifactId>
-				<version>4.2.5.RELEASE</version>
+				<version>4.2.6.BUILD-SNAPSHOT</version>
 			</dependency>
 
 			<!-- Spring Data Redis -->
 			<dependency>
 				<groupId>org.springframework.data</groupId>
 				<artifactId>spring-data-redis</artifactId>
-				<version>1.8.5.RELEASE</version>
+				<version>1.8.6.BUILD-SNAPSHOT</version>
 			</dependency>
 
 			<!-- Spring Data REST -->
 			<dependency>
 				<groupId>org.springframework.data</groupId>
 				<artifactId>spring-data-rest-webmvc</artifactId>
-				<version>2.6.5.RELEASE</version>
+				<version>2.6.6.BUILD-SNAPSHOT</version>
 			</dependency>
 			<dependency>
 				<groupId>org.springframework.data</groupId>
 				<artifactId>spring-data-rest-core</artifactId>
-				<version>2.6.5.RELEASE</version>
+				<version>2.6.6.BUILD-SNAPSHOT</version>
 			</dependency>
 			<dependency>
 				<groupId>org.springframework.data</groupId>
 				<artifactId>spring-data-rest-hal-browser</artifactId>
-				<version>2.6.5.RELEASE</version>
+				<version>2.6.6.BUILD-SNAPSHOT</version>
 			</dependency>
 
 			<!-- Spring Data Solr -->
 			<dependency>
 				<groupId>org.springframework.data</groupId>
 				<artifactId>spring-data-solr</artifactId>
-				<version>2.1.5.RELEASE</version>
+				<version>2.1.6.BUILD-SNAPSHOT</version>
 			</dependency>
 
 			<!-- Spring Data KeyValue -->
 			<dependency>
 				<groupId>org.springframework.data</groupId>
 				<artifactId>spring-data-keyvalue</artifactId>
-				<version>1.2.5.RELEASE</version>
+				<version>1.2.6.BUILD-SNAPSHOT</version>
 			</dependency>
 
 			<!-- Spring Data Envers -->
 			<dependency>
 				<groupId>org.springframework.data</groupId>
 				<artifactId>spring-data-envers</artifactId>
-				<version>1.1.5.RELEASE</version>
+				<version>1.1.6.BUILD-SNAPSHOT</version>
 			</dependency>
 
 			<!-- Spring Data LDAP -->
 			<dependency>
 				<groupId>org.springframework.data</groupId>
 				<artifactId>spring-data-ldap</artifactId>
-				<version>1.0.5.RELEASE</version>
+				<version>1.0.6.BUILD-SNAPSHOT</version>
 			</dependency>
 
 		</dependencies>
