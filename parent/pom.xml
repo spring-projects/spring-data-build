@@ -92,24 +92,24 @@
 		<commons-io>2.5</commons-io>
 		<guava>19.0</guava>
 		<hamcrest>1.3</hamcrest>
-		<jackson>2.9.0.pr3</jackson>
+		<jackson>2.9.0.pr4</jackson>
 		<jacoco>0.7.9</jacoco>
 		<jodatime>2.9.9</jodatime>
-		<jsonpath>2.2.0</jsonpath>
+		<jsonpath>2.4.0</jsonpath>
 		<junit>4.12</junit>
-		<kotlin>1.1.2-5</kotlin>
-		<logback>1.2.2</logback>
-		<lombok>1.16.16</lombok>
-		<mockito>2.8.9</mockito>
+		<kotlin>1.1.3-2</kotlin>
+		<logback>1.2.3</logback>
+		<lombok>1.16.18</lombok>
+		<mockito>2.8.47</mockito>
 		<querydsl>4.1.4</querydsl>
 		<reactor>Bismuth-M3</reactor>
 		<rxjava>1.3.0</rxjava>
 		<rxjava-reactive-streams>1.2.1</rxjava-reactive-streams>
-		<rxjava2>2.1.0</rxjava2>
+		<rxjava2>2.1.2</rxjava2>
 		<slf4j>1.7.25</slf4j>
-		<spring>5.0.0.BUILD-SNAPSHOT</spring>
+		<spring>5.0.0.RC3</spring>
 		<spring-hateoas>0.23.0.RELEASE</spring-hateoas>
-		<threetenbp>1.3.5</threetenbp>
+		<threetenbp>1.3.6</threetenbp>
 		<validation>1.1.0.Final</validation>
 		<webbeans>1.2.8</webbeans>
 
