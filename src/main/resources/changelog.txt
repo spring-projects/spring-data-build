@@ -1,6 +1,11 @@
 Spring Data Build - Changelog
 =============================
 
+Changes in version 2.0.0.RC2 (2017-07-25)
+-----------------------------------------
+* #394 - Release 2.0 RC2 (Kay).
+
+
 Changes in version 2.0.0.RC1 (2017-07-25)
 -----------------------------------------
 * #391 - Upgrade Artifactory Maven Plugin to 2.6.1.
