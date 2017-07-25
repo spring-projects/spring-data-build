@@ -1,6 +1,18 @@
 Spring Data Build - Changelog
 =============================
 
+Changes in version 2.0.0.RC1 (2017-07-25)
+-----------------------------------------
+* #391 - Upgrade Artifactory Maven Plugin to 2.6.1.
+* #390 - Downgrade RxJava2 dependency to 2.1.1 to align with Spring Framework 5.0 RC3.
+* #388 - Add Spring Data Geode to BOM.
+* #386 - Upgrade to Reactor 3.1.0 M3 (Bismuth-M3).
+* #385 - Upgrade to Spring 5 snapshots.
+* #384 - Remove spring-data-mongodb-log4j from bill of materials.
+* #383 - Release 2.0 RC1 (Kay).
+* #369 - Add Kotlin properties and plugins to parent/pom.xml.
+
+
 Changes in version 1.9.5.RELEASE (2017-07-24)
 ---------------------------------------------
 * #389 - Upgrade to Spring 4.3.10.
