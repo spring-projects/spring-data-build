@@ -60,13 +60,54 @@
 	</licenses>
 
 	<profiles>
+
+		<!-- Common release setup -->
+
 		<profile>
 			<id>release</id>
+			<build>
+				<plugins>
+
+					<!-- Make sure we build on Java 8 with only release dependencies -->
+
+					<plugin>
+						<groupId>org.apache.maven.plugins</groupId>
+						<artifactId>maven-enforcer-plugin</artifactId>
+						<executions>
+							<execution>
+								<id>enforce-release-rules</id>
+								<goals>
+									<goal>enforce</goal>
+								</goals>
+								<configuration>
+									<rules>
+										<requireJavaVersion>
+											<version>[1.8,1.9)</version>
+										</requireJavaVersion>
+										<requireReleaseDeps />
+										<requireReleaseVersion />
+									</rules>
+								</configuration>
+							</execution>
+						</executions>
+					</plugin>
+
+				</plugins>
+			</build>
+		</profile>
+
+		<!-- Build profile for the build run deploying to Artifactory -->
+
+		<profile>
+			<id>artifactory</id>
 
 			<build>
 
 				<pluginManagement>
 					<plugins>
+
+						<!-- Deploy to Artifactory -->
+
 						<plugin>
 							<groupId>org.jfrog.buildinfo</groupId>
 							<artifactId>artifactory-maven-plugin</artifactId>
