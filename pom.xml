@@ -154,12 +154,16 @@
 			</build>
 		</profile>
 
+		<!-- Build profile for the build run to deploy to Maven Central -->
+
 		<profile>
 			<id>central</id>
 			<build>
 				<pluginManagement>
-
 					<plugins>
+
+						<!-- Sign JARs -->
+
 						<plugin>
 							<groupId>org.apache.maven.plugins</groupId>
 							<artifactId>maven-gpg-plugin</artifactId>
@@ -175,6 +179,8 @@
 							</executions>
 						</plugin>
 
+						<!-- Deploy to Sonatype OSS Nexus -->
+
 						<plugin>
 							<groupId>org.sonatype.plugins</groupId>
 							<artifactId>nexus-staging-maven-plugin</artifactId>
@@ -189,6 +195,7 @@
 					</plugins>
 
 				</pluginManagement>
+
 				<plugins>
 
 					<plugin>
