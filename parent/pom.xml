@@ -568,8 +568,8 @@
 			<id>spring5</id>
 
 			<properties>
-				<spring>5.0.0.RC2</spring>
-				<jackson>2.9.0.pr3</jackson>
+				<spring>5.0.0.RC4</spring>
+				<jackson>2.9.1</jackson>
 			</properties>
 
 			<repositories>
