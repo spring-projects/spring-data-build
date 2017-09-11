@@ -1,6 +1,14 @@
 Spring Data Build - Changelog
 =============================
 
+Changes in version 1.9.7.RELEASE (2017-09-11)
+---------------------------------------------
+* #408 - Upgrade to Spring 4.3.11.
+* #404 - Upgrade to new Spring Asciidoctor CSS.
+* #402 - Upgrade to Jackson 2.8.10.
+* #400 - Release 1.9.7 (Ingalls SR7).
+
+
 Changes in version 1.9.6.RELEASE (2017-07-26)
 ---------------------------------------------
 * #398 - Fix BOM for Ingalls SR5.
