@@ -581,16 +581,9 @@
 			<id>spring5</id>
 
 			<properties>
-				<spring>5.0.0.RC4</spring>
+				<spring>5.0.0.RELEASE</spring>
 				<jackson>2.9.1</jackson>
 			</properties>
-
-			<repositories>
-				<repository>
-					<id>spring-libs-milestone</id>
-					<url>http://repo.spring.io/libs-milestone</url>
-				</repository>
-			</repositories>
 
 		</profile>
 
@@ -599,7 +592,7 @@
 			<id>spring5-next</id>
 
 			<properties>
-				<spring>5.0.0.BUILD-SNAPSHOT</spring>
+				<spring>5.0.1.BUILD-SNAPSHOT</spring>
 				<jackson>2.9.1</jackson>
 			</properties>
 
