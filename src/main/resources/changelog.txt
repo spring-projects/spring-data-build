@@ -1,6 +1,16 @@
 Spring Data Build - Changelog
 =============================
 
+Changes in version 2.0.1.RELEASE (2017-10-27)
+---------------------------------------------
+* #446 - Upgrade to Kotlin 1.1.51.
+* #443 - Upgrade to Project Reactor Bismuth-SR3.
+* #441 - Upgrade to Spring Framework 5.0.1.
+* #439 - Upgrade to AspectJ 1.8.12.
+* #432 - Upgrade to RxJava 2.1.5.
+* #428 - Release 2.0.1 (Kay SR1).
+
+
 Changes in version 1.9.8.RELEASE (2017-10-11)
 ---------------------------------------------
 * #434 - Upgrade to Spring Framework 4.3.12.
