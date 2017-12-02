@@ -886,9 +886,9 @@
 					<docfilessubdirs>true</docfilessubdirs>
 					<additionalparam>-Xdoclint:none</additionalparam>
 					<links>
-						<link>http://docs.spring.io/spring/docs/4.3.x/javadoc-api/</link>
-						<link>http://docs.spring.io/spring-data/commons/docs/current/api/</link>
-						<link>http://docs.oracle.com/javase/6/docs/api</link>
+						<link>https://docs.spring.io/spring/docs/4.3.x/javadoc-api/</link>
+						<link>https://docs.spring.io/spring-data/commons/docs/current/api/</link>
+						<link>https://docs.oracle.com/javase/6/docs/api/</link>
 					</links>
 				</configuration>
 			</plugin>
