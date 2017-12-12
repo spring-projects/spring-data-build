@@ -881,6 +881,24 @@
 			</plugin>
 
 			<plugin>
+				<groupId>org.projectlombok</groupId>
+				<artifactId>lombok-maven-plugin</artifactId>
+				<version>${lombok}.0</version>
+				<configuration>
+					<addOutputDirectory>false</addOutputDirectory>
+					<sourceDirectory>${project.basedir}/src/main/java</sourceDirectory>
+				</configuration>
+				<executions>
+					<execution>
+						<phase>generate-sources</phase>
+						<goals>
+							<goal>delombok</goal>
+						</goals>
+					</execution>
+				</executions>
+			</plugin>
+
+			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-javadoc-plugin</artifactId>
 				<configuration>
@@ -894,6 +912,7 @@
 					<!-- copies doc-files subdirectory which contains image resources -->
 					<docfilessubdirs>true</docfilessubdirs>
 					<additionalparam>-Xdoclint:none</additionalparam>
+					<sourcepath>target/generated-sources/delombok</sourcepath>
 					<links>
 						<link>https://docs.spring.io/spring/docs/5.0.x/javadoc-api/</link>
 						<link>https://docs.spring.io/spring-data/commons/docs/current/api/</link>
