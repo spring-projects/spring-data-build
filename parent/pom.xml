@@ -132,6 +132,21 @@
 			<build>
 				<plugins>
 
+					<!-- Delombok sources so that generated code shows up in JavaDoc -->
+
+					<plugin>
+						<groupId>org.projectlombok</groupId>
+						<artifactId>lombok-maven-plugin</artifactId>
+						<executions>
+							<execution>
+								<phase>generate-sources</phase>
+								<goals>
+									<goal>delombok</goal>
+								</goals>
+							</execution>
+						</executions>
+					</plugin>
+
 					<plugin>
 						<groupId>org.apache.maven.plugins</groupId>
 						<artifactId>maven-javadoc-plugin</artifactId>
@@ -275,6 +290,21 @@
 					<!--
 						Configures JavaDoc generation.
 					-->
+
+					<!-- Delombok sources so that generated code shows up in JavaDoc -->
+
+					<plugin>
+						<groupId>org.projectlombok</groupId>
+						<artifactId>lombok-maven-plugin</artifactId>
+						<executions>
+							<execution>
+								<phase>generate-sources</phase>
+								<goals>
+									<goal>delombok</goal>
+								</goals>
+							</execution>
+						</executions>
+					</plugin>
 
 					<plugin>
 						<groupId>org.apache.maven.plugins</groupId>
@@ -761,6 +791,12 @@
 					<version>1.4.1</version>
 				</plugin>
 
+				<plugin>
+					<groupId>org.projectlombok</groupId>
+					<artifactId>lombok-maven-plugin</artifactId>
+					<version>1.16.18.1</version>
+				</plugin>
+
 			</plugins>
 
 		</pluginManagement>
@@ -883,19 +919,10 @@
 			<plugin>
 				<groupId>org.projectlombok</groupId>
 				<artifactId>lombok-maven-plugin</artifactId>
-				<version>${lombok}.0</version>
 				<configuration>
 					<addOutputDirectory>false</addOutputDirectory>
 					<sourceDirectory>${project.basedir}/src/main/java</sourceDirectory>
 				</configuration>
-				<executions>
-					<execution>
-						<phase>generate-sources</phase>
-						<goals>
-							<goal>delombok</goal>
-						</goals>
-					</execution>
-				</executions>
 			</plugin>
 
 			<plugin>
