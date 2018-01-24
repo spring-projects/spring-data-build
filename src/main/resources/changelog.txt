@@ -1,6 +1,18 @@
 Spring Data Build - Changelog
 =============================
 
+Changes in version 1.9.10.RELEASE (2018-01-24)
+----------------------------------------------
+* #492 - Upgrade Spring 5 build profiles after Spring Framework 5.0.3 release.
+* #490 - Upgrade to Spring Framework 4.3.14.
+* #489 - Upgrade to Lombok 1.16.20.
+* #488 - Remove delombok and JavaDoc generation from default build (and into dedicated profiles).
+* #484 - Upgrade build profiles that check for forward compatibility.
+* #483 - Upgrade to JaCoCo 0.8.0.
+* #470 - Update Javadoc package list links to HTTPS.
+* #466 - Release 1.9.10 (Ingalls SR10).
+
+
 Changes in version 2.0.2.RELEASE (2017-11-27)
 ---------------------------------------------
 * #463 - Upgrade to RxJava 2.1.7.
