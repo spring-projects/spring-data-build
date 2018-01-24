@@ -1,6 +1,20 @@
 Spring Data Build - Changelog
 =============================
 
+Changes in version 2.0.3.RELEASE (2018-01-24)
+---------------------------------------------
+* #496 - Upgrade to RxJava2 2.1.8.
+* #494 - Upgrade to Reactor Bismuth SR5.
+* #491 - Upgrade to Spring Framework 5.0.3.
+* #487 - Upgrade to Lombok 1.16.20.
+* #486 - Remove delombok and JavaDoc generation from default build (and into dedicated profiles).
+* #482 - Upgrade to JaCoCo 0.8.0.
+* #480 - Upgrade to Jackson 2.9.3.
+* #479 - Upgrade to AssertJ 3.9.0.
+* #472 - Update Javadoc package list links to HTTPS.
+* #467 - Release 2.0.3 (Kay SR3).
+
+
 Changes in version 1.9.10.RELEASE (2018-01-24)
 ----------------------------------------------
 * #492 - Upgrade Spring 5 build profiles after Spring Framework 5.0.3 release.
