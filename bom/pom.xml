@@ -62,6 +62,13 @@
 				<version>2.1.0.BUILD-SNAPSHOT</version>
 			</dependency>
 
+			<!-- Spring Data JDBC -->
+			<dependency>
+				<groupId>org.springframework.data</groupId>
+				<artifactId>spring-data-jdbc</artifactId>
+				<version>1.0.0.BUILD-SNAPSHOT</version>
+			</dependency>
+
 			<!-- Spring Data JPA -->
 			<dependency>
 				<groupId>org.springframework.data</groupId>
