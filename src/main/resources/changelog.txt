@@ -1,6 +1,18 @@
 Spring Data Build - Changelog
 =============================
 
+Changes in version 2.0.4.RELEASE (2018-02-19)
+---------------------------------------------
+* #515 - Upgrade to Spring Framework 5.0.4.
+* #514 - Upgrade to RxJava 1.3.6.
+* #511 - Upgrade to Reactor Bismuth SR6.
+* #510 - Add plugin management for maven-failsafe-plugin.
+* #506 - Upgrade to RxJava 2.1.9.
+* #504 - Upgrade to RxJava 1.3.5.
+* #502 - Upgrade to Jackson 2.9.4.
+* #499 - Release 2.0.4 (Kay SR4).
+
+
 Changes in version 2.1.0.M1 (2018-02-06)
 ----------------------------------------
 * #507 - Upgrade to Kotlin 1.2.21.
