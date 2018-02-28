@@ -1,6 +1,13 @@
 Spring Data Build - Changelog
 =============================
 
+Changes in version 2.0.5.RELEASE (2018-02-28)
+---------------------------------------------
+* #521 - Upgrade to Reactor Bismuth SR7.
+* #518 - Upgrade to RxJava 2.1.10.
+* #517 - Release 2.0.5 (Kay SR5).
+
+
 Changes in version 2.0.4.RELEASE (2018-02-19)
 ---------------------------------------------
 * #515 - Upgrade to Spring Framework 5.0.4.
