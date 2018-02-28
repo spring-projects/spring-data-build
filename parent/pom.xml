@@ -114,7 +114,7 @@
 		<webbeans>2.0.2</webbeans>
 		<javax-annotation-api>1.3</javax-annotation-api>
 
-		<releasetrain>Kay-SR5</releasetrain>
+		<releasetrain>Kay-BUILD-SNAPSHOT</releasetrain>
 
 		<!-- To be overridden by individual modules -->
 		<java-module-name/>
