@@ -97,7 +97,7 @@
 		<jodatime>2.9.9</jodatime>
 		<jsonpath>2.4.0</jsonpath>
 		<junit>4.12</junit>
-		<kotlin>1.2.21</kotlin>
+		<kotlin>1.2.30</kotlin>
 		<logback>1.2.3</logback>
 		<lombok>1.16.20</lombok>
 		<mockito>2.8.47</mockito>
