@@ -96,6 +96,13 @@
 			</build>
 		</profile>
 
+		<profile>
+			<id>bom-verify</id>
+			<modules>
+				<module>bom-client</module>
+			</modules>
+		</profile>
+
 		<!-- Build profile for the build run deploying to Artifactory -->
 
 		<profile>
