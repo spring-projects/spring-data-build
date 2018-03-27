@@ -605,7 +605,7 @@
 		<profile>
 			<id>spring5-next</id>
 			<properties>
-				<spring>5.0.4.BUILD-SNAPSHOT</spring>
+				<spring>5.0.5.BUILD-SNAPSHOT</spring>
 			</properties>
 			<repositories>
 				<repository>
