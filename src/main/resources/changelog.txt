@@ -1,6 +1,16 @@
 Spring Data Build - Changelog
 =============================
 
+Changes in version 1.9.11.RELEASE (2018-04-04)
+----------------------------------------------
+* #542 - Move to Jackson BOM for dependency management.
+* #539 - Upgrade to Jackson 2.8.11.1.
+* #538 - Upgrade to Spring Framework 4.3.15.
+* #530 - Add BOM client to verify dependency availability.
+* #529 - JavaDoc generation for multi-module projects broken because of delombok.
+* #498 - Release 1.9.11 (Ingalls SR11).
+
+
 Changes in version 2.0.5.RELEASE (2018-02-28)
 ---------------------------------------------
 * #521 - Upgrade to Reactor Bismuth SR7.
