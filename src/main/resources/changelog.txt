@@ -1,6 +1,16 @@
 Spring Data Build - Changelog
 =============================
 
+Changes in version 2.0.6.RELEASE (2018-04-04)
+---------------------------------------------
+* #541 - Move to Jackson BOM for dependency management.
+* #537 - Upgrade to Spring Framework 5.0.5.
+* #535 - Upgrade to RxJava 2.1.12.
+* #531 - Add BOM client to verify dependency availability.
+* #528 - JavaDoc generation for multi-module projects broken because of delombok.
+* #522 - Release 2.0.6 (Kay SR6).
+
+
 Changes in version 1.9.11.RELEASE (2018-04-04)
 ----------------------------------------------
 * #542 - Move to Jackson BOM for dependency management.
