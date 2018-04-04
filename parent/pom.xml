@@ -114,7 +114,7 @@
 		<webbeans>2.0.2</webbeans>
 		<javax-annotation-api>1.3</javax-annotation-api>
 
-		<releasetrain>Kay-BUILD-SNAPSHOT</releasetrain>
+		<releasetrain>Kay-SR6</releasetrain>
 
 		<!-- To be overridden by individual modules -->
 		<java-module-name/>
@@ -252,7 +252,7 @@
 				<dependency>
 					<groupId>org.springframework.data.build</groupId>
 					<artifactId>spring-data-build-resources</artifactId>
-					<version>2.0.6.BUILD-SNAPSHOT</version>
+					<version>2.0.6.RELEASE</version>
 					<scope>provided</scope>
 					<type>zip</type>
 				</dependency>
