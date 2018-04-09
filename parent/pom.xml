@@ -341,12 +341,12 @@
 								<phase>generate-resources</phase>
 								<configuration>
 									<target>
-										<copy todir="${project.root}/target/site/reference/html">
+<!--										<copy todir="${project.root}/target/site/reference/html">
 											<fileset dir="${shared.resources}/asciidoc" erroronmissingdir="false">
 												<include name="**/*.css"/>
 											</fileset>
 											<flattenmapper/>
-										</copy>
+										</copy> -->
 										<copy todir="${project.root}/target/site/reference/html/images">
 											<fileset dir="${basedir}/src/main/asciidoc" erroronmissingdir="false">
 												<include name="**/*.png"/>
@@ -385,8 +385,27 @@
 								<phase>package</phase>
 								<configuration>
 									<target>
+
+										<!-- Copy files for the single-file HTML version -->
+										<copy failonerror="false" file="${project.build.directory}/generated-docs/index.html" tofile="${project.root}/target/site/reference/html/${dist.id}-reference.html"/>
+										<copy failonerror="false" todir="${project.root}/target/site/reference/html/images">
+											<fileset dir="${project.build.directory}/generated-docs/images">
+												<include name="*.*"/>
+											</fileset>
+										</copy>
+										<copy failonerror="false" todir="${project.root}/target/site/reference/html/tocbot-3.0.2">
+											<fileset dir="${project.build.directory}/generated-docs/tocbot-3.0.2">
+												<include name="*.*"/>
+											</fileset>
+										</copy>
+										<copy failonerror="false" file="${project.build.directory}/generated-docs/stylesheets/spring.css" tofile="${project.root}/target/site/reference/html/stylesheets/spring.css"/>
+
+										<!-- Copy and rename the Epub file -->
 										<copy failonerror="false" file="${project.build.directory}/generated-docs/index.pdf" tofile="${project.root}/target/site/reference/pdf/${dist.id}-reference.pdf"/>
+
+										<!-- Copy and rename the PDF file -->
 										<copy failonerror="false" file="${project.build.directory}/generated-docs/index.epub" tofile="${project.root}/target/site/reference/epub/${dist.id}-reference.epub"/>
+
 									</target>
 								</configuration>
 								<goals>
@@ -431,20 +450,24 @@
 										<goal>process-asciidoc</goal>
 									</goals>
 									<configuration>
+										<sourceDirectory>${project.root}/src/main/asciidoc</sourceDirectory>
 										<backend>html5</backend>
-										<outputDirectory>${project.root}/target/site/reference/html</outputDirectory>
+										<outputDirectory>${project.build.directory}/generated-docs</outputDirectory>
 										<sectids>false</sectids>
 										<sourceHighlighter>prettify</sourceHighlighter>
 										<attributes>
 											<linkcss>true</linkcss>
 											<icons>font</icons>
 											<sectanchors>true</sectanchors>
+											<stylesdir>./stylesheets</stylesdir>
 											<stylesheet>spring.css</stylesheet>
+											<docinfo>shared</docinfo>
+											<toc>left</toc>
 										</attributes>
 									</configuration>
 								</execution>
 
-<!--
+
 								<execution>
 									<id>epub</id>
 									<phase>prepare-package</phase>
@@ -452,7 +475,11 @@
 										<goal>process-asciidoc</goal>
 									</goals>
 									<configuration>
+										<sourceDirectory>${project.root}/src/main/asciidoc</sourceDirectory>
+										<sourceDocumentName>index.adoc</sourceDocumentName>
 										<backend>epub3</backend>
+										<outputDirectory>${project.build.directory}/generated-docs</outputDirectory>
+										<sectids>false</sectids>
 										<sourceHighlighter>coderay</sourceHighlighter>
 									</configuration>
 								</execution>
@@ -464,16 +491,18 @@
 										<goal>process-asciidoc</goal>
 									</goals>
 									<configuration>
+										<sourceDirectory>${project.root}/src/main/asciidoc</sourceDirectory>
+										<sourceDocumentName>index.adoc</sourceDocumentName>
 										<backend>pdf</backend>
+										<outputDirectory>${project.build.directory}/generated-docs</outputDirectory>
+										<sectids>false</sectids>
 										<sourceHighlighter>coderay</sourceHighlighter>
 									</configuration>
-								</execution>-->
+								</execution>
 
 							</executions>
 
 							<configuration>
-								<sourceDirectory>${project.root}/src/main/asciidoc</sourceDirectory>
-								<sourceDocumentName>index.adoc</sourceDocumentName>
 								<doctype>book</doctype>
 								<attributes>
 									<version>${project.version}</version>
@@ -484,7 +513,7 @@
 									<springVersion>${spring}</springVersion>
 									<releasetrainVersion>${releasetrain}</releasetrainVersion>
 									<allow-uri-read>true</allow-uri-read>
-									<toclevels>3</toclevels>
+									<toclevels>4</toclevels>
 									<numbered>true</numbered>
 								</attributes>
 							</configuration>
