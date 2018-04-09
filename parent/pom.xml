@@ -341,12 +341,6 @@
 								<phase>generate-resources</phase>
 								<configuration>
 									<target>
-<!--										<copy todir="${project.root}/target/site/reference/html">
-											<fileset dir="${shared.resources}/asciidoc" erroronmissingdir="false">
-												<include name="**/*.css"/>
-											</fileset>
-											<flattenmapper/>
-										</copy> -->
 										<copy todir="${project.root}/target/site/reference/html/images">
 											<fileset dir="${basedir}/src/main/asciidoc" erroronmissingdir="false">
 												<include name="**/*.png"/>
