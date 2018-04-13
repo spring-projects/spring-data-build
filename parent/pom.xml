@@ -100,7 +100,7 @@
 		<kotlin>1.2.31</kotlin>
 		<logback>1.2.3</logback>
 		<lombok>1.16.20</lombok>
-		<mockito>2.8.47</mockito>
+		<mockito>2.17.0</mockito>
 		<querydsl>4.1.4</querydsl>
 		<reactor>Bismuth-SR7</reactor>
 		<rxjava>1.3.6</rxjava>
