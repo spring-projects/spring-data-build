@@ -244,11 +244,19 @@
 
 			<properties>
 				<shared.resources>${project.build.directory}/shared-resources</shared.resources>
+				<doc.resources>${project.build.directory}/doc-resources</doc.resources>
 				<maven.install.skip>true</maven.install.skip>
 				<skipTests>true</skipTests>
 			</properties>
 
 			<dependencies>
+				<dependency>
+					<groupId>org.springframework.doc-resources</groupId>
+					<artifactId>spring-doc-resources</artifactId>
+					<version>0.1.1-SNAPSHOT</version>
+					<scope>provided</scope>
+					<type>zip</type>
+				</dependency>
 				<dependency>
 					<groupId>org.springframework.data.build</groupId>
 					<artifactId>spring-data-build-resources</artifactId>
@@ -284,6 +292,31 @@
 							<includeTypes>zip</includeTypes>
 							<excludeTransitive>true</excludeTransitive>
 							<outputDirectory>${shared.resources}</outputDirectory>
+						</configuration>
+					</plugin>
+
+					<!--
+						Unpacks the content of spring-doc-resources into the doc resources folder.
+					-->
+
+					<plugin>
+						<groupId>org.apache.maven.plugins</groupId>
+						<artifactId>maven-dependency-plugin</artifactId>
+						<executions>
+							<execution>
+								<id>unpack-shared-resources</id>
+								<goals>
+									<goal>unpack-dependencies</goal>
+								</goals>
+								<phase>initialize</phase>
+							</execution>
+						</executions>
+						<configuration>
+							<includeGroupIds>org.springframework.doc-resources</includeGroupIds>
+							<includeArtifactIds>spring-doc-resources</includeArtifactIds>
+							<includeTypes>zip</includeTypes>
+							<excludeTransitive>true</excludeTransitive>
+							<outputDirectory>${doc.resources}</outputDirectory>
 						</configuration>
 					</plugin>
 
@@ -375,6 +408,36 @@
 							</execution>
 
 							<execution>
+								<id>create-docs-working-directory</id>
+								<phase>initialize</phase>
+								<configuration>
+									<target>
+										<copy failonerror="false" file="${project.build.directory}/doc-resources/stylesheets/spring.css" tofile="${project.build.directory}/working/stylesheets/spring.css"/>
+										<copy failonerror="false" file="${project.build.directory}/doc-resources/html/docinfo.html" tofile="${project.build.directory}/working/docinfo.html"/>
+										<copy failonerror="false" file="${project.build.directory}/doc-resources/html/docinfo-footer.html" tofile="${project.build.directory}/working/docinfo-footer.html"/>
+										<copy failonerror="false" todir="${project.build.directory}/working/tocbot-3.0.2">
+											<fileset dir="${project.build.directory}/doc-resources/javascript/tocbot-3.0.2">
+												<include name="*.*"/>
+											</fileset>
+										</copy>
+										<copy failonerror="false" todir="${project.build.directory}/working">
+											<fileset dir="${project.root}/src/main/asciidoc">
+												<include name="**/*.adoc"/>
+											</fileset>
+										</copy>
+										<copy failonerror="false" todir="${project.build.directory}/working/images">
+											<fileset dir="${project.root}/src/main/asciidoc/images">
+												<include name="*.*"/>
+											</fileset>
+										</copy>
+									</target>
+								</configuration>
+								<goals>
+									<goal>run</goal>
+								</goals>
+							</execution>
+
+							<execution>
 								<id>rename-reference-docs</id>
 								<phase>package</phase>
 								<configuration>
@@ -444,7 +507,7 @@
 										<goal>process-asciidoc</goal>
 									</goals>
 									<configuration>
-										<sourceDirectory>${project.root}/src/main/asciidoc</sourceDirectory>
+										<sourceDirectory>${project.build.directory}/working</sourceDirectory>
 										<backend>html5</backend>
 										<outputDirectory>${project.build.directory}/generated-docs</outputDirectory>
 										<sectids>false</sectids>
@@ -469,7 +532,7 @@
 										<goal>process-asciidoc</goal>
 									</goals>
 									<configuration>
-										<sourceDirectory>${project.root}/src/main/asciidoc</sourceDirectory>
+										<sourceDirectory>${project.build.directory}/working</sourceDirectory>
 										<sourceDocumentName>index.adoc</sourceDocumentName>
 										<backend>epub3</backend>
 										<outputDirectory>${project.build.directory}/generated-docs</outputDirectory>
@@ -485,7 +548,7 @@
 										<goal>process-asciidoc</goal>
 									</goals>
 									<configuration>
-										<sourceDirectory>${project.root}/src/main/asciidoc</sourceDirectory>
+										<sourceDirectory>${project.build.directory}/working</sourceDirectory>
 										<sourceDocumentName>index.adoc</sourceDocumentName>
 										<backend>pdf</backend>
 										<outputDirectory>${project.build.directory}/generated-docs</outputDirectory>
