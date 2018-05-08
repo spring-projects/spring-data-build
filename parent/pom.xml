@@ -618,7 +618,7 @@
 			<id>spring5</id>
 
 			<properties>
-				<spring>5.0.5.RELEASE</spring>
+				<spring>5.0.6.RELEASE</spring>
 				<jackson>2.9.5</jackson>
 			</properties>
 
@@ -629,7 +629,7 @@
 			<id>spring5-next</id>
 
 			<properties>
-				<spring>5.0.6.BUILD-SNAPSHOT</spring>
+				<spring>5.0.7.BUILD-SNAPSHOT</spring>
 				<jackson>2.9.5</jackson>
 			</properties>
 
