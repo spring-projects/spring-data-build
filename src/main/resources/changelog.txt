@@ -1,6 +1,17 @@
 Spring Data Build - Changelog
 =============================
 
+Changes in version 2.0.7.RELEASE (2018-05-08)
+---------------------------------------------
+* #562 - Upgrade to Reactor Bismuth-SR9.
+* #558 - Upgrade to Jackson 2.9.5.
+* #557 - Upgrade to RxJava 1.3.8.
+* #556 - Upgrade to OpenWebBeans 2.0.5.
+* #555 - Upgrade to RxJava 2.1.13.
+* #553 - Upgrade to Spring Framework 5.0.6.
+* #544 - Release 2.0.7 (Kay SR7).
+
+
 Changes in version 1.9.12.RELEASE (2018-05-08)
 ----------------------------------------------
 * #561 - Upgrade to Jackson BOM 2.8.11.20180405.
