@@ -1,6 +1,13 @@
 Spring Data Build - Changelog
 =============================
 
+Changes in version 1.9.12.RELEASE (2018-05-08)
+----------------------------------------------
+* #561 - Upgrade to Jackson BOM 2.8.11.20180405.
+* #552 - Upgrade to Spring Framework 4.3.17.
+* #543 - Release 1.9.12 (Ingalls SR12).
+
+
 Changes in version 2.1.0.M2 (2018-04-13)
 ----------------------------------------
 * #549 - Upgrade to RxJava 1.3.8.
