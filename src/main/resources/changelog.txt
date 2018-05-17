@@ -1,6 +1,15 @@
 Spring Data Build - Changelog
 =============================
 
+Changes in version 2.1.0.M3 (2018-05-17)
+----------------------------------------
+* #563 - Upgrade to Reactor Bismuth-SR9.
+* #560 - Upgrade to OpenWebBeans 2.0.5.
+* #559 - Upgrade to Jackson 2.9.5.
+* #554 - Upgrade to Spring Framework 5.0.6.
+* #551 - Release 2.1 M3 (Lovelace).
+
+
 Changes in version 2.0.7.RELEASE (2018-05-08)
 ---------------------------------------------
 * #562 - Upgrade to Reactor Bismuth-SR9.
