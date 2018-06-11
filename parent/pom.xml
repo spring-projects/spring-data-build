@@ -102,7 +102,7 @@
 		<lombok>1.16.20</lombok>
 		<mockito>2.8.47</mockito>
 		<querydsl>4.1.4</querydsl>
-		<reactor>Bismuth-SR9</reactor>
+		<reactor>Bismuth-SR10</reactor>
 		<rxjava>1.3.8</rxjava>
 		<rxjava-reactive-streams>1.2.1</rxjava-reactive-streams>
 		<rxjava2>2.1.13</rxjava2>
