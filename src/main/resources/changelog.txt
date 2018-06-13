@@ -1,6 +1,17 @@
 Spring Data Build - Changelog
 =============================
 
+Changes in version 2.0.8.RELEASE (2018-06-13)
+---------------------------------------------
+* #581 - Upgrade to Jackson 2.9.6.
+* #579 - Upgrade to AspectJ 1.8.13.
+* #578 - Upgrade to Lombok 1.16.22.
+* #575 - Upgrade to Spring Framework 5.0.7.
+* #572 - Upgrade to RxJava 2.1.14.
+* #570 - Upgrade to Reactor Bismuth SR10.
+* #565 - Release 2.0.8 (Kay SR8).
+
+
 Changes in version 1.9.13.RELEASE (2018-06-13)
 ----------------------------------------------
 * #577 - Upgrade to Lombok 1.16.22.
