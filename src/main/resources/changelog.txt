@@ -1,6 +1,14 @@
 Spring Data Build - Changelog
 =============================
 
+Changes in version 1.9.13.RELEASE (2018-06-13)
+----------------------------------------------
+* #577 - Upgrade to Lombok 1.16.22.
+* #574 - Upgrade to Spring Framework 4.3.18.
+* #569 - Upgrade to Jackson BOM 2.8.11.20180608.
+* #564 - Release 1.9.13 (Ingalls SR13).
+
+
 Changes in version 2.1.0.M3 (2018-05-17)
 ----------------------------------------
 * #563 - Upgrade to Reactor Bismuth-SR9.
