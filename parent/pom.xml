@@ -99,7 +99,7 @@
 		<junit>4.12</junit>
 		<kotlin>1.2.31</kotlin>
 		<logback>1.2.3</logback>
-		<lombok>1.16.20</lombok>
+		<lombok>1.18.0</lombok>
 		<mockito>2.17.0</mockito>
 		<querydsl>4.2.1</querydsl>
 		<reactor>Bismuth-SR10</reactor>
@@ -827,7 +827,7 @@
 				<plugin>
 					<groupId>org.projectlombok</groupId>
 					<artifactId>lombok-maven-plugin</artifactId>
-					<version>1.16.18.1</version>
+					<version>1.18.0.0</version>
 				</plugin>
 
 			</plugins>
