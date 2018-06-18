@@ -25,12 +25,21 @@ public void yourTestMethod() { … }
 ----
 
 * Make sure you added yourself as author in the headers of the classes you touched. Amend the date range in the Apache license header if needed. For new types, add the license header (copy from another file and set the current year only).
-* The commit message should follow the following style:
-** First line starts with the ticket id.
-** Separate ticket id and summary with a dash.
-** Finish summary with a dot.
-** In the description, don't use single line breaks. No manual wrapping. Separate paragraphs by a blank line.
-** Add related references at the very bottom (also see the section on pull requests below).
+* Make sure you follow the <<commit-messages>> guidelines.
+* Make sure you provide your full name and an email address registered with your GitHub account.
+If you're a first-time submitter, make sure you have signed the https://cla.pivotal.io/sign/spring[Contributor License Agreement].
+
+[[commit-messages]]
+== Commit messages
+
+The commit message should follow the following style:
+* First line starts with the ticket id.
+* Separate ticket id and summary with a dash.
+* Start summary with a capital letter.
+* Finish summary with a dot.
+* In the description, don't use single line breaks. No manual wrapping. Separate paragraphs by a blank line.
+* During merges, add a reference to the original pull request.
+* Add related references at the very bottom (also see the section on pull requests below).
 
 [source]
 ----
@@ -38,11 +47,9 @@ DATA…-??? - Summary of the commit (try to stay under 80 characters).
 
 Additional explanations if necessary.
 
-See also: DATA…-???. (optionally refer to related tickets)
+Original pull reuqest: #??.
+Related tickets: DATA…-???. (optionally refer to related tickets)
 ----
-
-* Make sure you provide your full name and an email address registered with your GitHub account.
-If you're a first-time submitter, make sure you have signed the https://cla.pivotal.io/sign/spring[Contributor License Agreement].
 
 [[advanced]]
 == Advanced
