@@ -996,7 +996,9 @@
 					<stylesheetfile>${shared.resources}/javadoc/spring-javadoc.css</stylesheetfile>
 					<!-- copies doc-files subdirectory which contains image resources -->
 					<docfilessubdirs>true</docfilessubdirs>
-					<additionalJOptions>-Xdoclint:none</additionalJOptions>
+					<additionalJOptions>
+						<additionalJOption>-Xdoclint:none</additionalJOption>
+					</additionalJOptions>
 					<sourcepath>target/generated-sources/delombok</sourcepath>
 					<links>
 						<link>https://docs.spring.io/spring/docs/5.0.x/javadoc-api/</link>
