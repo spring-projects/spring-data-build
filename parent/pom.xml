@@ -943,7 +943,9 @@
 					<stylesheetfile>${shared.resources}/javadoc/spring-javadoc.css</stylesheetfile>
 					<!-- copies doc-files subdirectory which contains image resources -->
 					<docfilessubdirs>true</docfilessubdirs>
-					<additionalJOptions>-Xdoclint:none</additionalJOptions>
+					<additionalJOptions>
+						<additionalJOption>-Xdoclint:none</additionalJOption>
+					</additionalJOptions>
 					<links>
 						<link>https://docs.spring.io/spring/docs/4.3.x/javadoc-api/</link>
 						<link>https://docs.spring.io/spring-data/commons/docs/current/api/</link>
