@@ -111,7 +111,7 @@
 		<spring-hateoas>0.23.0.RELEASE</spring-hateoas>
 		<threetenbp>1.3.6</threetenbp>
 		<validation>1.1.0.Final</validation>
-		<webbeans>2.0.5</webbeans>
+		<webbeans>2.0.6</webbeans>
 		<javax-annotation-api>1.3</javax-annotation-api>
 
 		<releasetrain>Kay-BUILD-SNAPSHOT</releasetrain>
