@@ -1,6 +1,19 @@
 Spring Data Build - Changelog
 =============================
 
+Changes in version 2.0.9.RELEASE (2018-07-26)
+---------------------------------------------
+* #607 - Upgrade to Spring HATEOAS 0.25.
+* #606 - Upgrade to AssertJ 3.9.1.
+* #604 - Upgrade to OpenWebBeans 2.0.6.
+* #600 - Upgrade to RxJava 2.1.17.
+* #597 - Upgrade to Spring Framework 5.0.8.
+* #595 - Add Enforcer Plugin rule to require Maven in version >= 3.5.0.
+* #592 - Javadoc plugin configuration not working on older Maven versions (e.g. 3.0.3).
+* #589 - Make sure Kotlin extension code is packaged into source JAR.
+* #583 - Release 2.0.9 (Kay SR9).
+
+
 Changes in version 2.1.0.RC1 (2018-07-26)
 -----------------------------------------
 * #608 - Upgrade to Spring HATEOAS 0.25.
