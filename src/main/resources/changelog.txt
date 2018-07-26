@@ -1,6 +1,31 @@
 Spring Data Build - Changelog
 =============================
 
+Changes in version 2.1.0.RC1 (2018-07-26)
+-----------------------------------------
+* #608 - Upgrade to Spring HATEOAS 0.25.
+* #605 - Upgrade to OpenWebBeans 2.0.6.
+* #603 - Upgrade to AspectJ 1.9.1.
+* #602 - Upgrade to AssertJ 3.10.0.
+* #601 - Upgrade to Mockito 2.20.
+* #599 - Upgrade to RxJava 2.1.17.
+* #598 - Upgrade to Spring Framework 5.1 RC1.
+* #594 - Add Enforcer Plugin rule to require Maven in version >= 3.5.0.
+* #591 - Javadoc plugin configuration not working on older Maven versions (e.g. 3.0.3).
+* #590 - Upgrade to Kotlin 1.2.51.
+* #588 - #587 - Attach Kotlin source dir to source code artifact.
+* #587 - Make sure Kotlin extension code is packaged into source JAR.
+* #586 - Upgrade to Reactor Californium.
+* #585 - Upgrade to Lombok 1.18.0.
+* #584 - Improve contribution guidelines for commit messages.
+* #580 - Upgrade to Jackson 2.9.6.
+* #576 - Upgrade to Spring Framework 5.0.7.
+* #573 - Upgrade to RxJava 2.1.14.
+* #571 - Upgrade to Reactor Bismuth SR10.
+* #568 - Upgrade to JodaTime 2.10.
+* #567 - Release 2.1 RC1 (Lovelace).
+
+
 Changes in version 2.0.8.RELEASE (2018-06-13)
 ---------------------------------------------
 * #581 - Upgrade to Jackson 2.9.6.
