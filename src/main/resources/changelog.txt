@@ -1,6 +1,13 @@
 Spring Data Build - Changelog
 =============================
 
+Changes in version 1.9.14.RELEASE (2018-07-27)
+----------------------------------------------
+* #596 - Add Enforcer Plugin rule to require Maven in version >= 3.5.0.
+* #593 - Javadoc plugin configuration not working on older Maven versions (e.g. 3.0.3).
+* #582 - Release 1.9.14 (Ingalls SR14).
+
+
 Changes in version 2.0.9.RELEASE (2018-07-26)
 ---------------------------------------------
 * #607 - Upgrade to Spring HATEOAS 0.25.
