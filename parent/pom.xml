@@ -99,7 +99,7 @@
 		<junit>4.12</junit>
 		<kotlin>1.1.61</kotlin>
 		<logback>1.2.3</logback>
-		<lombok>1.16.20</lombok>
+		<lombok>1.18.2</lombok>
 		<mockito>2.8.47</mockito>
 		<querydsl>4.1.4</querydsl>
 		<reactor>Bismuth-SR10</reactor>
