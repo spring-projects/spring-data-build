@@ -618,8 +618,8 @@
 			<id>spring5</id>
 
 			<properties>
-				<spring>5.0.7.RELEASE</spring>
-				<jackson>2.9.5</jackson>
+				<spring>5.0.8.RELEASE</spring>
+				<jackson>2.9.6</jackson>
 			</properties>
 
 		</profile>
@@ -629,8 +629,26 @@
 			<id>spring5-next</id>
 
 			<properties>
-				<spring>5.0.8.BUILD-SNAPSHOT</spring>
-				<jackson>2.9.5</jackson>
+				<spring>5.0.9.BUILD-SNAPSHOT</spring>
+				<jackson>2.9.6</jackson>
+			</properties>
+
+			<repositories>
+				<repository>
+					<id>spring-libs-snapshot</id>
+					<url>http://repo.spring.io/libs-snapshot</url>
+				</repository>
+			</repositories>
+
+		</profile>
+
+		<profile>
+
+			<id>spring51-next</id>
+
+			<properties>
+				<spring>5.1.0.BUILD-SNAPSHOT</spring>
+				<jackson>2.9.6</jackson>
 			</properties>
 
 			<repositories>
