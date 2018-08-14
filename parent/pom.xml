@@ -616,6 +616,19 @@
 		</profile>
 
 		<profile>
+			<id>spring51-next</id>
+			<properties>
+				<spring>5.1.0.BUILD-SNAPSHOT</spring>
+			</properties>
+			<repositories>
+				<repository>
+					<id>spring-libs-snapshot</id>
+					<url>https://repo.spring.io/libs-snapshot</url>
+				</repository>
+			</repositories>
+		</profile>
+
+		<profile>
 			<id>querydsl-next</id>
 			<properties>
 				<querydsl>4.1.4.BUILD-SNAPSHOT</querydsl>
