@@ -1,6 +1,14 @@
 Spring Data Build - Changelog
 =============================
 
+Changes in version 2.1.0.RC2 (2018-08-20)
+-----------------------------------------
+* #618 - Upgrade to Spring Framework 5.1 RC2.
+* #617 - Upgrade to AssertJ 3.11.0.
+* #612 - Upgrade to Lombok 1.18.2.
+* #609 - Release 2.1 RC2 (Lovelace).
+
+
 Changes in version 1.9.14.RELEASE (2018-07-27)
 ----------------------------------------------
 * #596 - Add Enforcer Plugin rule to require Maven in version >= 3.5.0.
