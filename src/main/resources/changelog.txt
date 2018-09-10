@@ -1,6 +1,13 @@
 Spring Data Build - Changelog
 =============================
 
+Changes in version 1.9.15.RELEASE (2018-09-10)
+----------------------------------------------
+* #616 - Add build profile for Spring 5.1.
+* #614 - Upgrade to Lombok 1.18.2.
+* #611 - Release 1.9.15 (Ingalls SR15).
+
+
 Changes in version 2.1.0.RC2 (2018-08-20)
 -----------------------------------------
 * #618 - Upgrade to Spring Framework 5.1 RC2.
