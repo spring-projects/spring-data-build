@@ -1,6 +1,15 @@
 Spring Data Build - Changelog
 =============================
 
+Changes in version 2.0.10.RELEASE (2018-09-10)
+----------------------------------------------
+* #623 - Upgrade to Reactor Bismuth SR11.
+* #621 - Upgrade to Spring Framework 5.0.9.
+* #615 - Add build profile for Spring 5.1.
+* #613 - Upgrade to Lombok 1.18.2.
+* #610 - Release 2.0.10 (Kay SR10).
+
+
 Changes in version 1.9.15.RELEASE (2018-09-10)
 ----------------------------------------------
 * #616 - Add build profile for Spring 5.1.
