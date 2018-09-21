@@ -1,6 +1,20 @@
 Spring Data Build - Changelog
 =============================
 
+Changes in version 2.1.0.RELEASE (2018-09-21)
+---------------------------------------------
+* #636 - Upgrade to ThreeTenBp 1.3.7.
+* #635 - Upgrade to AssertJ 3.11.1.
+* #634 - Upgrade to Reactor Californium GA.
+* #633 - Upgrade to Spring Framework 5.1 GA.
+* #631 - Upgrade to Jackson 2.9.7.
+* #630 - Upgrade to Kotlin 1.2.70.
+* #626 - Upgrade to Kotlin 1.2.61.
+* #625 - Upgrade to RxJava 2.2.2.
+* #624 - Upgrade to Reactor Californium RC1.
+* #620 - Release 2.1 GA (Lovelace).
+
+
 Changes in version 2.0.10.RELEASE (2018-09-10)
 ----------------------------------------------
 * #623 - Upgrade to Reactor Bismuth SR11.
