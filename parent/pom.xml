@@ -109,7 +109,7 @@
 		<slf4j>1.7.25</slf4j>
 		<spring>5.1.0.RELEASE</spring>
 		<spring-hateoas>0.25.0.RELEASE</spring-hateoas>
-		<threetenbp>1.3.6</threetenbp>
+		<threetenbp>1.3.7</threetenbp>
 		<validation>1.1.0.Final</validation>
 		<webbeans>2.0.6</webbeans>
 		<javax-annotation-api>1.3</javax-annotation-api>
