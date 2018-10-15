@@ -9,7 +9,7 @@
 	<parent>
 		<groupId>org.springframework.data</groupId>
 		<artifactId>spring-data-releasetrain</artifactId>
-		<version>Kay-SR11</version>
+		<version>Kay-BUILD-SNAPSHOT</version>
 		<relativePath>../bom</relativePath>
 	</parent>
 
