@@ -1,6 +1,13 @@
 Spring Data Build - Changelog
 =============================
 
+Changes in version 2.0.11.RELEASE (2018-10-15)
+----------------------------------------------
+* #639 - Upgrade to Spring Framework 5.0.10.
+* #632 - Upgrade to Jackson 2.9.7.
+* #629 - Release 2.0.11 (Kay SR11).
+
+
 Changes in version 2.1.1.RELEASE (2018-10-15)
 ---------------------------------------------
 * #641 - Upgrade to Reactor Californium SR1.
