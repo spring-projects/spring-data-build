@@ -1,6 +1,13 @@
 Spring Data Build - Changelog
 =============================
 
+Changes in version 2.1.1.RELEASE (2018-10-15)
+---------------------------------------------
+* #641 - Upgrade to Reactor Californium SR1.
+* #640 - Upgrade to Spring Framework 5.1.1.
+* #637 - Release 2.1.1 (Lovelace SR1).
+
+
 Changes in version 2.1.0.RELEASE (2018-09-21)
 ---------------------------------------------
 * #636 - Upgrade to ThreeTenBp 1.3.7.
