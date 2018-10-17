@@ -33,6 +33,7 @@ If you're a first-time submitter, make sure you have signed the https://cla.pivo
 == Commit messages
 
 The commit message should follow the following style:
+
 * First line starts with the ticket id.
 * Separate ticket id and summary with a dash.
 * Start summary with a capital letter.
