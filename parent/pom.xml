@@ -647,7 +647,7 @@
 			<id>spring51-next</id>
 
 			<properties>
-				<spring>5.1.0.BUILD-SNAPSHOT</spring>
+				<spring>5.1.4.BUILD-SNAPSHOT</spring>
 				<jackson>2.9.6</jackson>
 			</properties>
 
