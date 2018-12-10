@@ -282,21 +282,6 @@
 						<artifactId>maven-dependency-plugin</artifactId>
 						<executions>
 							<execution>
-								<id>unpack-shared-resources</id>
-								<goals>
-									<goal>unpack-dependencies</goal>
-								</goals>
-								<phase>generate-resources</phase>
-								<configuration>
-									<includeGroupIds>${project.groupId}</includeGroupIds>
-									<includeArtifactIds>spring-data-build-resources</includeArtifactIds>
-									<includeTypes>zip</includeTypes>
-									<excludeTransitive>true</excludeTransitive>
-									<outputDirectory>${shared.resources}</outputDirectory>
-								</configuration>
-							</execution>
-
-							<execution>
 								<id>unpack-doc-resources</id>
 								<goals>
 									<goal>unpack-dependencies</goal>
@@ -308,6 +293,20 @@
 									<includeTypes>zip</includeTypes>
 									<excludeTransitive>true</excludeTransitive>
 									<outputDirectory>${generated-asciidoc-sources.directory}</outputDirectory>
+								</configuration>
+							</execution>
+							<execution>
+								<id>unpack-shared-resources</id>
+								<goals>
+									<goal>unpack-dependencies</goal>
+								</goals>
+								<phase>generate-resources</phase>
+								<configuration>
+									<includeGroupIds>${project.groupId}</includeGroupIds>
+									<includeArtifactIds>spring-data-build-resources</includeArtifactIds>
+									<includeTypes>zip</includeTypes>
+									<excludeTransitive>true</excludeTransitive>
+									<outputDirectory>${shared.resources}</outputDirectory>
 								</configuration>
 							</execution>
 						</executions>
@@ -444,6 +443,14 @@
 										<copy failonerror="false"
 											  todir="${project.root}/target/site/reference/html/images">
 											<fileset dir="${generated-docs.directory}/images"/>
+										</copy>
+
+										<!-- Copy shared resources. Spring Data ones first to override the ones shared -->
+										<copy failonerror="false" todir="${project.root}/target/site/reference/html/">
+											<fileset dir="${shared.resources}">
+												<include name="css/**"/>
+												<include name="js/**"/>
+											</fileset>
 										</copy>
 
 										<copy failonerror="false" todir="${project.root}/target/site/reference/html/">
