@@ -1,6 +1,40 @@
 Spring Data Build - Changelog
 =============================
 
+Changes in version 2.2.0.M1 (2018-12-11)
+----------------------------------------
+* #702 - Customize Spring Docs TOC Bot to match our document structure.
+* #700 - Upgrade to Maven Javadoc Plugin 3.0.1.
+* #699 - Upgrade to Maven Jar Plugin 3.1.0.
+* #698 - Upgrade to Maven Failsafe/Surefire Plugin 2.22.1.
+* #697 - Upgrade to Maven Dependency Plugin 3.1.1.
+* #696 - Upgrade to Maven Compiler Plugin 3.8.0.
+* #695 - Upgrade to Maven Assembly Plugin 3.1.0.
+* #692 - Upgrade to OpenWebBeans 2.0.8.
+* #691 - Upgrade to RxJava 2.2.4.
+* #690 - Upgrade to Mockito 2.23.4.
+* #689 - Upgrade to Kotlin 1.3.11.
+* #685 - Upgrade to Jacoco 0.8.2.
+* #684 - Upgrade to AspectJ 1.9.2.
+* #682 - Release 2.2 M1 (Moore).
+* #680 - Add Spring Data Relational to BOM.
+* #679 - Upgrade to Spring Framework 5.1.3.
+* #675 - Upgrade to Reactor Californium SR3.
+* #665 - Upgrade to Asciidoctor 1.5.7.1 and EPUB module 1.5.0-alpha.8.1.
+* #664 - Upgrade to Lombok 1.18.4.
+* #661 - Upgrade Kotlin Version.
+* #659 - Upgrade to Spring Framework 5.1.2.
+* #658 - Upgrade to JodaTime 2.10.1.
+* #654 - Upgrade to ThreeTenBp 1.3.8.
+* #653 - Upgrade to Reactor Californium SR2.
+* #649 - Upgrade to RxJava 2.2.3.
+* #648 - Update developer profile in POM.
+* #643 - Upgrade to Spring Framework 5.1.1.
+* #642 - Upgrade to Reactor Californium SR1.
+* #566 - Add shared documentation resources for a consistent reference documentation styling.
+* #545 - Use external Spring Doc resources.
+
+
 Changes in version 2.1.3.RELEASE (2018-11-27)
 ---------------------------------------------
 * #674 - Upgrade to Reactor Californium SR3.
