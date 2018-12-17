@@ -619,7 +619,7 @@
 
 			<properties>
 				<spring>5.0.11.RELEASE</spring>
-				<jackson>2.9.6</jackson>
+				<jackson>2.9.8</jackson>
 			</properties>
 
 		</profile>
@@ -630,7 +630,7 @@
 
 			<properties>
 				<spring>5.0.12.BUILD-SNAPSHOT</spring>
-				<jackson>2.9.6</jackson>
+				<jackson>2.9.8</jackson>
 			</properties>
 
 			<repositories>
@@ -648,7 +648,7 @@
 
 			<properties>
 				<spring>5.1.4.BUILD-SNAPSHOT</spring>
-				<jackson>2.9.6</jackson>
+				<jackson>2.9.8</jackson>
 			</properties>
 
 			<repositories>
