@@ -1,0 +1,2708 @@
+---
+resource_types:
+- name: artifactory-resource
+  type: docker-image
+  source:
+    repository: springio/artifactory-resource
+    tag:        latest
+
+- name: github-status
+  type: docker-image
+  source:
+    repository: dpb587/github-status-resource
+    tag:        master
+
+- name: pull-request
+  type: docker-image
+  source:
+    repository: jtarchie/pr
+    tag:        latest
+
+- name: slack-notification
+  type: docker-image
+  source:
+    repository: nebhale/slack-notification-resource
+
+resources:
+- name: openjdk:8-jdk
+  type: docker-image
+  source:
+    repository: openjdk
+    tag:        8-jdk
+
+- name: openjdk:11-jdk
+  type: docker-image
+  source:
+    repository: openjdk
+    tag:        11-jdk
+
+- name: spring-hateoas-artifactory
+  type: artifactory-resource
+  source:
+    uri: https://repo.spring.io
+    username: ((artifactory-username))
+    password: ((artifactory-password))
+    build_name: spring-hateoas
+
+- name: spring-data-build-github
+  type: git
+  source:
+    uri: https://github.com/spring-projects/spring-data-build.git
+    branch: master
+
+- name: spring-data-build-status
+  type: github-status
+  source:
+    access_token: ((github-access-token))
+    repository:   spring-projects/spring-data-build
+    branch:       master
+
+- name: spring-data-build-artifactory
+  type: artifactory-resource
+  source:
+    uri: https://repo.spring.io
+    username: ((artifactory-username))
+    password: ((artifactory-password))
+    build_name: spring-data-build
+
+- name: spring-data-build-pull-requests
+  type: pull-request
+  source:
+    access_token: ((github-access-token))
+    repo: spring-projects/spring-data-build
+    base: master
+
+- name: spring-data-commons-github
+  type: git
+  source:
+    uri: https://github.com/spring-projects/spring-data-commons.git
+    branch: master
+
+- name: spring-data-commons-status
+  type: github-status
+  source:
+    access_token: ((github-access-token))
+    repository:   spring-projects/spring-data-commons
+    branch:       master
+
+- name: spring-data-commons-artifactory
+  type: artifactory-resource
+  source:
+    uri: https://repo.spring.io
+    username: ((artifactory-username))
+    password: ((artifactory-password))
+    build_name: spring-data-commons
+
+- name: spring-data-commons-pull-requests
+  type: pull-request
+  source:
+    access_token: ((github-access-token))
+    repo: spring-projects/spring-data-commons
+    base: master
+    
+- name: spring-data-jpa-github
+  type: git
+  source:
+    uri: https://github.com/spring-projects/spring-data-jpa.git
+    branch: master
+
+- name: spring-data-jpa-status
+  type: github-status
+  source:
+    access_token: ((github-access-token))
+    repository:   spring-projects/spring-data-jpa
+    branch: master
+
+- name: spring-data-jpa-artifactory
+  type: artifactory-resource
+  source:
+    uri: https://repo.spring.io
+    username: ((artifactory-username))
+    password: ((artifactory-password))
+    build_name: spring-data-jpa
+
+- name: spring-data-jpa-pull-requests
+  type: pull-request
+  source:
+    access_token: ((github-access-token))
+    repo: spring-projects/spring-data-jpa
+    base: master
+
+- name: spring-data-mongodb-github
+  type: git
+  source:
+    uri: https://github.com/spring-projects/spring-data-mongodb.git
+    branch: master
+    ignore_paths:
+    - ci/8-jdk/Dockerfile
+    - ci/11-jdk/Dockerfile
+
+- name: spring-data-mongodb-status
+  type: github-status
+  source:
+    access_token: ((github-access-token))
+    repository:   spring-projects/spring-data-mongodb
+    branch: master
+
+- name: spring-data-mongodb-artifactory
+  type: artifactory-resource
+  source:
+    uri: https://repo.spring.io
+    username: ((artifactory-username))
+    password: ((artifactory-password))
+    build_name: spring-data-mongodb
+
+- name: spring-data-mongodb-pull-requests
+  type: pull-request
+  source:
+    access_token: ((github-access-token))
+    repo: spring-projects/spring-data-mongodb
+    base: master
+
+- name: spring-data-redis-github
+  type: git
+  source:
+    uri: https://github.com/spring-projects/spring-data-redis.git
+    branch: master
+    ignore_paths:
+    - ci/8-jdk/Dockerfile
+    - ci/11-jdk/Dockerfile
+    - Makefile
+
+- name: spring-data-redis-status
+  type: github-status
+  source:
+    access_token: ((github-access-token))
+    repository:   spring-projects/spring-data-redis
+    branch: master
+
+- name: spring-data-redis-artifactory
+  type: artifactory-resource
+  source:
+    uri: https://repo.spring.io
+    username: ((artifactory-username))
+    password: ((artifactory-password))
+    build_name: spring-data-redis
+
+- name: spring-data-redis-pull-requests
+  type: pull-request
+  source:
+    access_token: ((github-access-token))
+    repo: spring-projects/spring-data-redis
+    base: master
+
+- name: spring-data-geode-github
+  type: git
+  source:
+    uri: https://github.com/spring-projects/spring-data-geode.git
+    branch: master
+
+- name: spring-data-geode-status
+  type: github-status
+  source:
+    access_token: ((github-access-token))
+    repository:   spring-projects/spring-data-geode
+    branch: master
+
+- name: spring-data-geode-artifactory
+  type: artifactory-resource
+  source:
+    uri: https://repo.spring.io
+    username: ((artifactory-username))
+    password: ((artifactory-password))
+    build_name: spring-data-geode
+
+- name: spring-data-geode-pull-requests
+  type: pull-request
+  source:
+    access_token: ((github-access-token))
+    repo: spring-projects/spring-data-geode
+    base: master
+
+- name: spring-data-gemfire-github
+  type: git
+  source:
+    uri: https://github.com/spring-projects/spring-data-gemfire.git
+    branch: master
+
+- name: spring-data-gemfire-status
+  type: github-status
+  source:
+    access_token: ((github-access-token))
+    repository:   spring-projects/spring-data-gemfire
+    branch: master
+
+- name: spring-data-gemfire-artifactory
+  type: artifactory-resource
+  source:
+    uri: https://repo.spring.io
+    username: ((artifactory-username))
+    password: ((artifactory-password))
+    build_name: spring-data-gemfire
+
+- name: spring-data-gemfire-pull-requests
+  type: pull-request
+  source:
+    access_token: ((github-access-token))
+    repo: spring-projects/spring-data-gemfire
+    base: master
+
+- name: spring-data-jdbc-github
+  type: git
+  source:
+    uri: https://github.com/spring-projects/spring-data-jdbc.git
+    branch: master
+
+- name: spring-data-jdbc-status
+  type: github-status
+  source:
+    access_token: ((github-access-token))
+    repository:   spring-projects/spring-data-jdbc
+    branch: master
+
+- name: spring-data-jdbc-artifactory
+  type: artifactory-resource
+  source:
+    uri: https://repo.spring.io
+    username: ((artifactory-username))
+    password: ((artifactory-password))
+    build_name: spring-data-jdbc
+
+- name: spring-data-jdbc-pull-requests
+  type: pull-request
+  source:
+    access_token: ((github-access-token))
+    repo: spring-projects/spring-data-jdbc
+    base: master
+
+- name: spring-data-rest-github
+  type: git
+  source:
+    uri: https://github.com/spring-projects/spring-data-rest.git
+    branch: master
+
+- name: spring-data-rest-status
+  type: github-status
+  source:
+    access_token: ((github-access-token))
+    repository:   spring-projects/spring-data-rest
+    branch: master
+
+- name: spring-data-rest-artifactory
+  type: artifactory-resource
+  source:
+    uri: https://repo.spring.io
+    username: ((artifactory-username))
+    password: ((artifactory-password))
+    build_name: spring-data-rest
+
+- name: spring-data-rest-pull-requests
+  type: pull-request
+  source:
+    access_token: ((github-access-token))
+    repo: spring-projects/spring-data-rest
+    base: master
+
+- name: spring-data-solr-github
+  type: git
+  source:
+    uri: https://github.com/spring-projects/spring-data-solr.git
+    branch: master
+
+- name: spring-data-solr-status
+  type: github-status
+  source:
+    access_token: ((github-access-token))
+    repository:   spring-projects/spring-data-solr
+    branch: master
+
+- name: spring-data-solr-artifactory
+  type: artifactory-resource
+  source:
+    uri: https://repo.spring.io
+    username: ((artifactory-username))
+    password: ((artifactory-password))
+    build_name: spring-data-solr
+
+- name: spring-data-solr-pull-requests
+  type: pull-request
+  source:
+    access_token: ((github-access-token))
+    repo: spring-projects/spring-data-solr
+    base: master
+
+- name: spring-data-keyvalue-github
+  type: git
+  source:
+    uri: https://github.com/spring-projects/spring-data-keyvalue.git
+    branch: master
+
+- name: spring-data-keyvalue-status
+  type: github-status
+  source:
+    access_token: ((github-access-token))
+    repository:   spring-projects/spring-data-keyvalue
+    branch: master
+
+- name: spring-data-keyvalue-artifactory
+  type: artifactory-resource
+  source:
+    uri: https://repo.spring.io
+    username: ((artifactory-username))
+    password: ((artifactory-password))
+    build_name: spring-data-keyvalue
+
+- name: spring-data-keyvalue-pull-requests
+  type: pull-request
+  source:
+    access_token: ((github-access-token))
+    repo: spring-projects/spring-data-keyvalue
+    base: master
+
+- name: spring-data-cassandra-github
+  type: git
+  source:
+    uri: https://github.com/spring-projects/spring-data-cassandra.git
+    branch: master
+
+- name: spring-data-cassandra-status
+  type: github-status
+  source:
+    access_token: ((github-access-token))
+    repository:   spring-projects/spring-data-cassandra
+    branch: master
+
+- name: spring-data-cassandra-artifactory
+  type: artifactory-resource
+  source:
+    uri: https://repo.spring.io
+    username: ((artifactory-username))
+    password: ((artifactory-password))
+    build_name: spring-data-cassandra
+
+- name: spring-data-cassandra-pull-requests
+  type: pull-request
+  source:
+    access_token: ((github-access-token))
+    repo: spring-projects/spring-data-cassandra
+    base: master
+
+- name: spring-data-neo4j-github
+  type: git
+  source:
+    uri: https://github.com/spring-projects/spring-data-neo4j.git
+    branch: master
+
+- name: spring-data-neo4j-status
+  type: github-status
+  source:
+    access_token: ((github-access-token))
+    repository:   spring-projects/spring-data-neo4j
+    branch: master
+
+- name: spring-data-neo4j-artifactory
+  type: artifactory-resource
+  source:
+    uri: https://repo.spring.io
+    username: ((artifactory-username))
+    password: ((artifactory-password))
+    build_name: spring-data-neo4j
+
+- name: spring-data-neo4j-pull-requests
+  type: pull-request
+  source:
+    access_token: ((github-access-token))
+    repo: spring-projects/spring-data-neo4j
+    base: master
+
+- name: spring-data-ldap-github
+  type: git
+  source:
+    uri: https://github.com/spring-projects/spring-data-ldap.git
+    branch: master
+
+- name: spring-data-ldap-status
+  type: github-status
+  source:
+    access_token: ((github-access-token))
+    repository:   spring-projects/spring-data-ldap
+    branch: master
+
+- name: spring-data-ldap-artifactory
+  type: artifactory-resource
+  source:
+    uri: https://repo.spring.io
+    username: ((artifactory-username))
+    password: ((artifactory-password))
+    build_name: spring-data-ldap
+
+- name: spring-data-ldap-pull-requests
+  type: pull-request
+  source:
+    access_token: ((github-access-token))
+    repo: spring-projects/spring-data-ldap
+    base: master
+
+- name: spring-data-envers-github
+  type: git
+  source:
+    uri: https://github.com/spring-projects/spring-data-envers.git
+    branch: master
+
+- name: spring-data-envers-status
+  type: github-status
+  source:
+    access_token: ((github-access-token))
+    repository:   spring-projects/spring-data-envers
+    branch: master
+
+- name: spring-data-envers-artifactory
+  type: artifactory-resource
+  source:
+    uri: https://repo.spring.io
+    username: ((artifactory-username))
+    password: ((artifactory-password))
+    build_name: spring-data-envers
+
+- name: spring-data-envers-pull-requests
+  type: pull-request
+  source:
+    access_token: ((github-access-token))
+    repo: spring-projects/spring-data-envers
+    base: master
+
+- name: spring-data-elasticsearch-github
+  type: git
+  source:
+    uri: https://github.com/spring-projects/spring-data-elasticsearch.git
+    branch: master
+
+- name: spring-data-elasticsearch-status
+  type: github-status
+  source:
+    access_token: ((github-access-token))
+    repository:   spring-projects/spring-data-elasticsearch
+    branch: master
+
+- name: spring-data-elasticsearch-artifactory
+  type: artifactory-resource
+  source:
+    uri: https://repo.spring.io
+    username: ((artifactory-username))
+    password: ((artifactory-password))
+    build_name: spring-data-elasticsearch
+
+- name: spring-data-elasticsearch-pull-requests
+  type: pull-request
+  source:
+    access_token: ((github-access-token))
+    repo: spring-projects/spring-data-elasticsearch
+    base: master
+
+- name: spring-data-couchbase-github
+  type: git
+  source:
+    uri: https://github.com/spring-projects/spring-data-couchbase.git
+    branch: master
+
+- name: spring-data-couchbase-status
+  type: github-status
+  source:
+    access_token: ((github-access-token))
+    repository:   spring-projects/spring-data-couchbase
+    branch: master
+
+- name: spring-data-couchbase-artifactory
+  type: artifactory-resource
+  source:
+    uri: https://repo.spring.io
+    username: ((artifactory-username))
+    password: ((artifactory-password))
+    build_name: spring-data-couchbase
+
+- name: spring-data-couchbase-pull-requests
+  type: pull-request
+  source:
+    access_token: ((github-access-token))
+    repo: spring-projects/spring-data-couchbase
+    base: master
+
+- name: slack
+  type: slack-notification
+  source:
+    url: ((slack))
+
+- name: 8-jdk-with-mongodb-docker-image-github
+  type: git
+  source:
+    uri: https://github.com/spring-projects/spring-data-mongodb.git
+    branch: master
+    paths:
+    - ci/8-jdk/Dockerfile
+
+- name: 11-jdk-with-mongodb-docker-image-github
+  type: git
+  source:
+    uri: https://github.com/spring-projects/spring-data-mongodb.git
+    branch: master
+    paths:
+    - ci/11-jdk/Dockerfile
+
+- name: 8-jdk-with-mongodb:latest
+  type: docker-image
+  source:
+    repository: springci/spring-data-8-jdk-with-mongodb
+    email:      ((docker-email))
+    username:   ((docker-username))
+    password:   ((docker-password))
+
+- name: 11-jdk-with-mongodb:latest
+  type: docker-image
+  source:
+    repository: springci/spring-data-11-jdk-with-mongodb
+    email:      ((docker-email))
+    username:   ((docker-username))
+    password:   ((docker-password))
+
+- name: 8-jdk-with-redis-docker-image-github
+  type: git
+  source:
+    uri: https://github.com/spring-projects/spring-data-redis.git
+    branch: master
+    paths:
+    - ci/8-jdk/Dockerfile
+    - Makefile
+
+- name: 11-jdk-with-redis-docker-image-github
+  type: git
+  source:
+    uri: https://github.com/spring-projects/spring-data-redis.git
+    branch: master
+    paths:
+    - ci/11-jdk/Dockerfile
+    - Makefile
+
+- name: 8-jdk-with-redis:latest
+  type: docker-image
+  source:
+    repository: springci/spring-data-8-jdk-with-redis
+    email:      ((docker-email))
+    username:   ((docker-username))
+    password:   ((docker-password))
+
+- name: 11-jdk-with-redis:latest
+  type: docker-image
+  source:
+    repository: springci/spring-data-11-jdk-with-redis
+    email:      ((docker-email))
+    username:   ((docker-username))
+    password:   ((docker-password))
+
+groups:
+- name: spring-data
+  jobs:
+  - spring-data-build-test-jdk8
+  - spring-data-build-build
+  - spring-data-commons-test-jdk8
+  - spring-data-commons-build
+  - spring-data-cassandra-test-jdk8
+  - spring-data-cassandra-build
+  - spring-data-couchbase-test-jdk8
+  - spring-data-couchbase-build
+  - spring-data-elasticsearch-test-jdk8
+  - spring-data-elasticsearch-build
+  - spring-data-geode-test-jdk8
+  - spring-data-geode-build
+  - spring-data-gemfire-test-jdk8
+  - spring-data-gemfire-build
+  - spring-data-jdbc-test-jdk8
+  - spring-data-jdbc-build
+  - spring-data-jpa-test-jdk8
+  - spring-data-jpa-test-jdk8-spring5-next
+  - spring-data-jpa-test-jdk8-hibernate-next
+  - spring-data-jpa-test-jdk8-hibernate-53
+  - spring-data-jpa-test-jdk8-hibernate-53-next
+  - spring-data-jpa-test-jdk8-hibernate-54-next
+  - spring-data-jpa-test-jdk8-eclipselink-next
+  - spring-data-jpa-test-jdk8-eclipselink-27
+  - spring-data-jpa-test-jdk8-eclipselink-27-next
+  - spring-data-jpa-test-jdk8-querydsl-next
+  - spring-data-jpa-build
+  - spring-data-keyvalue-test-jdk8
+  - spring-data-keyvalue-build
+  - spring-data-ldap-test-jdk8
+  - spring-data-ldap-build
+  - spring-data-mongodb-test-jdk8
+  - spring-data-mongodb-build
+  - spring-data-neo4j-test-jdk8
+  - spring-data-neo4j-build
+  - spring-data-redis-test-jdk8
+  - spring-data-redis-build
+  - spring-data-solr-test-jdk8
+  - spring-data-solr-build
+  - spring-data-envers-test-jdk8
+  - spring-data-envers-build
+  - spring-data-rest-test-jdk8
+  - spring-data-rest-build
+- name: infra
+  jobs:
+  - spring-data-build-test-jdk8
+  - spring-data-build-build
+  - spring-data-build-pull-requests
+  - spring-data-commons-test-jdk8
+  - spring-data-commons-build
+  - spring-data-commons-pull-requests
+- name: jpa
+  jobs:
+  - spring-data-jpa-test-jdk8
+  - spring-data-jpa-test-jdk8-spring5-next
+  - spring-data-jpa-test-jdk8-hibernate-next
+  - spring-data-jpa-test-jdk8-hibernate-53
+  - spring-data-jpa-test-jdk8-hibernate-53-next
+  - spring-data-jpa-test-jdk8-hibernate-54-next
+  - spring-data-jpa-test-jdk8-eclipselink-next
+  - spring-data-jpa-test-jdk8-eclipselink-27
+  - spring-data-jpa-test-jdk8-eclipselink-27-next
+  - spring-data-jpa-test-jdk8-querydsl-next
+  - spring-data-jpa-build
+  - spring-data-jpa-pull-requests
+- name: jdbc
+  jobs:
+  - spring-data-jdbc-test-jdk8
+  - spring-data-jdbc-build
+  - spring-data-jdbc-pull-requests
+- name: redis
+  jobs:
+  - spring-data-redis-test-jdk8
+  - spring-data-redis-build
+  - spring-data-redis-pull-requests
+  - 8-jdk-with-redis:latest
+  - 11-jdk-with-redis:latest
+- name: mongodb
+  jobs:
+  - spring-data-mongodb-test-jdk8
+  - spring-data-mongodb-build
+  - spring-data-mongodb-pull-requests
+  - 8-jdk-with-mongodb:latest
+  - 11-jdk-with-mongodb:latest
+- name: geode
+  jobs:
+  - spring-data-geode-test-jdk8
+  - spring-data-geode-build
+  - spring-data-geode-pull-requests
+  - spring-data-gemfire-test-jdk8
+  - spring-data-gemfire-build
+  - spring-data-gemfire-pull-requests
+- name: cassandra
+  jobs:
+  - spring-data-cassandra-test-jdk8
+  - spring-data-cassandra-build
+  - spring-data-cassandra-pull-requests
+- name: solr
+  jobs:
+  - spring-data-solr-test-jdk8
+  - spring-data-solr-build
+  - spring-data-solr-pull-requests
+- name: community
+  jobs:
+  - spring-data-couchbase-test-jdk8
+  - spring-data-couchbase-build
+  - spring-data-couchbase-pull-requests
+  - spring-data-elasticsearch-test-jdk8
+  - spring-data-elasticsearch-build
+  - spring-data-elasticsearch-pull-requests
+  - spring-data-neo4j-test-jdk8
+  - spring-data-neo4j-build
+  - spring-data-neo4j-pull-requests
+- name: other
+  jobs:
+  - spring-data-ldap-test-jdk8
+  - spring-data-ldap-build
+  - spring-data-ldap-pull-requests
+  - spring-data-envers-test-jdk8
+  - spring-data-envers-build
+  - spring-data-envers-pull-requests
+  - spring-data-keyvalue-test-jdk8
+  - spring-data-keyvalue-build
+  - spring-data-keyvalue-pull-requests
+- name: rest
+  jobs:
+  - spring-data-rest-test-jdk8
+  - spring-data-rest-build
+  - spring-data-rest-pull-requests
+- name: pull-requests
+  jobs:
+  - spring-data-build-pull-requests
+  - spring-data-commons-pull-requests
+  - spring-data-cassandra-pull-requests
+  - spring-data-couchbase-pull-requests
+  - spring-data-elasticsearch-pull-requests
+  - spring-data-envers-pull-requests
+  - spring-data-geode-pull-requests
+  - spring-data-gemfire-pull-requests
+  - spring-data-jdbc-pull-requests
+  - spring-data-jpa-pull-requests
+  - spring-data-keyvalue-pull-requests
+  - spring-data-ldap-pull-requests
+  - spring-data-mongodb-pull-requests
+  - spring-data-neo4j-pull-requests
+  - spring-data-redis-pull-requests
+  - spring-data-solr-pull-requests
+  - spring-data-rest-pull-requests
+- name: docker
+  jobs:
+  - 8-jdk-with-mongodb:latest
+  - 8-jdk-with-redis:latest
+  - 11-jdk-with-mongodb:latest
+  - 11-jdk-with-redis:latest
+
+jobs:
+
+- name: spring-data-build-test-jdk8
+  serial: true
+  public: true
+  plan:
+  - get: spring-data-build-github
+    trigger: true
+  - get: openjdk:8-jdk
+    trigger: true
+  - task: test
+    file: spring-data-build-github/ci/test.yml
+    params: { PROFILE: "non-existent" }
+  <<: *slack-test-failure
+
+- name: spring-data-build-build
+  serial: true
+  public: true
+  plan:
+  - get: spring-data-build-github
+    trigger: true
+    passed: [
+      spring-data-build-test-jdk8
+    ]
+  - put: spring-data-build-status
+    params:
+      commit: spring-data-build-github
+      state: pending
+  - task: build
+    file: spring-data-build-github/ci/build.yml
+  - put: spring-data-build-artifactory
+    params:
+      build_number:   ${BUILD_NAME}
+      build_uri:      ${ATC_EXTERNAL_URL}/teams/${BUILD_TEAM_NAME}/pipelines/${BUILD_PIPELINE_NAME}/jobs/${BUILD_JOB_NAME}/builds/${BUILD_NAME}
+      repo:           libs-snapshot-local
+      folder:         spring-data-build-artifactory
+      artifact_set:
+      - include:
+        - "/**"
+        properties:
+          zip.deployed: false
+          zip.displayname: "spring-data-build"
+          zip.name: "spring-data-build"
+          zip.type: "docs"
+  on_abort:
+    put: spring-data-build-status
+    params:
+      commit: spring-data-build-github
+      state:  error
+  on_failure:
+    aggregate:
+    - put: spring-data-build-status
+      params:
+        commit: spring-data-build-github
+        state: failure
+    - put: slack
+      params:
+        attachments:
+          - color: danger
+            fallback: "$BUILD_PIPELINE_NAME/$BUILD_JOB_NAME #$BUILD_NAME <FAILURE>"
+            text: "Build has failed"
+            title: "$BUILD_PIPELINE_NAME/$BUILD_JOB_NAME #$BUILD_NAME"
+            title_link: $ATC_EXTERNAL_URL/teams/$BUILD_TEAM_NAME/pipelines/$BUILD_PIPELINE_NAME/jobs/$BUILD_JOB_NAME/builds/$BUILD_NAME
+  on_success:
+    aggregate:
+    - put: spring-data-build-status
+      params:
+        commit: spring-data-build-github
+        state: success
+    - put: slack
+      params:
+        attachments:
+          - color: good
+            fallback: "$BUILD_PIPELINE_NAME/$BUILD_JOB_NAME #$BUILD_NAME <SUCCESS>"
+            text: "Build has succeeded!"
+            title: "$BUILD_PIPELINE_NAME/$BUILD_JOB_NAME #$BUILD_NAME"
+            title_link: $ATC_EXTERNAL_URL/teams/$BUILD_TEAM_NAME/pipelines/$BUILD_PIPELINE_NAME/jobs/$BUILD_JOB_NAME/builds/$BUILD_NAME
+
+- name: spring-data-build-pull-requests
+  public: true
+  plan:
+  - get: spring-data-build-github
+    resource: spring-data-build-pull-requests
+    trigger: true
+    version: every
+  - put: spring-data-build-pull-requests
+    params:
+      path: spring-data-build-github
+      status: pending
+  - aggregate:
+    - task: test
+      file: spring-data-build-github/ci/test.yml
+      params: { PROFILE: "non-existent" }
+  on_failure:
+    put: spring-data-build-pull-requests
+    params:
+      path: spring-data-build-github
+      status: failure
+  on_success:
+    put: spring-data-build-pull-requests
+    params:
+      path: spring-data-build-github
+      status: success
+
+- name: spring-data-commons-test-jdk8
+  serial: true
+  public: true
+  plan:
+  - get: spring-data-commons-github
+    trigger: true
+  - get: spring-hateoas-artifactory
+    trigger: true
+  - get: spring-data-build-artifactory
+    trigger: true
+  - get: openjdk:8-jdk
+    trigger: true
+  - task: test
+    file: spring-data-commons-github/ci/test.yml
+    params: { PROFILE: "non-existent" }
+  <<: *slack-test-failure
+
+- name: spring-data-commons-build
+  serial: true
+  public: true
+  plan:
+  - get: spring-data-commons-github
+    trigger: true
+    passed: [
+      spring-data-commons-test-jdk8
+    ]
+  - get: spring-hateoas-artifactory
+    trigger: true
+    passed: [
+      spring-data-commons-test-jdk8
+    ]
+  - get: spring-data-build-artifactory
+    trigger: true
+    passed: [
+      spring-data-commons-test-jdk8
+    ]
+  - put: spring-data-commons-status
+    params:
+      commit: spring-data-commons-github
+      state: pending
+  - task: build
+    file: spring-data-commons-github/ci/build.yml
+  - put: spring-data-commons-artifactory
+    params:
+      build_number:   ${BUILD_NAME}
+      build_uri:      ${ATC_EXTERNAL_URL}/teams/${BUILD_TEAM_NAME}/pipelines/${BUILD_PIPELINE_NAME}/jobs/${BUILD_JOB_NAME}/builds/${BUILD_NAME}
+      repo:           libs-snapshot-local
+      folder:         spring-data-commons-artifactory
+      artifact_set:
+      - include:
+        - "/**"
+        properties:
+          zip.deployed: false
+          zip.displayname: "spring-data-commons"
+          zip.name: "spring-data-commons"
+          zip.type: "docs"
+  on_abort:
+    put: spring-data-commons-status
+    params:
+      commit: spring-data-commons-github
+      state:  error
+  on_failure:
+    aggregate:
+    - put: spring-data-commons-status
+      params:
+        commit: spring-data-commons-github
+        state: failure
+    - put: slack
+      params:
+        attachments:
+          - color: danger
+            fallback: "$BUILD_PIPELINE_NAME/$BUILD_JOB_NAME #$BUILD_NAME <FAILURE>"
+            text: "Build has failed"
+            title: "$BUILD_PIPELINE_NAME/$BUILD_JOB_NAME #$BUILD_NAME"
+            title_link: $ATC_EXTERNAL_URL/teams/$BUILD_TEAM_NAME/pipelines/$BUILD_PIPELINE_NAME/jobs/$BUILD_JOB_NAME/builds/$BUILD_NAME
+  on_success:
+    aggregate:
+    - put: spring-data-commons-status
+      params:
+        commit: spring-data-commons-github
+        state: success
+
+- name: spring-data-commons-pull-requests
+  public: true
+  plan:
+  - get: spring-data-commons-github
+    resource: spring-data-commons-pull-requests
+    trigger: true
+    version: every
+  - put: spring-data-commons-pull-requests
+    params:
+      path: spring-data-commons-github
+      status: pending
+  - aggregate:
+    - task: test
+      file: spring-data-commons-github/ci/test.yml
+      params: { PROFILE: "non-existent" }
+  on_failure:
+    put: spring-data-commons-pull-requests
+    params:
+      path: spring-data-commons-github
+      status: failure
+  on_success:
+    put: spring-data-commons-pull-requests
+    params:
+      path: spring-data-commons-github
+      status: success
+
+- name: spring-data-jpa-test-jdk8
+  serial: true
+  public: true
+  plan:
+  - get: spring-data-jpa-github
+    trigger: true
+  - get: spring-data-commons-artifactory
+    trigger: true
+  - get: openjdk:8-jdk
+    trigger: true
+  - task: test
+    file: spring-data-jpa-github/ci/test.yml
+    params: { PROFILE: "ci" }
+  <<: *slack-test-failure
+
+- name: spring-data-jpa-test-jdk8-spring5-next
+  serial: true
+  public: true
+  plan:
+  - get: spring-data-jpa-github
+    trigger: true
+  - get: spring-data-commons-artifactory
+    trigger: true
+  - get: openjdk:8-jdk
+    trigger: true
+  - task: test
+    file: spring-data-jpa-github/ci/test.yml
+    params: { PROFILE: spring5-next }
+  <<: *slack-test-failure
+
+- name: spring-data-jpa-test-jdk8-hibernate-next
+  serial: true
+  public: true
+  plan:
+  - get: spring-data-jpa-github
+    trigger: true
+  - get: spring-data-commons-artifactory
+    trigger: true
+  - get: openjdk:8-jdk
+    trigger: true
+  - task: test
+    file: spring-data-jpa-github/ci/test.yml
+    params: { PROFILE: hibernate-next }
+  <<: *slack-test-failure
+
+- name: spring-data-jpa-test-jdk8-hibernate-53
+  serial: true
+  public: true
+  plan:
+  - get: spring-data-jpa-github
+    trigger: true
+  - get: spring-data-commons-artifactory
+    trigger: true
+  - get: openjdk:8-jdk
+    trigger: true
+  - task: test
+    file: spring-data-jpa-github/ci/test.yml
+    params: { PROFILE: hibernate-53 }
+  <<: *slack-test-failure
+
+- name: spring-data-jpa-test-jdk8-hibernate-53-next
+  serial: true
+  public: true
+  plan:
+  - get: spring-data-jpa-github
+    trigger: true
+  - get: spring-data-commons-artifactory
+    trigger: true
+  - get: openjdk:8-jdk
+    trigger: true
+  - task: test
+    file: spring-data-jpa-github/ci/test.yml
+    params: { PROFILE: hibernate-53-next }
+  <<: *slack-test-failure
+
+- name: spring-data-jpa-test-jdk8-hibernate-54-next
+  serial: true
+  public: true
+  plan:
+  - get: spring-data-jpa-github
+    trigger: true
+  - get: spring-data-commons-artifactory
+    trigger: true
+  - get: openjdk:8-jdk
+    trigger: true
+  - task: test
+    file: spring-data-jpa-github/ci/test.yml
+    params: { PROFILE: hibernate-54-next }
+  <<: *slack-test-failure
+
+- name: spring-data-jpa-test-jdk8-eclipselink-next
+  serial: true
+  public: true
+  plan:
+  - get: spring-data-jpa-github
+    trigger: true
+  - get: spring-data-commons-artifactory
+    trigger: true
+  - get: openjdk:8-jdk
+    trigger: true
+  - task: test
+    file: spring-data-jpa-github/ci/test.yml
+    params: { PROFILE: eclipselink-next }
+  <<: *slack-test-failure
+
+- name: spring-data-jpa-test-jdk8-eclipselink-27
+  serial: true
+  public: true
+  plan:
+  - get: spring-data-jpa-github
+    trigger: true
+  - get: spring-data-commons-artifactory
+    trigger: true
+  - get: openjdk:8-jdk
+    trigger: true
+  - task: test
+    file: spring-data-jpa-github/ci/test.yml
+    params: { PROFILE: eclipselink-27 }
+  <<: *slack-test-failure
+
+- name: spring-data-jpa-test-jdk8-eclipselink-27-next
+  serial: true
+  public: true
+  plan:
+  - get: spring-data-jpa-github
+    trigger: true
+  - get: spring-data-commons-artifactory
+    trigger: true
+  - get: openjdk:8-jdk
+    trigger: true
+  - task: test
+    file: spring-data-jpa-github/ci/test.yml
+    params: { PROFILE: eclipselink-27-next }
+  <<: *slack-test-failure
+
+- name: spring-data-jpa-test-jdk8-querydsl-next
+  serial: true
+  public: true
+  plan:
+  - get: spring-data-jpa-github
+    trigger: true
+  - get: spring-data-commons-artifactory
+    trigger: true
+  - get: openjdk:8-jdk
+    trigger: true
+  - task: test
+    file: spring-data-jpa-github/ci/test.yml
+    params: { PROFILE: querydsl-next }
+  <<: *slack-test-failure
+
+- name: spring-data-jpa-build
+  serial: true
+  public: true
+  plan:
+  - get: spring-data-jpa-github
+    trigger: true
+    passed: [
+      spring-data-jpa-test-jdk8,
+      spring-data-jpa-test-jdk8-spring5-next,
+      spring-data-jpa-test-jdk8-hibernate-next,
+      spring-data-jpa-test-jdk8-hibernate-53,
+      spring-data-jpa-test-jdk8-hibernate-53-next,
+      spring-data-jpa-test-jdk8-hibernate-54-next,
+      spring-data-jpa-test-jdk8-eclipselink-next,
+      spring-data-jpa-test-jdk8-eclipselink-27,
+      spring-data-jpa-test-jdk8-eclipselink-27-next,
+      spring-data-jpa-test-jdk8-querydsl-next
+    ]
+  - get: spring-data-commons-artifactory
+    trigger: true
+    passed: [
+      spring-data-jpa-test-jdk8,
+      spring-data-jpa-test-jdk8-spring5-next,
+      spring-data-jpa-test-jdk8-hibernate-next,
+      spring-data-jpa-test-jdk8-hibernate-53,
+      spring-data-jpa-test-jdk8-hibernate-53-next,
+      spring-data-jpa-test-jdk8-hibernate-54-next,
+      spring-data-jpa-test-jdk8-eclipselink-next,
+      spring-data-jpa-test-jdk8-eclipselink-27,
+      spring-data-jpa-test-jdk8-eclipselink-27-next,
+      spring-data-jpa-test-jdk8-querydsl-next
+    ]
+  - put: spring-data-jpa-status
+    params:
+      commit: spring-data-jpa-github
+      state: pending
+  - task: build
+    file: spring-data-jpa-github/ci/build.yml
+  - put: spring-data-jpa-artifactory
+    params:
+      build_number:   ${BUILD_NAME}
+      build_uri:      ${ATC_EXTERNAL_URL}/teams/${BUILD_TEAM_NAME}/pipelines/${BUILD_PIPELINE_NAME}/jobs/${BUILD_JOB_NAME}/builds/${BUILD_NAME}
+      repo:           libs-snapshot-local
+      folder:         spring-data-jpa-artifactory
+      artifact_set:
+      - include:
+        - "/**"
+        properties:
+          zip.deployed: false
+          zip.displayname: "spring-data-jpa"
+          zip.name: "spring-data-jpa"
+          zip.type: "docs"
+  on_abort:
+    put: spring-data-jpa-status
+    params:
+      commit: spring-data-jpa-github
+      state:  error
+  on_failure:
+    aggregate:
+    - put: spring-data-jpa-status
+      params:
+        commit: spring-data-jpa-github
+        state: failure
+    - put: slack
+      params:
+        attachments:
+          - color: danger
+            fallback: "$BUILD_PIPELINE_NAME/$BUILD_JOB_NAME #$BUILD_NAME <FAILURE>"
+            text: "Build has failed"
+            title: "$BUILD_PIPELINE_NAME/$BUILD_JOB_NAME #$BUILD_NAME"
+            title_link: $ATC_EXTERNAL_URL/teams/$BUILD_TEAM_NAME/pipelines/$BUILD_PIPELINE_NAME/jobs/$BUILD_JOB_NAME/builds/$BUILD_NAME
+  on_success:
+    aggregate:
+    - put: spring-data-jpa-status
+      params:
+        commit: spring-data-jpa-github
+        state: success
+
+- name: spring-data-jpa-pull-requests
+  public: true
+  plan:
+  - get: spring-data-jpa-github
+    resource: spring-data-jpa-pull-requests
+    trigger: true
+    version: every
+  - put: spring-data-jpa-pull-requests
+    params:
+      path: spring-data-jpa-github
+      status: pending
+  - aggregate:
+    - task: test (jdk8)
+      file: spring-data-jpa-github/ci/test.yml
+      params: { PROFILE: "ci" }
+    - task: test (jdk8 spring5-next)
+      file: spring-data-jpa-github/ci/test.yml
+      params: { PROFILE: spring5-next }
+    - task: test (jdk8 hibernate-next)
+      file: spring-data-jpa-github/ci/test.yml
+      params: { PROFILE: hibernate-next }
+    - task: test (jdk8 hibernate-53)
+      file: spring-data-jpa-github/ci/test.yml
+      params: { PROFILE: hibernate-53 }
+    - task: test (jdk8 hibernate-53-next)
+      file: spring-data-jpa-github/ci/test.yml
+      params: { PROFILE: hibernate-53-next }
+    - task: test (jdk8 hibernate-54-next)
+      file: spring-data-jpa-github/ci/test.yml
+      params: { PROFILE: hibernate-54-next }
+    - task: test (jdk8 eclipselink-next)
+      file: spring-data-jpa-github/ci/test.yml
+      params: { PROFILE: eclipselink-next }
+    - task: test (jdk8 eclipselink-27)
+      file: spring-data-jpa-github/ci/test.yml
+      params: { PROFILE: eclipselink-27 }
+    - task: test (jdk8 eclipselink-27-next)
+      file: spring-data-jpa-github/ci/test.yml
+      params: { PROFILE: eclipselink-27-next }
+    - task: test (jdk8 querydsl-next)
+      file: spring-data-jpa-github/ci/test.yml
+      params: { PROFILE: querydsl-next }
+  on_failure:
+    put: spring-data-jpa-pull-requests
+    params:
+      path: spring-data-jpa-github
+      status: failure
+  on_success:
+    put: spring-data-jpa-pull-requests
+    params:
+      path: spring-data-jpa-github
+      status: success
+
+- name: spring-data-mongodb-test-jdk8
+  serial: true
+  public: true
+  plan:
+  - get: spring-data-mongodb-github
+    trigger: true
+  - get: spring-data-commons-artifactory
+    trigger: true
+  - get: 8-jdk-with-mongodb:latest
+    trigger: true
+  - task: test
+    file: spring-data-mongodb-github/ci/test.yml
+    params: { PROFILE: "non-existent" }
+  <<: *slack-test-failure
+
+- name: spring-data-mongodb-build
+  serial: true
+  public: true
+  plan:
+  - get: spring-data-mongodb-github
+    trigger: true
+    passed: [
+      spring-data-mongodb-test-jdk8
+    ]
+  - get: spring-data-commons-artifactory
+    trigger: true
+    passed: [
+      spring-data-mongodb-test-jdk8
+    ]
+  - put: spring-data-mongodb-status
+    params:
+      commit: spring-data-mongodb-github
+      state: pending
+  - task: build
+    file: spring-data-mongodb-github/ci/build.yml
+  - put: spring-data-mongodb-artifactory
+    params:
+      build_number:   ${BUILD_NAME}
+      build_uri:      ${ATC_EXTERNAL_URL}/teams/${BUILD_TEAM_NAME}/pipelines/${BUILD_PIPELINE_NAME}/jobs/${BUILD_JOB_NAME}/builds/${BUILD_NAME}
+      repo:           libs-snapshot-local
+      folder:         spring-data-mongodb-artifactory
+      artifact_set:
+      - include:
+        - "/**"
+        properties:
+          zip.deployed: false
+          zip.displayname: "spring-data-mongodb"
+          zip.name: "spring-data-mongodb"
+          zip.type: "docs"
+  on_abort:
+    put: spring-data-mongodb-status
+    params:
+      commit: spring-data-mongodb-github
+      state:  error
+  on_failure:
+    aggregate:
+    - put: spring-data-mongodb-status
+      params:
+        commit: spring-data-mongodb-github
+        state: failure
+    - put: slack
+      params:
+        attachments:
+          - color: danger
+            fallback: "$BUILD_PIPELINE_NAME/$BUILD_JOB_NAME #$BUILD_NAME <FAILURE>"
+            text: "Build has failed"
+            title: "$BUILD_PIPELINE_NAME/$BUILD_JOB_NAME #$BUILD_NAME"
+            title_link: $ATC_EXTERNAL_URL/teams/$BUILD_TEAM_NAME/pipelines/$BUILD_PIPELINE_NAME/jobs/$BUILD_JOB_NAME/builds/$BUILD_NAME
+
+- name: spring-data-mongodb-pull-requests
+  public: true
+  plan:
+  - get: spring-data-mongodb-github
+    resource: spring-data-mongodb-pull-requests
+    trigger: true
+    version: every
+  - put: spring-data-mongodb-pull-requests
+    params:
+      path: spring-data-mongodb-github
+      status: pending
+  - aggregate:
+    - task: test (jdk8)
+      file: spring-data-mongodb-github/ci/test.yml
+      params: { PROFILE: "non-existent" }
+  on_failure:
+    put: spring-data-mongodb-pull-requests
+    params:
+      path: spring-data-mongodb-github
+      status: failure
+  on_success:
+    put: spring-data-mongodb-pull-requests
+    params:
+      path: spring-data-mongodb-github
+      status: success
+
+- name: spring-data-redis-test-jdk8
+  serial: true
+  public: true
+  plan:
+  - get: spring-data-redis-github
+    trigger: true
+  - get: spring-data-commons-artifactory
+    trigger: true
+  - get: 8-jdk-with-redis:latest
+    trigger: true
+  - task: test
+    file: spring-data-redis-github/ci/test.yml
+    params: { PROFILE: "non-existent" }
+  <<: *slack-test-failure
+
+- name: spring-data-redis-build
+  serial: true
+  public: true
+  plan:
+  - get: spring-data-redis-github
+    trigger: true
+    passed: [
+      spring-data-redis-test-jdk8
+    ]
+  - get: spring-data-commons-artifactory
+    trigger: true
+    passed: [
+      spring-data-redis-test-jdk8
+    ]
+  - put: spring-data-redis-status
+    params:
+      commit: spring-data-redis-github
+      state: pending
+  - task: build
+    file: spring-data-redis-github/ci/build.yml
+  - put: spring-data-redis-artifactory
+    params:
+      build_number:   ${BUILD_NAME}
+      build_uri:      ${ATC_EXTERNAL_URL}/teams/${BUILD_TEAM_NAME}/pipelines/${BUILD_PIPELINE_NAME}/jobs/${BUILD_JOB_NAME}/builds/${BUILD_NAME}
+      repo:           libs-snapshot-local
+      folder:         spring-data-redis-artifactory
+      artifact_set:
+      - include:
+        - "/**"
+        properties:
+          zip.deployed: false
+          zip.displayname: "spring-data-redis"
+          zip.name: "spring-data-redis"
+          zip.type: "docs"
+  on_abort:
+    put: spring-data-redis-status
+    params:
+      commit: spring-data-redis-github
+      state:  error
+  on_failure:
+    aggregate:
+    - put: spring-data-redis-status
+      params:
+        commit: spring-data-redis-github
+        state: failure
+    - put: slack
+      params:
+        attachments:
+          - color: danger
+            fallback: "$BUILD_PIPELINE_NAME/$BUILD_JOB_NAME #$BUILD_NAME <FAILURE>"
+            text: "Build has failed"
+            title: "$BUILD_PIPELINE_NAME/$BUILD_JOB_NAME #$BUILD_NAME"
+            title_link: $ATC_EXTERNAL_URL/teams/$BUILD_TEAM_NAME/pipelines/$BUILD_PIPELINE_NAME/jobs/$BUILD_JOB_NAME/builds/$BUILD_NAME
+
+- name: spring-data-redis-pull-requests
+  public: true
+  plan:
+  - get: spring-data-redis-github
+    resource: spring-data-redis-pull-requests
+    trigger: true
+    version: every
+  - put: spring-data-redis-pull-requests
+    params:
+      path: spring-data-redis-github
+      status: pending
+  - aggregate:
+    - task: test (jdk8)
+      file: spring-data-redis-github/ci/test.yml
+      params: { PROFILE: "non-existent" }
+  on_failure:
+    put: spring-data-redis-pull-requests
+    params:
+      path: spring-data-redis-github
+      status: failure
+  on_success:
+    put: spring-data-redis-pull-requests
+    params:
+      path: spring-data-redis-github
+      status: success
+
+- name: spring-data-geode-test-jdk8
+  serial: true
+  public: true
+  plan:
+  - get: spring-data-geode-github
+    trigger: true
+  - get: spring-data-commons-artifactory
+    trigger: true
+  - get: openjdk:8-jdk
+    trigger: true
+  - task: test
+    file: spring-data-geode-github/ci/test.yml
+    params: { PROFILE: "non-existent" }
+  <<: *slack-test-failure
+
+- name: spring-data-geode-build
+  serial: true
+  public: true
+  plan:
+  - get: spring-data-geode-github
+    trigger: true
+    passed: [
+      spring-data-geode-test-jdk8
+    ]
+  - get: spring-data-commons-artifactory
+    trigger: true
+    passed: [
+      spring-data-geode-test-jdk8
+    ]
+  - put: spring-data-geode-status
+    params:
+      commit: spring-data-geode-github
+      state: pending
+  - task: build
+    file: spring-data-geode-github/ci/build.yml
+  - put: spring-data-geode-artifactory
+    params:
+      build_number:   ${BUILD_NAME}
+      build_uri:      ${ATC_EXTERNAL_URL}/teams/${BUILD_TEAM_NAME}/pipelines/${BUILD_PIPELINE_NAME}/jobs/${BUILD_JOB_NAME}/builds/${BUILD_NAME}
+      repo:           libs-snapshot-local
+      folder:         spring-data-geode-artifactory
+      artifact_set:
+      - include:
+        - "/**"
+        properties:
+          zip.deployed: false
+          zip.displayname: "spring-data-geode"
+          zip.name: "spring-data-geode"
+          zip.type: "docs"
+  on_abort:
+    put: spring-data-geode-status
+    params:
+      commit: spring-data-geode-github
+      state:  error
+  on_failure:
+    aggregate:
+    - put: spring-data-geode-status
+      params:
+        commit: spring-data-geode-github
+        state: failure
+    - put: slack
+      params:
+        attachments:
+          - color: danger
+            fallback: "$BUILD_PIPELINE_NAME/$BUILD_JOB_NAME #$BUILD_NAME <FAILURE>"
+            text: "Build has failed"
+            title: "$BUILD_PIPELINE_NAME/$BUILD_JOB_NAME #$BUILD_NAME"
+            title_link: $ATC_EXTERNAL_URL/teams/$BUILD_TEAM_NAME/pipelines/$BUILD_PIPELINE_NAME/jobs/$BUILD_JOB_NAME/builds/$BUILD_NAME
+
+- name: spring-data-geode-pull-requests
+  public: true
+  plan:
+  - get: spring-data-geode-github
+    resource: spring-data-geode-pull-requests
+    trigger: true
+    version: every
+  - put: spring-data-geode-pull-requests
+    params:
+      path: spring-data-geode-github
+      status: pending
+  - aggregate:
+    - task: test (jdk8)
+      file: spring-data-geode-github/ci/test.yml
+      params: { PROFILE: "non-existent" }
+  on_failure:
+    put: spring-data-geode-pull-requests
+    params:
+      path: spring-data-geode-github
+      status: failure
+  on_success:
+    put: spring-data-geode-pull-requests
+    params:
+      path: spring-data-geode-github
+      status: success
+
+- name: spring-data-gemfire-test-jdk8
+  serial: true
+  public: true
+  plan:
+  - get: spring-data-gemfire-github
+    trigger: true
+  - get: spring-data-commons-artifactory
+    trigger: true
+  - get: openjdk:8-jdk
+    trigger: true
+  - task: test
+    file: spring-data-gemfire-github/ci/test.yml
+    params: { PROFILE: "non-existent" }
+  <<: *slack-test-failure
+
+- name: spring-data-gemfire-build
+  serial: true
+  public: true
+  plan:
+  - get: spring-data-gemfire-github
+    trigger: true
+    passed: [
+      spring-data-gemfire-test-jdk8
+    ]
+  - get: spring-data-commons-artifactory
+    trigger: true
+    passed: [
+      spring-data-gemfire-test-jdk8
+    ]
+  - put: spring-data-gemfire-status
+    params:
+      commit: spring-data-gemfire-github
+      state: pending
+  - task: build
+    file: spring-data-gemfire-github/ci/build.yml
+  - put: spring-data-gemfire-artifactory
+    params:
+      build_number:   ${BUILD_NAME}
+      build_uri:      ${ATC_EXTERNAL_URL}/teams/${BUILD_TEAM_NAME}/pipelines/${BUILD_PIPELINE_NAME}/jobs/${BUILD_JOB_NAME}/builds/${BUILD_NAME}
+      repo:           libs-snapshot-local
+      folder:         spring-data-gemfire-artifactory
+      artifact_set:
+      - include:
+        - "/**"
+        properties:
+          zip.deployed: false
+          zip.displayname: "spring-data-gemfire"
+          zip.name: "spring-data-gemfire"
+          zip.type: "docs"
+  on_abort:
+    put: spring-data-gemfire-status
+    params:
+      commit: spring-data-gemfire-github
+      state:  error
+  on_failure:
+    aggregate:
+    - put: spring-data-gemfire-status
+      params:
+        commit: spring-data-gemfire-github
+        state: failure
+    - put: slack
+      params:
+        attachments:
+          - color: danger
+            fallback: "$BUILD_PIPELINE_NAME/$BUILD_JOB_NAME #$BUILD_NAME <FAILURE>"
+            text: "Build has failed"
+            title: "$BUILD_PIPELINE_NAME/$BUILD_JOB_NAME #$BUILD_NAME"
+            title_link: $ATC_EXTERNAL_URL/teams/$BUILD_TEAM_NAME/pipelines/$BUILD_PIPELINE_NAME/jobs/$BUILD_JOB_NAME/builds/$BUILD_NAME
+
+- name: spring-data-gemfire-pull-requests
+  public: true
+  plan:
+  - get: spring-data-gemfire-github
+    resource: spring-data-gemfire-pull-requests
+    trigger: true
+    version: every
+  - put: spring-data-gemfire-pull-requests
+    params:
+      path: spring-data-gemfire-github
+      status: pending
+  - aggregate:
+    - task: test (jdk8)
+      file: spring-data-gemfire-github/ci/test.yml
+      params: { PROFILE: "non-existent" }
+  on_failure:
+    put: spring-data-gemfire-pull-requests
+    params:
+      path: spring-data-gemfire-github
+      status: failure
+  on_success:
+    put: spring-data-gemfire-pull-requests
+    params:
+      path: spring-data-gemfire-github
+      status: success
+
+- name: spring-data-jdbc-test-jdk8
+  serial: true
+  public: true
+  plan:
+  - get: spring-data-jdbc-github
+    trigger: true
+  - get: spring-data-commons-artifactory
+    trigger: true
+  - get: openjdk:8-jdk
+    trigger: true
+  - task: test
+    file: spring-data-jdbc-github/ci/test.yml
+    params: { PROFILE: ci }
+  <<: *slack-test-failure
+
+- name: spring-data-jdbc-build
+  serial: true
+  public: true
+  plan:
+  - get: spring-data-jdbc-github
+    trigger: true
+    passed: [
+      spring-data-jdbc-test-jdk8
+    ]
+  - get: spring-data-commons-artifactory
+    trigger: true
+    passed: [
+      spring-data-jdbc-test-jdk8
+    ]
+  - put: spring-data-jdbc-status
+    params:
+      commit: spring-data-jdbc-github
+      state: pending
+  - task: build
+    file: spring-data-jdbc-github/ci/build.yml
+  - put: spring-data-jdbc-artifactory
+    params:
+      build_number:   ${BUILD_NAME}
+      build_uri:      ${ATC_EXTERNAL_URL}/teams/${BUILD_TEAM_NAME}/pipelines/${BUILD_PIPELINE_NAME}/jobs/${BUILD_JOB_NAME}/builds/${BUILD_NAME}
+      repo:           libs-snapshot-local
+      folder:         spring-data-jdbc-artifactory
+      artifact_set:
+      - include:
+        - "/**"
+        properties:
+          zip.deployed: false
+          zip.displayname: "spring-data-jdbc"
+          zip.name: "spring-data-jdbc"
+          zip.type: "docs"
+  on_abort:
+    put: spring-data-jdbc-status
+    params:
+      commit: spring-data-jdbc-github
+      state:  error
+  on_failure:
+    aggregate:
+    - put: spring-data-jdbc-status
+      params:
+        commit: spring-data-jdbc-github
+        state: failure
+    - put: slack
+      params:
+        attachments:
+          - color: danger
+            fallback: "$BUILD_PIPELINE_NAME/$BUILD_JOB_NAME #$BUILD_NAME <FAILURE>"
+            text: "Build has failed"
+            title: "$BUILD_PIPELINE_NAME/$BUILD_JOB_NAME #$BUILD_NAME"
+            title_link: $ATC_EXTERNAL_URL/teams/$BUILD_TEAM_NAME/pipelines/$BUILD_PIPELINE_NAME/jobs/$BUILD_JOB_NAME/builds/$BUILD_NAME
+
+- name: spring-data-jdbc-pull-requests
+  public: true
+  plan:
+  - get: spring-data-jdbc-github
+    resource: spring-data-jdbc-pull-requests
+    trigger: true
+    version: every
+  - put: spring-data-jdbc-pull-requests
+    params:
+      path: spring-data-jdbc-github
+      status: pending
+  - aggregate:
+    - task: test (jdk8)
+      file: spring-data-jdbc-github/ci/test.yml
+      params: { PROFILE: "non-existent" }
+  on_failure:
+    put: spring-data-jdbc-pull-requests
+    params:
+      path: spring-data-jdbc-github
+      status: failure
+  on_success:
+    put: spring-data-jdbc-pull-requests
+    params:
+      path: spring-data-jdbc-github
+      status: success
+
+- name: spring-data-solr-test-jdk8
+  serial: true
+  public: true
+  plan:
+  - get: spring-data-solr-github
+    trigger: true
+  - get: spring-data-commons-artifactory
+    trigger: true
+  - get: openjdk:8-jdk
+    trigger: true
+  - task: test
+    file: spring-data-solr-github/ci/test.yml
+    params: { PROFILE: "non-existent" }
+  <<: *slack-test-failure
+
+- name: spring-data-solr-build
+  serial: true
+  public: true
+  plan:
+  - get: spring-data-solr-github
+    trigger: true
+    passed: [
+      spring-data-solr-test-jdk8
+    ]
+  - get: spring-data-commons-artifactory
+    trigger: true
+    passed: [
+      spring-data-solr-test-jdk8
+    ]
+  - put: spring-data-solr-status
+    params:
+      commit: spring-data-solr-github
+      state: pending
+  - task: build
+    file: spring-data-solr-github/ci/build.yml
+  - put: spring-data-solr-artifactory
+    params:
+      build_number:   ${BUILD_NAME}
+      build_uri:      ${ATC_EXTERNAL_URL}/teams/${BUILD_TEAM_NAME}/pipelines/${BUILD_PIPELINE_NAME}/jobs/${BUILD_JOB_NAME}/builds/${BUILD_NAME}
+      repo:           libs-snapshot-local
+      folder:         spring-data-solr-artifactory
+      artifact_set:
+      - include:
+        - "/**"
+        properties:
+          zip.deployed: false
+          zip.displayname: "spring-data-solr"
+          zip.name: "spring-data-solr"
+          zip.type: "docs"
+  on_abort:
+    put: spring-data-solr-status
+    params:
+      commit: spring-data-solr-github
+      state:  error
+  on_failure:
+    aggregate:
+    - put: spring-data-solr-status
+      params:
+        commit: spring-data-solr-github
+        state: failure
+    - put: slack
+      params:
+        attachments:
+          - color: danger
+            fallback: "$BUILD_PIPELINE_NAME/$BUILD_JOB_NAME #$BUILD_NAME <FAILURE>"
+            text: "Build has failed"
+            title: "$BUILD_PIPELINE_NAME/$BUILD_JOB_NAME #$BUILD_NAME"
+            title_link: $ATC_EXTERNAL_URL/teams/$BUILD_TEAM_NAME/pipelines/$BUILD_PIPELINE_NAME/jobs/$BUILD_JOB_NAME/builds/$BUILD_NAME
+
+- name: spring-data-solr-pull-requests
+  public: true
+  plan:
+  - get: spring-data-solr-github
+    resource: spring-data-solr-pull-requests
+    trigger: true
+    version: every
+  - put: spring-data-solr-pull-requests
+    params:
+      path: spring-data-solr-github
+      status: pending
+  - aggregate:
+    - task: test (jdk8)
+      file: spring-data-solr-github/ci/test.yml
+      params: { PROFILE: "non-existent" }
+  on_failure:
+    put: spring-data-solr-pull-requests
+    params:
+      path: spring-data-solr-github
+      status: failure
+  on_success:
+    put: spring-data-solr-pull-requests
+    params:
+      path: spring-data-solr-github
+      status: success
+
+- name: spring-data-keyvalue-test-jdk8
+  serial: true
+  public: true
+  plan:
+  - get: spring-data-keyvalue-github
+    trigger: true
+  - get: spring-data-commons-artifactory
+    trigger: true
+  - get: openjdk:8-jdk
+    trigger: true
+  - task: test
+    file: spring-data-keyvalue-github/ci/test.yml
+    params: { PROFILE: "non-existent" }
+  <<: *slack-test-failure
+
+- name: spring-data-keyvalue-build
+  serial: true
+  public: true
+  plan:
+  - get: spring-data-keyvalue-github
+    trigger: true
+    passed: [
+      spring-data-keyvalue-test-jdk8
+    ]
+  - get: spring-data-commons-artifactory
+    trigger: true
+    passed: [
+      spring-data-keyvalue-test-jdk8
+    ]
+  - put: spring-data-keyvalue-status
+    params:
+      commit: spring-data-keyvalue-github
+      state: pending
+  - task: build
+    file: spring-data-keyvalue-github/ci/build.yml
+  - put: spring-data-keyvalue-artifactory
+    params:
+      build_number:   ${BUILD_NAME}
+      build_uri:      ${ATC_EXTERNAL_URL}/teams/${BUILD_TEAM_NAME}/pipelines/${BUILD_PIPELINE_NAME}/jobs/${BUILD_JOB_NAME}/builds/${BUILD_NAME}
+      repo:           libs-snapshot-local
+      folder:         spring-data-keyvalue-artifactory
+      artifact_set:
+      - include:
+        - "/**"
+        properties:
+          zip.deployed: false
+          zip.displayname: "spring-data-keyvalue"
+          zip.name: "spring-data-keyvalue"
+          zip.type: "docs"
+  on_abort:
+    put: spring-data-keyvalue-status
+    params:
+      commit: spring-data-keyvalue-github
+      state:  error
+  on_failure:
+    aggregate:
+    - put: spring-data-keyvalue-status
+      params:
+        commit: spring-data-keyvalue-github
+        state: failure
+    - put: slack
+      params:
+        attachments:
+          - color: danger
+            fallback: "$BUILD_PIPELINE_NAME/$BUILD_JOB_NAME #$BUILD_NAME <FAILURE>"
+            text: "Build has failed"
+            title: "$BUILD_PIPELINE_NAME/$BUILD_JOB_NAME #$BUILD_NAME"
+            title_link: $ATC_EXTERNAL_URL/teams/$BUILD_TEAM_NAME/pipelines/$BUILD_PIPELINE_NAME/jobs/$BUILD_JOB_NAME/builds/$BUILD_NAME
+
+- name: spring-data-keyvalue-pull-requests
+  public: true
+  plan:
+  - get: spring-data-keyvalue-github
+    resource: spring-data-keyvalue-pull-requests
+    trigger: true
+    version: every
+  - put: spring-data-keyvalue-pull-requests
+    params:
+      path: spring-data-keyvalue-github
+      status: pending
+  - aggregate:
+    - task: test (jdk8)
+      file: spring-data-keyvalue-github/ci/test.yml
+      params: { PROFILE: "non-existent" }
+  on_failure:
+    put: spring-data-keyvalue-pull-requests
+    params:
+      path: spring-data-keyvalue-github
+      status: failure
+  on_success:
+    put: spring-data-keyvalue-pull-requests
+    params:
+      path: spring-data-keyvalue-github
+      status: success
+
+- name: spring-data-cassandra-test-jdk8
+  serial: true
+  public: true
+  plan:
+  - get: spring-data-cassandra-github
+    trigger: true
+  - get: spring-data-commons-artifactory
+    trigger: true
+  - get: openjdk:8-jdk
+    trigger: true
+  - task: test
+    file: spring-data-cassandra-github/ci/test.yml
+    params: { PROFILE: "non-existent" }
+  <<: *slack-test-failure
+
+- name: spring-data-cassandra-build
+  serial: true
+  public: true
+  plan:
+  - get: spring-data-cassandra-github
+    trigger: true
+    passed: [
+      spring-data-cassandra-test-jdk8
+    ]
+  - get: spring-data-commons-artifactory
+    trigger: true
+    passed: [
+      spring-data-cassandra-test-jdk8
+    ]
+  - put: spring-data-cassandra-status
+    params:
+      commit: spring-data-cassandra-github
+      state: pending
+  - task: build
+    file: spring-data-cassandra-github/ci/build.yml
+  - put: spring-data-cassandra-artifactory
+    params:
+      build_number:   ${BUILD_NAME}
+      build_uri:      ${ATC_EXTERNAL_URL}/teams/${BUILD_TEAM_NAME}/pipelines/${BUILD_PIPELINE_NAME}/jobs/${BUILD_JOB_NAME}/builds/${BUILD_NAME}
+      repo:           libs-snapshot-local
+      folder:         spring-data-cassandra-artifactory
+      artifact_set:
+      - include:
+        - "/**"
+        properties:
+          zip.deployed: false
+          zip.displayname: "spring-data-cassandra"
+          zip.name: "spring-data-cassandra"
+          zip.type: "docs"
+  on_abort:
+    put: spring-data-cassandra-status
+    params:
+      commit: spring-data-cassandra-github
+      state:  error
+  on_failure:
+    aggregate:
+    - put: spring-data-cassandra-status
+      params:
+        commit: spring-data-cassandra-github
+        state: failure
+    - put: slack
+      params:
+        attachments:
+          - color: danger
+            fallback: "$BUILD_PIPELINE_NAME/$BUILD_JOB_NAME #$BUILD_NAME <FAILURE>"
+            text: "Build has failed"
+            title: "$BUILD_PIPELINE_NAME/$BUILD_JOB_NAME #$BUILD_NAME"
+            title_link: $ATC_EXTERNAL_URL/teams/$BUILD_TEAM_NAME/pipelines/$BUILD_PIPELINE_NAME/jobs/$BUILD_JOB_NAME/builds/$BUILD_NAME
+
+- name: spring-data-cassandra-pull-requests
+  public: true
+  plan:
+  - get: spring-data-cassandra-github
+    resource: spring-data-cassandra-pull-requests
+    trigger: true
+    version: every
+  - put: spring-data-cassandra-pull-requests
+    params:
+      path: spring-data-cassandra-github
+      status: pending
+  - aggregate:
+    - task: test (jdk8)
+      file: spring-data-cassandra-github/ci/test.yml
+      params: { PROFILE: "non-existent" }
+  on_failure:
+    put: spring-data-cassandra-pull-requests
+    params:
+      path: spring-data-cassandra-github
+      status: failure
+  on_success:
+    put: spring-data-cassandra-pull-requests
+    params:
+      path: spring-data-cassandra-github
+      status: success
+
+- name: spring-data-neo4j-test-jdk8
+  serial: true
+  public: true
+  plan:
+  - get: spring-data-neo4j-github
+    trigger: true
+  - get: spring-data-commons-artifactory
+    trigger: true
+  - get: openjdk:8-jdk
+    trigger: true
+  - task: test
+    file: spring-data-neo4j-github/ci/test.yml
+    params: { PROFILE: "non-existent" }
+  <<: *slack-test-failure
+
+- name: spring-data-neo4j-build
+  serial: true
+  public: true
+  plan:
+  - get: spring-data-neo4j-github
+    trigger: true
+    passed: [
+      spring-data-neo4j-test-jdk8
+    ]
+  - get: spring-data-commons-artifactory
+    trigger: true
+    passed: [
+      spring-data-neo4j-test-jdk8
+    ]
+  - put: spring-data-neo4j-status
+    params:
+      commit: spring-data-neo4j-github
+      state: pending
+  - task: build
+    file: spring-data-neo4j-github/ci/build.yml
+  - put: spring-data-neo4j-artifactory
+    params:
+      build_number:   ${BUILD_NAME}
+      build_uri:      ${ATC_EXTERNAL_URL}/teams/${BUILD_TEAM_NAME}/pipelines/${BUILD_PIPELINE_NAME}/jobs/${BUILD_JOB_NAME}/builds/${BUILD_NAME}
+      repo:           libs-snapshot-local
+      folder:         spring-data-neo4j-artifactory
+      artifact_set:
+      - include:
+        - "/**"
+        properties:
+          zip.deployed: false
+          zip.displayname: "spring-data-neo4j"
+          zip.name: "spring-data-neo4j"
+          zip.type: "docs"
+  on_abort:
+    put: spring-data-neo4j-status
+    params:
+      commit: spring-data-neo4j-github
+      state:  error
+  on_failure:
+    aggregate:
+    - put: spring-data-neo4j-status
+      params:
+        commit: spring-data-neo4j-github
+        state: failure
+    - put: slack
+      params:
+        attachments:
+          - color: danger
+            fallback: "$BUILD_PIPELINE_NAME/$BUILD_JOB_NAME #$BUILD_NAME <FAILURE>"
+            text: "Build has failed"
+            title: "$BUILD_PIPELINE_NAME/$BUILD_JOB_NAME #$BUILD_NAME"
+            title_link: $ATC_EXTERNAL_URL/teams/$BUILD_TEAM_NAME/pipelines/$BUILD_PIPELINE_NAME/jobs/$BUILD_JOB_NAME/builds/$BUILD_NAME
+
+- name: spring-data-neo4j-pull-requests
+  public: true
+  plan:
+  - get: spring-data-neo4j-github
+    resource: spring-data-neo4j-pull-requests
+    trigger: true
+    version: every
+  - put: spring-data-neo4j-pull-requests
+    params:
+      path: spring-data-neo4j-github
+      status: pending
+  - aggregate:
+    - task: test (jdk8)
+      file: spring-data-neo4j-github/ci/test.yml
+      params: { PROFILE: "non-existent" }
+  on_failure:
+    put: spring-data-neo4j-pull-requests
+    params:
+      path: spring-data-neo4j-github
+      status: failure
+  on_success:
+    put: spring-data-neo4j-pull-requests
+    params:
+      path: spring-data-neo4j-github
+      status: success
+
+- name: spring-data-ldap-test-jdk8
+  serial: true
+  public: true
+  plan:
+  - get: spring-data-ldap-github
+    trigger: true
+  - get: spring-data-commons-artifactory
+    trigger: true
+  - get: openjdk:8-jdk
+    trigger: true
+  - task: test
+    file: spring-data-ldap-github/ci/test.yml
+    params: { PROFILE: "non-existent" }
+  <<: *slack-test-failure
+
+- name: spring-data-ldap-build
+  serial: true
+  public: true
+  plan:
+  - get: spring-data-ldap-github
+    trigger: true
+    passed: [
+      spring-data-ldap-test-jdk8
+    ]
+  - get: spring-data-commons-artifactory
+    trigger: true
+    passed: [
+      spring-data-ldap-test-jdk8
+    ]
+  - put: spring-data-ldap-status
+    params:
+      commit: spring-data-ldap-github
+      state: pending
+  - task: build
+    file: spring-data-ldap-github/ci/build.yml
+  - put: spring-data-ldap-artifactory
+    params:
+      build_number:   ${BUILD_NAME}
+      build_uri:      ${ATC_EXTERNAL_URL}/teams/${BUILD_TEAM_NAME}/pipelines/${BUILD_PIPELINE_NAME}/jobs/${BUILD_JOB_NAME}/builds/${BUILD_NAME}
+      repo:           libs-snapshot-local
+      folder:         spring-data-ldap-artifactory
+      artifact_set:
+      - include:
+        - "/**"
+        properties:
+          zip.deployed: false
+          zip.displayname: "spring-data-ldap"
+          zip.name: "spring-data-ldap"
+          zip.type: "docs"
+  on_abort:
+    put: spring-data-ldap-status
+    params:
+      commit: spring-data-ldap-github
+      state:  error
+  on_failure:
+    aggregate:
+    - put: spring-data-ldap-status
+      params:
+        commit: spring-data-ldap-github
+        state: failure
+    - put: slack
+      params:
+        attachments:
+          - color: danger
+            fallback: "$BUILD_PIPELINE_NAME/$BUILD_JOB_NAME #$BUILD_NAME <FAILURE>"
+            text: "Build has failed"
+            title: "$BUILD_PIPELINE_NAME/$BUILD_JOB_NAME #$BUILD_NAME"
+            title_link: $ATC_EXTERNAL_URL/teams/$BUILD_TEAM_NAME/pipelines/$BUILD_PIPELINE_NAME/jobs/$BUILD_JOB_NAME/builds/$BUILD_NAME
+
+- name: spring-data-ldap-pull-requests
+  public: true
+  plan:
+  - get: spring-data-ldap-github
+    resource: spring-data-ldap-pull-requests
+    trigger: true
+    version: every
+  - put: spring-data-ldap-pull-requests
+    params:
+      path: spring-data-ldap-github
+      status: pending
+  - aggregate:
+    - task: test (jdk8)
+      file: spring-data-ldap-github/ci/test.yml
+      params: { PROFILE: "non-existent" }
+  on_failure:
+    put: spring-data-ldap-pull-requests
+    params:
+      path: spring-data-ldap-github
+      status: failure
+  on_success:
+    put: spring-data-ldap-pull-requests
+    params:
+      path: spring-data-ldap-github
+      status: success
+
+- name: spring-data-envers-test-jdk8
+  serial: true
+  public: true
+  plan:
+  - get: spring-data-envers-github
+    trigger: true
+  - get: spring-data-commons-artifactory
+    trigger: true
+  - get: openjdk:8-jdk
+    trigger: true
+  - task: test
+    file: spring-data-envers-github/ci/test.yml
+    params: { PROFILE: "non-existent" }
+  <<: *slack-test-failure
+
+- name: spring-data-envers-build
+  serial: true
+  public: true
+  plan:
+  - get: spring-data-envers-github
+    trigger: true
+    passed: [
+      spring-data-envers-test-jdk8
+    ]
+  - get: spring-data-commons-artifactory
+    trigger: true
+    passed: [
+      spring-data-envers-test-jdk8
+    ]
+  - put: spring-data-envers-status
+    params:
+      commit: spring-data-envers-github
+      state: pending
+  - task: build
+    file: spring-data-envers-github/ci/build.yml
+  - put: spring-data-envers-artifactory
+    params:
+      build_number:   ${BUILD_NAME}
+      build_uri:      ${ATC_EXTERNAL_URL}/teams/${BUILD_TEAM_NAME}/pipelines/${BUILD_PIPELINE_NAME}/jobs/${BUILD_JOB_NAME}/builds/${BUILD_NAME}
+      repo:           libs-snapshot-local
+      folder:         spring-data-envers-artifactory
+      artifact_set:
+      - include:
+        - "/**"
+        properties:
+          zip.deployed: false
+          zip.displayname: "spring-data-envers"
+          zip.name: "spring-data-envers"
+          zip.type: "docs"
+  on_abort:
+    put: spring-data-envers-status
+    params:
+      commit: spring-data-envers-github
+      state:  error
+  on_failure:
+    aggregate:
+    - put: spring-data-envers-status
+      params:
+        commit: spring-data-envers-github
+        state: failure
+    - put: slack
+      params:
+        attachments:
+          - color: danger
+            fallback: "$BUILD_PIPELINE_NAME/$BUILD_JOB_NAME #$BUILD_NAME <FAILURE>"
+            text: "Build has failed"
+            title: "$BUILD_PIPELINE_NAME/$BUILD_JOB_NAME #$BUILD_NAME"
+            title_link: $ATC_EXTERNAL_URL/teams/$BUILD_TEAM_NAME/pipelines/$BUILD_PIPELINE_NAME/jobs/$BUILD_JOB_NAME/builds/$BUILD_NAME
+
+- name: spring-data-envers-pull-requests
+  public: true
+  plan:
+  - get: spring-data-envers-github
+    resource: spring-data-envers-pull-requests
+    trigger: true
+    version: every
+  - put: spring-data-envers-pull-requests
+    params:
+      path: spring-data-envers-github
+      status: pending
+  - aggregate:
+    - task: test (jdk8)
+      file: spring-data-envers-github/ci/test.yml
+      params: { PROFILE: "non-existent" }
+  on_failure:
+    put: spring-data-envers-pull-requests
+    params:
+      path: spring-data-envers-github
+      status: failure
+  on_success:
+    put: spring-data-envers-pull-requests
+    params:
+      path: spring-data-envers-github
+      status: success
+
+- name: spring-data-elasticsearch-test-jdk8
+  serial: true
+  public: true
+  plan:
+  - get: spring-data-elasticsearch-github
+    trigger: true
+  - get: spring-data-commons-artifactory
+    trigger: true
+  - get: openjdk:8-jdk
+    trigger: true
+  - task: test
+    file: spring-data-elasticsearch-github/ci/test.yml
+    params: { PROFILE: "non-existent" }
+  <<: *slack-test-failure
+
+- name: spring-data-elasticsearch-build
+  serial: true
+  public: true
+  plan:
+  - get: spring-data-elasticsearch-github
+    trigger: true
+    passed: [
+      spring-data-elasticsearch-test-jdk8
+    ]
+  - get: spring-data-commons-artifactory
+    trigger: true
+    passed: [
+      spring-data-elasticsearch-test-jdk8
+    ]
+  - put: spring-data-elasticsearch-status
+    params:
+      commit: spring-data-elasticsearch-github
+      state: pending
+  - task: build
+    file: spring-data-elasticsearch-github/ci/build.yml
+  - put: spring-data-elasticsearch-artifactory
+    params:
+      build_number:   ${BUILD_NAME}
+      build_uri:      ${ATC_EXTERNAL_URL}/teams/${BUILD_TEAM_NAME}/pipelines/${BUILD_PIPELINE_NAME}/jobs/${BUILD_JOB_NAME}/builds/${BUILD_NAME}
+      repo:           libs-snapshot-local
+      folder:         spring-data-elasticsearch-artifactory
+      artifact_set:
+      - include:
+        - "/**"
+        properties:
+          zip.deployed: false
+          zip.displayname: "spring-data-elasticsearch"
+          zip.name: "spring-data-elasticsearch"
+          zip.type: "docs"
+  on_abort:
+    put: spring-data-elasticsearch-status
+    params:
+      commit: spring-data-elasticsearch-github
+      state:  error
+  on_failure:
+    aggregate:
+    - put: spring-data-elasticsearch-status
+      params:
+        commit: spring-data-elasticsearch-github
+        state: failure
+    - put: slack
+      params:
+        attachments:
+          - color: danger
+            fallback: "$BUILD_PIPELINE_NAME/$BUILD_JOB_NAME #$BUILD_NAME <FAILURE>"
+            text: "Build has failed"
+            title: "$BUILD_PIPELINE_NAME/$BUILD_JOB_NAME #$BUILD_NAME"
+            title_link: $ATC_EXTERNAL_URL/teams/$BUILD_TEAM_NAME/pipelines/$BUILD_PIPELINE_NAME/jobs/$BUILD_JOB_NAME/builds/$BUILD_NAME
+
+- name: spring-data-elasticsearch-pull-requests
+  public: true
+  plan:
+  - get: spring-data-elasticsearch-github
+    resource: spring-data-elasticsearch-pull-requests
+    trigger: true
+    version: every
+  - put: spring-data-elasticsearch-pull-requests
+    params:
+      path: spring-data-elasticsearch-github
+      status: pending
+  - aggregate:
+    - task: test (jdk8)
+      file: spring-data-elasticsearch-github/ci/test.yml
+      params: { PROFILE: "non-existent" }
+  on_failure:
+    put: spring-data-elasticsearch-pull-requests
+    params:
+      path: spring-data-elasticsearch-github
+      status: failure
+  on_success:
+    put: spring-data-elasticsearch-pull-requests
+    params:
+      path: spring-data-elasticsearch-github
+      status: success
+
+- name: spring-data-couchbase-test-jdk8
+  serial: true
+  public: true
+  plan:
+  - get: spring-data-couchbase-github
+    trigger: true
+  - get: spring-data-commons-artifactory
+    trigger: true
+  - get: openjdk:8-jdk
+    trigger: true
+  - task: test
+    file: spring-data-couchbase-github/ci/test.yml
+    params: { PROFILE: "non-existent" }
+  <<: *slack-test-failure
+
+- name: spring-data-couchbase-build
+  serial: true
+  public: true
+  plan:
+  - get: spring-data-couchbase-github
+    trigger: true
+    passed: [
+      spring-data-couchbase-test-jdk8
+    ]
+  - get: spring-data-commons-artifactory
+    trigger: true
+    passed: [
+      spring-data-couchbase-test-jdk8
+    ]
+  - put: spring-data-couchbase-status
+    params:
+      commit: spring-data-couchbase-github
+      state: pending
+  - task: build
+    file: spring-data-couchbase-github/ci/build.yml
+  - put: spring-data-couchbase-artifactory
+    params:
+      build_number:   ${BUILD_NAME}
+      build_uri:      ${ATC_EXTERNAL_URL}/teams/${BUILD_TEAM_NAME}/pipelines/${BUILD_PIPELINE_NAME}/jobs/${BUILD_JOB_NAME}/builds/${BUILD_NAME}
+      repo:           libs-snapshot-local
+      folder:         spring-data-couchbase-artifactory
+      artifact_set:
+      - include:
+        - "/**"
+        properties:
+          zip.deployed: false
+          zip.displayname: "spring-data-couchbase"
+          zip.name: "spring-data-couchbase"
+          zip.type: "docs"
+  on_abort:
+    put: spring-data-couchbase-status
+    params:
+      commit: spring-data-couchbase-github
+      state:  error
+  on_failure:
+    aggregate:
+    - put: spring-data-couchbase-status
+      params:
+        commit: spring-data-couchbase-github
+        state: failure
+    - put: slack
+      params:
+        attachments:
+          - color: danger
+            fallback: "$BUILD_PIPELINE_NAME/$BUILD_JOB_NAME #$BUILD_NAME <FAILURE>"
+            text: "Build has failed"
+            title: "$BUILD_PIPELINE_NAME/$BUILD_JOB_NAME #$BUILD_NAME"
+            title_link: $ATC_EXTERNAL_URL/teams/$BUILD_TEAM_NAME/pipelines/$BUILD_PIPELINE_NAME/jobs/$BUILD_JOB_NAME/builds/$BUILD_NAME
+
+- name: spring-data-couchbase-pull-requests
+  public: true
+  plan:
+  - get: spring-data-couchbase-github
+    resource: spring-data-couchbase-pull-requests
+    trigger: true
+    version: every
+  - put: spring-data-couchbase-pull-requests
+    params:
+      path: spring-data-couchbase-github
+      status: pending
+  - aggregate:
+    - task: test (jdk8)
+      file: spring-data-couchbase-github/ci/test.yml
+      params: { PROFILE: "non-existent" }
+  on_failure:
+    put: spring-data-couchbase-pull-requests
+    params:
+      path: spring-data-couchbase-github
+      status: failure
+  on_success:
+    put: spring-data-couchbase-pull-requests
+    params:
+      path: spring-data-couchbase-github
+      status: success
+
+- name: spring-data-rest-test-jdk8
+  serial: true
+  public: true
+  plan:
+  - get: spring-data-rest-github
+    trigger: true
+  - get: spring-data-jpa-artifactory
+    trigger: true
+  - get: spring-data-mongodb-artifactory
+    trigger: true
+  - get: spring-data-redis-artifactory
+    trigger: true
+  - get: spring-data-geode-artifactory
+    trigger: true
+  - get: spring-data-gemfire-artifactory
+    trigger: true
+  - get: spring-data-jdbc-artifactory
+    trigger: true
+  - get: spring-data-solr-artifactory
+    trigger: true
+  - get: spring-data-cassandra-artifactory
+    trigger: true
+  - get: spring-data-neo4j-artifactory
+    trigger: true
+  - get: openjdk:8-jdk
+    trigger: true
+  - task: test
+    file: spring-data-rest-github/ci/test.yml
+    params: { PROFILE: "non-existent" }
+  <<: *slack-test-failure
+
+- name: spring-data-rest-build
+  serial: true
+  public: true
+  plan:
+  - get: spring-data-rest-github
+    trigger: true
+    passed: [
+      spring-data-rest-test-jdk8,
+    ]
+  - get: spring-data-jpa-artifactory
+    trigger: true
+    passed: [
+      spring-data-rest-test-jdk8,
+    ]
+  - get: spring-data-mongodb-artifactory
+    trigger: true
+    passed: [
+      spring-data-rest-test-jdk8,
+    ]
+  - get: spring-data-redis-artifactory
+    trigger: true
+    passed: [
+      spring-data-rest-test-jdk8,
+    ]
+  - get: spring-data-geode-artifactory
+    trigger: true
+    passed: [
+      spring-data-rest-test-jdk8,
+    ]
+  - get: spring-data-gemfire-artifactory
+    trigger: true
+    passed: [
+      spring-data-rest-test-jdk8,
+    ]
+  - get: spring-data-jdbc-artifactory
+    trigger: true
+    passed: [
+      spring-data-rest-test-jdk8,
+    ]
+  - get: spring-data-solr-artifactory
+    trigger: true
+    passed: [
+      spring-data-rest-test-jdk8,
+    ]
+  - get: spring-data-cassandra-artifactory
+    trigger: true
+    passed: [
+      spring-data-rest-test-jdk8,
+    ]
+  - get: spring-data-neo4j-artifactory
+    trigger: true
+    passed: [
+      spring-data-rest-test-jdk8,
+    ]
+  - put: spring-data-rest-status
+    params:
+      commit: spring-data-rest-github
+      state: pending
+  - task: build
+    file: spring-data-rest-github/ci/build.yml
+  - put: spring-data-rest-artifactory
+    params:
+      build_number:   ${BUILD_NAME}
+      build_uri:      ${ATC_EXTERNAL_URL}/teams/${BUILD_TEAM_NAME}/pipelines/${BUILD_PIPELINE_NAME}/jobs/${BUILD_JOB_NAME}/builds/${BUILD_NAME}
+      repo:           libs-snapshot-local
+      folder:         spring-data-rest-artifactory
+      artifact_set:
+      - include:
+        - "/**"
+        properties:
+          zip.deployed: false
+          zip.displayname: "spring-data-rest"
+          zip.name: "spring-data-rest"
+          zip.type: "docs"
+  on_abort:
+    put: spring-data-rest-status
+    params:
+      commit: spring-data-rest-github
+      state:  error
+  on_failure:
+    aggregate:
+    - put: spring-data-rest-status
+      params:
+        commit: spring-data-rest-github
+        state: failure
+    - put: slack
+      params:
+        attachments:
+          - color: danger
+            fallback: "$BUILD_PIPELINE_NAME/$BUILD_JOB_NAME #$BUILD_NAME <FAILURE>"
+            text: "Build has failed"
+            title: "$BUILD_PIPELINE_NAME/$BUILD_JOB_NAME #$BUILD_NAME"
+            title_link: $ATC_EXTERNAL_URL/teams/$BUILD_TEAM_NAME/pipelines/$BUILD_PIPELINE_NAME/jobs/$BUILD_JOB_NAME/builds/$BUILD_NAME
+
+- name: spring-data-rest-pull-requests
+  public: true
+  plan:
+  - get: spring-data-rest-github
+    resource: spring-data-rest-pull-requests
+    trigger: true
+    version: every
+  - put: spring-data-rest-pull-requests
+    params:
+      path: spring-data-rest-github
+      status: pending
+  - aggregate:
+    - task: test (jdk8)
+      file: spring-data-rest-github/ci/test.yml
+      params: { PROFILE: "non-existent" }
+  on_failure:
+    put: spring-data-rest-pull-requests
+    params:
+      path: spring-data-rest-github
+      status: failure
+  on_success:
+    put: spring-data-rest-pull-requests
+    params:
+      path: spring-data-rest-github
+      status: success
+
+- name: 8-jdk-with-mongodb:latest
+  public: true
+  plan:
+  - aggregate:
+    - get: 8-jdk-with-mongodb-docker-image-github
+      trigger: true
+    - get: openjdk:8-jdk
+      trigger: true
+  - put: 8-jdk-with-mongodb:latest
+    params:
+      build: 8-jdk-with-mongodb-docker-image-github/ci/8-jdk
+
+- name: 11-jdk-with-mongodb:latest
+  public: true
+  plan:
+  - aggregate:
+    - get: 11-jdk-with-mongodb-docker-image-github
+      trigger: true
+    - get: openjdk:11-jdk
+      trigger: true
+  - put: 11-jdk-with-mongodb:latest
+    params:
+      build: 11-jdk-with-mongodb-docker-image-github/ci/11-jdk
+
+- name: 8-jdk-with-redis:latest
+  public: true
+  plan:
+  - aggregate:
+    - get: 8-jdk-with-redis-docker-image-github
+      trigger: true
+    - get: openjdk:8-jdk
+      trigger: true
+  - put: 8-jdk-with-redis:latest
+    params:
+      build: 8-jdk-with-redis-docker-image-github
+      dockerfile: 8-jdk-with-redis-docker-image-github/ci/8-jdk/Dockerfile
+
+- name: 11-jdk-with-redis:latest
+  public: true
+  plan:
+  - aggregate:
+    - get: 11-jdk-with-redis-docker-image-github
+      trigger: true
+    - get: openjdk:11-jdk
+      trigger: true
+  - put: 11-jdk-with-redis:latest
+    params:
+      build: 11-jdk-with-redis-docker-image-github
+      dockerfile: 11-jdk-with-redis-docker-image-github/ci/8-jdk/Dockerfile
+
+slack-test-success: &slack-test-success
+  on_success:
+    put: slack
+    params:
+      attachments:
+        - color: good
+          fallback: "$BUILD_PIPELINE_NAME/$BUILD_JOB_NAME #$BUILD_NAME <FAILURE>"
+          text: "Test has succeeded"
+          title: "$BUILD_PIPELINE_NAME/$BUILD_JOB_NAME #$BUILD_NAME"
+          title_link: $ATC_EXTERNAL_URL/teams/$BUILD_TEAM_NAME/pipelines/$BUILD_PIPELINE_NAME/jobs/$BUILD_JOB_NAME/builds/$BUILD_NAME
+
+slack-test-failure: &slack-test-failure
+  on_failure:
+    put: slack
+    params:
+      attachments:
+        - color: danger
+          fallback: "$BUILD_PIPELINE_NAME/$BUILD_JOB_NAME #$BUILD_NAME <FAILURE>"
+          text: "Test has failed"
+          title: "$BUILD_PIPELINE_NAME/$BUILD_JOB_NAME #$BUILD_NAME"
+          title_link: $ATC_EXTERNAL_URL/teams/$BUILD_TEAM_NAME/pipelines/$BUILD_PIPELINE_NAME/jobs/$BUILD_JOB_NAME/builds/$BUILD_NAME
