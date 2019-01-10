@@ -1,6 +1,17 @@
 Spring Data Build - Changelog
 =============================
 
+Changes in version 2.1.4.RELEASE (2019-01-10)
+---------------------------------------------
+* #710 - Upgrade to Reactor Californium SR4.
+* #709 - Upgrade to Spring Framework 5.1.4.
+* #705 - Upgrade to Jackson 2.9.8.
+* #693 - Upgrade to OpenWebBeans 2.0.8.
+* #686 - Upgrade to Jacoco 0.8.2.
+* #683 - Upgrade to AspectJ 1.9.2.
+* #681 - Release 2.1.4 (Lovelace SR4).
+
+
 Changes in version 2.0.13.RELEASE (2019-01-10)
 ----------------------------------------------
 * #712 - Upgrade to Reactor Bismuth SR15.
