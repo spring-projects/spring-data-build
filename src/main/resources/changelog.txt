@@ -1,6 +1,16 @@
 Spring Data Build - Changelog
 =============================
 
+Changes in version 2.0.13.RELEASE (2019-01-10)
+----------------------------------------------
+* #712 - Upgrade to Reactor Bismuth SR15.
+* #711 - Upgrade to Spring Framework 5.0.12.
+* #706 - Upgrade to Jackson 2.9.8.
+* #694 - Upgrade to OpenWebBeans 2.0.8.
+* #687 - Upgrade to Jacoco 0.8.2.
+* #678 - Release 2.0.13 (Kay SR13).
+
+
 Changes in version 1.9.18.RELEASE (2019-01-10)
 ----------------------------------------------
 * #713 - Upgrade to Spring Framework 4.3.22.
