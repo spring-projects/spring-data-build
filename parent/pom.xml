@@ -99,7 +99,7 @@
 		<junit>4.12</junit>
 		<kotlin>1.2.71</kotlin>
 		<logback>1.2.3</logback>
-		<lombok>1.18.4</lombok>
+		<lombok>1.18.6</lombok>
 		<mockito>2.20.0</mockito>
 		<querydsl>4.2.1</querydsl>
 		<reactor>Californium-SR4</reactor>
