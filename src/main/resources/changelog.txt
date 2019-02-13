@@ -1,6 +1,17 @@
 Spring Data Build - Changelog
 =============================
 
+Changes in version 2.1.5.RELEASE (2019-02-13)
+---------------------------------------------
+* #728 - Upgrade to Reactor Californium SR5.
+* #726 - Upgrade to Spring HATEOAS 0.25.1.
+* #724 - Upgrade to OpenWebBeans 2.0.10.
+* #722 - Upgrade to RxJava 2.2.6.
+* #720 - Upgrade to Lombok 1.18.6.
+* #719 - Upgrade to Spring Framework 5.1.5.
+* #717 - Release 2.1.5 (Lovelace SR5).
+
+
 Changes in version 2.1.4.RELEASE (2019-01-10)
 ---------------------------------------------
 * #710 - Upgrade to Reactor Californium SR4.
