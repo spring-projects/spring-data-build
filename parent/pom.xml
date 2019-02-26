@@ -32,12 +32,12 @@
 
 	<name>Spring Data Build - General parent module</name>
 	<description>Global parent pom.xml to be used by Spring Data modules</description>
-	<url>http://www.spring.io/spring-data</url>
+	<url>https://www.spring.io/spring-data</url>
 	<inceptionYear>2011</inceptionYear>
 
 	<organization>
 		<name>Pivotal Software, Inc.</name>
-		<url>http://www.spring.io</url>
+		<url>https://www.spring.io</url>
 	</organization>
 
 	<developers>
@@ -46,7 +46,7 @@
 			<name>Oliver Gierke</name>
 			<email>ogierke at pivotal.io</email>
 			<organization>Pivotal Software, Inc.</organization>
-			<organizationUrl>http://www.spring.io</organizationUrl>
+			<organizationUrl>https://www.spring.io</organizationUrl>
 			<roles>
 				<role>Project lead</role>
 			</roles>
@@ -636,7 +636,7 @@
 			<repositories>
 				<repository>
 					<id>oss-nexus-snapshots</id>
-					<url>http://oss.sonatype.org/content/repositories/snapshots</url>
+					<url>https://oss.sonatype.org/content/repositories/snapshots</url>
 				</repository>
 			</repositories>
 		</profile>
