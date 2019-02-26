@@ -57,7 +57,7 @@ Be sure to adapt the version number to the latest release version. The second an
 </plugin>
 ```
 	
-As an example have a look at the build of [Spring Data JPA](http://github.com/spring-projects/spring-data-jpa).
+As an example have a look at the build of [Spring Data JPA](https://github.com/spring-projects/spring-data-jpa).
 
 ### Multi project setup
 	
@@ -68,7 +68,7 @@ A multi module setup requires slightly more setup and some structure being set u
 - The assembly needs to be build in a dedicated sub-module (e.g. `distribution`), declare the assembly plugin (see single project setup) in that submodule and reconfigure the `project.root` property in that module to `${basedir}/..`.
 - Configure `${dist.id}` in the root project to the basic artifact id (e.g. `spring-data-mongodb`) as this will serve as file name for distribution artifacts, static resources etc. It will default to the artifact id and thus usually resolve to a `…-parent` if not configured properly.
 
-As an example have a look at the build of [Spring Data MongoDB](http://github.com/spring-projects/spring-data-mongodb).
+As an example have a look at the build of [Spring Data MongoDB](https://github.com/spring-projects/spring-data-mongodb).
 
 ## Build configuration
 
