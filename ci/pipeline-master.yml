@@ -941,6 +941,14 @@ jobs:
       params:
         commit: spring-data-commons-github
         state: success
+    - put: slack
+      params:
+        attachments:
+          - color: good
+            fallback: "$BUILD_PIPELINE_NAME/$BUILD_JOB_NAME #$BUILD_NAME <FAILURE>"
+            text: "Build has succeeded"
+            title: "$BUILD_PIPELINE_NAME/$BUILD_JOB_NAME #$BUILD_NAME"
+            title_link: $ATC_EXTERNAL_URL/teams/$BUILD_TEAM_NAME/pipelines/$BUILD_PIPELINE_NAME/jobs/$BUILD_JOB_NAME/builds/$BUILD_NAME
 
 - name: spring-data-commons-pull-requests
   public: true
@@ -1213,6 +1221,14 @@ jobs:
       params:
         commit: spring-data-jpa-github
         state: success
+    - put: slack
+      params:
+        attachments:
+          - color: good
+            fallback: "$BUILD_PIPELINE_NAME/$BUILD_JOB_NAME #$BUILD_NAME <FAILURE>"
+            text: "Build has succeeded"
+            title: "$BUILD_PIPELINE_NAME/$BUILD_JOB_NAME #$BUILD_NAME"
+            title_link: $ATC_EXTERNAL_URL/teams/$BUILD_TEAM_NAME/pipelines/$BUILD_PIPELINE_NAME/jobs/$BUILD_JOB_NAME/builds/$BUILD_NAME
 
 - name: spring-data-jpa-pull-requests
   public: true
@@ -1335,6 +1351,20 @@ jobs:
             text: "Build has failed"
             title: "$BUILD_PIPELINE_NAME/$BUILD_JOB_NAME #$BUILD_NAME"
             title_link: $ATC_EXTERNAL_URL/teams/$BUILD_TEAM_NAME/pipelines/$BUILD_PIPELINE_NAME/jobs/$BUILD_JOB_NAME/builds/$BUILD_NAME
+  on_success:
+    aggregate:
+    - put: spring-data-mongodb-status
+      params:
+        commit: spring-data-mongodb-github
+        state: success
+    - put: slack
+      params:
+        attachments:
+          - color: good
+            fallback: "$BUILD_PIPELINE_NAME/$BUILD_JOB_NAME #$BUILD_NAME <SUCCESS>"
+            text: "Build has succeeded!"
+            title: "$BUILD_PIPELINE_NAME/$BUILD_JOB_NAME #$BUILD_NAME"
+            title_link: $ATC_EXTERNAL_URL/teams/$BUILD_TEAM_NAME/pipelines/$BUILD_PIPELINE_NAME/jobs/$BUILD_JOB_NAME/builds/$BUILD_NAME
 
 - name: spring-data-mongodb-pull-requests
   public: true
@@ -1428,6 +1458,20 @@ jobs:
           - color: danger
             fallback: "$BUILD_PIPELINE_NAME/$BUILD_JOB_NAME #$BUILD_NAME <FAILURE>"
             text: "Build has failed"
+            title: "$BUILD_PIPELINE_NAME/$BUILD_JOB_NAME #$BUILD_NAME"
+            title_link: $ATC_EXTERNAL_URL/teams/$BUILD_TEAM_NAME/pipelines/$BUILD_PIPELINE_NAME/jobs/$BUILD_JOB_NAME/builds/$BUILD_NAME
+  on_success:
+    aggregate:
+    - put: spring-data-redis-status
+      params:
+        commit: spring-data-redis-github
+        state: success
+    - put: slack
+      params:
+        attachments:
+          - color: good
+            fallback: "$BUILD_PIPELINE_NAME/$BUILD_JOB_NAME #$BUILD_NAME <SUCCESS>"
+            text: "Build has succeeded!"
             title: "$BUILD_PIPELINE_NAME/$BUILD_JOB_NAME #$BUILD_NAME"
             title_link: $ATC_EXTERNAL_URL/teams/$BUILD_TEAM_NAME/pipelines/$BUILD_PIPELINE_NAME/jobs/$BUILD_JOB_NAME/builds/$BUILD_NAME
 
@@ -1525,6 +1569,20 @@ jobs:
             text: "Build has failed"
             title: "$BUILD_PIPELINE_NAME/$BUILD_JOB_NAME #$BUILD_NAME"
             title_link: $ATC_EXTERNAL_URL/teams/$BUILD_TEAM_NAME/pipelines/$BUILD_PIPELINE_NAME/jobs/$BUILD_JOB_NAME/builds/$BUILD_NAME
+  on_success:
+    aggregate:
+    - put: spring-data-geode-status
+      params:
+        commit: spring-data-geode-github
+        state: success
+    - put: slack
+      params:
+        attachments:
+          - color: good
+            fallback: "$BUILD_PIPELINE_NAME/$BUILD_JOB_NAME #$BUILD_NAME <SUCCESS>"
+            text: "Build has succeeded!"
+            title: "$BUILD_PIPELINE_NAME/$BUILD_JOB_NAME #$BUILD_NAME"
+            title_link: $ATC_EXTERNAL_URL/teams/$BUILD_TEAM_NAME/pipelines/$BUILD_PIPELINE_NAME/jobs/$BUILD_JOB_NAME/builds/$BUILD_NAME
 
 - name: spring-data-geode-pull-requests
   public: true
@@ -1618,6 +1676,20 @@ jobs:
           - color: danger
             fallback: "$BUILD_PIPELINE_NAME/$BUILD_JOB_NAME #$BUILD_NAME <FAILURE>"
             text: "Build has failed"
+            title: "$BUILD_PIPELINE_NAME/$BUILD_JOB_NAME #$BUILD_NAME"
+            title_link: $ATC_EXTERNAL_URL/teams/$BUILD_TEAM_NAME/pipelines/$BUILD_PIPELINE_NAME/jobs/$BUILD_JOB_NAME/builds/$BUILD_NAME
+  on_success:
+    aggregate:
+    - put: spring-data-gemfire-status
+      params:
+        commit: spring-data-gemfire-github
+        state: success
+    - put: slack
+      params:
+        attachments:
+          - color: good
+            fallback: "$BUILD_PIPELINE_NAME/$BUILD_JOB_NAME #$BUILD_NAME <SUCCESS>"
+            text: "Build has succeeded!"
             title: "$BUILD_PIPELINE_NAME/$BUILD_JOB_NAME #$BUILD_NAME"
             title_link: $ATC_EXTERNAL_URL/teams/$BUILD_TEAM_NAME/pipelines/$BUILD_PIPELINE_NAME/jobs/$BUILD_JOB_NAME/builds/$BUILD_NAME
 
@@ -1715,6 +1787,20 @@ jobs:
             text: "Build has failed"
             title: "$BUILD_PIPELINE_NAME/$BUILD_JOB_NAME #$BUILD_NAME"
             title_link: $ATC_EXTERNAL_URL/teams/$BUILD_TEAM_NAME/pipelines/$BUILD_PIPELINE_NAME/jobs/$BUILD_JOB_NAME/builds/$BUILD_NAME
+  on_success:
+    aggregate:
+    - put: spring-data-jdbc-status
+      params:
+        commit: spring-data-jdbc-github
+        state: success
+    - put: slack
+      params:
+        attachments:
+          - color: good
+            fallback: "$BUILD_PIPELINE_NAME/$BUILD_JOB_NAME #$BUILD_NAME <SUCCESS>"
+            text: "Build has succeeded!"
+            title: "$BUILD_PIPELINE_NAME/$BUILD_JOB_NAME #$BUILD_NAME"
+            title_link: $ATC_EXTERNAL_URL/teams/$BUILD_TEAM_NAME/pipelines/$BUILD_PIPELINE_NAME/jobs/$BUILD_JOB_NAME/builds/$BUILD_NAME
 
 - name: spring-data-jdbc-pull-requests
   public: true
@@ -1808,6 +1894,20 @@ jobs:
           - color: danger
             fallback: "$BUILD_PIPELINE_NAME/$BUILD_JOB_NAME #$BUILD_NAME <FAILURE>"
             text: "Build has failed"
+            title: "$BUILD_PIPELINE_NAME/$BUILD_JOB_NAME #$BUILD_NAME"
+            title_link: $ATC_EXTERNAL_URL/teams/$BUILD_TEAM_NAME/pipelines/$BUILD_PIPELINE_NAME/jobs/$BUILD_JOB_NAME/builds/$BUILD_NAME
+  on_success:
+    aggregate:
+    - put: spring-data-solr-status
+      params:
+        commit: spring-data-solr-github
+        state: success
+    - put: slack
+      params:
+        attachments:
+          - color: good
+            fallback: "$BUILD_PIPELINE_NAME/$BUILD_JOB_NAME #$BUILD_NAME <SUCCESS>"
+            text: "Build has succeeded!"
             title: "$BUILD_PIPELINE_NAME/$BUILD_JOB_NAME #$BUILD_NAME"
             title_link: $ATC_EXTERNAL_URL/teams/$BUILD_TEAM_NAME/pipelines/$BUILD_PIPELINE_NAME/jobs/$BUILD_JOB_NAME/builds/$BUILD_NAME
 
@@ -1905,6 +2005,20 @@ jobs:
             text: "Build has failed"
             title: "$BUILD_PIPELINE_NAME/$BUILD_JOB_NAME #$BUILD_NAME"
             title_link: $ATC_EXTERNAL_URL/teams/$BUILD_TEAM_NAME/pipelines/$BUILD_PIPELINE_NAME/jobs/$BUILD_JOB_NAME/builds/$BUILD_NAME
+  on_success:
+    aggregate:
+    - put: spring-data-keyvalue-status
+      params:
+        commit: spring-data-keyvalue-github
+        state: success
+    - put: slack
+      params:
+        attachments:
+          - color: good
+            fallback: "$BUILD_PIPELINE_NAME/$BUILD_JOB_NAME #$BUILD_NAME <SUCCESS>"
+            text: "Build has succeeded!"
+            title: "$BUILD_PIPELINE_NAME/$BUILD_JOB_NAME #$BUILD_NAME"
+            title_link: $ATC_EXTERNAL_URL/teams/$BUILD_TEAM_NAME/pipelines/$BUILD_PIPELINE_NAME/jobs/$BUILD_JOB_NAME/builds/$BUILD_NAME
 
 - name: spring-data-keyvalue-pull-requests
   public: true
@@ -1998,6 +2112,20 @@ jobs:
           - color: danger
             fallback: "$BUILD_PIPELINE_NAME/$BUILD_JOB_NAME #$BUILD_NAME <FAILURE>"
             text: "Build has failed"
+            title: "$BUILD_PIPELINE_NAME/$BUILD_JOB_NAME #$BUILD_NAME"
+            title_link: $ATC_EXTERNAL_URL/teams/$BUILD_TEAM_NAME/pipelines/$BUILD_PIPELINE_NAME/jobs/$BUILD_JOB_NAME/builds/$BUILD_NAME
+  on_success:
+    aggregate:
+    - put: spring-data-cassandra-status
+      params:
+        commit: spring-data-cassandra-github
+        state: success
+    - put: slack
+      params:
+        attachments:
+          - color: good
+            fallback: "$BUILD_PIPELINE_NAME/$BUILD_JOB_NAME #$BUILD_NAME <SUCCESS>"
+            text: "Build has succeeded!"
             title: "$BUILD_PIPELINE_NAME/$BUILD_JOB_NAME #$BUILD_NAME"
             title_link: $ATC_EXTERNAL_URL/teams/$BUILD_TEAM_NAME/pipelines/$BUILD_PIPELINE_NAME/jobs/$BUILD_JOB_NAME/builds/$BUILD_NAME
 
@@ -2095,6 +2223,20 @@ jobs:
             text: "Build has failed"
             title: "$BUILD_PIPELINE_NAME/$BUILD_JOB_NAME #$BUILD_NAME"
             title_link: $ATC_EXTERNAL_URL/teams/$BUILD_TEAM_NAME/pipelines/$BUILD_PIPELINE_NAME/jobs/$BUILD_JOB_NAME/builds/$BUILD_NAME
+  on_success:
+    aggregate:
+    - put: spring-data-neo4j-status
+      params:
+        commit: spring-data-neo4j-github
+        state: success
+    - put: slack
+      params:
+        attachments:
+          - color: good
+            fallback: "$BUILD_PIPELINE_NAME/$BUILD_JOB_NAME #$BUILD_NAME <SUCCESS>"
+            text: "Build has succeeded!"
+            title: "$BUILD_PIPELINE_NAME/$BUILD_JOB_NAME #$BUILD_NAME"
+            title_link: $ATC_EXTERNAL_URL/teams/$BUILD_TEAM_NAME/pipelines/$BUILD_PIPELINE_NAME/jobs/$BUILD_JOB_NAME/builds/$BUILD_NAME
 
 - name: spring-data-neo4j-pull-requests
   public: true
@@ -2188,6 +2330,20 @@ jobs:
           - color: danger
             fallback: "$BUILD_PIPELINE_NAME/$BUILD_JOB_NAME #$BUILD_NAME <FAILURE>"
             text: "Build has failed"
+            title: "$BUILD_PIPELINE_NAME/$BUILD_JOB_NAME #$BUILD_NAME"
+            title_link: $ATC_EXTERNAL_URL/teams/$BUILD_TEAM_NAME/pipelines/$BUILD_PIPELINE_NAME/jobs/$BUILD_JOB_NAME/builds/$BUILD_NAME
+  on_success:
+    aggregate:
+    - put: spring-data-ldap-status
+      params:
+        commit: spring-data-ldap-github
+        state: success
+    - put: slack
+      params:
+        attachments:
+          - color: good
+            fallback: "$BUILD_PIPELINE_NAME/$BUILD_JOB_NAME #$BUILD_NAME <SUCCESS>"
+            text: "Build has succeeded!"
             title: "$BUILD_PIPELINE_NAME/$BUILD_JOB_NAME #$BUILD_NAME"
             title_link: $ATC_EXTERNAL_URL/teams/$BUILD_TEAM_NAME/pipelines/$BUILD_PIPELINE_NAME/jobs/$BUILD_JOB_NAME/builds/$BUILD_NAME
 
@@ -2285,6 +2441,20 @@ jobs:
             text: "Build has failed"
             title: "$BUILD_PIPELINE_NAME/$BUILD_JOB_NAME #$BUILD_NAME"
             title_link: $ATC_EXTERNAL_URL/teams/$BUILD_TEAM_NAME/pipelines/$BUILD_PIPELINE_NAME/jobs/$BUILD_JOB_NAME/builds/$BUILD_NAME
+  on_success:
+    aggregate:
+    - put: spring-data-envers-status
+      params:
+        commit: spring-data-envers-github
+        state: success
+    - put: slack
+      params:
+        attachments:
+          - color: good
+            fallback: "$BUILD_PIPELINE_NAME/$BUILD_JOB_NAME #$BUILD_NAME <SUCCESS>"
+            text: "Build has succeeded!"
+            title: "$BUILD_PIPELINE_NAME/$BUILD_JOB_NAME #$BUILD_NAME"
+            title_link: $ATC_EXTERNAL_URL/teams/$BUILD_TEAM_NAME/pipelines/$BUILD_PIPELINE_NAME/jobs/$BUILD_JOB_NAME/builds/$BUILD_NAME
 
 - name: spring-data-envers-pull-requests
   public: true
@@ -2380,6 +2550,20 @@ jobs:
             text: "Build has failed"
             title: "$BUILD_PIPELINE_NAME/$BUILD_JOB_NAME #$BUILD_NAME"
             title_link: $ATC_EXTERNAL_URL/teams/$BUILD_TEAM_NAME/pipelines/$BUILD_PIPELINE_NAME/jobs/$BUILD_JOB_NAME/builds/$BUILD_NAME
+  on_success:
+    aggregate:
+    - put: spring-data-elasticsearch-status
+      params:
+        commit: spring-data-elasticsearch-github
+        state: success
+    - put: slack
+      params:
+        attachments:
+          - color: good
+            fallback: "$BUILD_PIPELINE_NAME/$BUILD_JOB_NAME #$BUILD_NAME <SUCCESS>"
+            text: "Build has succeeded!"
+            title: "$BUILD_PIPELINE_NAME/$BUILD_JOB_NAME #$BUILD_NAME"
+            title_link: $ATC_EXTERNAL_URL/teams/$BUILD_TEAM_NAME/pipelines/$BUILD_PIPELINE_NAME/jobs/$BUILD_JOB_NAME/builds/$BUILD_NAME
 
 - name: spring-data-elasticsearch-pull-requests
   public: true
@@ -2473,6 +2657,20 @@ jobs:
           - color: danger
             fallback: "$BUILD_PIPELINE_NAME/$BUILD_JOB_NAME #$BUILD_NAME <FAILURE>"
             text: "Build has failed"
+            title: "$BUILD_PIPELINE_NAME/$BUILD_JOB_NAME #$BUILD_NAME"
+            title_link: $ATC_EXTERNAL_URL/teams/$BUILD_TEAM_NAME/pipelines/$BUILD_PIPELINE_NAME/jobs/$BUILD_JOB_NAME/builds/$BUILD_NAME
+  on_success:
+    aggregate:
+    - put: spring-data-couchbase-status
+      params:
+        commit: spring-data-couchbase-github
+        state: success
+    - put: slack
+      params:
+        attachments:
+          - color: good
+            fallback: "$BUILD_PIPELINE_NAME/$BUILD_JOB_NAME #$BUILD_NAME <SUCCESS>"
+            text: "Build has succeeded!"
             title: "$BUILD_PIPELINE_NAME/$BUILD_JOB_NAME #$BUILD_NAME"
             title_link: $ATC_EXTERNAL_URL/teams/$BUILD_TEAM_NAME/pipelines/$BUILD_PIPELINE_NAME/jobs/$BUILD_JOB_NAME/builds/$BUILD_NAME
 
@@ -2624,6 +2822,20 @@ jobs:
           - color: danger
             fallback: "$BUILD_PIPELINE_NAME/$BUILD_JOB_NAME #$BUILD_NAME <FAILURE>"
             text: "Build has failed"
+            title: "$BUILD_PIPELINE_NAME/$BUILD_JOB_NAME #$BUILD_NAME"
+            title_link: $ATC_EXTERNAL_URL/teams/$BUILD_TEAM_NAME/pipelines/$BUILD_PIPELINE_NAME/jobs/$BUILD_JOB_NAME/builds/$BUILD_NAME
+  on_success:
+    aggregate:
+    - put: spring-data-rest-status
+      params:
+        commit: spring-data-rest-github
+        state: success
+    - put: slack
+      params:
+        attachments:
+          - color: good
+            fallback: "$BUILD_PIPELINE_NAME/$BUILD_JOB_NAME #$BUILD_NAME <SUCCESS>"
+            text: "Build has succeeded!"
             title: "$BUILD_PIPELINE_NAME/$BUILD_JOB_NAME #$BUILD_NAME"
             title_link: $ATC_EXTERNAL_URL/teams/$BUILD_TEAM_NAME/pipelines/$BUILD_PIPELINE_NAME/jobs/$BUILD_JOB_NAME/builds/$BUILD_NAME
 
