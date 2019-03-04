@@ -989,8 +989,10 @@ jobs:
   plan:
   - get: spring-data-jpa-github
     trigger: true
+    passed: [ spring-data-jpa-test-jdk8 ]
   - get: spring-data-commons-artifactory
     trigger: true
+    passed: [ spring-data-jpa-test-jdk8 ]
   - get: openjdk:8-jdk
     trigger: true
   - task: test
@@ -1004,8 +1006,10 @@ jobs:
   plan:
   - get: spring-data-jpa-github
     trigger: true
+    passed: [ spring-data-jpa-test-jdk8 ]
   - get: spring-data-commons-artifactory
     trigger: true
+    passed: [ spring-data-jpa-test-jdk8 ]
   - get: openjdk:8-jdk
     trigger: true
   - task: test
@@ -1019,8 +1023,10 @@ jobs:
   plan:
   - get: spring-data-jpa-github
     trigger: true
+    passed: [ spring-data-jpa-test-jdk8 ]
   - get: spring-data-commons-artifactory
     trigger: true
+    passed: [ spring-data-jpa-test-jdk8 ]
   - get: openjdk:8-jdk
     trigger: true
   - task: test
@@ -1034,8 +1040,10 @@ jobs:
   plan:
   - get: spring-data-jpa-github
     trigger: true
+    passed: [ spring-data-jpa-test-jdk8 ]
   - get: spring-data-commons-artifactory
     trigger: true
+    passed: [ spring-data-jpa-test-jdk8 ]
   - get: openjdk:8-jdk
     trigger: true
   - task: test
@@ -1049,8 +1057,10 @@ jobs:
   plan:
   - get: spring-data-jpa-github
     trigger: true
+    passed: [ spring-data-jpa-test-jdk8 ]
   - get: spring-data-commons-artifactory
     trigger: true
+    passed: [ spring-data-jpa-test-jdk8 ]
   - get: openjdk:8-jdk
     trigger: true
   - task: test
@@ -1064,8 +1074,10 @@ jobs:
   plan:
   - get: spring-data-jpa-github
     trigger: true
+    passed: [ spring-data-jpa-test-jdk8 ]
   - get: spring-data-commons-artifactory
     trigger: true
+    passed: [ spring-data-jpa-test-jdk8 ]
   - get: openjdk:8-jdk
     trigger: true
   - task: test
@@ -1079,8 +1091,10 @@ jobs:
   plan:
   - get: spring-data-jpa-github
     trigger: true
+    passed: [ spring-data-jpa-test-jdk8 ]
   - get: spring-data-commons-artifactory
     trigger: true
+    passed: [ spring-data-jpa-test-jdk8 ]
   - get: openjdk:8-jdk
     trigger: true
   - task: test
@@ -1094,8 +1108,10 @@ jobs:
   plan:
   - get: spring-data-jpa-github
     trigger: true
+    passed: [ spring-data-jpa-test-jdk8 ]
   - get: spring-data-commons-artifactory
     trigger: true
+    passed: [ spring-data-jpa-test-jdk8 ]
   - get: openjdk:8-jdk
     trigger: true
   - task: test
@@ -1109,8 +1125,10 @@ jobs:
   plan:
   - get: spring-data-jpa-github
     trigger: true
+    passed: [ spring-data-jpa-test-jdk8 ]
   - get: spring-data-commons-artifactory
     trigger: true
+    passed: [ spring-data-jpa-test-jdk8 ]
   - get: openjdk:8-jdk
     trigger: true
   - task: test
