@@ -275,6 +275,34 @@ resources:
     repo: spring-projects/spring-data-jdbc
     base: master
 
+- name: spring-data-r2dbc-github
+  type: git
+  source:
+    uri: https://github.com/gregturn/spring-data-r2dbc.git
+    branch: concourse
+
+- name: spring-data-r2dbc-status
+  type: github-status
+  source:
+    access_token: ((github-access-token))
+    repository:   spring-projects/spring-data-r2dbc
+    branch: master
+
+- name: spring-data-r2dbc-artifactory
+  type: artifactory-resource
+  source:
+    uri: https://repo.spring.io
+    username: ((artifactory-username))
+    password: ((artifactory-password))
+    build_name: spring-data-r2dbc
+
+- name: spring-data-r2dbc-pull-requests
+  type: pull-request
+  source:
+    access_token: ((github-access-token))
+    repo: spring-projects/spring-data-r2dbc
+    base: master
+
 - name: spring-data-rest-github
   type: git
   source:
@@ -671,6 +699,11 @@ groups:
   - spring-data-jdbc-test-jdk8
   - spring-data-jdbc-build
   - spring-data-jdbc-pull-requests
+- name: r2dbc
+  jobs:
+  - spring-data-r2dbc-test-jdk8
+  - spring-data-r2dbc-build
+  - spring-data-r2dbc-pull-requests
 - name: redis
   jobs:
   - spring-data-redis-test-jdk8
@@ -882,16 +915,6 @@ jobs:
   public: true
   plan:
   - get: spring-data-commons-github
-    trigger: true
-    passed: [
-      spring-data-commons-test-jdk8
-    ]
-  - get: spring-hateoas-artifactory
-    trigger: true
-    passed: [
-      spring-data-commons-test-jdk8
-    ]
-  - get: spring-data-build-artifactory
     trigger: true
     passed: [
       spring-data-commons-test-jdk8
@@ -1828,6 +1851,116 @@ jobs:
       path: spring-data-jdbc-github
       status: success
 
+- name: spring-data-r2dbc-test-jdk8
+  serial: true
+  public: true
+  plan:
+  - get: spring-data-r2dbc-github
+    trigger: true
+  - get: spring-data-commons-artifactory
+    trigger: true
+  - get: openjdk:8-jdk
+    trigger: true
+  - task: test
+    privileged: true
+    file: spring-data-r2dbc-github/ci/test.yml
+    params: { PROFILE: ci }
+  <<: *slack-test-failure
+
+- name: spring-data-r2dbc-build
+  serial: true
+  public: true
+  plan:
+  - get: spring-data-r2dbc-github
+    trigger: true
+    passed: [
+      spring-data-r2dbc-test-jdk8
+    ]
+  - get: spring-data-commons-artifactory
+    trigger: true
+    passed: [
+      spring-data-r2dbc-test-jdk8
+    ]
+  - put: spring-data-r2dbc-status
+    params:
+      commit: spring-data-r2dbc-github
+      state: pending
+  - task: build
+    file: spring-data-r2dbc-github/ci/build.yml
+  - put: spring-data-r2dbc-artifactory
+    params:
+      build_number:   ${BUILD_NAME}
+      build_uri:      ${ATC_EXTERNAL_URL}/teams/${BUILD_TEAM_NAME}/pipelines/${BUILD_PIPELINE_NAME}/jobs/${BUILD_JOB_NAME}/builds/${BUILD_NAME}
+      repo:           libs-snapshot-local
+      folder:         spring-data-r2dbc-artifactory
+      artifact_set:
+      - include:
+        - "/**"
+        properties:
+          zip.deployed: false
+          zip.displayname: "spring-data-r2dbc"
+          zip.name: "spring-data-r2dbc"
+          zip.type: "docs"
+  on_abort:
+    put: spring-data-r2dbc-status
+    params:
+      commit: spring-data-r2dbc-github
+      state:  error
+  on_failure:
+    aggregate:
+    - put: spring-data-r2dbc-status
+      params:
+        commit: spring-data-r2dbc-github
+        state: failure
+    - put: slack
+      params:
+        attachments:
+          - color: danger
+            fallback: "$BUILD_PIPELINE_NAME/$BUILD_JOB_NAME #$BUILD_NAME <FAILURE>"
+            text: "Build has failed"
+            title: "$BUILD_PIPELINE_NAME/$BUILD_JOB_NAME #$BUILD_NAME"
+            title_link: $ATC_EXTERNAL_URL/teams/$BUILD_TEAM_NAME/pipelines/$BUILD_PIPELINE_NAME/jobs/$BUILD_JOB_NAME/builds/$BUILD_NAME
+  on_success:
+    aggregate:
+    - put: spring-data-r2dbc-status
+      params:
+        commit: spring-data-r2dbc-github
+        state: success
+    - put: slack
+      params:
+        attachments:
+          - color: good
+            fallback: "$BUILD_PIPELINE_NAME/$BUILD_JOB_NAME #$BUILD_NAME <SUCCESS>"
+            text: "Build has succeeded!"
+            title: "$BUILD_PIPELINE_NAME/$BUILD_JOB_NAME #$BUILD_NAME"
+            title_link: $ATC_EXTERNAL_URL/teams/$BUILD_TEAM_NAME/pipelines/$BUILD_PIPELINE_NAME/jobs/$BUILD_JOB_NAME/builds/$BUILD_NAME
+
+- name: spring-data-r2dbc-pull-requests
+  public: true
+  plan:
+  - get: spring-data-r2dbc-github
+    resource: spring-data-r2dbc-pull-requests
+    trigger: true
+    version: every
+  - put: spring-data-r2dbc-pull-requests
+    params:
+      path: spring-data-r2dbc-github
+      status: pending
+  - aggregate:
+    - task: test (jdk8)
+      file: spring-data-r2dbc-github/ci/test.yml
+      params: { PROFILE: "non-existent" }
+  on_failure:
+    put: spring-data-r2dbc-pull-requests
+    params:
+      path: spring-data-r2dbc-github
+      status: failure
+  on_success:
+    put: spring-data-r2dbc-pull-requests
+    params:
+      path: spring-data-r2dbc-github
+      status: success
+
 - name: spring-data-solr-test-jdk8
   serial: true
   public: true
@@ -2706,23 +2839,7 @@ jobs:
   plan:
   - get: spring-data-rest-github
     trigger: true
-  - get: spring-data-jpa-artifactory
-    trigger: true
-  - get: spring-data-mongodb-artifactory
-    trigger: true
-  - get: spring-data-redis-artifactory
-    trigger: true
-  - get: spring-data-geode-artifactory
-    trigger: true
-  - get: spring-data-gemfire-artifactory
-    trigger: true
-  - get: spring-data-jdbc-artifactory
-    trigger: true
-  - get: spring-data-solr-artifactory
-    trigger: true
-  - get: spring-data-cassandra-artifactory
-    trigger: true
-  - get: spring-data-neo4j-artifactory
+  - get: spring-hateoas-artifactory
     trigger: true
   - get: openjdk:8-jdk
     trigger: true
@@ -2736,51 +2853,6 @@ jobs:
   public: true
   plan:
   - get: spring-data-rest-github
-    trigger: true
-    passed: [
-      spring-data-rest-test-jdk8,
-    ]
-  - get: spring-data-jpa-artifactory
-    trigger: true
-    passed: [
-      spring-data-rest-test-jdk8,
-    ]
-  - get: spring-data-mongodb-artifactory
-    trigger: true
-    passed: [
-      spring-data-rest-test-jdk8,
-    ]
-  - get: spring-data-redis-artifactory
-    trigger: true
-    passed: [
-      spring-data-rest-test-jdk8,
-    ]
-  - get: spring-data-geode-artifactory
-    trigger: true
-    passed: [
-      spring-data-rest-test-jdk8,
-    ]
-  - get: spring-data-gemfire-artifactory
-    trigger: true
-    passed: [
-      spring-data-rest-test-jdk8,
-    ]
-  - get: spring-data-jdbc-artifactory
-    trigger: true
-    passed: [
-      spring-data-rest-test-jdk8,
-    ]
-  - get: spring-data-solr-artifactory
-    trigger: true
-    passed: [
-      spring-data-rest-test-jdk8,
-    ]
-  - get: spring-data-cassandra-artifactory
-    trigger: true
-    passed: [
-      spring-data-rest-test-jdk8,
-    ]
-  - get: spring-data-neo4j-artifactory
     trigger: true
     passed: [
       spring-data-rest-test-jdk8,
