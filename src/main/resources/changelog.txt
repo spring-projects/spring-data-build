@@ -1,6 +1,30 @@
 Spring Data Build - Changelog
 =============================
 
+Changes in version 2.2.0.M2 (2019-03-07)
+----------------------------------------
+* #748 - Upgrade to Maven Javadoc Plugin 3.1.0.
+* #745 - Upgrade to Spring HATEOAS 1.0 M1.
+* #744 - Add r2dbc to the pipeline.
+* #743 - Consistently handle notifications and status updates.
+* #742 - Gate Spring Data JPA tests based on JDK 8.
+* #741 - #714 - Introduce Concourse.
+* #737 - Consistently use https for repository access.
+* #736 - Use Kotlin BOM to manage Kotlin dependencies.
+* #735 - Add version placeholder for Kotlin Coroutines.
+* #733 - Add version property for MockK.
+* #732 - Upgrade to AssertJ 3.12.0.
+* #731 - Upgrade to Kotlin 1.3.21.
+* #729 - Upgrade to Reactor Californium SR5.
+* #727 - Upgrade to Spring Framework 5.1.5.
+* #725 - Upgrade to OpenWebBeans 2.0.10.
+* #723 - Upgrade to RxJava 2.2.6.
+* #721 - Upgrade to Lombok 1.18.6.
+* #718 - Upgrade to Kotlin 1.3.20.
+* #714 - Introduce Concourse CI.
+* #703 - Release 2.2 M2 (Moore).
+
+
 Changes in version 2.1.5.RELEASE (2019-02-13)
 ---------------------------------------------
 * #728 - Upgrade to Reactor Californium SR5.
