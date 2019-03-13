@@ -661,6 +661,20 @@
 		</profile>
 
 		<profile>
+			<id>spring52-next</id>
+			<properties>
+				<spring>5.2.0.BUILD-SNAPSHOT</spring>
+				<jackson>2.9.8</jackson>
+			</properties>
+			<repositories>
+				<repository>
+					<id>spring-libs-snapshot</id>
+					<url>https://repo.spring.io/libs-snapshot</url>
+				</repository>
+			</repositories>
+		</profile>
+
+		<profile>
 			<id>querydsl-next</id>
 			<properties>
 				<querydsl>4.1.5.BUILD-SNAPSHOT</querydsl>
