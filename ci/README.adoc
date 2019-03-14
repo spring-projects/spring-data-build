@@ -33,8 +33,8 @@ With this in place, run the following `fly` commands to create pipelines:
 With this pipeline in place, you can now activate and expose it:
 
 ----
-% fly -t spring-data unpause-pipeline -p spring-hateoas
-% fly -t spring-data expose-pipeline -p spring-hateoas
+% fly -t spring-data unpause-pipeline -p spring-data
+% fly -t spring-data expose-pipeline -p spring-data
 ----
 
 === Running CI tasks locally
