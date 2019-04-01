@@ -1,6 +1,11 @@
 Spring Data Build - Changelog
 =============================
 
+Changes in version 1.9.20.RELEASE (2019-04-01)
+----------------------------------------------
+* #786 - Release 1.9.20 (Ingalls SR20).
+
+
 Changes in version 1.9.19.RELEASE (2019-04-01)
 ----------------------------------------------
 * #776 - Upgrade to Spring Framework 4.3.23.
