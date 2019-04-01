@@ -1,6 +1,19 @@
 Spring Data Build - Changelog
 =============================
 
+Changes in version 2.1.6.RELEASE (2019-04-01)
+---------------------------------------------
+* #783 - Upgrade to Reactor Californium SR6.
+* #782 - Upgrade to RxJava 2.2.7.
+* #779 - Upgrade to MockK 1.9.3.
+* #778 - Upgrade to Spring Framework 5.1.6.
+* #756 - Add build profile for Spring Framework 5.2 snapshots.
+* #747 - Upgrade to Maven Javadoc Plugin 3.1.0.
+* #740 - Consistently use https for repository access.
+* #734 - Add version property for MockK.
+* #730 - Release 2.1.6 (Lovelace SR6).
+
+
 Changes in version 2.0.14.RELEASE (2019-04-01)
 ----------------------------------------------
 * #777 - Upgrade to Spring Framework 5.0.13.
