@@ -1,6 +1,15 @@
 Spring Data Build - Changelog
 =============================
 
+Changes in version 2.0.14.RELEASE (2019-04-01)
+----------------------------------------------
+* #777 - Upgrade to Spring Framework 5.0.13.
+* #757 - Add build profile for Spring Framework 5.2 snapshots.
+* #749 - Upgrade to Maven Javadoc Plugin 3.1.0.
+* #739 - Consistently use https for repository access.
+* #716 - Release 2.0.14 (Kay SR14).
+
+
 Changes in version 1.9.20.RELEASE (2019-04-01)
 ----------------------------------------------
 * #786 - Release 1.9.20 (Ingalls SR20).
