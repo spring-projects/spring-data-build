@@ -47,7 +47,7 @@ DATA…-??? - Summary of the commit (try to stay under 80 characters).
 
 Additional explanations if necessary.
 
-Original pull reuqest: #??.
+Original pull request: #??.
 Related tickets: DATA…-???. (optionally refer to related tickets)
 ----
 
@@ -77,7 +77,7 @@ This section contains some advanced information, mainly targeted at developers o
 * We usually use feature branches to work on tickets and potentially let multiple people work on a feature. There's a https://github.com/spring-projects/spring-data-build/tree/master/etc/scripts[new-issue-branch script] available that sets up a feature branch for you, and adds a commit changing the Maven version numbers so that the branch builds can still publish snapshot artifacts but don't interfere with each other.
 * Follow the commit message style described in <<quickstart>>. Especially the summary line should adhere to the style documented there.
 * After pushing fixes to the remote repository, mark the tickets as resolved in JIRA and set the fixed versions according to which branches you pushed to.
-* Avoid merge commits as they just tend to make it hard to understand what comes from where. Using the ticket identifier in the summary line will allow us to keep track fo commits belonging together.
+* Avoid merge commits as they just tend to make it hard to understand what comes from where. Using the ticket identifier in the summary line will allow us to keep track of commits belonging together.
 
 [[advanced.code-style]]
 === Code style
