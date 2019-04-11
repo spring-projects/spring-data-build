@@ -1,6 +1,23 @@
 Spring Data Build - Changelog
 =============================
 
+Changes in version 2.2.0.M3 (2019-04-11)
+----------------------------------------
+* #798 - Upgrade to SLF4J 1.7.26.
+* #797 - Upgrade to RxJava 2.2.8.
+* #796 - Upgrade to Mockito 2.26.0.
+* #795 - Upgrade to AssertJ 3.12.2.
+* #793 - Upgrade to AspectJ 1.9.3.
+* #792 - Upgrade to Coroutines 1.2.0-alpha-2.
+* #785 - Upgrade to Reactor Californium SR6.
+* #781 - Upgrade to RxJava 2.2.7.
+* #780 - Upgrade to MockK 1.9.3.
+* #755 - Upgrade to Spring Framework 5.2 M1.
+* #754 - Migrate to HTTPS URLs in license headers.
+* #753 - Upgrade to MockK 1.9.2.
+* #751 - Release 2.2 M3 (Moore).
+
+
 Changes in version 2.1.6.RELEASE (2019-04-01)
 ---------------------------------------------
 * #783 - Upgrade to Reactor Californium SR6.
