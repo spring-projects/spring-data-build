@@ -34,6 +34,17 @@
 			</roles>
 			<timezone>+1</timezone>
 		</developer>
+		<developer>
+			<id>mpaluch</id>
+			<name>Mark Paluch</name>
+			<email>mpaluch at pivotal.io</email>
+			<organization>Pivotal Software, Inc.</organization>
+			<organizationUrl>https://www.spring.io</organizationUrl>
+			<roles>
+				<role>Project lead</role>
+			</roles>
+			<timezone>+1</timezone>
+		</developer>
 	</developers>
 
 	<licenses>
