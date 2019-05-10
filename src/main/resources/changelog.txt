@@ -1,6 +1,14 @@
 Spring Data Build - Changelog
 =============================
 
+Changes in version 2.1.7.RELEASE (2019-05-10)
+---------------------------------------------
+* #807 - Upgrade to Spring Framework 5.1.7.
+* #799 - Upgrade to SLF4J 1.7.26.
+* #794 - Upgrade to AspectJ 1.9.3.
+* #789 - Release 2.1.7 (Lovelace SR7).
+
+
 Changes in version 2.2.0.M3 (2019-04-11)
 ----------------------------------------
 * #798 - Upgrade to SLF4J 1.7.26.
