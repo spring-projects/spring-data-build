@@ -1,6 +1,11 @@
 Spring Data Build - Changelog
 =============================
 
+Changes in version 1.9.22.RELEASE (2019-05-13)
+----------------------------------------------
+* #812 - Release 1.9.22 (Ingalls SR22).
+
+
 Changes in version 2.1.8.RELEASE (2019-05-13)
 ---------------------------------------------
 * #811 - Release 2.1.8 (Lovelace SR8).
