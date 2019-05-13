@@ -9,7 +9,7 @@
 	<parent>
 		<groupId>org.springframework.data</groupId>
 		<artifactId>spring-data-releasetrain</artifactId>
-		<version>Ingalls-BUILD-SNAPSHOT</version>
+		<version>Ingalls-SR22</version>
 		<relativePath>../bom</relativePath>
 	</parent>
 
