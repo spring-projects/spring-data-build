@@ -1,6 +1,11 @@
 Spring Data Build - Changelog
 =============================
 
+Changes in version 2.1.8.RELEASE (2019-05-13)
+---------------------------------------------
+* #811 - Release 2.1.8 (Lovelace SR8).
+
+
 Changes in version 2.2.0.M4 (2019-05-13)
 ----------------------------------------
 * #814 - Upgrade to Kotlin Coroutines 1.2.1.
