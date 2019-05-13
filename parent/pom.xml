@@ -121,7 +121,7 @@
 		<rxjava2>2.2.8</rxjava2>
 		<slf4j>1.7.26</slf4j>
 		<spring>5.2.0.M2</spring>
-		<spring-hateoas>1.0.0.BUILD-SNAPSHOT</spring-hateoas>
+		<spring-hateoas>1.0.0.M2</spring-hateoas>
 		<threetenbp>1.3.8</threetenbp>
 		<validation>1.1.0.Final</validation>
 		<webbeans>2.0.10</webbeans>
