@@ -4,13 +4,13 @@
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>org.springframework.data</groupId>
 	<artifactId>spring-data-releasetrain</artifactId>
-	<version>Moore-BUILD-SNAPSHOT</version>
+	<version>Moore-M4</version>
 	<packaging>pom</packaging>
 
 	<parent>
 		<groupId>org.springframework.data.build</groupId>
 		<artifactId>spring-data-build</artifactId>
-		<version>2.2.0.BUILD-SNAPSHOT</version>
+		<version>2.2.0.M4</version>
 	</parent>
 
 	<name>Spring Data Release Train - BOM</name>
