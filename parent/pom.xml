@@ -723,19 +723,6 @@
 			</repositories>
 		</profile>
 
-		<profile>
-			<id>querydsl-next</id>
-			<properties>
-				<querydsl>4.2.2.BUILD-SNAPSHOT</querydsl>
-			</properties>
-			<repositories>
-				<repository>
-					<id>oss-nexus-snapshots</id>
-					<url>https://oss.sonatype.org/content/repositories/snapshots</url>
-				</repository>
-			</repositories>
-		</profile>
-
 	</profiles>
 
 	<dependencyManagement>
