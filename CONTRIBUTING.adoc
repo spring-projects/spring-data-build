@@ -48,7 +48,7 @@ DATA…-??? - Summary of the commit (try to stay under 80 characters).
 
 Additional explanations if necessary.
 
-Original pull reuqest: #??.
+Original pull request: #??.
 Related tickets: DATA…-???. (optionally refer to related tickets)
 ----
 
