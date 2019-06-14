@@ -1,6 +1,23 @@
 Spring Data Build - Changelog
 =============================
 
+Changes in version 2.2.0.RC1 (2019-06-14)
+-----------------------------------------
+* #832 - Upgrade to Spring HATEOAS 1.0 M3.
+* #831 - Upgrade to Spring Framework 5.2 M3.
+* #829 - Include Spring Data REST HAL Explorer module in BOM.
+* #827 - Create security policy readme.
+* #826 - Downgrade to lombok-maven-plugin 1.18.4.0.
+* #825 - Upgrade build plugins.
+* #824 - Upgrade to Lombok 1.18.8.
+* #822 - Upgrade to joda-time 2.10.2.
+* #821 - Upgrade to ThreeTenBp 1.4.0.
+* #819 - Upgrade to Jackson 2.9.9.
+* #818 - Add version property for testcontainers.
+* #817 - Remove querydsl-next profile.
+* #800 - Release 2.2 RC1 (Moore).
+
+
 Changes in version 2.1.9.RELEASE (2019-06-14)
 ---------------------------------------------
 * #830 - Upgrade to Spring Framework 5.1.8.
