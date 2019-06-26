@@ -150,6 +150,7 @@
 										<buildInfo>
 											<buildName>{{artifactory.build-name}}</buildName>
 											<buildNumber>{{artifactory.build-number}}</buildNumber>
+											<buildUrl>{{BUILD_URL}}</buildUrl>
 										</buildInfo>
 									</configuration>
 								</execution>
