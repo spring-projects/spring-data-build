@@ -3,7 +3,7 @@ pipeline {
 
     triggers {
         pollSCM 'H/10 * * * *'
-        cron '* H * * *'
+        cron '@daily'
     }
 
     options {
