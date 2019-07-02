@@ -22,7 +22,7 @@ pipeline {
                     }
                     options { timeout(time: 30, unit: 'MINUTES') }
                     steps {
-                        sh 'MAVEN_OPTS="-Duser.name=jenkins -Duser.home=/tmp/spring-data-maven-repository" ./mvnw clean dependency:list test -Dsort -B'
+                        sh 'MAVEN_OPTS="-Duser.name=jenkins -Duser.home=/tmp/spring-data-maven-repository" ./mvnw clean dependency:list verify -Dsort -B'
                     }
                 }
             }
