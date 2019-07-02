@@ -154,7 +154,6 @@
 					<plugin>
 						<groupId>org.jfrog.buildinfo</groupId>
 						<artifactId>artifactory-maven-plugin</artifactId>
-						<inherited>false</inherited>
 					</plugin>
 
 				</plugins>
