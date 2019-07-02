@@ -17,12 +17,12 @@ pipeline {
                     agent {
                         docker {
                             image 'adoptopenjdk/openjdk8:latest'
-                            args '-v $HOME/.m2:/tmp/spring-data-maven-repository'
+                            args '-v $HOME:/tmp/jenkins-home'
                         }
                     }
                     options { timeout(time: 30, unit: 'MINUTES') }
                     steps {
-                        sh 'MAVEN_OPTS="-Duser.name=jenkins -Duser.home=/tmp/spring-data-maven-repository" ./mvnw clean dependency:list verify -Dsort -B'
+                        sh 'MAVEN_OPTS="-Duser.name=jenkins -Duser.home=/tmp/jenkins-home" ./mvnw clean dependency:list verify -Dsort -B'
                     }
                 }
             }
@@ -34,7 +34,7 @@ pipeline {
             agent {
                 docker {
                     image 'adoptopenjdk/openjdk8:latest'
-                    args '-v $HOME/.m2:/tmp/spring-data-maven-repository'
+                    args '-v $HOME:/tmp/jenkins-home'
                 }
             }
             options { timeout(time: 20, unit: 'MINUTES') }
@@ -44,7 +44,7 @@ pipeline {
             }
 
             steps {
-                sh 'MAVEN_OPTS="-Duser.name=jenkins -Duser.home=/tmp/spring-data-maven-repository" ./mvnw -Pci,artifactory ' +
+                sh 'MAVEN_OPTS="-Duser.name=jenkins -Duser.home=/tmp/jenkins-home" ./mvnw -Pci,artifactory ' +
                         '-Dartifactory.server=https://repo.spring.io ' +
                         "-Dartifactory.username=${ARTIFACTORY_USR} " +
                         "-Dartifactory.password=${ARTIFACTORY_PSW} " +
@@ -61,7 +61,7 @@ pipeline {
             agent {
                 docker {
                     image 'adoptopenjdk/openjdk8:latest'
-                    args '-v $HOME/.m2:/tmp/spring-data-maven-repository'
+                    args '-v $HOME:/tmp/jenkins-home'
                 }
             }
             options { timeout(time: 20, unit: 'MINUTES') }
@@ -71,7 +71,7 @@ pipeline {
             }
 
             steps {
-                sh 'MAVEN_OPTS="-Duser.name=jenkins -Duser.home=/tmp/spring-data-maven-repository" ./mvnw -Pci,artifactory ' +
+                sh 'MAVEN_OPTS="-Duser.name=jenkins -Duser.home=/tmp/jenkins-home" ./mvnw -Pci,artifactory ' +
                         '-Dartifactory.server=https://repo.spring.io ' +
                         "-Dartifactory.username=${ARTIFACTORY_USR} " +
                         "-Dartifactory.password=${ARTIFACTORY_PSW} " +
