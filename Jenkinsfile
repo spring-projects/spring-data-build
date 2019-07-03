@@ -50,7 +50,7 @@ pipeline {
                         "-Dartifactory.username=${ARTIFACTORY_USR} " +
                         "-Dartifactory.password=${ARTIFACTORY_PSW} " +
                         "-Dartifactory.staging-repository=libs-snapshot-local " +
-                        "-Dartifactory.build-name=spring-data-build " +
+                        "-Dartifactory.build-name=spring-data-build-1.9 " +
                         "-Dartifactory.build-number=${BUILD_NUMBER} " +
                         '-Dmaven.test.skip=true clean deploy -B'
             }
@@ -77,7 +77,7 @@ pipeline {
                         "-Dartifactory.username=${ARTIFACTORY_USR} " +
                         "-Dartifactory.password=${ARTIFACTORY_PSW} " +
                         "-Dartifactory.staging-repository=libs-snapshot-local " +
-                        "-Dartifactory.build-name=spring-data-build " +
+                        "-Dartifactory.build-name=spring-data-build-1.9 " +
                         "-Dartifactory.build-number=${BUILD_NUMBER} " +
                         '-Dmaven.test.skip=true clean deploy -B'
             }
