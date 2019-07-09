@@ -750,6 +750,7 @@
 					<!--
 						Copies all namespaces schemas to target/schemas flatten the directory structure.
 						Depended on by the site.xml assembly descriptor.
+						Conditional execution if schemas are present.
 					-->
 
 					<plugin>
@@ -763,11 +764,46 @@
 								<configuration>
 									<target>
 										<copy todir="${project.build.directory}/schemas">
-											<fileset dir="${basedir}" erroronmissingdir="false">
-												<include name="**/src/main/resources/**/config/spring-*.xsd"/>
+											<fileset dir="${basedir}"
+													 erroronmissingdir="false">
+												<include
+														name="**/src/main/resources/**/config/spring-*.xsd"/>
 											</fileset>
 											<flattenmapper/>
 										</copy>
+									</target>
+								</configuration>
+								<goals>
+									<goal>run</goal>
+								</goals>
+							</execution>
+
+							<execution>
+								<id>check-schema-files</id>
+								<phase>prepare-package</phase>
+								<configuration>
+									<target>
+										<available
+												file="${project.build.directory}/schemas"
+												property="schema.present"/>
+									</target>
+									<exportAntProperties>true</exportAntProperties>
+								</configuration>
+								<goals>
+									<goal>run</goal>
+								</goals>
+							</execution>
+							<execution>
+								<id>zip-schema-files</id>
+								<phase>prepare-package</phase>
+								<configuration>
+									<target if="schema.present">
+										<zip destfile="${project.build.directory}/${dist.id}-${project.version}-schema.zip"
+											 basedir="${project.build.directory}/schemas"
+											 whenempty="skip"/>
+										<attachartifact
+												file="${project.build.directory}/${dist.id}-${project.version}-schema.zip"
+												classifier="schema" type="zip"/>
 									</target>
 								</configuration>
 								<goals>
@@ -789,30 +825,6 @@
 				<pluginManagement>
 					<plugins>
 
-						<!--
-							Creates schema zip.
-						-->
-						<plugin>
-							<groupId>org.apache.maven.plugins</groupId>
-							<artifactId>maven-assembly-plugin</artifactId>
-							<executions>
-								<execution>
-									<id>schema</id>
-									<goals>
-										<goal>single</goal>
-									</goals>
-									<phase>package</phase>
-									<configuration>
-										<descriptors>
-											<descriptor>${shared.resources}/assemblies/schema.xml</descriptor>
-										</descriptors>
-										<finalName>${dist.id}</finalName>
-										<appendAssemblyId>true</appendAssemblyId>
-									</configuration>
-								</execution>
-							</executions>
-						</plugin>
-
 						<!-- Deploy to Artifactory -->
 
 						<plugin>
@@ -832,7 +844,7 @@
 										<deployProperties>
 											<zip.name>${dist.id}</zip.name>
 											<zip.displayname>${dist.id}</zip.displayname>
-											<zip.deployed>true</zip.deployed>
+											<zip.deployed>false</zip.deployed>
 											<zip.type>schema</zip.type>
 										</deployProperties>
 										<buildInfo>
