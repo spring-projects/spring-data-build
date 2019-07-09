@@ -1,12 +1,12 @@
-= Spring Data Build Infrastructure
+= Spring Data Build Infrastructure image:https://jenkins.spring.io/buildStatus/icon?job=spring-data-build%2Fmaster&subject=Build[link=https://jenkins.spring.io/view/SpringData/job/spring-data-build/]
 
 This repository contains common infrastructure to be used by Spring Data modules that build with Maven. It consists of a _resources_ project that bundles up resources that are needed during the build CSS for reference documentation generation and JavaDoc. The second project is _parent_ that can be used as parent project to pre-configure core dependencies, properties, reference documentation generation and most important of all the appropriate distribution assembly.
 
 The parent project can be eased for either a single-module Maven project or a multi-module one. Each of the setups requires a slightly different setup of the project.
 
-image:https://jenkins.spring.io/buildStatus/icon?job=spring-data-build%2Fmaster&subject=Moore%20(master)[link=https://jenkins.spring.io/view/SpringData/job/spring-data-build/]
-image:https://jenkins.spring.io/buildStatus/icon?job=spring-data-build%2F2.1.x&subject=Lovelace%20(2.1.x)[link=https://jenkins.spring.io/view/SpringData/job/spring-data-build/]
-image:https://jenkins.spring.io/buildStatus/icon?job=spring-data-build%2F1.9.x&subject=Ingalls%20(1.9.x)[link=https://jenkins.spring.io/view/SpringData/job/spring-data-build/]
+== Code of Conduct
+
+This project is governed by the link:CODE_OF_CONDUCT.adoc[Spring Code of Conduct]. By participating, you are expected to uphold this code of conduct. Please report unacceptable behavior to spring-code-of-conduct@pivotal.io.
 
 == Project setup
 
@@ -14,27 +14,25 @@ image:https://jenkins.spring.io/buildStatus/icon?job=spring-data-build%2F1.9.x&s
 
 The parent project configures the following aspects of the project build:
 
-Shared resources are pulled in from the `spring-data-build-resources` dependency (images, CSS, XSLTs for documentation generation). Renders reference documentation from Docbook file named `index.xml` within `src/docbkx`. In the `distribute` profile, two assemblies are generated: A ZIP to be uploaded to static.springsource.org (incl. javadoc (browsable), reference docs as described before) with the following content:
+Shared resources are pulled in from the `spring-data-build-resources` dependency (images, CSS, JavaScript). Renders reference documentation from Asciidoc file named `index.adoc` within `src/asciidoc`. In the `distribute` profile, two assemblies are generated: A ZIP to be uploaded to docs.spring.io (incl. javadoc (browsable), reference docs as described before) with the following content:
 
 [source]
 ----
 - changelog.txt
-- license.txt
 - notice.txt
-- readme.txt
-+ reference -> Docbook generated reference documentation
++ reference -> Asciidoc generated reference documentation
   + html
   + pdf
   + epub
 + api -> JavaDoc
 ----
 
-A second ZIP is generated to be uploaded to static.springsource.org to contain all Spring namespace XSDs.
+A second ZIP is generated to be uploaded to docs.spring.io to contain all Spring namespace XSDs.
 
 The following dependencies are pre-configured.
 
 * Logging dependencies: SLF4j + Commons Logging bridge and Logback as test dependency
-* Test dependencies: JUnit / Hamcrest / Mockito
+* Test dependencies: JUnit / AssertJ / Hamcrest / Mockito
 * Dependency versions for commonly used dependencies
 
 === Single project setup
@@ -50,7 +48,7 @@ If the client project is a project consisting of a single project only all that 
 </parent>
 ----
 
-Be sure to adapt the version number to the latest release version. The second and already last step of the setup is to activate the assembly and wagon plugin in the build section:
+Be sure to adapt the version number to the latest release version. The second and already last step of the setup is to activate the assembly and asciidoctor plugin in the build section:
 
 [source,xml]
 ----
@@ -59,8 +57,8 @@ Be sure to adapt the version number to the latest release version. The second an
 	<artifactId>maven-assembly-plugin</artifactId>
 </plugin>
 <plugin>
-	<groupId>org.codehaus.mojo</groupId>
-	<artifactId>wagon-maven-plugin</artifactId>
+	<groupId>org.asciidoctor</groupId>
+	<artifactId>asciidoctor-maven-plugin</artifactId>
 </plugin>
 ----
 
@@ -68,10 +66,10 @@ As an example have a look at the build of https://github.com/spring-projects/spr
 
 === Multi project setup
 
-A multi module setup requires slightly more setup and some structure being set up. 
+A multi module setup requires slightly more setup and some structure being set up.
 
 * The root `pom.xml` needs to configure the `project.type` property to `multi`.
-* Docbook documentation sources need to be in the root project.
+* Asciidoc documentation sources need to be in the root project.
 * The assembly needs to be build in a dedicated sub-module (e.g. `distribution`), declare the assembly plugin (see single project setup) in that submodule and reconfigure the `project.root` property in that module to `${basedir}/..`.
 * Configure `${dist.id}` in the root project to the basic artifact id (e.g. `spring-data-mongodb`) as this will serve as file name for distribution artifacts, static resources etc. It will default to the artifact id and thus usually resolve to a `…-parent` if not configured properly.
 
@@ -79,54 +77,17 @@ As an example have a look at the build of https://github.com/spring-projects/spr
 
 == Build configuration
 
-* Configure "Artifactory Maven 3" task
-* Goals to execute `clean (dependency:tree) install -Pci`
-* A nightly build can then use `clean (dependency:tree) deploy -Pdistribute` to publish static resources and reference documentation
+* Goals to execute `clean (dependency:tree) install -Pci` to run the build
+* Goals to execute `clean deploy -Pci,artifactory` to deploy artifacts to Artifactory
+* A nightly build can then use `clean (dependency:tree) deploy -Pdistribute` to publish reference documentation
 
 == Additional build profiles
 
 * `ci` - Packages the JavaDoc as JAR for distribution (needs to be active on the CI server to make sure we distribute JavaDoc as JAR).
-* `distribute` - Creates Docbook documentation, assembles the distribution zip, etc.
-* `milestone` - Configures the binary distribution to upload to the milestone S3 repository.
-* `release` - Configures the binary distribution to upload to the release S3 repository.
-* `spring4-next` - Configures the Spring version to be used to be the next 4.0.x snapshot version.
-* `spring41` - Configures the Spring version to be used to be the latest 4.1.x release version.
-* `spring41-next` - Configures the Spring version to be used to be the next 4.1.x release version.
-* `querydsl-next` - Configures the Querydsl version to be used to be the next available snapshot version.
+* `distribute` - Creates Asciidoc documentation.
+* `distribute-schema` - Creates schema file distribution.
+* `spring…-next` - Configures the Spring version to be used to be the next Spring Framework snapshot version.
 
-== Running CI tasks locally
+== License
 
-Since this pipeline is purely Docker-based, it's easy to:
-
-* Debug what went wrong on your local machine.
-* Experiment against a new image before submitting your pull request.
-
-All of these use cases are great reasons to essentially run what the CI server does on your local machine.
-
-IMPORTANT: To do this you must have Docker installed on your machine.
-
-1. `docker run -it --mount type=bind,source="$(pwd)",target=/spring-data-build-github adoptopenjdk/openjdk8:latest /bin/bash`
-+
-This will launch the Docker image and mount your source code at `spring-data-build-github`.
-+
-2. `cd spring-data-build-github`
-+
-Next, run your tests from inside the container:
-+
-3. `./mvnw clean dependency:list test -Dsort` (or whatever profile you need to test out)
-
-Since the container is binding to your source, you can make edits from your IDE and continue to run build jobs.
-
-If you need to test the `build.sh` script, do this:
-
-1. `docker run -it --mount type=bind,source="$(pwd)",target=/spring-data-build-github adoptopenjdk/openjdk8:latest /bin/bash`
-+
-This will launch the Docker image and mount your source code at `spring-data-build-github`.
-+
-2. `cd spring-data-build-github`
-+
-Next, try to package everything up from inside the container:
-+
-3. `./mvnw -Pci,snapshot -Dmaven.test.skip=true clean package`
-
-NOTE: Docker containers can eat up disk space fast! From time to time, run `docker system prune` to clean out old images.
+Spring Data Build is Open Source software released under the https://www.apache.org/licenses/LICENSE-2.0.html[Apache 2.0 license].
