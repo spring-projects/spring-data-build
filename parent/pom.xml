@@ -113,7 +113,7 @@
 		<kotlin-coroutines>1.2.1</kotlin-coroutines>
 		<logback>1.2.3</logback>
 		<lombok>1.18.8</lombok>
-		<mockito>2.26.0</mockito>
+		<mockito>3.0.0</mockito>
 		<mockk>1.9.3</mockk>
 		<querydsl>4.2.1</querydsl>
 		<reactor>Dysprosium-M1</reactor>
