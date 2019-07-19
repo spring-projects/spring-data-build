@@ -13,6 +13,12 @@ pipeline {
 
     stages {
         stage("Test") {
+            when {
+                anyOf {
+                    branch 'master'
+                    not { triggeredBy 'UpstreamCause' }
+                }
+            }
             parallel {
                 stage("test: baseline") {
                     agent {
@@ -31,35 +37,10 @@ pipeline {
         }
         stage('Release to artifactory') {
             when {
-                branch 'issue/*'
-            }
-            agent {
-                docker {
-                    image 'adoptopenjdk/openjdk8:latest'
-                    label 'data'
-                    args '-v $HOME:/tmp/jenkins-home'
+                anyOf {
+                    branch 'master'
+                    not { triggeredBy 'UpstreamCause' }
                 }
-            }
-            options { timeout(time: 20, unit: 'MINUTES') }
-
-            environment {
-                ARTIFACTORY = credentials('02bd1690-b54f-4c9f-819d-a77cb7a9822c')
-            }
-
-            steps {
-                sh 'MAVEN_OPTS="-Duser.name=jenkins -Duser.home=/tmp/jenkins-home" ./mvnw -Pci,artifactory ' +
-                        '-Dartifactory.server=https://repo.spring.io ' +
-                        "-Dartifactory.username=${ARTIFACTORY_USR} " +
-                        "-Dartifactory.password=${ARTIFACTORY_PSW} " +
-                        "-Dartifactory.staging-repository=libs-snapshot-local " +
-                        "-Dartifactory.build-name=spring-data-build " +
-                        "-Dartifactory.build-number=${BUILD_NUMBER} " +
-                        '-Dmaven.test.skip=true clean deploy -B'
-            }
-        }
-        stage('Release to artifactory with docs') {
-            when {
-                branch 'master'
             }
             agent {
                 docker {
