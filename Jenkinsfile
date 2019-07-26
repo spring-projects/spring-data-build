@@ -35,7 +35,7 @@ pipeline {
 				}
 			}
 		}
-		stage('Release to artifactory') {
+		stage('Build project & BOM then release to artifactory') {
 			when {
 				anyOf {
 					branch 'master'
@@ -56,6 +56,13 @@ pipeline {
 			}
 
 			steps {
+				sh 'MAVEN_OPTS="-Duser.name=jenkins -Duser.home=/tmp/jenkins-home" ' +
+						'./mvnw clean dependency:tree source:jar javadoc:javadoc javadoc:jar install -pl "!bom" -B -U '
+
+				sh 'MAVEN_OPTS="-Duser.name=jenkins -Duser.home=/tmp/jenkins-home" ./mvnw clean install -pl bom -B -U'
+
+				sh 'MAVEN_OPTS="-Duser.name=jenkins -Duser.home=/tmp/jenkins-home" ./mvnw -Pwith-bom-client verify -pl bom-client -B -U'
+				
 				sh 'MAVEN_OPTS="-Duser.name=jenkins -Duser.home=/tmp/jenkins-home" ./mvnw -Pci,artifactory ' +
 						'-Dartifactory.server=https://repo.spring.io ' +
 						"-Dartifactory.username=${ARTIFACTORY_USR} " +
