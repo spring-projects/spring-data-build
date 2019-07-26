@@ -126,7 +126,7 @@
 		<testcontainers>1.12.0</testcontainers>
 		<threetenbp>1.4.0</threetenbp>
 		<validation>1.1.0.Final</validation>
-		<webbeans>2.0.10</webbeans>
+		<webbeans>2.0.11</webbeans>
 		<javax-annotation-api>1.3</javax-annotation-api>
 
 		<releasetrain>Moore-BUILD-SNAPSHOT</releasetrain>
