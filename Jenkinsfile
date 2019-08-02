@@ -1,15 +1,15 @@
 pipeline {
-    agent none
+	agent none
 
-    triggers {
-        pollSCM 'H/10 * * * *'
-        cron '@daily'
-    }
+	triggers {
+		pollSCM 'H/10 * * * *'
+		cron '@daily'
+	}
 
-    options {
-        disableConcurrentBuilds()
-        buildDiscarder(logRotator(numToKeepStr: '14'))
-    }
+	options {
+		disableConcurrentBuilds()
+		buildDiscarder(logRotator(numToKeepStr: '14'))
+	}
 
 	stages {
 		stage("Test") {
@@ -51,9 +51,9 @@ pipeline {
 			}
 			options { timeout(time: 20, unit: 'MINUTES') }
 
-            environment {
-                ARTIFACTORY = credentials('02bd1690-b54f-4c9f-819d-a77cb7a9822c')
-            }
+			environment {
+				ARTIFACTORY = credentials('02bd1690-b54f-4c9f-819d-a77cb7a9822c')
+			}
 
 			steps {
 				sh 'MAVEN_OPTS="-Duser.name=jenkins -Duser.home=/tmp/jenkins-home" ' +
@@ -62,7 +62,7 @@ pipeline {
 				sh 'MAVEN_OPTS="-Duser.name=jenkins -Duser.home=/tmp/jenkins-home" ./mvnw clean install -pl bom -B -U'
 
 				sh 'MAVEN_OPTS="-Duser.name=jenkins -Duser.home=/tmp/jenkins-home" ./mvnw -Pwith-bom-client verify -pl bom-client -B -U'
-				
+
 				sh 'MAVEN_OPTS="-Duser.name=jenkins -Duser.home=/tmp/jenkins-home" ./mvnw -Pci,artifactory ' +
 						'-Dartifactory.server=https://repo.spring.io ' +
 						"-Dartifactory.username=${ARTIFACTORY_USR} " +
@@ -75,19 +75,19 @@ pipeline {
 		}
 	}
 
-    post {
-        changed {
-            script {
-                slackSend(
-                        color: (currentBuild.currentResult == 'SUCCESS') ? 'good' : 'danger',
-                        channel: '#spring-data-dev',
-                        message: "${currentBuild.fullDisplayName} - `${currentBuild.currentResult}`\n${env.BUILD_URL}")
-                emailext(
-                        subject: "[${currentBuild.fullDisplayName}] ${currentBuild.currentResult}",
-                        mimeType: 'text/html',
-                        recipientProviders: [[$class: 'CulpritsRecipientProvider'], [$class: 'RequesterRecipientProvider']],
-                        body: "<a href=\"${env.BUILD_URL}\">${currentBuild.fullDisplayName} is reported as ${currentBuild.currentResult}</a>")
-            }
-        }
-    }
+	post {
+		changed {
+			script {
+				slackSend(
+						color: (currentBuild.currentResult == 'SUCCESS') ? 'good' : 'danger',
+						channel: '#spring-data-dev',
+						message: "${currentBuild.fullDisplayName} - `${currentBuild.currentResult}`\n${env.BUILD_URL}")
+				emailext(
+						subject: "[${currentBuild.fullDisplayName}] ${currentBuild.currentResult}",
+						mimeType: 'text/html',
+						recipientProviders: [[$class: 'CulpritsRecipientProvider'], [$class: 'RequesterRecipientProvider']],
+						body: "<a href=\"${env.BUILD_URL}\">${currentBuild.fullDisplayName} is reported as ${currentBuild.currentResult}</a>")
+			}
+		}
+	}
 }
