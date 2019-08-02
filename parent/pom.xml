@@ -622,7 +622,7 @@
 						</plugin>
 
 						<!--
-							Creates two zip files for download as well as API and reference documentation distribution.
+							Creates the documentation zip file.
 						-->
 						<plugin>
 							<groupId>org.apache.maven.plugins</groupId>
@@ -746,7 +746,6 @@
 						</executions>
 					</plugin>
 
-
 					<!--
 						Copies all namespaces schemas to target/schemas flatten the directory structure.
 						Depended on by the site.xml assembly descriptor.
@@ -763,7 +762,7 @@
 								<phase>prepare-package</phase>
 								<configuration>
 									<target>
-										<copy todir="${project.build.directory}/schemas">
+										<copy todir="${project.root}/target/schemas">
 											<fileset dir="${basedir}"
 													 erroronmissingdir="false">
 												<include
@@ -783,9 +782,11 @@
 								<phase>prepare-package</phase>
 								<configuration>
 									<target>
-										<available
-												file="${project.build.directory}/schemas"
-												property="schema.present"/>
+										<condition property="assembly.skipAssembly">
+											<not>
+												<available file="${project.root}/target/schemas"/>
+											</not>
+										</condition>
 									</target>
 									<exportAntProperties>true</exportAntProperties>
 								</configuration>
@@ -793,27 +794,32 @@
 									<goal>run</goal>
 								</goals>
 							</execution>
-							<execution>
-								<id>zip-schema-files</id>
-								<phase>prepare-package</phase>
-								<configuration>
-									<target if="schema.present">
-										<zip destfile="${project.build.directory}/${dist.id}-${project.version}-schema.zip"
-											 basedir="${project.build.directory}/schemas"
-											 whenempty="skip"/>
-										<attachartifact
-												file="${project.build.directory}/${dist.id}-${project.version}-schema.zip"
-												classifier="schema" type="zip"/>
-									</target>
-								</configuration>
-								<goals>
-									<goal>run</goal>
-								</goals>
-							</execution>
-
 						</executions>
-
 					</plugin>
+
+						<!--
+							Creates the schema zip file.
+						-->
+						<plugin>
+							<groupId>org.apache.maven.plugins</groupId>
+							<artifactId>maven-assembly-plugin</artifactId>
+							<executions>
+								<execution>
+									<id>docs</id>
+									<goals>
+										<goal>single</goal>
+									</goals>
+									<phase>package</phase>
+									<configuration>
+										<descriptors>
+											<descriptor>${shared.resources}/assemblies/schema.xml</descriptor>
+										</descriptors>
+										<finalName>${dist.id}</finalName>
+										<appendAssemblyId>true</appendAssemblyId>
+									</configuration>
+								</execution>
+							</executions>
+						</plugin>
 
 					<plugin>
 						<groupId>org.jfrog.buildinfo</groupId>
