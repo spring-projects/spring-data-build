@@ -216,6 +216,7 @@
 								<serverId>sonatype</serverId>
 								<nexusUrl>https://oss.sonatype.org/</nexusUrl>
 								<autoReleaseAfterClose>false</autoReleaseAfterClose>
+								<keepStagingRepositoryOnFailure>true</keepStagingRepositoryOnFailure>
 							</configuration>
 						</plugin>
 					</plugins>
