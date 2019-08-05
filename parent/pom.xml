@@ -111,7 +111,7 @@
 		<validation>1.0.0.GA</validation>
 		<webbeans>1.2.8</webbeans>
 
-		<releasetrain>Ingalls-BUILD-SNAPSHOT</releasetrain>
+		<releasetrain>Ingalls-SR23</releasetrain>
 
 	</properties>
 
@@ -247,7 +247,7 @@
 				<dependency>
 					<groupId>org.springframework.data.build</groupId>
 					<artifactId>spring-data-build-resources</artifactId>
-					<version>1.9.23.BUILD-SNAPSHOT</version>
+					<version>1.9.23.RELEASE</version>
 					<scope>provided</scope>
 					<type>zip</type>
 				</dependency>
@@ -632,10 +632,8 @@
 								<configuration>
 									<target>
 										<copy todir="${project.root}/target/schemas">
-											<fileset dir="${basedir}"
-													 erroronmissingdir="false">
-												<include
-														name="**/src/main/resources/**/config/spring-*.xsd"/>
+											<fileset dir="${basedir}" erroronmissingdir="false">
+												<include name="**/src/main/resources/**/config/spring-*.xsd"/>
 											</fileset>
 											<flattenmapper/>
 										</copy>
