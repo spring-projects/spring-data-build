@@ -1,6 +1,15 @@
 Spring Data Build - Changelog
 =============================
 
+Changes in version 1.9.23.RELEASE (2019-08-05)
+----------------------------------------------
+* #850 - Upgrade to Jackson BOM 2.8.11.20190726.
+* #848 - Upgrade to Spring Framework 4.3.25.
+* #842 - Deploy documentation and schema through Artifactory.
+* #839 - Handle JDK 8u181 breaking change to maven-surefire-plugin.
+* #816 - Release 1.9.23 (Ingalls SR23).
+
+
 Changes in version 2.2.0.RC1 (2019-06-14)
 -----------------------------------------
 * #832 - Upgrade to Spring HATEOAS 1.0 M3.
