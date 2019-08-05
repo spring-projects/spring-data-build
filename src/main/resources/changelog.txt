@@ -1,6 +1,21 @@
 Spring Data Build - Changelog
 =============================
 
+Changes in version 2.1.10.RELEASE (2019-08-05)
+----------------------------------------------
+* #865 - Upgrade to Spring HATEOAS 0.25.2.
+* #863 - Downgrade to Jackson 2.9.9.
+* #862 - Upgrade to Reactor Californium SR10.
+* #860 - Upgrade to Jackson 2.9.9.20190727.
+* #856 - Upgrade to OpenWebBeans 2.0.11.
+* #854 - Upgrade to RxJava 2.2.10.
+* #852 - Upgrade to Joda Time 2.10.3.
+* #847 - Upgrade to Spring Framework 5.1.9.
+* #841 - Deploy documentation and schema through Artifactory.
+* #836 - Integrate nohttp tooling into CI build profile.
+* #834 - Release 2.1.10 (Lovelace SR10).
+
+
 Changes in version 1.9.23.RELEASE (2019-08-05)
 ----------------------------------------------
 * #850 - Upgrade to Jackson BOM 2.8.11.20190726.
