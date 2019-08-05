@@ -26,7 +26,7 @@
 	<parent>
 		<groupId>org.springframework.data.build</groupId>
 		<artifactId>spring-data-build</artifactId>
-		<version>1.9.23.BUILD-SNAPSHOT</version>
+		<version>1.9.23.RELEASE</version>
 		<relativePath>../pom.xml</relativePath>
 	</parent>
 
@@ -580,7 +580,7 @@
 				<dependency>
 					<groupId>org.springframework.data.build</groupId>
 					<artifactId>spring-data-build-resources</artifactId>
-					<version>1.9.23.BUILD-SNAPSHOT</version>
+					<version>1.9.23.RELEASE</version>
 					<type>zip</type>
 					<optional>true</optional>
 				</dependency>
