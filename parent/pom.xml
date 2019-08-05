@@ -306,6 +306,7 @@
 				<generated-docs.directory>${project.build.directory}/generated-docs</generated-docs.directory>
 				<maven.main.skip>true</maven.main.skip>
 				<maven.test.skip>true</maven.test.skip>
+				<aspectj.skip>true</aspectj.skip>
 				<maven.kotlin.skip>true</maven.kotlin.skip>
 				<maven.install.skip>true</maven.install.skip>
 				<maven.deploy.skip>true</maven.deploy.skip>
@@ -701,6 +702,7 @@
 				<shared.resources>${project.build.directory}/shared-resources</shared.resources>
 				<maven.main.skip>true</maven.main.skip>
 				<maven.test.skip>true</maven.test.skip>
+				<aspectj.skip>true</aspectj.skip>
 				<maven.kotlin.skip>true</maven.kotlin.skip>
 				<maven.install.skip>true</maven.install.skip>
 				<maven.deploy.skip>true</maven.deploy.skip>
