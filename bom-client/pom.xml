@@ -9,7 +9,7 @@
 	<parent>
 		<groupId>org.springframework.data</groupId>
 		<artifactId>spring-data-releasetrain</artifactId>
-		<version>Moore-BUILD-SNAPSHOT</version>
+		<version>Moore-RC2</version>
 		<relativePath>../bom</relativePath>
 	</parent>
 
