@@ -9,7 +9,7 @@
 	<parent>
 		<groupId>org.springframework.data</groupId>
 		<artifactId>spring-data-releasetrain</artifactId>
-		<version>Lovelace-SR10</version>
+		<version>Lovelace-BUILD-SNAPSHOT</version>
 		<relativePath>../bom</relativePath>
 	</parent>
 
