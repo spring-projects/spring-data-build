@@ -1,6 +1,27 @@
 Spring Data Build - Changelog
 =============================
 
+Changes in version 2.2.0.RC2 (2019-08-05)
+-----------------------------------------
+* #866 - Upgrade to Spring HATEOAS 1.0 RC1.
+* #864 - Downgrade to Jackson 2.9.9.
+* #859 - Upgrade to Jackson 2.9.9.20190727.
+* #858 - Update Jenkins job to build BOM stuff properly.
+* #857 - Upgrade to OpenWebBeans 2.0.11.
+* #855 - Upgrade to Testcontainers 1.12.0.
+* #853 - Upgrade to RxJava 2.2.10.
+* #851 - Upgrade to Joda Time 2.10.3.
+* #849 - Upgrade to Kotlin 1.3.41.
+* #846 - Upgrade to Spring Framework 5.2 RC1.
+* #845 - Upgrade to Reactor Dysprosium M3.
+* #844 - Upgrade to Mockito 3.0.0.
+* #843 - Revise readme for a consistent structure.
+* #840 - Deploy documentation and schema through Artifactory.
+* #837 - Upgrade to Kotlin 1.3.40.
+* #835 - Release 2.2 RC2 (Moore).
+* #828 - Integrate nohttp tooling into CI build profile.
+
+
 Changes in version 2.1.10.RELEASE (2019-08-05)
 ----------------------------------------------
 * #865 - Upgrade to Spring HATEOAS 0.25.2.
