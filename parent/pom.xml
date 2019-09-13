@@ -205,7 +205,7 @@
 								</module>
 							</checkstyleRules>
 							<includes>**/*</includes>
-							<excludes>.git/**/*,target/**/*,**/target/**/*,.idea/**/*,**/spring.schemas,**/*.svg,mvnw,mvnw.cmd,**/*.graphml,work/**/*</excludes>
+							<excludes>**/.flattened-pom.xml,.git/**/*,target/**/*,**/target/**/*,.idea/**/*,**/spring.schemas,**/*.svg,mvnw,mvnw.cmd,**/*.graphml,work/**/*</excludes>
 							<sourceDirectories>./</sourceDirectories>
 						</configuration>
 						<executions>
