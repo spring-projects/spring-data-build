@@ -128,7 +128,7 @@
 		<threetenbp>1.4.0</threetenbp>
 		<validation>1.1.0.Final</validation>
 		<webbeans>2.0.11</webbeans>
-		<javax-annotation-api>1.3</javax-annotation-api>
+		<javax-annotation-api>1.3.2</javax-annotation-api>
 
 		<releasetrain>Moore-BUILD-SNAPSHOT</releasetrain>
 
