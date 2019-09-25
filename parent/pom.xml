@@ -124,7 +124,7 @@
 		<spring>5.2.0.RC2</spring>
 		<spring-hateoas>1.0.0.RC2</spring-hateoas>
 		<spring-plugin>2.0.0.BUILD-SNAPSHOT</spring-plugin>
-		<testcontainers>1.12.0</testcontainers>
+		<testcontainers>1.12.1</testcontainers>
 		<threetenbp>1.4.0</threetenbp>
 		<validation>1.1.0.Final</validation>
 		<webbeans>2.0.11</webbeans>
