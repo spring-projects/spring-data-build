@@ -818,7 +818,7 @@
 		<profile>
 			<id>spring52</id>
 			<properties>
-				<spring>5.2.0.RC2</spring>
+				<spring>5.2.0.RELEASE</spring>
 			</properties>
 			<repositories>
 				<repository>
