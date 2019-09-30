@@ -1,6 +1,20 @@
 Spring Data Build - Changelog
 =============================
 
+Changes in version 2.1.11.RELEASE (2019-09-30)
+----------------------------------------------
+* #901 - Upgrade to Jackson 2.9.10.
+* #900 - Upgrade to joda-time 2.10.4.
+* #899 - Upgrade to RxJava 2.2.12.
+* #898 - Upgrade to Reactor Californium-SR12.
+* #897 - Upgrade to Spring Framework 5.1.10.
+* #893 - Upgrade to javax.annotation-api 1.3.2.
+* #888 - Upgrade to AspectJ 1.9.4.
+* #872 - Upgrade to Jackson 2.9.9.20190807.
+* #869 - Release 2.1.11 (Lovelace SR11).
+* #868 - Skip AspectJ with Distribute and Schema profiles.
+
+
 Changes in version 2.2.0.RC3 (2019-09-06)
 -----------------------------------------
 * #881 - Upgrade to Spring HATEOAS 1.0 RC2.
