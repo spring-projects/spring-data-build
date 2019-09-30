@@ -1,6 +1,25 @@
 Spring Data Build - Changelog
 =============================
 
+Changes in version 2.2.0.RELEASE (2019-09-30)
+---------------------------------------------
+* #902 - Upgrade to Spring Plugin 2.0 GA.
+* #896 - Upgrade to Spring Framework 5.2 GA.
+* #895 - Upgrade to Kotlin Coroutines 1.3.2.
+* #894 - Upgrade to javax.annotation-api 1.3.2.
+* #892 - Upgrade to Testcontainers 1.12.1.
+* #891 - Upgrade to Lombok 1.18.10.
+* #890 - Upgrade to joda-time 2.10.4.
+* #889 - Upgrade to AspectJ 1.9.4.
+* #887 - Upgrade to Reactor Dysprosium GA.
+* #886 - Introduce property for Spring Plugin version.
+* #885 - Upgrade to Jackson 2.10.
+* #883 - Upgrade to Spring HATEAOS 1.0.0 GA.
+* #882 - Exclude .flattened-pom.xml from nohttp checks.
+* #870 - Release 2.2 GA (Moore).
+* #437 - Upgrade Maven plugin versions.
+
+
 Changes in version 2.1.11.RELEASE (2019-09-30)
 ----------------------------------------------
 * #901 - Upgrade to Jackson 2.9.10.
