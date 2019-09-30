@@ -15,7 +15,7 @@ pipeline {
 		stage("Test") {
 			when {
 				anyOf {
-					branch 'master'
+					branch '2.2.x'
 					not { triggeredBy 'UpstreamCause' }
 				}
 			}
@@ -38,7 +38,7 @@ pipeline {
 		stage('Build project & BOM then release to artifactory') {
 			when {
 				anyOf {
-					branch 'master'
+					branch '2.2.x'
 					not { triggeredBy 'UpstreamCause' }
 				}
 			}
