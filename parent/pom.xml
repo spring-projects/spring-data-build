@@ -13,7 +13,7 @@
 	Preconfigures the following:
 
 	- Logging dependencies: SLF4j + Commons Logging bridge and Logback as test dependency
-	- Test dependencies: JUnit 4+5 / Hamcrest / Mockito
+	- Test dependencies: JUnit 4+5 / Mockito
 	- Dependency versions for commonly used dependencies
 
 	-->
@@ -942,20 +942,6 @@
 	<dependencies>
 
 		<!-- Test -->
-		<dependency>
-			<groupId>org.hamcrest</groupId>
-			<artifactId>hamcrest-library</artifactId>
-			<version>${hamcrest}</version>
-			<scope>test</scope>
-		</dependency>
-
-		<dependency>
-			<groupId>org.hamcrest</groupId>
-			<artifactId>hamcrest-core</artifactId>
-			<version>${hamcrest}</version>
-			<scope>test</scope>
-		</dependency>
-
 		<dependency>
 			<groupId>org.junit.jupiter</groupId>
 			<artifactId>junit-jupiter</artifactId>
