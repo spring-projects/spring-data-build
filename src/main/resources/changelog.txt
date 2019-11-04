@@ -1,6 +1,13 @@
 Spring Data Build - Changelog
 =============================
 
+Changes in version 2.1.12.RELEASE (2019-11-04)
+----------------------------------------------
+* #910 - Upgrade to Spring Framework 5.1.11.
+* #909 - Upgrade to Jackson BOM 2.9.10.20191020.
+* #903 - Release 2.1.12 (Lovelace SR12).
+
+
 Changes in version 2.2.0.RELEASE (2019-09-30)
 ---------------------------------------------
 * #902 - Upgrade to Spring Plugin 2.0 GA.
