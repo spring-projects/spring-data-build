@@ -1,6 +1,12 @@
 Spring Data Build - Changelog
 =============================
 
+Changes in version 2.2.1.RELEASE (2019-11-04)
+---------------------------------------------
+* #911 - Upgrade to Spring Framework 5.2.1.
+* #904 - Release 2.2.1 (Moore SR1).
+
+
 Changes in version 2.1.12.RELEASE (2019-11-04)
 ----------------------------------------------
 * #910 - Upgrade to Spring Framework 5.1.11.
