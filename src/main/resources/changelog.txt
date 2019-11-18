@@ -1,6 +1,13 @@
 Spring Data Build - Changelog
 =============================
 
+Changes in version 2.2.2.RELEASE (2019-11-18)
+---------------------------------------------
+* #917 - Upgrade to Testcontainers 1.12.3.
+* #915 - Upgrade to Jackson 2.10.1.
+* #914 - Release 2.2.2 (Moore SR2).
+
+
 Changes in version 2.1.13.RELEASE (2019-11-18)
 ----------------------------------------------
 * #913 - Release 2.1.13 (Lovelace SR13).
