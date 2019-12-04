@@ -1,6 +1,17 @@
 Spring Data Build - Changelog
 =============================
 
+Changes in version 2.1.14.RELEASE (2019-12-04)
+----------------------------------------------
+* #944 - Upgrade to AspectJ 1.9.5.
+* #940 - Upgrade to RxJava 2.2.15.
+* #936 - Upgrade to Spring Framework 5.1.12.
+* #935 - Upgrade to Reactor Californium SR14.
+* #933 - Upgrade to Reactor Californium SR13.
+* #930 - Upgrade to RxJava 2.2.14.
+* #920 - Release 2.1.14 (Lovelace SR14).
+
+
 Changes in version 2.2.2.RELEASE (2019-11-18)
 ---------------------------------------------
 * #917 - Upgrade to Testcontainers 1.12.3.
@@ -1274,3 +1285,4 @@ Changes in version 1.3.0.M1 (2014-04-16)
 * #28 - Release 1.3 M1.
 * #27 - Introduce shell script to automatically create issue branches and update pom versions.
 * #26 - Upgrade Spring baseline to latest 3.2.x.
+
