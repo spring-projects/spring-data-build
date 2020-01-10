@@ -1,0 +1,9 @@
+#!/bin/bash
+#
+# This script updates the license headers of all Java files to extend the copyright year to the given date.
+USAGE="$0 <year>"
+if [ $# -lt 1 ]; then echo -e "ERROR: Year required. \n$USAGE" >&2; exit 1; fi
+
+YEAR=$1
+for file in `find . -name '*.java' `; do sed -E -i '' "s/\* Copyright ([0-9]{4})-([0-9]{4}) the/\* Copyright \1-${YEAR} the/g" $file; done
+for file in `find . -name '*.java' `; do sed -E -i '' "s/\* Copyright ([0-9]{4}) the/\* Copyright \1-${YEAR} the/g" $file; done

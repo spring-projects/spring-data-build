@@ -1,0 +1,27 @@
+#!/bin/bash
+#
+# This script updates the license headers of Java files to extend the copyright year to given date and commits those using the given message to all branches listed
+USAGE="$0 <year> <commit message> <branches...>"
+if [ $# -lt 1 ]; then echo -e "ERROR: Year required. \n$USAGE" >&2; exit 1; fi
+if [ $# -lt 2 ]; then echo -e "ERROR: Commit message required.\n$USAGE" >&2; exit 1; fi
+if [ $# -lt 3 ]; then echo -e "ERROR: At least one branch required.\n$USAGE" >&2; exit 1; fi
+
+YEAR="$1"
+MESSAGE="$2"
+shift 2
+
+git fetch
+
+PUSHSPEC=""
+for branch in "$@"
+do
+	echo "Processing branch $branch"
+		git checkout $branch
+		git rebase origin/$branch
+		update-license-headers.sh $YEAR
+		git add *.java
+		git commit -m "$MESSAGE"
+		PUSHSPEC="${PUSHSPEC} $branch"
+done
+
+echo pushing $PUSHSPEC

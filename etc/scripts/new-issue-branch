@@ -3,7 +3,7 @@
 # This script creates a new local issue branch for the given issue id.
 # Previous changes are stashed before the issue branch is created and are reapplied after branch creation.
 #
-# executing new-issue-branch.sh DATACMNS-42
+# executing new-issue-branch DATACMNS-42
 # will create a new (local) branch issue/DATACMNS-42
 USAGE="$0 <ticket_id>"
 if [ $# -lt 1 ]; then echo -e "ERROR: ticket_id required. \n$USAGE" >&2; exit 1; fi
