@@ -1,6 +1,21 @@
 Spring Data Build - Changelog
 =============================
 
+Changes in version 2.2.4.RELEASE (2020-01-15)
+---------------------------------------------
+* #981 - Upgrade to Kotlin Coroutines 1.3.3.
+* #979 - Upgrade to Kotlin 1.3.61.
+* #977 - Upgrade to ThreeTenBp 1.4.1.
+* #975 - Upgrade to JodaTime 2.10.5.
+* #971 - Upgrade to RxJava 2.2.17.
+* #966 - Upgrade to Jackson BOM 2.10.2.
+* #964 - Upgrade to Reactor Dysprosium SR3.
+* #960 - Upgrade to Spring Framework 5.2.3.
+* #951 - Upgrade to Querydsl 4.2.2.
+* #949 - Upgrade to Spring HATEOAS 1.0.3.
+* #948 - Release 2.2.4 (Moore SR4).
+
+
 Changes in version 2.1.15.RELEASE (2020-01-15)
 ----------------------------------------------
 * #974 - Upgrade to JodaTime 2.10.5.
@@ -1311,6 +1326,7 @@ Changes in version 1.3.0.M1 (2014-04-16)
 * #28 - Release 1.3 M1.
 * #27 - Introduce shell script to automatically create issue branches and update pom versions.
 * #26 - Upgrade Spring baseline to latest 3.2.x.
+
 
 
 
