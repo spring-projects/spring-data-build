@@ -1,6 +1,18 @@
 Spring Data Build - Changelog
 =============================
 
+Changes in version 2.1.15.RELEASE (2020-01-15)
+----------------------------------------------
+* #974 - Upgrade to JodaTime 2.10.5.
+* #973 - Upgrade to RxJava 2.2.17.
+* #970 - Upgrade to Querydsl 4.2.2.
+* #969 - Upgrade to Lombok 1.18.10.
+* #968 - Upgrade to Jackson BOM 2.9.10.20200103.
+* #963 - Upgrade to Spring Framework 5.1.13.
+* #962 - Upgrade to Reactor Californium SR15.
+* #947 - Release 2.1.15 (Lovelace SR15).
+
+
 Changes in version 2.2.3.RELEASE (2019-12-04)
 ---------------------------------------------
 * #945 - Upgrade to AspectJ 1.9.5.
@@ -1299,5 +1311,6 @@ Changes in version 1.3.0.M1 (2014-04-16)
 * #28 - Release 1.3 M1.
 * #27 - Introduce shell script to automatically create issue branches and update pom versions.
 * #26 - Upgrade Spring baseline to latest 3.2.x.
+
 
 
