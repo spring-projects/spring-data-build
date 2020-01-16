@@ -1,6 +1,43 @@
 Spring Data Build - Changelog
 =============================
 
+Changes in version 2.3.0.M1 (2020-01-16)
+----------------------------------------
+* #982 - Upgrade to Kotlin Coroutines 1.3.3.
+* #980 - Upgrade to Kotlin 1.3.61.
+* #978 - Upgrade to ThreeTenBp 1.4.1.
+* #976 - Upgrade to JodaTime 2.10.5.
+* #972 - Upgrade to RxJava 2.2.17.
+* #967 - Upgrade to Jackson BOM 2.10.2.
+* #965 - Upgrade to Reactor Dysprosium SR3.
+* #961 - Upgrade to Spring Framework 5.2.3.
+* #959 - Add scripts to update copyright years.
+* #958 - Add Spring Data R2DBC to BOM.
+* #957 - Increment Spring Data Couchbase version to 4.0.
+* #956 - Increment Spring Data MongoDB version to 3.0.
+* #955 - Increment Spring Data JDBC version to 2.0.
+* #954 - Increment Spring Data Elasticsearch version to 4.0.
+* #953 - Increment Spring Data for Apache Cassandra version to 3.0.
+* #952 - Update copyright years to 2020.
+* #950 - Upgrade to Querydsl 4.2.2.
+* #946 - Upgrade to AspectJ 1.9.5.
+* #942 - Upgrade to Spring HATEOAS 1.1 M1.
+* #939 - Upgrade to Spring Framework 5.2.2.
+* #938 - Upgrade to Reactor Dysprosium SR2.
+* #931 - Upgrade to Reactor Dysprosium SR2.
+* #928 - Upgrade to RxJava 2.2.14.
+* #927 - Upgrade to Mockito 3.1.0.
+* #925 - Upgrade to Kotlin 1.3.60.
+* #923 - Upgrade to Jacoco 0.8.5.
+* #922 - Upgrade to AssertJ 3.14.0.
+* #919 - Update build configuration to work with Java 11.
+* #918 - Upgrade to Testcontainers 1.12.3.
+* #916 - Upgrade to Jackson 2.10.1.
+* #907 - Remove Hamcrest from dependencies.
+* #906 - Add dependencies for JUnit 5 including vintage engine.
+* #905 - Release 2.3 M1 (Neumann).
+
+
 Changes in version 2.2.4.RELEASE (2020-01-15)
 ---------------------------------------------
 * #981 - Upgrade to Kotlin Coroutines 1.3.3.
@@ -1326,6 +1363,7 @@ Changes in version 1.3.0.M1 (2014-04-16)
 * #28 - Release 1.3 M1.
 * #27 - Introduce shell script to automatically create issue branches and update pom versions.
 * #26 - Upgrade Spring baseline to latest 3.2.x.
+
 
 
 
