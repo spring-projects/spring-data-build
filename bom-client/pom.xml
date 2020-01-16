@@ -9,7 +9,7 @@
 	<parent>
 		<groupId>org.springframework.data</groupId>
 		<artifactId>spring-data-releasetrain</artifactId>
-		<version>Neumann-BUILD-SNAPSHOT</version>
+		<version>Neumann-M1</version>
 		<relativePath>../bom</relativePath>
 	</parent>
 
