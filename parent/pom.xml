@@ -129,7 +129,7 @@
 		<testcontainers>1.12.5</testcontainers>
 		<threetenbp>1.4.1</threetenbp>
 		<validation>1.1.0.Final</validation>
-		<webbeans>2.0.11</webbeans>
+		<webbeans>2.0.14</webbeans>
 		<javax-annotation-api>1.3.2</javax-annotation-api>
 
 		<releasetrain>Neumann-BUILD-SNAPSHOT</releasetrain>
