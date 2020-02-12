@@ -1,6 +1,23 @@
 Spring Data Build - Changelog
 =============================
 
+Changes in version 2.3.0.M3 (2020-02-12)
+----------------------------------------
+* #1003 - Upgrade to Spring HATEOAS 1.1.0 M2.
+* #1002 - Upgrade to OpenWebBeans 2.0.14.
+* #1001 - Upgrade to Project Reactor Dysprosium-SR4.
+* #1000 - Upgrade to Mockito 3.2.4.
+* #999 - Upgrade to Lombok 1.18.12.
+* #998 - Upgrade to JUnit 4.13.
+* #997 - Upgrade to JUnit 5.6.0.
+* #996 - Upgrade to AssertJ 3.15.0.
+* #995 - Upgrade to Jackson BOM 2.10.2.20200130.
+* #992 - Move Checkstyle declaration to pluginManagement.
+* #989 - Bump checkstyle from 8.21 to 8.29 in /parent.
+* #988 - Upgrade to Testcontainers 1.12.5.
+* #986 - Release 2.3 M3 (Neumann).
+
+
 Changes in version 2.3.0.M2 (2020-01-17)
 ----------------------------------------
 * #985 - Release 2.3 M2 (Neumann).
@@ -1368,6 +1385,7 @@ Changes in version 1.3.0.M1 (2014-04-16)
 * #28 - Release 1.3 M1.
 * #27 - Introduce shell script to automatically create issue branches and update pom versions.
 * #26 - Upgrade Spring baseline to latest 3.2.x.
+
 
 
 
