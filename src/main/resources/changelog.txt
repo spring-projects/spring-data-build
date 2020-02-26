@@ -1,6 +1,19 @@
 Spring Data Build - Changelog
 =============================
 
+Changes in version 2.2.5.RELEASE (2020-02-26)
+---------------------------------------------
+* #1013 - Upgrade to Reactor Dysprosium SR5.
+* #1010 - Upgrade to Spring Framework 5.2.4.
+* #1007 - Upgrade to OpenWebBeans 2.0.15.
+* #1005 - Upgrade to RxJava 2.2.18.
+* #994 - Upgrade to Jackson BOM 2.10.2.20200130.
+* #993 - Move Checkstyle declaration to pluginManagement.
+* #990 - Upgrade to checkstyle 8.29.
+* #987 - Upgrade to Testcontainers 1.12.5.
+* #984 - Release 2.2.5 (Moore SR5).
+
+
 Changes in version 2.1.16.RELEASE (2020-02-26)
 ----------------------------------------------
 * #1014 - Upgrade to Reactor Californium SR16.
@@ -1395,6 +1408,7 @@ Changes in version 1.3.0.M1 (2014-04-16)
 * #28 - Release 1.3 M1.
 * #27 - Introduce shell script to automatically create issue branches and update pom versions.
 * #26 - Upgrade Spring baseline to latest 3.2.x.
+
 
 
 
