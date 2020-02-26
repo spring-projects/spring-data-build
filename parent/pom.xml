@@ -116,7 +116,7 @@
 		<webbeans>2.0.15</webbeans>
 		<javax-annotation-api>1.3.2</javax-annotation-api>
 
-		<releasetrain>Lovelace-SR16</releasetrain>
+		<releasetrain>Lovelace-BUILD-SNAPSHOT</releasetrain>
 
 		<!-- To be overridden by individual modules -->
 		<java-module-name/>
