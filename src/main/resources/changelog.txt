@@ -1,6 +1,22 @@
 Spring Data Build - Changelog
 =============================
 
+Changes in version 2.3.0.RC1 (2020-03-31)
+-----------------------------------------
+* #1045 - Upgrade to Querydsl 4.3.1.
+* #1044 - Upgrade to OpenWebBeans 2.0.16.
+* #1043 - Upgrade to ThreeTenBp 1.4.2.
+* #1042 - Upgrade to RxJava2 2.2.19.
+* #1041 - Upgrade to Kotlin 1.3.71.
+* #1040 - Upgrade to JUnit 5.6.1.
+* #1039 - Upgrade to Spring HATEOAS 1.1 M3.
+* #1038 - Upgrade to Querydsl 4.3.0.
+* #1036 - Upgrade to Reactor Dysprosium SR6.
+* #1027 - Upgrade to Spring Framework 5.2.5.
+* #1026 - Upgrade to Kotlin Coroutines 1.3.5.
+* #1023 - Release 2.3 RC1 (Neumann).
+
+
 Changes in version 2.2.6.RELEASE (2020-03-25)
 ---------------------------------------------
 * #1035 - Upgrade to Reactor Dysprosium SR6.
@@ -1435,6 +1451,7 @@ Changes in version 1.3.0.M1 (2014-04-16)
 * #28 - Release 1.3 M1.
 * #27 - Introduce shell script to automatically create issue branches and update pom versions.
 * #26 - Upgrade Spring baseline to latest 3.2.x.
+
 
 
 
