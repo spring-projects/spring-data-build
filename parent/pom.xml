@@ -1307,6 +1307,7 @@
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-javadoc-plugin</artifactId>
 				<configuration>
+					<locale>en_US</locale>
 					<breakiterator>true</breakiterator>
 					<header>${project.name}</header>
 					<source>${source.level}</source>
@@ -1316,9 +1317,9 @@
 					<stylesheetfile>${shared.resources}/javadoc/spring-javadoc.css</stylesheetfile>
 					<!-- copies doc-files subdirectory which contains image resources -->
 					<docfilessubdirs>true</docfilessubdirs>
-					<additionalJOptions>
-						<additionalJOption>-Xdoclint:none</additionalJOption>
-					</additionalJOptions>
+					<additionalOptions>
+						<additionalOption>-Xdoclint:none</additionalOption>
+					</additionalOptions>
 					<sourcepath>target/generated-sources/delombok</sourcepath>
 					<links>
 						<link>https://docs.spring.io/spring/docs/5.0.x/javadoc-api/</link>
