@@ -127,7 +127,7 @@
 		<spring-hateoas>1.1.0.M3</spring-hateoas>
 		<spring-plugin>2.0.0.RELEASE</spring-plugin>
 		<testcontainers>1.14.1</testcontainers>
-		<threetenbp>1.4.3</threetenbp>
+		<threetenbp>1.4.4</threetenbp>
 		<validation>1.1.0.Final</validation>
 		<webbeans>2.0.16</webbeans>
 		<javax-annotation-api>1.3.2</javax-annotation-api>
