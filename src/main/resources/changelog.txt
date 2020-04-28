@@ -1,6 +1,20 @@
 Spring Data Build - Changelog
 =============================
 
+Changes in version 2.1.17.RELEASE (2020-04-28)
+----------------------------------------------
+* #1079 - Upgrade to Joda Time 2.10.6.
+* #1073 - Upgrade to RxJava2 2.2.19.
+* #1072 - Upgrade to Jacoco 0.8.5.
+* #1071 - Upgrade to Jackson 2.9.10.20200411.
+* #1070 - Upgrade to OpenWebBeans 2.0.16.
+* #1057 - Upgrade to Reactor Californium SR18.
+* #1054 - Upgrade to Spring Framework 5.1.15.
+* #1051 - Upgrade to Spring Doc Resources 0.2.0.
+* #1049 - Javadoc generated in English has German language indicated in HTML tag.
+* #1015 - Release 2.1.17 (Lovelace SR17).
+
+
 Changes in version 2.3.0.RC1 (2020-03-31)
 -----------------------------------------
 * #1045 - Upgrade to Querydsl 4.3.1.
@@ -1451,6 +1465,7 @@ Changes in version 1.3.0.M1 (2014-04-16)
 * #28 - Release 1.3 M1.
 * #27 - Introduce shell script to automatically create issue branches and update pom versions.
 * #26 - Upgrade Spring baseline to latest 3.2.x.
+
 
 
 
