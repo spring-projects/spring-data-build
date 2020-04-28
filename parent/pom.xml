@@ -130,7 +130,7 @@
 		<webbeans>2.0.16</webbeans>
 		<javax-annotation-api>1.3.2</javax-annotation-api>
 
-		<releasetrain>Moore-SR7</releasetrain>
+		<releasetrain>Moore-BUILD-SNAPSHOT</releasetrain>
 
 		<!-- To be overridden by individual modules -->
 		<java-module-name/>
