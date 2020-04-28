@@ -1,6 +1,28 @@
 Spring Data Build - Changelog
 =============================
 
+Changes in version 2.3.0.RC2 (2020-04-28)
+-----------------------------------------
+* #1086 - Upgrade to Spring HATEOAS 1.1 RC1.
+* #1085 - Upgrade to Jackson 2.11.0.
+* #1084 - Upgrade to ThreeTenBp 1.4.4.
+* #1082 - Upgrade to Testcontainers 1.14.1.
+* #1081 - Upgrade to Joda Time 2.10.6.
+* #1075 - Create new jackson-next profile for Jackson 2.11.
+* #1074 - Revert to Jackson 2.10.3.
+* #1066 - Upgrade to Jackson 2.11.0.rc1.
+* #1065 - Upgrade to ThreeTenBp 1.4.3.
+* #1064 - Upgrade to Testcontainers 1.14.0.
+* #1063 - Upgrade to Mockk 1.10.0.
+* #1062 - Upgrade to Kotlin 1.3.72.
+* #1061 - Upgrade to Reactor Dysprosium SR7.
+* #1056 - Upgrade to Spring Framework 5.2.6.
+* #1053 - Use JDK 14 for Java.NEXT CI testing.
+* #1048 - Javadoc generated in English has German language indicated in HTML tag.
+* #1047 - Update spring-doc-resources, changed highlight.
+* #1046 - Release 2.3 RC2 (Neumann).
+
+
 Changes in version 2.2.7.RELEASE (2020-04-28)
 ---------------------------------------------
 * #1087 - Upgrade to Spring HATEOAS 1.0.5.
@@ -1480,6 +1502,7 @@ Changes in version 1.3.0.M1 (2014-04-16)
 * #28 - Release 1.3 M1.
 * #27 - Introduce shell script to automatically create issue branches and update pom versions.
 * #26 - Upgrade Spring baseline to latest 3.2.x.
+
 
 
 
