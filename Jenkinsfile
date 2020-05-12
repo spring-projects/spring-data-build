@@ -76,7 +76,7 @@ pipeline {
 			}
 		}
 
-		stage('Build project & BOM then release to artifactory') {
+		stage('Build project and release to artifactory') {
 			when {
 				anyOf {
 					branch 'master'
@@ -96,26 +96,15 @@ pipeline {
 				ARTIFACTORY = credentials('02bd1690-b54f-4c9f-819d-a77cb7a9822c')
 			}
 
-			steps {
+			steps {			
 				sh 'MAVEN_OPTS="-Duser.name=jenkins -Duser.home=/tmp/jenkins-home" ./mvnw -Pci,artifactory ' +
 						'-Dartifactory.server=https://repo.spring.io ' +
 						"-Dartifactory.username=${ARTIFACTORY_USR} " +
 						"-Dartifactory.password=${ARTIFACTORY_PSW} " +
 						"-Dartifactory.staging-repository=libs-snapshot-local " +
-						"-Dartifactory.build-name=spring-data-build-without-bom " +
+						"-Dartifactory.build-name=spring-data-build " +
 						"-Dartifactory.build-number=${BUILD_NUMBER} " +
-						'-Dmaven.test.skip=true clean dependency:tree source:jar javadoc:javadoc javadoc:jar deploy -pl "!bom" -B -U'
-
-				sh 'MAVEN_OPTS="-Duser.name=jenkins -Duser.home=/tmp/jenkins-home" ./mvnw -Pwith-bom-client verify -pl bom,bom-client -B -U'
-				
-				sh 'MAVEN_OPTS="-Duser.name=jenkins -Duser.home=/tmp/jenkins-home" ./mvnw -Pci,artifactory ' +
-						'-Dartifactory.server=https://repo.spring.io ' +
-						"-Dartifactory.username=${ARTIFACTORY_USR} " +
-						"-Dartifactory.password=${ARTIFACTORY_PSW} " +
-						"-Dartifactory.staging-repository=libs-snapshot-local " +
-						"-Dartifactory.build-name=spring-data-build-bom " +
-						"-Dartifactory.build-number=${BUILD_NUMBER} " +
-						'-Dmaven.test.skip=true clean deploy -pl bom -B -U'
+						'-Dmaven.test.skip=true clean deploy -B -U'
 			}
 		}
 	}
