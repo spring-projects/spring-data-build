@@ -15,7 +15,7 @@ pipeline {
 		stage("test: baseline (jdk8)") {
 			when {
 				anyOf {
-					branch 'master'
+					branch '2.3.x'
 					not { triggeredBy 'UpstreamCause' }
 				}
 			}
@@ -37,7 +37,7 @@ pipeline {
 				stage("test: baseline (jdk11)") {
 					when {
 						anyOf {
-							branch 'master'
+							branch '2.3.x'
 							not { triggeredBy 'UpstreamCause' }
 						}
 					}
@@ -57,7 +57,7 @@ pipeline {
 				stage("test: baseline (jdk14)") {
 					when {
 						anyOf {
-							branch 'master'
+							branch '2.3.x'
 							not { triggeredBy 'UpstreamCause' }
 						}
 					}
@@ -79,7 +79,7 @@ pipeline {
 		stage('Build project & BOM then release to artifactory') {
 			when {
 				anyOf {
-					branch 'master'
+					branch '2.3.x'
 					not { triggeredBy 'UpstreamCause' }
 				}
 			}
