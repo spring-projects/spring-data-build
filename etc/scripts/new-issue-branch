@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/bash -x
 #
 # This script creates a new local issue branch for the given issue id.
 # Previous changes are stashed before the issue branch is created and are reapplied after branch creation.
@@ -24,7 +24,7 @@ OLD_VERSION_TMP=$(mvn -o org.apache.maven.plugins:maven-help-plugin:2.1.1:evalua
 OLD_POM_VERSION=${OLD_VERSION_TMP:?"Could not extract current project version from pom.xml"}
 
 # Replaces BUILD in BUILD-SNAPSHOT with the given TICKET_ID
-NEW_POM_VERSION=${OLD_POM_VERSION/"BUILD"/$TICKET_ID}
+NEW_POM_VERSION=${OLD_POM_VERSION/"-SNAPSHOT"/"-${TICKET_ID}-SNAPSHOT"}
 ISSUE_BRANCH="issue/$TICKET_ID"
 
 echo "Creating feature branch $TICKET_ID: $OLD_POM_VERSION -> $NEW_POM_VERSION"
