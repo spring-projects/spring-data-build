@@ -1,4 +1,4 @@
-#!/bin/bash -x
+#!/bin/bash
 #
 # This script creates a new local issue branch for the given issue id.
 # Previous changes are stashed before the issue branch is created and are reapplied after branch creation.
