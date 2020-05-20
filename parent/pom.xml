@@ -133,7 +133,8 @@
 		<webbeans>2.0.16</webbeans>
 		<javax-annotation-api>1.3.2</javax-annotation-api>
 
-		<releasetrain>Neumann-BUILD-SNAPSHOT</releasetrain>
+		<!-- Used in asciidoc reference documentation -->
+		<releasetrain>2020.0.0-SNAPSHOT</releasetrain>
 
 		<!-- To be overridden by individual modules -->
 		<java-module-name/>
