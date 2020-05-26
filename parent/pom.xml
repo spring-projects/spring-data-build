@@ -555,12 +555,7 @@
 								<dependency>
 									<groupId>org.asciidoctor</groupId>
 									<artifactId>asciidoctorj-pdf</artifactId>
-									<version>1.5.0-alpha.16</version>
-								</dependency>
-								<dependency>
-									<groupId>org.asciidoctor</groupId>
-									<artifactId>asciidoctorj-epub3</artifactId>
-									<version>1.5.0-alpha.8.1</version>
+									<version>1.5.3</version>
 								</dependency>
 							</dependencies>
 							<executions>
@@ -590,20 +585,6 @@
 								</execution>
 
 								<!-- Requires a fix to Lombok/Javadoc generation first otherwise build duration explodes
-								<execution>
-									<id>epub</id>
-									<phase>compile</phase>
-									<goals>
-										<goal>process-asciidoc</goal>
-									</goals>
-									<configuration>
-										<sourceDirectory>${generated-asciidoc-sources.directory}</sourceDirectory>
-										<sourceDocumentName>index.adoc</sourceDocumentName>
-										<backend>epub3</backend>
-										<outputDirectory>${generated-docs.directory}</outputDirectory>
-										<sourceHighlighter>coderay</sourceHighlighter>
-									</configuration>
-								</execution>
 
 								<execution>
 									<id>pdf</id>
@@ -1058,7 +1039,7 @@
 				<plugin>
 					<groupId>org.asciidoctor</groupId>
 					<artifactId>asciidoctor-maven-plugin</artifactId>
-					<version>1.5.7.1</version>
+					<version>1.6.0</version>
 				</plugin>
 
 				<plugin>
