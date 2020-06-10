@@ -1,6 +1,13 @@
 Spring Data Build - Changelog
 =============================
 
+Changes in version 2.1.18.RELEASE (2020-06-10)
+----------------------------------------------
+* #1111 - Upgrade to Reactor Californium SR19.
+* #1106 - Upgrade to Spring Framework 5.1.16.
+* #1088 - Release 2.1.18 (Lovelace SR18).
+
+
 Changes in version 2.3.0.RC2 (2020-04-28)
 -----------------------------------------
 * #1086 - Upgrade to Spring HATEOAS 1.1 RC1.
@@ -1502,6 +1509,7 @@ Changes in version 1.3.0.M1 (2014-04-16)
 * #28 - Release 1.3 M1.
 * #27 - Introduce shell script to automatically create issue branches and update pom versions.
 * #26 - Upgrade Spring baseline to latest 3.2.x.
+
 
 
 
