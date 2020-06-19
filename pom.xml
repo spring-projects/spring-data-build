@@ -171,14 +171,6 @@
 			</build>
 		</profile>
 
-		<profile>
-			<id>with-bom-client</id>
-
-			<modules>
-				<module>bom-client</module>
-			</modules>
-		</profile>
-
 		<!-- Build profile for the build run to deploy to Maven Central -->
 
 		<profile>
