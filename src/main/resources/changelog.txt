@@ -1,6 +1,22 @@
 Spring Data Build - Changelog
 =============================
 
+Changes in version 2.4.0-M1 (2020-06-25)
+----------------------------------------
+* #1125 - Upgrade to Kotlin Coroutines 1.3.7.
+* #1124 - Upgrade build plugin versions.
+* #1123 - Upgrade to OpenWebBeans 2.0.17.
+* #1122 - Upgrade to Reactor 2020.0.0-M1.
+* #1118 - Use standard Spring code of conduct.
+* #1117 - Upgrade to Testcontainers 1.14.3.
+* #1104 - Upgrade to asciidoctor-maven-plugin 1.6.0.
+* #1103 - Upgrade to Spring Framework 5.3 M1.
+* #1101 - Adapt new-issue-branch script to handle calver.
+* #1100 - Remove BOM in favor of Spring Data BOM.
+* #1099 - Add version property for RxJava 3.
+* #1098 - Release 2.4 M1 (2020.0.0).
+
+
 Changes in version 2.3.1.RELEASE (2020-06-10)
 ---------------------------------------------
 * #1116 - Upgrade to Testcontainers 1.14.3.
@@ -1539,6 +1555,7 @@ Changes in version 1.3.0.M1 (2014-04-16)
 * #28 - Release 1.3 M1.
 * #27 - Introduce shell script to automatically create issue branches and update pom versions.
 * #26 - Upgrade Spring baseline to latest 3.2.x.
+
 
 
 
