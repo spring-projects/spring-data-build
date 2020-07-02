@@ -855,9 +855,9 @@
 		</profile>
 
 		<profile>
-			<id>spring52-next</id>
+			<id>spring53-next</id>
 			<properties>
-				<spring>5.2.7.BUILD-SNAPSHOT</spring>
+				<spring>5.3.0-SNAPSHOT</spring>
 			</properties>
 			<repositories>
 				<repository>
