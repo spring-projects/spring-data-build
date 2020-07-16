@@ -101,7 +101,7 @@
 		<kotlin>1.2.71</kotlin>
 		<logback>1.2.3</logback>
 		<lombok>1.18.10</lombok>
-		<mockito>2.20.0</mockito>
+		<mockito>2.20.1</mockito>
 		<mockk>1.9.3</mockk>
 		<querydsl>4.2.2</querydsl>
 		<reactor>Californium-BUILD-SNAPSHOT</reactor>
