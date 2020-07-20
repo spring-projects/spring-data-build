@@ -104,7 +104,7 @@
 		<mockito>2.20.1</mockito>
 		<mockk>1.9.3</mockk>
 		<querydsl>4.2.2</querydsl>
-		<reactor>Californium-BUILD-SNAPSHOT</reactor>
+		<reactor>Californium-SR20</reactor>
 		<rxjava>1.3.8</rxjava>
 		<rxjava-reactive-streams>1.2.1</rxjava-reactive-streams>
 		<rxjava2>2.2.19</rxjava2>
