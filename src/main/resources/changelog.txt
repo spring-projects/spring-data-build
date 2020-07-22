@@ -1,6 +1,16 @@
 Spring Data Build - Changelog
 =============================
 
+Changes in version 2.1.19.RELEASE (2020-07-22)
+----------------------------------------------
+* #1139 - Upgrade to Mockito 2.20.1.
+* #1138 - Upgrade to Jackson BOM 2.9.10.20200621.
+* #1135 - Upgrade to OpenWebBeans 2.0.17.
+* #1129 - Upgrade to Spring Framework 5.1.17.
+* #1128 - Upgrade to Reactor Californium SR20.
+* #1119 - Release 2.1.19 (Lovelace SR19).
+
+
 Changes in version 2.4.0-M1 (2020-06-25)
 ----------------------------------------
 * #1125 - Upgrade to Kotlin Coroutines 1.3.7.
@@ -1555,6 +1565,7 @@ Changes in version 1.3.0.M1 (2014-04-16)
 * #28 - Release 1.3 M1.
 * #27 - Introduce shell script to automatically create issue branches and update pom versions.
 * #26 - Upgrade Spring baseline to latest 3.2.x.
+
 
 
 
