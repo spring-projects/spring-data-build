@@ -1,6 +1,16 @@
 Spring Data Build - Changelog
 =============================
 
+Changes in version 2.3.2.RELEASE (2020-07-22)
+---------------------------------------------
+* #1142 - Upgrade to Kotlin Coroutines 1.3.8.
+* #1137 - Upgrade to OpenWebBeans 2.0.17.
+* #1134 - Upgrade to Jackson BOM 2.11.1.
+* #1133 - Upgrade to Spring Framework 5.2.8.
+* #1132 - Upgrade to Reactor Dysprosium SR10.
+* #1121 - Release 2.3.2 (Neumann SR2).
+
+
 Changes in version 2.2.9.RELEASE (2020-07-22)
 ---------------------------------------------
 * #1141 - Upgrade to Kotlin Coroutines 1.3.8.
@@ -1566,6 +1576,7 @@ Changes in version 1.3.0.M1 (2014-04-16)
 * #28 - Release 1.3 M1.
 * #27 - Introduce shell script to automatically create issue branches and update pom versions.
 * #26 - Upgrade Spring baseline to latest 3.2.x.
+
 
 
 
