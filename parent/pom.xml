@@ -152,21 +152,6 @@
 			<build>
 				<plugins>
 
-					<!-- Delombok sources so that generated code shows up in JavaDoc -->
-
-					<plugin>
-						<groupId>org.projectlombok</groupId>
-						<artifactId>lombok-maven-plugin</artifactId>
-						<executions>
-							<execution>
-								<phase>generate-sources</phase>
-								<goals>
-									<goal>delombok</goal>
-								</goals>
-							</execution>
-						</executions>
-					</plugin>
-
 					<plugin>
 						<groupId>org.apache.maven.plugins</groupId>
 						<artifactId>maven-javadoc-plugin</artifactId>
@@ -402,24 +387,6 @@
 						Configures JavaDoc generation.
 					-->
 
-					<!-- Delombok sources so that generated code shows up in JavaDoc -->
-
-					<plugin>
-						<groupId>org.projectlombok</groupId>
-						<artifactId>lombok-maven-plugin</artifactId>
-						<executions>
-							<execution>
-								<phase>generate-sources</phase>
-								<goals>
-									<goal>delombok</goal>
-								</goals>
-								<configuration>
-									<outputDirectory>${project.root}/target/generated-sources/delombok</outputDirectory>
-								</configuration>
-							</execution>
-						</executions>
-					</plugin>
-
 					<plugin>
 						<groupId>org.apache.maven.plugins</groupId>
 						<artifactId>maven-javadoc-plugin</artifactId>
@@ -430,9 +397,6 @@
 									<goal>aggregate</goal>
 								</goals>
 								<phase>package</phase>
-								<configuration>
-									<outputDirectory>${project.root}/target/site/apidocs</outputDirectory>
-								</configuration>
 							</execution>
 						</executions>
 					</plugin>
@@ -990,7 +954,7 @@
 			<groupId>org.projectlombok</groupId>
 			<artifactId>lombok</artifactId>
 			<version>${lombok}</version>
-			<optional>true</optional>
+			<scope>test</scope>
 		</dependency>
 
 	</dependencies>
@@ -1264,15 +1228,6 @@
 			</plugin>
 
 			<plugin>
-				<groupId>org.projectlombok</groupId>
-				<artifactId>lombok-maven-plugin</artifactId>
-				<configuration>
-					<addOutputDirectory>false</addOutputDirectory>
-					<sourceDirectory>${project.basedir}/src/main/java</sourceDirectory>
-				</configuration>
-			</plugin>
-
-			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-javadoc-plugin</artifactId>
 				<configuration>
@@ -1289,7 +1244,6 @@
 					<additionalOptions>
 						<additionalOption>-Xdoclint:none</additionalOption>
 					</additionalOptions>
-					<sourcepath>target/generated-sources/delombok</sourcepath>
 					<links>
 						<link>https://docs.spring.io/spring/docs/5.0.x/javadoc-api/</link>
 						<link>https://docs.spring.io/spring-data/commons/docs/current/api/</link>
