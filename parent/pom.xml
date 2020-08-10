@@ -124,7 +124,7 @@
 		<rxjava2>2.2.19</rxjava2>
 		<slf4j>1.7.26</slf4j>
 		<spring>5.2.8.RELEASE</spring>
-		<spring-hateoas>1.1.0.RELEASE</spring-hateoas>
+		<spring-hateoas>1.1.1.RELEASE</spring-hateoas>
 		<spring-plugin>2.0.0.RELEASE</spring-plugin>
 		<testcontainers>1.14.3</testcontainers>
 		<threetenbp>1.4.4</threetenbp>
