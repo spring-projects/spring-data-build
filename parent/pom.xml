@@ -124,7 +124,7 @@
 		<rxjava2>2.2.19</rxjava2>
 		<rxjava3>3.0.3</rxjava3>
 		<slf4j>1.7.26</slf4j>
-		<spring>5.3.0-SNAPSHOT</spring>
+		<spring>5.3.0-RC1</spring>
 		<spring-hateoas>1.2.0-M1</spring-hateoas>
 		<spring-plugin>2.0.0.RELEASE</spring-plugin>
 		<testcontainers>1.14.3</testcontainers>
@@ -834,7 +834,7 @@
 		<profile>
 			<id>jackson-next</id>
 			<properties>
-				<jackson>2.11.0</jackson>
+				<jackson>2.11.2</jackson>
 			</properties>
 			<repositories>
 				<repository>
