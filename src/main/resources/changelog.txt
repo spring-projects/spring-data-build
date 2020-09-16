@@ -1,6 +1,15 @@
 Spring Data Build - Changelog
 =============================
 
+Changes in version 2.1.20.RELEASE (2020-09-16)
+----------------------------------------------
+* #1171 - Upgrade to Jackson 2.9.10.20200824.
+* #1170 - Upgrade to AspectJ 1.9.6.
+* #1168 - Upgrade to Reactor Californium SR21.
+* #1167 - Upgrade to Spring Framework 5.1.18.
+* #1143 - Release 2.1.20 (Lovelace SR20).
+
+
 Changes in version 2.3.3.RELEASE (2020-08-12)
 ---------------------------------------------
 * #1156 - Upgrade to Reactor Dysprosium-SR11.
@@ -1608,6 +1617,7 @@ Changes in version 1.3.0.M1 (2014-04-16)
 * #28 - Release 1.3 M1.
 * #27 - Introduce shell script to automatically create issue branches and update pom versions.
 * #26 - Upgrade Spring baseline to latest 3.2.x.
+
 
 
 
