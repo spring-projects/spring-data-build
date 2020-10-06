@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
 
 	<!--
 
@@ -70,20 +71,20 @@
 			<name>Apache License, Version 2.0</name>
 			<url>https://www.apache.org/licenses/LICENSE-2.0</url>
 			<comments>
-			Copyright 2008-2020 the original author or authors.
+				Copyright 2008-2020 the original author or authors.
 
-			Licensed under the Apache License, Version 2.0 (the "License");
-			you may not use this file except in compliance with the License.
-			You may obtain a copy of the License at
+				Licensed under the Apache License, Version 2.0 (the "License");
+				you may not use this file except in compliance with the License.
+				You may obtain a copy of the License at
 
-				 https://www.apache.org/licenses/LICENSE-2.0
+				https://www.apache.org/licenses/LICENSE-2.0
 
-			Unless required by applicable law or agreed to in writing, software
-			distributed under the License is distributed on an "AS IS" BASIS,
-			WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or
-			implied.
-			See the License for the specific language governing permissions and
-			limitations under the License.
+				Unless required by applicable law or agreed to in writing, software
+				distributed under the License is distributed on an "AS IS" BASIS,
+				WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or
+				implied.
+				See the License for the specific language governing permissions and
+				limitations under the License.
 			</comments>
 		</license>
 	</licenses>
@@ -178,12 +179,15 @@
 
 									<module name="io.spring.nohttp.checkstyle.check.NoHttpCheck">
 										<!-- XML requires double escaping, config gets XML-processed twice -->
-										<property name="allowlist" value="http://www\.querydsl\.com.*&amp;#10;http://www\.prowaveconsulting\.com.*&amp;#10;http://www\.scispike\.com.*&amp;#10;http://.*.icu-project\.org.*"/>
+										<property name="allowlist"
+										          value="http://www\.querydsl\.com.*&amp;#10;http://www\.prowaveconsulting\.com.*&amp;#10;http://www\.scispike\.com.*&amp;#10;http://.*.icu-project\.org.*"/>
 									</module>
 								</module>
 							</checkstyleRules>
 							<includes>**/*</includes>
-							<excludes>**/.flattened-pom.xml,.git/**/*,target/**/*,**/target/**/*,.idea/**/*,**/spring.schemas,**/*.svg,mvnw,mvnw.cmd,**/*.graphml,work/**/*</excludes>
+							<excludes>
+								**/.flattened-pom.xml,.git/**/*,target/**/*,**/target/**/*,.idea/**/*,**/spring.schemas,**/*.svg,mvnw,mvnw.cmd,**/*.graphml,work/**/*
+							</excludes>
 							<sourceDirectories>./</sourceDirectories>
 						</configuration>
 						<executions>
@@ -434,7 +438,8 @@
 										<copy failonerror="false" todir="${generated-asciidoc-sources.directory}/">
 											<fileset dir="${project.root}/src/main/asciidoc" includes="**/*.adoc"/>
 										</copy>
-										<copy failonerror="false" todir="${generated-asciidoc-sources.directory}/images/">
+										<copy failonerror="false"
+										      todir="${generated-asciidoc-sources.directory}/images/">
 											<fileset dir="${project.root}/src/main/asciidoc/images"/>
 										</copy>
 
@@ -458,7 +463,8 @@
 									<target>
 
 										<!-- Copy files for the single-file HTML version -->
-										<copy failonerror="false" todir="${project.root}/target/site/reference/html/images">
+										<copy failonerror="false"
+										      todir="${project.root}/target/site/reference/html/images">
 											<fileset dir="${generated-docs.directory}/images"/>
 										</copy>
 
@@ -482,10 +488,12 @@
 										</copy>
 
 										<!-- Copy and rename the Epub file -->
-										<copy failonerror="false" file="${generated-docs.directory}/index.pdf" tofile="${project.root}/target/site/reference/pdf/${dist.id}-reference.pdf"/>
+										<copy failonerror="false" file="${generated-docs.directory}/index.pdf"
+										      tofile="${project.root}/target/site/reference/pdf/${dist.id}-reference.pdf"/>
 
 										<!-- Copy and rename the PDF file -->
-										<copy failonerror="false" file="${generated-docs.directory}/index.epub" tofile="${project.root}/target/site/reference/epub/${dist.id}-reference.epub"/>
+										<copy failonerror="false" file="${generated-docs.directory}/index.epub"
+										      tofile="${project.root}/target/site/reference/epub/${dist.id}-reference.epub"/>
 
 									</target>
 								</configuration>
@@ -631,6 +639,17 @@
 					</plugins>
 				</pluginManagement>
 			</build>
+
+			<pluginRepositories>
+
+				<pluginRepository>
+					<id>bintray-plugins</id>
+					<name>bintray-plugins</name>
+					<url>https://jcenter.bintray.com</url>
+				</pluginRepository>
+
+			</pluginRepositories>
+
 		</profile>
 
 		<profile>
@@ -740,29 +759,29 @@
 						</executions>
 					</plugin>
 
-						<!--
-							Creates the schema zip file.
-						-->
-						<plugin>
-							<groupId>org.apache.maven.plugins</groupId>
-							<artifactId>maven-assembly-plugin</artifactId>
-							<executions>
-								<execution>
-									<id>docs</id>
-									<goals>
-										<goal>single</goal>
-									</goals>
-									<phase>package</phase>
-									<configuration>
-										<descriptors>
-											<descriptor>${shared.resources}/assemblies/schema.xml</descriptor>
-										</descriptors>
-										<finalName>${dist.id}</finalName>
-										<appendAssemblyId>true</appendAssemblyId>
-									</configuration>
-								</execution>
-							</executions>
-						</plugin>
+					<!--
+						Creates the schema zip file.
+					-->
+					<plugin>
+						<groupId>org.apache.maven.plugins</groupId>
+						<artifactId>maven-assembly-plugin</artifactId>
+						<executions>
+							<execution>
+								<id>docs</id>
+								<goals>
+									<goal>single</goal>
+								</goals>
+								<phase>package</phase>
+								<configuration>
+									<descriptors>
+										<descriptor>${shared.resources}/assemblies/schema.xml</descriptor>
+									</descriptors>
+									<finalName>${dist.id}</finalName>
+									<appendAssemblyId>true</appendAssemblyId>
+								</configuration>
+							</execution>
+						</executions>
+					</plugin>
 
 					<plugin>
 						<groupId>org.jfrog.buildinfo</groupId>
@@ -816,6 +835,17 @@
 					</plugins>
 				</pluginManagement>
 			</build>
+
+			<pluginRepositories>
+
+				<pluginRepository>
+					<id>bintray-plugins</id>
+					<name>bintray-plugins</name>
+					<url>https://jcenter.bintray.com</url>
+				</pluginRepository>
+
+			</pluginRepositories>
+
 		</profile>
 
 		<profile>
