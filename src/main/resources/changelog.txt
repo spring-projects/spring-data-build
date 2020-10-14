@@ -1,6 +1,26 @@
 Spring Data Build - Changelog
 =============================
 
+Changes in version 2.4.0-RC2 (2020-10-14)
+-----------------------------------------
+* #1195 - Upgrade to Kotlin Coroutines 1.3.9.
+* #1194 - Upgrade to Kotlin 1.4.10.
+* #1193 - Upgrade to OpenWebBeans 2.0.18.
+* #1192 - Upgrade to ThreeTenBp 1.4.5.
+* #1191 - Upgrade to RxJava3 3.0.7.
+* #1190 - Upgrade to RxJava2 2.2.20.
+* #1189 - Upgrade to Querydsl 4.4.0.
+* #1188 - Upgrade to Mockk 1.10.2.
+* #1187 - Upgrade to Mockito 3.5.13.
+* #1186 - Upgrade to Lombok 1.18.14.
+* #1185 - Upgrade to Jacoco 0.8.6.
+* #1184 - Upgrade to JUnit 4.13.1/JUnit Jupiter 5.7.0.
+* #1183 - Upgrade to Spring Framework 5.3 RC2.
+* #1182 - Upgrade to Reactor 2020.0 RC2.
+* #1181 - Update CI jobs for Java 15.
+* #1180 - Release 2.4 RC2 (2020.0.0).
+
+
 Changes in version 2.4.0-RC1 (2020-09-16)
 -----------------------------------------
 * #1177 - Upgrade to Mockito 3.5.10.
@@ -1646,6 +1666,7 @@ Changes in version 1.3.0.M1 (2014-04-16)
 * #28 - Release 1.3 M1.
 * #27 - Introduce shell script to automatically create issue branches and update pom versions.
 * #26 - Upgrade Spring baseline to latest 3.2.x.
+
 
 
 
