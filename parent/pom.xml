@@ -106,7 +106,7 @@
 		<hamcrest>1.3</hamcrest>
 		<jackson>2.10.5</jackson>
 		<jacoco>0.8.6</jacoco>
-		<jodatime>2.10.6</jodatime>
+		<jodatime>2.10.7</jodatime>
 		<jsonpath>2.4.0</jsonpath>
 		<junit>4.12</junit>
 		<kotlin>1.3.72</kotlin>
