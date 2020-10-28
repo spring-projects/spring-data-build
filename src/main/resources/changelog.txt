@@ -1,6 +1,19 @@
 Spring Data Build - Changelog
 =============================
 
+Changes in version 2.2.11.RELEASE (2020-10-28)
+----------------------------------------------
+* #1229 - Upgrade to Joda Time 2.10.8.
+* #1221 - Upgrade to OpenWebBeans 2.0.19.
+* #1220 - Upgrade to ThreeTenBp 1.4.5.
+* #1219 - Upgrade to RxJava2 2.2.20.
+* #1218 - Upgrade to Joda Time 2.10.7.
+* #1217 - Upgrade to Jacoco 0.8.6.
+* #1202 - Upgrade to Reactor Dysprosium SR13.
+* #1198 - Upgrade to Spring Framework 5.2.10.
+* #1178 - Release 2.2.11 (Moore SR11).
+
+
 Changes in version 2.1.21.RELEASE (2020-10-28)
 ----------------------------------------------
 * #1226 - Upgrade to Joda Time 2.10.8.
@@ -1678,6 +1691,7 @@ Changes in version 1.3.0.M1 (2014-04-16)
 * #28 - Release 1.3 M1.
 * #27 - Introduce shell script to automatically create issue branches and update pom versions.
 * #26 - Upgrade Spring baseline to latest 3.2.x.
+
 
 
 
