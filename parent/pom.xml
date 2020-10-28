@@ -132,7 +132,7 @@
 		<webbeans>2.0.19</webbeans>
 		<javax-annotation-api>1.3.2</javax-annotation-api>
 
-		<releasetrain>Neumann-SR5</releasetrain>
+		<releasetrain>Neumann-BUILD-SNAPSHOT</releasetrain>
 
 		<!-- To be overridden by individual modules -->
 		<java-module-name/>
