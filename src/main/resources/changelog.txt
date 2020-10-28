@@ -1,6 +1,21 @@
 Spring Data Build - Changelog
 =============================
 
+Changes in version 2.4.0 (2020-10-28)
+-------------------------------------
+* #1234 - Upgrade to Spring HATEOAS 1.2.
+* #1233 - Upgrade to Kotlin Coroutines 1.4.0.
+* #1232 - Upgrade to ThreeTenBp 1.5.0.
+* #1231 - Upgrade to AssertJ 3.18.0.
+* #1228 - Upgrade to Joda Time 2.10.8.
+* #1208 - Upgrade to OpenWebBeans 2.0.19.
+* #1207 - Upgrade to Mockito 3.5.15.
+* #1206 - Upgrade to Joda Time 2.10.7.
+* #1204 - Upgrade to Reactor 2020.0.0 GA.
+* #1201 - Upgrade to Spring Framework 5.3 GA.
+* #1196 - Release 2.4 GA (2020.0.0).
+
+
 Changes in version 2.3.5.RELEASE (2020-10-28)
 ---------------------------------------------
 * #1230 - Upgrade to AssertJ 3.18.0.
@@ -1708,6 +1723,7 @@ Changes in version 1.3.0.M1 (2014-04-16)
 * #28 - Release 1.3 M1.
 * #27 - Introduce shell script to automatically create issue branches and update pom versions.
 * #26 - Upgrade Spring baseline to latest 3.2.x.
+
 
 
 
