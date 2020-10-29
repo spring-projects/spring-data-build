@@ -15,7 +15,7 @@ pipeline {
 		stage("test: baseline (jdk8)") {
 			when {
 				anyOf {
-					branch 'master'
+					branch '2.4.x'
 					not { triggeredBy 'UpstreamCause' }
 				}
 			}
@@ -35,7 +35,7 @@ pipeline {
 		stage("Test other configurations") {
 			when {
 				allOf {
-					branch 'master'
+					branch '2.4.x'
 					not { triggeredBy 'UpstreamCause' }
 				}
 			}
@@ -73,7 +73,7 @@ pipeline {
 		stage('Build project and release to artifactory') {
 			when {
 				anyOf {
-					branch 'master'
+					branch '2.4.x'
 					not { triggeredBy 'UpstreamCause' }
 				}
 			}
@@ -90,7 +90,7 @@ pipeline {
 				ARTIFACTORY = credentials('02bd1690-b54f-4c9f-819d-a77cb7a9822c')
 			}
 
-			steps {			
+			steps {
 				sh 'MAVEN_OPTS="-Duser.name=jenkins -Duser.home=/tmp/jenkins-home" ./mvnw -Pci,artifactory ' +
 						'-Dartifactory.server=https://repo.spring.io ' +
 						"-Dartifactory.username=${ARTIFACTORY_USR} " +
