@@ -1269,7 +1269,7 @@
 						<additionalOption>-Xdoclint:none</additionalOption>
 					</additionalOptions>
 					<links>
-						<link>https://docs.spring.io/spring/docs/5.0.x/javadoc-api/</link>
+						<link>https://docs.spring.io/spring/docs/${spring}/javadoc-api/</link>
 						<link>https://docs.spring.io/spring-data/commons/docs/current/api/</link>
 						<link>https://docs.oracle.com/javase/8/docs/api/</link>
 					</links>
