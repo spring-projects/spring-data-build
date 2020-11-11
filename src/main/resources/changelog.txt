@@ -1,6 +1,17 @@
 Spring Data Build - Changelog
 =============================
 
+Changes in version 2.4.1 (2020-11-11)
+-------------------------------------
+* #1250 - Upgrade to Spring Doc Resources 0.2.4.
+* #1248 - Upgrade to Spring HATEOAS 1.2.1.
+* #1247 - Upgrade to Reactor 2020.0.1.
+* #1245 - Upgrade to Spring Framework 5.3.1.
+* #1242 - Upgrade to Kotlin Coroutines 1.4.1.
+* #1241 - Upgrade to Jackson 2.11.3.
+* #1237 - Release 2.4.1 (2020.0.1).
+
+
 Changes in version 2.4.0 (2020-10-28)
 -------------------------------------
 * #1234 - Upgrade to Spring HATEOAS 1.2.
@@ -1714,6 +1725,7 @@ Changes in version 1.3.0.M1 (2014-04-16)
 * #28 - Release 1.3 M1.
 * #27 - Introduce shell script to automatically create issue branches and update pom versions.
 * #26 - Upgrade Spring baseline to latest 3.2.x.
+
 
 
 
