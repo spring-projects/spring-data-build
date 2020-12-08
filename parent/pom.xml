@@ -114,7 +114,7 @@
 		<kotlin>1.4.21</kotlin>
 		<kotlin-coroutines>1.4.2</kotlin-coroutines>
 		<logback>1.2.3</logback>
-		<lombok>1.18.14</lombok>
+		<lombok>1.18.16</lombok>
 		<mockito>3.6.28</mockito>
 		<mockk>1.10.3-jdk8</mockk>
 		<querydsl>4.4.0</querydsl>
@@ -1102,7 +1102,7 @@
 				<plugin>
 					<groupId>org.projectlombok</groupId>
 					<artifactId>lombok-maven-plugin</artifactId>
-					<version>1.18.12.0</version>
+					<version>1.18.16.0</version>
 				</plugin>
 
 				<plugin>
