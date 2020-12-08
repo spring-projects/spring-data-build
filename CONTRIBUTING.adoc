@@ -1,55 +1,105 @@
 = Spring Data contribution guidelines
 
+First off, thank you for taking the time to contribute!
+👍 🎉
 [[code-of-conduct]]
 == Code of Conduct
 
 This project adheres to the Contributor Covenant link:CODE_OF_CONDUCT.adoc[code of conduct].
-By participating, you  are expected to uphold this code.
+By participating, you are expected to uphold this code.
 Please report unacceptable behavior to spring-code-of-conduct@pivotal.io.
 
+[[how-to-contribute]]
+== How to Contribute
+
+[[security-vulnerabilities]]
+=== Reporting Security Vulnerabilities
+
+If you think you have found a security vulnerability in Spring Data please **DO NOT** disclose it publicly until we’ve had a chance to fix it.
+Please don’t report security vulnerabilities using GitHub issues, instead head over to https://pivotal.io/security and learn how to disclose them responsibly.
+
+[[discuss]]
+=== Discuss
+
+If you have a question, check Stack Overflow using this https://stackoverflow.com/questions/tagged/spring-data+or+spring-data-jpa+or+spring-data-commons+or+spring-data-jdbc+or+spring-data-mongodb+or+spring-data-redis+or+spring-data-r2dbc+or+spring-data-keyvalue+or+spring-data-ldap+or+spring-data-cassandra+or+spring-data-envers+or+spring-data-rest+or+spring-data-geode?tab=Newest[list of tags].
+Find an existing discussion, or start a new one if necessary.
+
+If you believe there is an issue, search through existing issues trying a few different ways to find discussions, past or current, that are related to the issue.
+Reading those discussions helps you to learn about the issue, and helps us to make a decision.
+
 [[quickstart]]
-== Quickstart
+=== Quickstart
 
-For the impatient, if you want to submit a quick pull request:
+For the impatient, if you want to submit a quick pull request (polishing, trivial fix, documentation fix):
 
-* Make sure there is a ticket in the bug tracker for the project in our https://jira.spring.io[JIRA].
-* Make sure you use the code formatters provided https://github.com/spring-projects/spring-data-build/tree/master/etc/ide[here] and have them applied to your changes. Don't submit any formatting related changes.
-* Make sure you submit test cases (unit or integration tests) that back your changes.
-* Try to reuse existing test sample code (domain classes). Try not to amend existing test cases but create new ones dedicated to the changes you're making to the codebase. Try to test as locally as possible but potentially also add integration tests.
-* In the Javadoc for the newly added test cases refer to the ticket the changes apply to like this
-
-[source, java]
+1. API changes require discussion, use cases, etc.
+Code comes later.
+Create a issue in the GitHub issue tracker and stop here.
+In every other case continue with step 2.
+2. Make sure you use the code formatters provided https://github.com/spring-projects/spring-data-build/tree/master/etc/ide[here] and have them applied to your changes.
+Don't submit any formatting related changes.
+3. Make sure you submit test cases (unit or integration tests) that back your changes.
+4. Try to reuse existing test sample code (domain classes).
+Try not to amend existing test cases but create new ones dedicated to the changes you're making to the codebase.
+Try to test as locally as possible but potentially also add integration tests.
+5. In the Javadoc for the newly added test cases refer to the issue the changes apply to like this
++
+[source,java]
 ----
-@Test // DATA…-???
-public void yourTestMethod() { … }
+@Test // gh…-???
+void yourTestMethod() { … }
 ----
-
-* Make sure you added yourself as author in the headers of the classes you touched. Amend the date range in the Apache license header if needed. For new types, add the license header (copy from another file and set the current year only).
-* Make sure you follow the <<commit-messages>> guidelines.
-* Make sure you provide your full name and an email address registered with your GitHub account.
++
+6. Make sure you added yourself as author in the headers of the classes you touched.
+Amend the date range in the Apache license header if needed.
+For new types, add the license header (copy from another file and set the current year only).
+7. Make sure you follow the <<commit-messages>> guidelines.
+8. Make sure you provide your full name and an email address registered with your GitHub account.
 If you're a first-time submitter, make sure you have signed the https://cla.pivotal.io/sign/spring[Contributor License Agreement].
+9. You may sign your commits with a GPG key.
+As we generally cherry-pick commits for merging, it can happen that your signature is replaced by a signature from a maintainer that pushes your changes to the target branches.
+
+[[participate-in-reviews]]
+=== Participate in Reviews
+
+Helping to review pull requests is another great way to contribute.
+Your feedback can help to shape the implementation of new features.
+When reviewing pull requests, however, please refrain from approving or rejecting a PR unless you are a core committer for Spring Data.
+
+[[reference-documentation]]
+=== Reference Documentation
+
+The reference documentation lives within the code located at the `src/docs/asciidoc` directory, in https://asciidoctor.org/[Asciidoctor format].
+For trivial changes, you may be able to browse, edit source files, and submit directly from GitHub.
+
+When making changes locally, run `mvn package -Pdistribute` and then browse the result under `target/site/reference/html/index.html`.
+
+Asciidoctor also supports live editing.
+For more details read https://asciidoctor.org/docs/editing-asciidoc-with-live-preview/[Editing AsciiDoc with Live Preview].
 
 [[commit-messages]]
-== Commit messages
+=== Commit messages
 
 The commit message should follow the following style:
 
-* First line starts with the ticket id.
-* Separate ticket id and summary with a dash.
-* Start summary with a capital letter.
+* First line contains the summary starting with a capital letter.
 * Finish summary with a dot.
-* In the description, don't use single line breaks. No manual wrapping. Separate paragraphs by a blank line.
+* In the description, don't use single line breaks.
+No manual wrapping.
+Separate paragraphs by a blank line.
 * During merges, add a reference to the original pull request.
+* To close a GitHub issue, use https://docs.github.com/en/free-pro-team@latest/github/managing-your-work-on-github/linking-a-pull-request-to-an-issue#linking-a-pull-request-to-an-issue-using-a-keyword[GitHub syntax to reference issues].
 * Add related references at the very bottom (also see the section on pull requests below).
 
 [source]
 ----
-DATA…-??? - Summary of the commit (try to stay under 80 characters).
+Summary of the commit (try to stay under 80 characters).
 
 Additional explanations if necessary.
 
-Original pull request: #??.
-Related tickets: DATA…-???. (optionally refer to related tickets)
+Original pull request #?? (can be omitted when there's no ticket using Closes #?? syntax)
+Closes #?? (optionally close tickets)
+Related tickets #??? (optionally refer to related tickets)
 ----
 
 [[advanced]]
@@ -61,55 +111,82 @@ This section contains some advanced information, mainly targeted at developers o
 === General
 
 * Fix bugs in master first, if it's reasonable to port the fix back into a bugfix branch, try to do so with cherry picking.
-* Try to keep the lifespan of a feature branch as short as possible. For simple bug fixes they should only be used for code review in pull requests.
-* On longer running feature branches, don't pull changes that were made to master in the meantime. Instead, rebase the feature branch onto current master, sorting out issues and making sure the branch will fast-forward merge eventually.
+* Try to keep the lifespan of a feature branch as short as possible.
+For simple bug fixes they should only be used for code review in pull requests.
+* On longer running feature branches, don't pull changes that were made to master in the meantime.
+Instead, rebase the feature branch onto current master, sorting out issues and making sure the branch will fast-forward merge eventually.
 
 [[advanced.dependency-management]]
 === Dependency management
+
 * When upgrading dependencies of a project, make sure you apply the following rules:
-** For service releases of a release train only upgrades to bugfix versions are allowed. I.e. if a GA release of a release train included a dependency in version 2.6.2, you must only upgrade to 2.6.x versions. Upgrading to 2.7 is *not allowed*.
-** During the milestone phase of a new release train, upgrade to the latest version of a dependency unless compatibility with a former version is required. Upgrades to new major versions are allowed, too, but consider ways to support multiple major versions for one release train to allow a smoother transition.
+** For service releases of a release train only upgrades to bugfix versions are allowed. I.e. if a GA release of a release train included a dependency in version 2.6.2, you must only upgrade to 2.6.x versions.
+Upgrading to 2.7 is *not allowed*.
+** During the milestone phase of a new release train, upgrade to the latest version of a dependency unless compatibility with a former version is required.
+Upgrades to new major versions are allowed, too, but consider ways to support multiple major versions for one release train to allow a smoother transition.
 
 [[advanced.change-tracking]]
 === Change tracking
 
-* Make sure you don't commit without referring to a ticket. If we have a rather general task to work on, create a ticket for it and commit against that one.
-* Try to resolve a ticket in a single commit. I.e. don't have separate commits for the fix and the test cases. When polishing pull requests requires some more effort, have a separate commit to clearly document the polishing (and attribute the efforts to you).
-* We usually use feature branches to work on tickets and potentially let multiple people work on a feature. There's a https://github.com/spring-projects/spring-data-build/tree/master/etc/scripts[new-issue-branch script] available that sets up a feature branch for you, and adds a commit changing the Maven version numbers so that the branch builds can still publish snapshot artifacts but don't interfere with each other.
-* Follow the commit message style described in <<quickstart>>. Especially the summary line should adhere to the style documented there.
-* After pushing fixes to the remote repository, mark the tickets as resolved in JIRA and set the fixed versions according to which branches you pushed to.
-* Avoid merge commits as they just tend to make it hard to understand what comes from where. Using the ticket identifier in the summary line will allow us to keep track fo commits belonging together.
+* Each change must be associated with either a GitHub issue or a pull request.
+* When an issue is first created, it is flagged `waiting-for-triage` waiting for a team member to triage it.
+Once the issue has been reviewed, the team may ask for further information if needed, and based on the findings, the issue is either assigned a target milestone or is closed with a specific status.
+When a fix is ready, the issue is closed and may still be re-opened until the fix is released.
+After that the issue will typically no longer be reopened.
+In rare cases if the issue was not at all fixed, the issue may be re-opened.
+In most cases however any follow-up reports will need to be created as new issues with a fresh description.
+* Make sure you don't commit without referring to a GitHub issue.
+If we have a rather general task to work on, create a GitHub issue for it and commit against that one.
+* Try to resolve a GitHub issue in a single commit. I.e. don't have separate commits for the fix and the test cases.
+When polishing pull requests requires some more effort, have a separate commit to clearly document the polishing (and attribute the efforts to you).
+* We usually use feature branches to work on GitHub issues and potentially let multiple people work on a feature.
+There's a https://github.com/spring-projects/spring-data-build/tree/master/etc/scripts[new-issue-branch script] available that sets up a feature branch for you, and adds a commit changing the Maven version numbers so that the branch builds can still publish snapshot artifacts but don't interfere with each other.
+* Follow the commit message style described in <<quickstart>>.
+Especially the summary line should adhere to the style documented there.
+* After pushing fixes to the remote repository, mark the GitHub issues as resolved in and set the earliest milestone that ships the fix according to which branches you pushed to.
+* Avoid merge commits as they just tend to make it hard to understand what comes from where.
+Using the GitHub issue number in the commit message will allow us to keep track for commits belonging together.
 
 [[advanced.code-style]]
-=== Code style
+=== Source Code style
 
-This section contains some stuff that the IDE formatters do not enforce. Try to keep track of those as well
+This section contains some stuff that the IDE formatters do not enforce.
+Try to keep track of those as well
 
 * Make sure, your IDE uses `.*` imports for all static ones.
 * Eclipse users should activate Save Actions to format sources on save, organize imports and also enable the standard set of
-* For methods only consisting of a single line, don't use any blank lines around the line of code. For methods consisting of more than one line of code, have a blank line after the method signature.
+* For methods only consisting of a single line, don't use any blank lines around the line of code.
+For methods consisting of more than one line of code, have a blank line after the method signature.
+* You can find IDE settings to import at https://github.com/spring-projects/spring-data-build/tree/master/etc/ide[`etc/ide`].
 
 === Handling pull requests
 
-* Be polite. It might be the first time someone contributes to an OpenSource project so we should forgive violations to the contribution guidelines. Use some gut feeling to find out in how far it makes sense to ask the reporter to fix stuff or just go ahead and add a polishing commit yourself.
-* Before we accept a non-trivial patch or pull request we will need you to https://cla.pivotal.io/sign/spring[sign the Contributor License Agreement]. Signing the contributor’s agreement does not grant anyone commit rights to the main repository, but it does mean that we can accept your contributions, and you will get an author credit if we do. If you forget to do so, you'll be reminded when you submit a pull request.
-* If you decide to merge stuff back make sure that all the infrastructure requirements are met (set up a JIRA ticket to commit against if necessary, etc.).
-* Before merging stuff back into master, make sure you rebase the branch. We generally do not allow merge commits, so a merge should always be fast-forward. The ticket IDs and the timestamps give enough tracking information already.
-* The simplest way to merge back a pull request submitted by someone external is `curl`ing the patch into `git am`. You can then polish it by either adding a commit or amending the provided commit. Make sure you keep the original author when amending.
+* Be polite.
+It might be the first time someone contributes to an OpenSource project so we should forgive violations to the contribution guidelines.
+Use some gut feeling to find out in how far it makes sense to ask the reporter to fix stuff or just go ahead and add a polishing commit yourself.
+* Before we accept a non-trivial patch or pull request we will need you to https://cla.pivotal.io/sign/spring[sign the Contributor License Agreement].
+Signing the contributor’s agreement does not grant anyone commit rights to the main repository, but it does mean that we can accept your contributions, and you will get an author credit if we do.
+If you forget to do so, you'll be reminded when you submit a pull request.
+* Before merging stuff back into `master`, make sure you rebase the branch.
+We generally do not allow merge commits, so a merge should always be fast-forward.
+The GitHub issue number and the timestamps give enough tracking information already.
+* The simplest way to merge back a pull request submitted by someone external is ``curl``ing the patch into `git am`.
+You can then polish it by either adding a commit or amending the provided commit.
+Make sure you keep the original author when amending.
 
 [source]
 ----
 curl $PULL_REQUEST_URL.patch | git am --ignore-whitespace
 ----
 
-* If the you merge back a feature branch and multiple developers contributed to that, try to rearrange to commits and squash the into a single commit per developer. Combine the commit messages and edit them to make sense.
-* Before pushing the changes to the remote repository, amend the commit(s) to be pushed and add a reference to the pull request to them. This will cause the pull request UI in GitHub show and link those commits.
+* If the you merge back a feature branch and multiple developers contributed to that, try to rearrange to commits and squash the into a single commit per developer.
+Combine the commit messages and edit them to make sense.
+* Before pushing the changes to the remote repository, amend the commit(s) to be pushed and add a reference to the pull request to them.
+This will cause the pull request UI in GitHub show and link those commits.
 
 [source]
 ----
 …
 
-Original pull request: #??.
+Original pull request #??
 ----
-
-Important pieces here: colon and the sentence completed with a dot.
