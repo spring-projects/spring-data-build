@@ -1,6 +1,35 @@
 Spring Data Build - Changelog
 =============================
 
+Changes in version 2.5.0-M1 (2020-12-09)
+----------------------------------------
+* #1316 - Upgrade to Spring HATEOAS 1.2.2.
+* #1307 - Upgrade to Lombok 1.18.16.
+* #1306 - Upgrade to Kotlin 1.4.21.
+* #1303 - Upgrade to Spring Doc Resources 0.2.5.
+* #1291 - Upgrade to Mockk 1.10.3-jdk8.
+* #1286 - Upgrade to OpenWebBeans 2.0.20.
+* #1285 - Upgrade to Testcontainers 1.15.0.
+* #1284 - Upgrade to RxJava 3.0.8.
+* #1283 - Upgrade to Mockito 3.6.28.
+* #1282 - Upgrade to Kotlin Coroutines 1.4.2.
+* #1281 - Upgrade to Jackson 2.12.0.
+* #1276 - Rollback to Spring Doc Resources 0.2.2.RELEASE.
+* #1269 - Upgrade to Reactor 2020.0.2.
+* #1268 - Upgrade to Spring Framework 5.3.2.
+* #1263 - Enable Project automation through GitHub Actions.
+* #1261 - Upgrade to Kotlin 1.4.20.
+* #1258 - Upgrade to Mockito 3.6.0.
+* #1257 - Upgrade to AssertJ 3.18.1.
+* #1251 - Upgrade to Spring Doc Resources 0.2.4.
+* #1249 - Upgrade to Spring HATEOAS 1.2.1.
+* #1246 - Upgrade to Reactor 2020.0.1.
+* #1244 - Upgrade to Spring Framework 5.3.1.
+* #1243 - Upgrade to Kotlin Coroutines 1.4.1.
+* #1240 - Upgrade to Jackson 2.11.3.
+* #1238 - Release 2.5 M1 (2021.0.0).
+
+
 Changes in version 2.3.6.RELEASE (2020-12-09)
 ---------------------------------------------
 * #1310 - Upgrade to Spring HATEOAS 1.1.3.
@@ -1755,6 +1784,7 @@ Changes in version 1.3.0.M1 (2014-04-16)
 * #28 - Release 1.3 M1.
 * #27 - Introduce shell script to automatically create issue branches and update pom versions.
 * #26 - Upgrade Spring baseline to latest 3.2.x.
+
 
 
 
