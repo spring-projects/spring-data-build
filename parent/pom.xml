@@ -858,7 +858,7 @@
 		<profile>
 			<id>jackson-next</id>
 			<properties>
-				<jackson>2.12.0-rc1</jackson>
+				<jackson>2.12.0</jackson>
 			</properties>
 			<repositories>
 				<repository>
