@@ -124,7 +124,7 @@
 		<spring>5.2.12.RELEASE</spring>
 		<spring-hateoas>1.0.5.RELEASE</spring-hateoas>
 		<spring-plugin>2.0.0.RELEASE</spring-plugin>
-		<testcontainers>1.12.5</testcontainers>
+		<testcontainers>1.15.1</testcontainers>
 		<threetenbp>1.4.5</threetenbp>
 		<validation>1.1.0.Final</validation>
 		<webbeans>2.0.20</webbeans>
