@@ -169,16 +169,17 @@
 				</plugins>
 
 			</build>
-	    <pluginRepositories>
-	        <pluginRepository>
-	            <snapshots>
-	                <enabled>false</enabled>
-	            </snapshots>
-	            <id>central</id>
-	            <name>bintray-plugins</name>
-	            <url>https://jcenter.bintray.com</url>
-	        </pluginRepository>
-	    </pluginRepositories>
+
+			<pluginRepositories>
+				<pluginRepository>
+					<snapshots>
+						<enabled>false</enabled>
+					</snapshots>
+					<id>central</id>
+					<name>bintray-plugins</name>
+					<url>https://jcenter.bintray.com</url>
+				</pluginRepository>
+			</pluginRepositories>
 		</profile>
 
 		<!-- Build profile for the build run to deploy to Maven Central -->
