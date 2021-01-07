@@ -6,7 +6,7 @@ The parent project can be eased for either a single-module Maven project or a mu
 
 == Code of Conduct
 
-This project is governed by the link:CODE_OF_CONDUCT.adoc[Spring Code of Conduct]. By participating, you are expected to uphold this code of conduct. Please report unacceptable behavior to spring-code-of-conduct@pivotal.io.
+This project is governed by the link:https://github.com/spring-projects/.github/blob/master/CODE_OF_CONDUCT.md[Spring Code of Conduct]. By participating, you are expected to uphold this code of conduct. Please report unacceptable behavior to spring-code-of-conduct@pivotal.io.
 
 == Project setup
 
