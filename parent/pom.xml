@@ -124,7 +124,7 @@
 		<rxjava2>2.2.20</rxjava2>
 		<rxjava3>3.0.9</rxjava3>
 		<slf4j>1.7.26</slf4j>
-		<spring>5.3.3-SNAPSHOT</spring>
+		<spring>5.3.3</spring>
 		<spring-hateoas>1.2.2</spring-hateoas>
 		<spring-plugin>2.0.0.RELEASE</spring-plugin>
 		<testcontainers>1.15.1</testcontainers>
@@ -845,7 +845,7 @@
 		<profile>
 			<id>spring53-next</id>
 			<properties>
-				<spring>5.3.3-SNAPSHOT</spring>
+				<spring>5.3.4-SNAPSHOT</spring>
 			</properties>
 			<repositories>
 				<repository>
