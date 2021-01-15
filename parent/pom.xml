@@ -676,6 +676,15 @@
 					</plugins>
 				</pluginManagement>
 			</build>
+
+			<pluginRepositories>
+				<pluginRepository>
+					<id>jcenter</id>
+					<name>bintray-plugins</name>
+					<url>https://jcenter.bintray.com</url>
+				</pluginRepository>
+			</pluginRepositories>
+
 		</profile>
 
 		<profile>
@@ -861,6 +870,15 @@
 					</plugins>
 				</pluginManagement>
 			</build>
+
+			<pluginRepositories>
+				<pluginRepository>
+					<id>jcenter</id>
+					<name>bintray-plugins</name>
+					<url>https://jcenter.bintray.com</url>
+				</pluginRepository>
+			</pluginRepositories>
+
 		</profile>
 
 		<profile>
