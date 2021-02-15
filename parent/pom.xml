@@ -109,7 +109,7 @@
 		<jodatime>2.10.10</jodatime>
 		<jsonpath>2.4.0</jsonpath>
 		<!-- Deprecated: Use junit-vintage-engine and JUnit 4 is included as transitive dependency -->
-		<junit>4.13.1</junit>
+		<junit>4.13.2</junit>
 		<junit5>5.7.1</junit5>
 		<kotlin>1.4.21</kotlin>
 		<kotlin-coroutines>1.4.2</kotlin-coroutines>
