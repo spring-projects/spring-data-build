@@ -121,7 +121,7 @@
 		<rxjava-reactive-streams>1.2.1</rxjava-reactive-streams>
 		<rxjava2>2.2.21</rxjava2>
 		<slf4j>1.7.26</slf4j>
-		<spring>5.2.12.RELEASE</spring>
+		<spring>5.2.13.RELEASE</spring>
 		<spring-hateoas>1.0.5.RELEASE</spring-hateoas>
 		<spring-plugin>2.0.0.RELEASE</spring-plugin>
 		<testcontainers>1.15.2</testcontainers>
@@ -884,7 +884,7 @@
 		<profile>
 			<id>spring52-next</id>
 			<properties>
-				<spring>5.2.13.BUILD-SNAPSHOT</spring>
+				<spring>5.2.14.BUILD-SNAPSHOT</spring>
 			</properties>
 			<repositories>
 				<repository>
