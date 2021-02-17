@@ -693,14 +693,6 @@
 				</pluginManagement>
 			</build>
 
-			<pluginRepositories>
-				<pluginRepository>
-					<id>jcenter</id>
-					<name>bintray-plugins</name>
-					<url>https://jcenter.bintray.com</url>
-				</pluginRepository>
-			</pluginRepositories>
-
 		</profile>
 
 		<profile>
@@ -886,14 +878,6 @@
 					</plugins>
 				</pluginManagement>
 			</build>
-
-			<pluginRepositories>
-				<pluginRepository>
-					<id>jcenter</id>
-					<name>bintray-plugins</name>
-					<url>https://jcenter.bintray.com</url>
-				</pluginRepository>
-			</pluginRepositories>
 
 		</profile>
 
@@ -1382,6 +1366,11 @@
 		<pluginRepository>
 			<id>spring-libs-milestone</id>
 			<url>https://repo.spring.io/libs-milestone</url>
+		</pluginRepository>
+		<pluginRepository>
+			<id>bintray-plugins</id>
+			<name>bintray-plugins</name>
+			<url>https://jcenter.bintray.com</url>
 		</pluginRepository>
 	</pluginRepositories>
 
