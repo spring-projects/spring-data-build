@@ -134,7 +134,7 @@
 		<javax-annotation-api>1.3.2</javax-annotation-api>
 
 		<!-- Used in asciidoc reference documentation -->
-		<releasetrain>2020.0.4</releasetrain>
+		<releasetrain>2020.0.5-SNAPSHOT</releasetrain>
 
 		<!-- To be overridden by individual modules -->
 		<java-module-name/>
