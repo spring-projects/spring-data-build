@@ -1,6 +1,10 @@
 Spring Data Build - Changelog
 =============================
 
+Changes in version 2.5.0-M4 (2021-02-18)
+----------------------------------------
+
+
 Changes in version 2.4.5 (2021-02-18)
 -------------------------------------
 
@@ -1918,6 +1922,7 @@ Changes in version 1.3.0.M1 (2014-04-16)
 * #28 - Release 1.3 M1.
 * #27 - Introduce shell script to automatically create issue branches and update pom versions.
 * #26 - Upgrade Spring baseline to latest 3.2.x.
+
 
 
 
