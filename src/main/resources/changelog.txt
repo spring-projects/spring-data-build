@@ -1,6 +1,13 @@
 Spring Data Build - Changelog
 =============================
 
+Changes in version 2.3.8.RELEASE (2021-03-17)
+---------------------------------------------
+* #1404 - Upgrade to Spring HATEOAS 1.1.5.
+* #1401 - Update Sonatype endpoints.
+* #1389 - Upgrade to Reactor Dysprosium-SR17.
+
+
 Changes in version 2.5.0-M4 (2021-02-18)
 ----------------------------------------
 
@@ -1922,6 +1929,7 @@ Changes in version 1.3.0.M1 (2014-04-16)
 * #28 - Release 1.3 M1.
 * #27 - Introduce shell script to automatically create issue branches and update pom versions.
 * #26 - Upgrade Spring baseline to latest 3.2.x.
+
 
 
 
