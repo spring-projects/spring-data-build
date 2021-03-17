@@ -1,6 +1,19 @@
 Spring Data Build - Changelog
 =============================
 
+Changes in version 2.4.6 (2021-03-17)
+-------------------------------------
+* #1403 - Upgrade to Spring HATEOAS 1.2.5.
+* #1401 - Update Sonatype endpoints.
+* #1395 - Upgrade to Lombok 1.18.18.
+* #1394 - Upgrade to RxJava 3.0.11.
+* #1393 - Upgrade to Kotlin Coroutines 1.4.3.
+* #1392 - Upgrade to Kotlin 1.4.31.
+* #1391 - Upgrade to Spring Framework 5.3.5.
+* #1390 - Upgrade to Reactor 2020.0.5.
+* #1347 - Bintray must also be included in parent POM.
+
+
 Changes in version 2.3.8.RELEASE (2021-03-17)
 ---------------------------------------------
 * #1404 - Upgrade to Spring HATEOAS 1.1.5.
@@ -1929,6 +1942,7 @@ Changes in version 1.3.0.M1 (2014-04-16)
 * #28 - Release 1.3 M1.
 * #27 - Introduce shell script to automatically create issue branches and update pom versions.
 * #26 - Upgrade Spring baseline to latest 3.2.x.
+
 
 
 
