@@ -1,6 +1,12 @@
 Spring Data Build - Changelog
 =============================
 
+Changes in version 2.4.7 (2021-03-31)
+-------------------------------------
+* #1415 - Upgrade to OpenWebBeans 2.0.22.
+* #1413 - Upgrade to Kotlin 1.4.32.
+
+
 Changes in version 2.5.0-RC1 (2021-03-31)
 -----------------------------------------
 * #1414 - Upgrade to Mockk 1.11.0.
@@ -1968,6 +1974,7 @@ Changes in version 1.3.0.M1 (2014-04-16)
 * #28 - Release 1.3 M1.
 * #27 - Introduce shell script to automatically create issue branches and update pom versions.
 * #26 - Upgrade Spring baseline to latest 3.2.x.
+
 
 
 
