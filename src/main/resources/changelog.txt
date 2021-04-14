@@ -1,6 +1,15 @@
 Spring Data Build - Changelog
 =============================
 
+Changes in version 2.4.8 (2021-04-14)
+-------------------------------------
+* #1428 - Upgrade to artifactory-maven-plugin 3.2.1.
+* #1426 - Upgrade to RxJava 3.0.12.
+* #1423 - Upgrade to Lombok 1.18.20.
+* #1419 - Upgrade to Spring Framework 5.3.6.
+* #1418 - Upgrade to Reactor 2020.0.6.
+
+
 Changes in version 2.3.9.RELEASE (2021-04-14)
 ---------------------------------------------
 * #1428 - Upgrade to artifactory-maven-plugin 3.2.1.
@@ -1982,6 +1991,7 @@ Changes in version 1.3.0.M1 (2014-04-16)
 * #28 - Release 1.3 M1.
 * #27 - Introduce shell script to automatically create issue branches and update pom versions.
 * #26 - Upgrade Spring baseline to latest 3.2.x.
+
 
 
 
