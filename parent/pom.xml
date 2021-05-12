@@ -1149,8 +1149,6 @@
 							<goal>test-compile</goal>
 						</goals>
 						<configuration>
-							<apiVersion>1.5</apiVersion>
-							<languageVersion>1.5</languageVersion>
 							<sourceDirs>
 								<sourceDir>${project.basedir}/src/test/kotlin</sourceDir>
 								<sourceDir>${project.basedir}/src/test/java</sourceDir>
