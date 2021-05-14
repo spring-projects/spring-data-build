@@ -1,6 +1,17 @@
 Spring Data Build - Changelog
 =============================
 
+Changes in version 2.4.9 (2021-05-14)
+-------------------------------------
+* #1449 - Upgrade to Spring HATEOAS 1.2.6.
+* #1445 - Upgrade to ThreeTenBp 1.5.1.
+* #1444 - Upgrade to Testcontainers 1.15.3.
+* #1440 - Upgrade to Reactor 2020.0.7.
+* #1439 - Upgrade to Spring Framework 5.3.7.
+* #1437 - Upgrade to Jacoco 0.8.7.
+* #1436 - org.jfrog.buildinfo:build-info-extractor:jar:2.21.1 not available from Maven Central.
+
+
 Changes in version 2.5.0 (2021-04-14)
 -------------------------------------
 * #1430 - Upgrade to Spring HATEOAS 1.3 GA.
@@ -2004,6 +2015,7 @@ Changes in version 1.3.0.M1 (2014-04-16)
 * #28 - Release 1.3 M1.
 * #27 - Introduce shell script to automatically create issue branches and update pom versions.
 * #26 - Upgrade Spring baseline to latest 3.2.x.
+
 
 
 
