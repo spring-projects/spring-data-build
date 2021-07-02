@@ -46,7 +46,7 @@ Try to test as locally as possible but potentially also add integration tests.
 +
 [source,java]
 ----
-@Test // gh…-???
+@Test // GH-???
 void yourTestMethod() { … }
 ----
 +
