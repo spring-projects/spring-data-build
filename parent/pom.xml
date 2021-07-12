@@ -99,7 +99,7 @@
 
 		<apt>1.1.3</apt>
 		<aspectj>1.9.6</aspectj>
-		<assertj>3.19.0</assertj>
+		<assertj>3.20.2</assertj>
 		<cdi>1.0</cdi>
 		<commons-io>2.5</commons-io>
 		<guava>19.0</guava>
