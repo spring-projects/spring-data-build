@@ -1,6 +1,18 @@
 Spring Data Build - Changelog
 =============================
 
+Changes in version 2.5.3 (2021-07-16)
+-------------------------------------
+* #1492 - Upgrade to Spring HATEOAS 1.3.3.
+* #1489 - Upgrade to Kotlin 1.5.21.
+* #1476 - Upgrade to Mockito 3.11.2.
+* #1475 - Upgrade to Kotlin 1.5.20.
+* #1474 - Upgrade to Jackson 2.12.4.
+* #1473 - Upgrade to Spring Framework 5.3.9.
+* #1471 - Upgrade to Reactor 2020.0.9.
+* #1468 - Upgrade artifactory-maven-plugin to 3.2.3.
+
+
 Changes in version 2.5.2 (2021-06-22)
 -------------------------------------
 * #1466 - Upgrade to Spring HATEOAS 1.3.2.
@@ -2050,6 +2062,7 @@ Changes in version 1.3.0.M1 (2014-04-16)
 * #28 - Release 1.3 M1.
 * #27 - Introduce shell script to automatically create issue branches and update pom versions.
 * #26 - Upgrade Spring baseline to latest 3.2.x.
+
 
 
 
