@@ -1,6 +1,37 @@
 Spring Data Build - Changelog
 =============================
 
+Changes in version 2.6.0-M1 (2021-07-16)
+----------------------------------------
+* #1491 - Upgrade to Spring HATEOAS 1.4 M1.
+* #1488 - Upgrade to Kotlin 1.5.21.
+* #1487 - Upgrade to OpenWebBeans 2.0.23.
+* #1486 - Upgrade to ThreeTenBp 1.5.1.
+* #1485 - Upgrade to Testcontainers 1.15.3.
+* #1484 - Upgrade to Spring Hateoas 1.3.2.
+* #1483 - Upgrade to RxJava 3.0.13.
+* #1482 - Upgrade to Mockk 1.12.0.
+* #1481 - Upgrade to Mockito 3.11.2.
+* #1480 - Upgrade to Kotlin Coroutines 1.5.1.
+* #1479 - Upgrade to Kotlin 1.5.20.
+* #1478 - Upgrade to Jackson 2.12.4.
+* #1477 - Upgrade to AssertJ 3.20.2.
+* #1473 - Upgrade to Spring Framework 5.3.9.
+* #1471 - Upgrade to Reactor 2020.0.9.
+* #1469 - Upgrade Mockito dependency to 3.11.1.
+* #1468 - Upgrade artifactory-maven-plugin to 3.2.3.
+* #1463 - Upgrade to Reactor 2020.0.8.
+* #1454 - Upgrade to Querydsl 5.0 M1.
+* #1453 - Upgrade to Spring Framework 5.3.8.
+* #1447 - Switch Kotlin test sources to language level 1.3.
+* #1440 - Upgrade to Reactor 2020.0.7.
+* #1439 - Upgrade to Spring Framework 5.3.7.
+* #1438 - Upgrade to Kotlin 1.5.0.
+* #1437 - Upgrade to Jacoco 0.8.7.
+* #1436 - org.jfrog.buildinfo:build-info-extractor:jar:2.21.1 not available from Maven Central.
+* #1408 - Update CI to Java 16.
+
+
 Changes in version 2.4.11 (2021-07-16)
 --------------------------------------
 * #1493 - Upgrade to Spring HATEOAS 1.2.8.
@@ -2058,6 +2089,7 @@ Changes in version 1.3.0.M1 (2014-04-16)
 * #28 - Release 1.3 M1.
 * #27 - Introduce shell script to automatically create issue branches and update pom versions.
 * #26 - Upgrade Spring baseline to latest 3.2.x.
+
 
 
 
