@@ -1018,7 +1018,7 @@
 						<dependency>
 							<groupId>io.spring.nohttp</groupId>
 							<artifactId>nohttp-checkstyle</artifactId>
-							<version>0.0.5.RELEASE</version>
+							<version>0.0.8</version>
 						</dependency>
 					</dependencies>
 				</plugin>
