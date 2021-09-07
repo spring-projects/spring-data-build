@@ -1001,6 +1001,7 @@
 					<version>3.8.1</version>
 					<configuration>
 						<forceJavacCompilerUse>true</forceJavacCompilerUse>
+						<parameters>true</parameters>
 					</configuration>
 				</plugin>
 
