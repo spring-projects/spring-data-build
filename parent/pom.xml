@@ -98,7 +98,7 @@
 		<maven.kotlin.skip>false</maven.kotlin.skip>
 
 		<apt>1.1.3</apt>
-		<aspectj>1.9.6</aspectj>
+		<aspectj>1.9.7</aspectj>
 		<assertj>3.20.2</assertj>
 		<cdi>1.0</cdi>
 		<commons-io>2.5</commons-io>
