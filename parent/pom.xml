@@ -108,7 +108,6 @@
 		<jackson>2.13.1</jackson>
 		<jaxb>2.3.1</jaxb>
 		<jacoco>0.8.7</jacoco>
-		<jodatime>2.10.13</jodatime>
 		<jmolecules>1.4.0</jmolecules>
 		<jmolecules-integration>0.7.0</jmolecules-integration>
 		<jsonpath>2.6.0</jsonpath>
@@ -134,7 +133,6 @@
 		<spring-plugin>2.0.0.RELEASE</spring-plugin>
 		<servlet-api>4.0.1</servlet-api>
 		<testcontainers>1.16.2</testcontainers>
-		<threetenbp>1.5.2</threetenbp>
 		<validation>1.1.0.Final</validation>
 		<webbeans>2.0.25</webbeans>
 
