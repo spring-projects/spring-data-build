@@ -339,6 +339,11 @@
 					<plugin>
 						<groupId>org.apache.maven.plugins</groupId>
 						<artifactId>maven-javadoc-plugin</artifactId>
+						<configuration>
+							<javadocDirectory>${shared.resources}/javadoc</javadocDirectory>
+							<overview>${shared.resources}/javadoc/overview.html</overview>
+							<stylesheetfile>${shared.resources}/javadoc/spring-javadoc.css</stylesheetfile>
+						</configuration>
 						<executions>
 							<execution>
 								<id>aggregate-javadoc</id>
@@ -1191,18 +1196,13 @@
 					<header>${project.name}</header>
 					<source>${source.level}</source>
 					<quiet>true</quiet>
-					<javadocDirectory>${shared.resources}/javadoc</javadocDirectory>
-					<overview>${shared.resources}/javadoc/overview.html</overview>
-					<stylesheetfile>${shared.resources}/javadoc/spring-javadoc.css</stylesheetfile>
 					<!-- copies doc-files subdirectory which contains image resources -->
 					<docfilessubdirs>true</docfilessubdirs>
-					<additionalOptions>
-						<additionalOption>-Xdoclint:none</additionalOption>
-					</additionalOptions>
+					<doclint>html,reference</doclint>
 					<links>
 						<link>https://docs.spring.io/spring/docs/${spring}/javadoc-api/</link>
 						<link>https://docs.spring.io/spring-data/commons/docs/current/api/</link>
-						<link>https://docs.oracle.com/javase/8/docs/api/</link>
+						<link>https://docs.oracle.com/en/java/javase/17/docs/api/</link>
 					</links>
 				</configuration>
 			</plugin>
