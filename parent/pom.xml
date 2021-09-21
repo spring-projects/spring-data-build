@@ -133,6 +133,7 @@
 		<threetenbp>1.5.1</threetenbp>
 		<validation>1.1.0.Final</validation>
 		<webbeans>2.0.23</webbeans>
+		<webbeans.xbean>4.20</webbeans.xbean>
 		<javax-annotation-api>1.3.2</javax-annotation-api>
 
 		<!-- Used in asciidoc reference documentation -->
