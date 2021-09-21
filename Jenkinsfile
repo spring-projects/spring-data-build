@@ -23,7 +23,7 @@ pipeline {
 			steps {
 				script {
 					docker.withRegistry('', 'hub.docker.com-springbuildmaster') {
-						docker.image('openjdk:17').inside('-v $HOME:/tmp/jenkins-home') {
+						docker.image('openjdk:17-bullseye').inside('-v $HOME:/tmp/jenkins-home') {
 							sh 'MAVEN_OPTS="-Duser.name=jenkins -Duser.home=/tmp/jenkins-home" ./mvnw -s settings.xml clean dependency:list verify -Dsort -B'
 						}
 					}
@@ -44,7 +44,7 @@ pipeline {
 			steps {
 				script {
 					docker.withRegistry('', 'hub.docker.com-springbuildmaster') {
-						docker.image('openjdk:17').inside('-v $HOME:/tmp/jenkins-home') {
+						docker.image('openjdk:17-bullseye').inside('-v $HOME:/tmp/jenkins-home') {
 							sh 'MAVEN_OPTS="-Duser.name=jenkins -Duser.home=/tmp/jenkins-home" ./mvnw -s settings.xml -Pci,artifactory ' +
 									'-Dartifactory.server=https://repo.spring.io ' +
 									"-Dartifactory.username=${ARTIFACTORY_USR} " +
