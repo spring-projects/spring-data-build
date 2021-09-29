@@ -1272,6 +1272,7 @@
 					<header>${project.name}</header>
 					<source>${source.level}</source>
 					<quiet>true</quiet>
+					<javadocVersion>1.8</javadocVersion>
 					<!-- copies doc-files subdirectory which contains image resources -->
 					<docfilessubdirs>true</docfilessubdirs>
 					<doclint>html,reference</doclint>
