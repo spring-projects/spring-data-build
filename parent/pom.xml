@@ -95,7 +95,6 @@
 		<source.level>1.8</source.level>
 		<dist.id>${project.artifactId}</dist.id>
 		<jacoco.destfile>${project.build.directory}/jacoco.exec</jacoco.destfile>
-		<maven.kotlin.skip>false</maven.kotlin.skip>
 
 		<apt>1.1.3</apt>
 		<aspectj>1.9.7</aspectj>
@@ -319,10 +318,8 @@
 				<generated-asciidoc-sources.directory>${project.build.directory}/generated-asciidoc-sources/source/
 				</generated-asciidoc-sources.directory>
 				<generated-docs.directory>${project.build.directory}/generated-docs</generated-docs.directory>
-				<maven.main.skip>true</maven.main.skip>
 				<maven.test.skip>true</maven.test.skip>
 				<aspectj.skip>true</aspectj.skip>
-				<maven.kotlin.skip>true</maven.kotlin.skip>
 				<maven.install.skip>true</maven.install.skip>
 				<maven.deploy.skip>true</maven.deploy.skip>
 				<skipTests>true</skipTests>
@@ -652,7 +649,6 @@
 				<maven.main.skip>true</maven.main.skip>
 				<maven.test.skip>true</maven.test.skip>
 				<aspectj.skip>true</aspectj.skip>
-				<maven.kotlin.skip>true</maven.kotlin.skip>
 				<maven.install.skip>true</maven.install.skip>
 				<maven.deploy.skip>true</maven.deploy.skip>
 				<skipTests>true</skipTests>
@@ -1114,7 +1110,6 @@
 					<jvmTarget>${source.level}</jvmTarget>
 					<apiVersion>1.3</apiVersion>
 					<languageVersion>1.3</languageVersion>
-					<skip>${maven.kotlin.skip}</skip>
 					<args>
 						<arg>-Xsuppress-version-warnings</arg>
 					</args>
