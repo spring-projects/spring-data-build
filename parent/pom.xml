@@ -96,7 +96,6 @@
 		<dist.id>${project.artifactId}</dist.id>
 		<jacoco.destfile>${project.build.directory}/jacoco.exec</jacoco.destfile>
 		<kotlin.jvm.target>11</kotlin.jvm.target>
-		<maven.kotlin.skip>false</maven.kotlin.skip>
 
 		<apt>1.1.3</apt>
 		<aspectj>1.9.7</aspectj>
