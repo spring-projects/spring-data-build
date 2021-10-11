@@ -97,7 +97,7 @@
 		<jacoco.destfile>${project.build.directory}/jacoco.exec</jacoco.destfile>
 
 		<apt>1.1.3</apt>
-		<aspectj>1.9.7</aspectj>
+		<aspectj>1.9.8.RC1</aspectj>
 		<assertj>3.21.0</assertj>
 		<cdi>1.0</cdi>
 		<commons-io>2.5</commons-io>
