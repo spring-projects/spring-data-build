@@ -124,7 +124,7 @@
 		<rxjava-reactive-streams>1.2.1</rxjava-reactive-streams>
 		<rxjava2>2.2.21</rxjava2>
 		<rxjava3>3.1.1</rxjava3>
-		<smallrye-mutiny>1.1.1</smallrye-mutiny>
+		<smallrye-mutiny>1.1.2</smallrye-mutiny>
 		<slf4j>1.7.32</slf4j>
 		<spring>5.3.11</spring>
 		<spring-hateoas>1.4.0-RC1</spring-hateoas>
