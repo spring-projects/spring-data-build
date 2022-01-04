@@ -113,7 +113,7 @@
 		<junit>4.13.2</junit>
 		<junit5>5.8.1</junit5>
 		<kotlin>1.6.10</kotlin>
-		<kotlin-coroutines>1.5.2</kotlin-coroutines>
+		<kotlin-coroutines>1.6.0</kotlin-coroutines>
 		<logback>1.2.5</logback>
 		<lombok>1.18.20</lombok>
 		<mockito>4.2.0</mockito>
