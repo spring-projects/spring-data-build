@@ -106,7 +106,7 @@
 		<jackson>2.13.1</jackson>
 		<jacoco>0.8.7</jacoco>
 		<jodatime>2.10.13</jodatime>
-		<jmolecules>1.3.0</jmolecules>
+		<jmolecules>1.4.0</jmolecules>
 		<jmolecules-integration>0.7.0</jmolecules-integration>
 		<jsonpath>2.6.0</jsonpath>
 		<!-- Deprecated: Use junit-vintage-engine and JUnit 4 is included as transitive dependency -->
