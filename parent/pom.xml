@@ -116,7 +116,7 @@
 		<kotlin-coroutines>1.6.0</kotlin-coroutines>
 		<logback>1.2.5</logback>
 		<lombok>1.18.20</lombok>
-		<mockito>4.2.0</mockito>
+		<mockito>4.3.1</mockito>
 		<mockk>1.12.2</mockk>
 		<querydsl>5.0.0</querydsl>
 		<reactor>2020.0.15</reactor>
