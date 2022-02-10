@@ -129,7 +129,7 @@
 		<spring>5.3.15</spring>
 		<spring-hateoas>1.4.1</spring-hateoas>
 		<spring-plugin>2.0.0.RELEASE</spring-plugin>
-		<testcontainers>1.16.2</testcontainers>
+		<testcontainers>1.16.3</testcontainers>
 		<threetenbp>1.5.2</threetenbp>
 		<validation>1.1.0.Final</validation>
 		<webbeans>2.0.25</webbeans>
