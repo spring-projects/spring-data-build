@@ -217,6 +217,10 @@
 				<java-activation.version>1.1.1</java-activation.version>
 			</properties>
 
+			<activation>
+				<jdk>(11,</jdk>
+			</activation>
+
 			<dependencies>
 				<dependency>
 					<groupId>javax.xml.bind</groupId>
@@ -244,7 +248,7 @@
 		<!--
 			Profile to be run before a release is executed, currently does the following:
 
-			- Prevents thrid-party snapshot dependencies in projects
+			- Prevents third-party snapshot dependencies in projects
 		-->
 
 		<profile>
