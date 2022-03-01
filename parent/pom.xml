@@ -340,7 +340,6 @@
 						<configuration>
 							<javadocDirectory>${shared.resources}/javadoc</javadocDirectory>
 							<overview>${shared.resources}/javadoc/overview.html</overview>
-							<stylesheetfile>${shared.resources}/javadoc/spring-javadoc.css</stylesheetfile>
 						</configuration>
 						<executions>
 							<execution>
