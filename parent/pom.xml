@@ -118,8 +118,6 @@
 		<kotlin-coroutines>1.6.0</kotlin-coroutines>
 		<logback>1.2.5</logback>
 		<lombok>1.18.20</lombok>
-		<micrometer>2.0.0-SNAPSHOT</micrometer>
-		<micrometer-tracing>1.0.0-SNAPSHOT</micrometer-tracing>
 		<mockito>4.4.0</mockito>
 		<mockk>1.12.3</mockk>
 		<querydsl>5.0.0</querydsl>
@@ -800,20 +798,6 @@
 
 	<dependencyManagement>
 		<dependencies>
-			<dependency>
-				<groupId>io.micrometer</groupId>
-				<artifactId>micrometer-bom</artifactId>
-				<version>${micrometer}</version>
-				<type>pom</type>
-				<scope>import</scope>
-			</dependency>
-			<dependency>
-				<groupId>io.micrometer</groupId>
-				<artifactId>micrometer-tracing-bom</artifactId>
-				<version>${micrometer-tracing}</version>
-				<type>pom</type>
-				<scope>import</scope>
-			</dependency>
 			<dependency>
 				<groupId>io.projectreactor</groupId>
 				<artifactId>reactor-bom</artifactId>
