@@ -135,7 +135,7 @@
 		<testcontainers>1.16.3</testcontainers>
 		<validation>3.0.0</validation>
 		<vavr>0.10.4</vavr>
-		<webbeans>2.0.25</webbeans>
+		<webbeans>2.0.26</webbeans>
 
 		<!-- OWB requires via XBean a newer ASM version -->
 		<webbeans.xbean>4.20</webbeans.xbean>
