@@ -121,7 +121,7 @@
 		<micrometer>2.0.0-SNAPSHOT</micrometer>
 		<micrometer-tracing>1.0.0-SNAPSHOT</micrometer-tracing>
 		<mockito>4.4.0</mockito>
-		<mockk>1.12.2</mockk>
+		<mockk>1.12.3</mockk>
 		<querydsl>5.0.0</querydsl>
 		<reactor>2020.0.17</reactor>
 		<rxjava2>2.2.21</rxjava2>
