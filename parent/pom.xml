@@ -139,7 +139,7 @@
 		<webbeans.xbean>4.20</webbeans.xbean>
 
 		<!-- Used in asciidoc reference documentation -->
-		<releasetrain>2022.0.0-M3</releasetrain>
+		<releasetrain>2022.0.0-SNAPSHOT</releasetrain>
 
 		<!-- To be overridden by individual modules -->
 		<java-module-name/>
