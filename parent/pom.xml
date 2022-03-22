@@ -273,10 +273,21 @@
 												<exclude>org.springframework.data:*</exclude>
 											</excludes>
 										</requireReleaseDeps>
+										<NoSnapshotDependenciesInDependencyManagementRule
+												implementation="de.smartics.maven.enforcer.rule.NoSnapshotsInDependencyManagementRule">
+											<onlyWhenRelease>true</onlyWhenRelease>
+										</NoSnapshotDependenciesInDependencyManagementRule>
 									</rules>
 								</configuration>
 							</execution>
 						</executions>
+						<dependencies>
+							<dependency>
+								<groupId>de.smartics.rules</groupId>
+								<artifactId>smartics-enforcer-rules</artifactId>
+								<version>1.0.2</version>
+							</dependency>
+						</dependencies>
 					</plugin>
 				</plugins>
 			</build>
@@ -1062,7 +1073,7 @@
 				<plugin>
 					<groupId>org.apache.maven.plugins</groupId>
 					<artifactId>maven-enforcer-plugin</artifactId>
-					<version>3.0.0-M3</version>
+					<version>3.0.0</version>
 				</plugin>
 
 				<plugin>

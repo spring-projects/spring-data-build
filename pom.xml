@@ -83,6 +83,7 @@
 					<plugin>
 						<groupId>org.apache.maven.plugins</groupId>
 						<artifactId>maven-enforcer-plugin</artifactId>
+						<version>3.0.0</version>
 						<executions>
 							<execution>
 								<id>enforce-release-rules</id>
@@ -96,10 +97,20 @@
 										</requireJavaVersion>
 										<requireReleaseDeps />
 										<requireReleaseVersion />
+										<NoSnapshotDependenciesInDependencyManagementRule
+												implementation="de.smartics.maven.enforcer.rule.NoSnapshotsInDependencyManagementRule">
+										</NoSnapshotDependenciesInDependencyManagementRule>
 									</rules>
 								</configuration>
 							</execution>
 						</executions>
+						<dependencies>
+							<dependency>
+								<groupId>de.smartics.rules</groupId>
+								<artifactId>smartics-enforcer-rules</artifactId>
+								<version>1.0.2</version>
+							</dependency>
+						</dependencies>
 					</plugin>
 
 				</plugins>
