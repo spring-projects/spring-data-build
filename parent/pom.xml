@@ -352,6 +352,16 @@
 
 				<plugins>
 
+					<!-- force-skip -->
+					<plugin>
+						<groupId>org.jetbrains.kotlin</groupId>
+						<artifactId>kotlin-maven-plugin</artifactId>
+						<inherited>false</inherited>
+						<configuration>
+							<skip>true</skip>
+						</configuration>
+					</plugin>
+
 					<!--
 						Unpacks the content of spring-data-build-resources into the shared resources folder.
 					-->
@@ -673,6 +683,16 @@
 			<build>
 
 				<plugins>
+
+					<!-- force-skip -->
+					<plugin>
+						<groupId>org.jetbrains.kotlin</groupId>
+						<artifactId>kotlin-maven-plugin</artifactId>
+						<inherited>false</inherited>
+						<configuration>
+							<skip>true</skip>
+						</configuration>
+					</plugin>
 
 					<!--
 						Unpacks the content of spring-data-build-resources into the shared resources folder.
