@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+		 xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
 
 	<!--
 
@@ -118,6 +119,8 @@
 		<kotlin-coroutines>1.6.0</kotlin-coroutines>
 		<logback>1.2.5</logback>
 		<lombok>1.18.20</lombok>
+		<micrometer>2.0.0-SNAPSHOT</micrometer>
+		<micrometer-tracing>1.0.0-SNAPSHOT</micrometer-tracing>
 		<mockito>4.4.0</mockito>
 		<mockk>1.12.3</mockk>
 		<querydsl>5.0.0</querydsl>
@@ -183,7 +186,8 @@
 
 									<module name="io.spring.nohttp.checkstyle.check.NoHttpCheck">
 										<!-- XML requires double escaping, config gets XML-processed twice -->
-										<property name="allowlist" value="http://www\.querydsl\.com.*&amp;#10;http://www\.prowaveconsulting\.com.*&amp;#10;http://www\.scispike\.com.*&amp;#10;http://.*.icu-project\.org.*"/>
+										<property name="allowlist"
+												  value="http://www\.querydsl\.com.*&amp;#10;http://www\.prowaveconsulting\.com.*&amp;#10;http://www\.scispike\.com.*&amp;#10;http://.*.icu-project\.org.*"/>
 									</module>
 								</module>
 							</checkstyleRules>
@@ -239,7 +243,8 @@
 												<exclude>org.springframework.data:*</exclude>
 											</excludes>
 										</requireReleaseDeps>
-										<NoSnapshotDependenciesInDependencyManagementRule implementation="de.smartics.maven.enforcer.rule.NoSnapshotsInDependencyManagementRule">
+										<NoSnapshotDependenciesInDependencyManagementRule
+												implementation="de.smartics.maven.enforcer.rule.NoSnapshotsInDependencyManagementRule">
 											<onlyWhenRelease>true</onlyWhenRelease>
 										</NoSnapshotDependenciesInDependencyManagementRule>
 									</rules>
@@ -403,7 +408,8 @@
 										<copy failonerror="false" todir="${generated-asciidoc-sources.directory}/">
 											<fileset dir="${project.root}/src/main/asciidoc" includes="**/*.adoc"/>
 										</copy>
-										<copy failonerror="false" todir="${generated-asciidoc-sources.directory}/images/">
+										<copy failonerror="false"
+											  todir="${generated-asciidoc-sources.directory}/images/">
 											<fileset dir="${project.root}/src/main/asciidoc/images"/>
 										</copy>
 
@@ -427,7 +433,8 @@
 									<target>
 
 										<!-- Copy files for the single-file HTML version -->
-										<copy failonerror="false" todir="${project.root}/target/site/reference/html/images">
+										<copy failonerror="false"
+											  todir="${project.root}/target/site/reference/html/images">
 											<fileset dir="${generated-docs.directory}/images"/>
 										</copy>
 
@@ -451,10 +458,12 @@
 										</copy>
 
 										<!-- Copy and rename the Epub file -->
-										<copy failonerror="false" file="${generated-docs.directory}/index.pdf" tofile="${project.root}/target/site/reference/pdf/${dist.id}-reference.pdf"/>
+										<copy failonerror="false" file="${generated-docs.directory}/index.pdf"
+											  tofile="${project.root}/target/site/reference/pdf/${dist.id}-reference.pdf"/>
 
 										<!-- Copy and rename the PDF file -->
-										<copy failonerror="false" file="${generated-docs.directory}/index.epub" tofile="${project.root}/target/site/reference/epub/${dist.id}-reference.epub"/>
+										<copy failonerror="false" file="${generated-docs.directory}/index.epub"
+											  tofile="${project.root}/target/site/reference/epub/${dist.id}-reference.epub"/>
 
 									</target>
 								</configuration>
@@ -832,6 +841,20 @@
 				<groupId>io.projectreactor</groupId>
 				<artifactId>reactor-bom</artifactId>
 				<version>${reactor}</version>
+				<type>pom</type>
+				<scope>import</scope>
+			</dependency>
+			<dependency>
+				<groupId>io.micrometer</groupId>
+				<artifactId>micrometer-bom</artifactId>
+				<version>${micrometer}</version>
+				<type>pom</type>
+				<scope>import</scope>
+			</dependency>
+			<dependency>
+				<groupId>io.micrometer</groupId>
+				<artifactId>micrometer-tracing-bom</artifactId>
+				<version>${micrometer-tracing}</version>
 				<type>pom</type>
 				<scope>import</scope>
 			</dependency>
