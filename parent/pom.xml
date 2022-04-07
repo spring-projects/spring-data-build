@@ -121,6 +121,7 @@
 		<lombok>1.18.20</lombok>
 		<micrometer>2.0.0-SNAPSHOT</micrometer>
 		<micrometer-tracing>1.0.0-SNAPSHOT</micrometer-tracing>
+		<micrometer-docs-generator>1.0.0-SNAPSHOT</micrometer-docs-generator>
 		<mockito>4.4.0</mockito>
 		<mockk>1.12.3</mockk>
 		<querydsl>5.0.0</querydsl>
@@ -859,6 +860,13 @@
 				<scope>import</scope>
 			</dependency>
 			<dependency>
+				<groupId>io.micrometer</groupId>
+				<artifactId>micrometer-docs-generator-bom</artifactId>
+				<version>${micrometer-docs-generator}</version>
+				<type>pom</type>
+				<scope>import</scope>
+			</dependency>
+			<dependency>
 				<groupId>org.springframework</groupId>
 				<artifactId>spring-framework-bom</artifactId>
 				<version>${spring}</version>
@@ -1387,8 +1395,8 @@
 			<url>https://repo.spring.io/plugins-release</url>
 		</pluginRepository>
 		<pluginRepository>
-			<id>spring-libs-milestone</id>
-			<url>https://repo.spring.io/libs-milestone</url>
+			<id>spring-libs-snapshot</id>
+			<url>https://repo.spring.io/libs-snapshot</url>
 		</pluginRepository>
 	</pluginRepositories>
 
