@@ -132,7 +132,7 @@
 						<plugin>
 							<groupId>org.jfrog.buildinfo</groupId>
 							<artifactId>artifactory-maven-plugin</artifactId>
-							<version>3.2.3</version>
+							<version>3.4.0</version>
 							<executions>
 								<execution>
 									<id>build-info</id>
@@ -189,7 +189,7 @@
 						<plugin>
 							<groupId>org.apache.maven.plugins</groupId>
 							<artifactId>maven-gpg-plugin</artifactId>
-							<version>1.6</version>
+							<version>3.0.1</version>
 							<executions>
 								<execution>
 									<id>sign-artifacts</id>
@@ -206,7 +206,7 @@
 						<plugin>
 							<groupId>org.sonatype.plugins</groupId>
 							<artifactId>nexus-staging-maven-plugin</artifactId>
-							<version>1.6.8</version>
+							<version>1.6.13</version>
 							<extensions>true</extensions>
 							<configuration>
 								<serverId>sonatype</serverId>

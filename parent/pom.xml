@@ -1021,7 +1021,7 @@
 				<plugin>
 					<groupId>org.apache.maven.plugins</groupId>
 					<artifactId>maven-antrun-plugin</artifactId>
-					<version>3.0.0</version>
+					<version>3.1.0</version>
 				</plugin>
 
 				<plugin>
@@ -1033,7 +1033,7 @@
 				<plugin>
 					<groupId>org.apache.maven.plugins</groupId>
 					<artifactId>maven-compiler-plugin</artifactId>
-					<version>3.8.1</version>
+					<version>3.10.1</version>
 					<configuration>
 						<forceJavacCompilerUse>true</forceJavacCompilerUse>
 						<parameters>true</parameters>
@@ -1048,12 +1048,12 @@
 						<dependency>
 							<groupId>com.puppycrawl.tools</groupId>
 							<artifactId>checkstyle</artifactId>
-							<version>8.45.1</version>
+							<version>9.3</version>
 						</dependency>
 						<dependency>
 							<groupId>io.spring.nohttp</groupId>
 							<artifactId>nohttp-checkstyle</artifactId>
-							<version>0.0.8</version>
+							<version>0.0.10</version>
 						</dependency>
 					</dependencies>
 				</plugin>
@@ -1061,13 +1061,13 @@
 				<plugin>
 					<groupId>org.apache.maven.plugins</groupId>
 					<artifactId>maven-dependency-plugin</artifactId>
-					<version>3.1.2</version>
+					<version>3.3.0</version>
 				</plugin>
 
 				<plugin>
 					<groupId>org.apache.maven.plugins</groupId>
 					<artifactId>maven-deploy-plugin</artifactId>
-					<version>3.0.0-M1</version>
+					<version>3.0.0-M2</version>
 				</plugin>
 
 				<plugin>
@@ -1088,13 +1088,13 @@
 				<plugin>
 					<groupId>org.apache.maven.plugins</groupId>
 					<artifactId>maven-jar-plugin</artifactId>
-					<version>3.2.0</version>
+					<version>3.2.2</version>
 				</plugin>
 
 				<plugin>
 					<groupId>org.apache.maven.plugins</groupId>
 					<artifactId>maven-javadoc-plugin</artifactId>
-					<version>3.2.0</version>
+					<version>3.4.0</version>
 				</plugin>
 
 				<plugin>
@@ -1115,7 +1115,7 @@
 				<plugin>
 					<groupId>org.codehaus.mojo</groupId>
 					<artifactId>build-helper-maven-plugin</artifactId>
-					<version>3.1.0</version>
+					<version>3.3.0</version>
 				</plugin>
 
 				<plugin>
@@ -1127,7 +1127,7 @@
 				<plugin>
 					<groupId>org.jfrog.buildinfo</groupId>
 					<artifactId>artifactory-maven-plugin</artifactId>
-					<version>3.2.3</version>
+					<version>3.4.0</version>
 				</plugin>
 
 			</plugins>
