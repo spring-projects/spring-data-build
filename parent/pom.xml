@@ -30,7 +30,7 @@
     		
     <artifactId>spring-data-build</artifactId>
     		
-    <version>3.0.0-M4</version>
+    <version>3.0.0-SNAPSHOT</version>
     		
     <relativePath>../pom.xml</relativePath>
     	
@@ -478,7 +478,7 @@
           					
           <artifactId>spring-data-build-resources</artifactId>
           					
-          <version>3.0.0-M4</version>
+          <version>3.0.0-SNAPSHOT</version>
           					
           <type>zip</type>
           					
@@ -1064,7 +1064,7 @@
           					
           <artifactId>spring-data-build-resources</artifactId>
           					
-          <version>3.0.0-M4</version>
+          <version>3.0.0-SNAPSHOT</version>
           					
           <type>zip</type>
           					
