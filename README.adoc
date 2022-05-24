@@ -18,7 +18,6 @@ Shared resources are pulled in from the `spring-data-build-resources` dependency
 
 [source]
 ----
-- changelog.txt
 - notice.txt
 + reference -> Asciidoc generated reference documentation
   + html
