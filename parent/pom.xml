@@ -134,7 +134,7 @@
 		<threetenbp>1.6.0</threetenbp>
 		<validation>1.1.0.Final</validation>
 		<vavr>0.10.4</vavr>
-		<webbeans>2.0.26</webbeans>
+		<webbeans>2.0.27</webbeans>
 		<webbeans.xbean>4.20</webbeans.xbean>
 		<javax-annotation-api>1.3.2</javax-annotation-api>
 
