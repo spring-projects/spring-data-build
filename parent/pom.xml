@@ -130,7 +130,7 @@
 		<spring>5.3.20</spring>
 		<spring-hateoas>1.5.0</spring-hateoas>
 		<spring-plugin>2.0.0.RELEASE</spring-plugin>
-		<testcontainers>1.17.1</testcontainers>
+		<testcontainers>1.17.2</testcontainers>
 		<threetenbp>1.6.0</threetenbp>
 		<validation>1.1.0.Final</validation>
 		<vavr>0.10.4</vavr>
