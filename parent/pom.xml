@@ -128,7 +128,7 @@
 		<reactor>2022.0.0-SNAPSHOT</reactor>
 		<rxjava2>2.2.21</rxjava2>
 		<rxjava3>3.1.5</rxjava3>
-		<smallrye-mutiny>1.4.0</smallrye-mutiny>
+		<smallrye-mutiny>1.6.0</smallrye-mutiny>
 		<slf4j>1.7.32</slf4j>
 		<spring>6.0.0-SNAPSHOT</spring>
 		<spring-hateoas>2.0.0-M3</spring-hateoas>
