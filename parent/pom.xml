@@ -109,8 +109,8 @@
 		<jakarta-annotation-api>2.0.0</jakarta-annotation-api>
 		<jaxb>3.0.1</jaxb>
 		<jacoco>0.8.8</jacoco>
-		<jmolecules>1.4.0</jmolecules>
-		<jmolecules-integration>0.8.0</jmolecules-integration>
+		<jmolecules>1.6.0</jmolecules>
+		<jmolecules-integration>0.11.0</jmolecules-integration>
 		<jsonpath>2.6.0</jsonpath>
 		<!-- Deprecated: Use junit-vintage-engine and JUnit 4 is included as transitive dependency -->
 		<junit>4.13.2</junit>
