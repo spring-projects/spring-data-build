@@ -120,7 +120,7 @@
 		<logback>1.2.5</logback>
 		<lombok>1.18.20</lombok>
 		<micrometer>1.10.0-M3</micrometer>
-		<micrometer-tracing>1.0.0-SNAPSHOT</micrometer-tracing>
+		<micrometer-tracing>1.0.0-M6</micrometer-tracing>
 		<micrometer-docs-generator>1.0.0-SNAPSHOT</micrometer-docs-generator>
 		<mockito>4.6.1</mockito>
 		<mockk>1.12.4</mockk>
