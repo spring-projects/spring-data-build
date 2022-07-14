@@ -127,7 +127,7 @@
 		<rxjava3>3.1.5</rxjava3>
 		<smallrye-mutiny>1.4.0</smallrye-mutiny>
 		<slf4j>1.7.32</slf4j>
-		<spring>5.3.21</spring>
+		<spring>5.3.22</spring>
 		<spring-hateoas>1.5.1</spring-hateoas>
 		<spring-plugin>2.0.0.RELEASE</spring-plugin>
 		<testcontainers>1.17.3</testcontainers>
@@ -861,7 +861,7 @@
 		<profile>
 			<id>spring53-next</id>
 			<properties>
-				<spring>5.3.22-SNAPSHOT</spring>
+				<spring>5.3.23-SNAPSHOT</spring>
 			</properties>
 			<repositories>
 				<repository>
