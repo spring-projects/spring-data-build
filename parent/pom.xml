@@ -291,6 +291,11 @@
 					<type>zip</type>
 					<optional>true</optional>
 				</dependency>
+				<dependency>
+					<groupId>io.spring.asciidoctor.backends</groupId>
+					<artifactId>spring-asciidoctor-backends</artifactId>
+					<version>${spring-asciidoctor-backends.version}</version>
+				</dependency>
 			</dependencies>
 
 			<build>
