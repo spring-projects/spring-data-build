@@ -130,6 +130,7 @@
 		<smallrye-mutiny>1.6.0</smallrye-mutiny>
 		<slf4j>1.7.32</slf4j>
 		<spring>6.0.0-SNAPSHOT</spring>
+		<spring-asciidoctor-backends.version>0.0.3</spring-asciidoctor-backends.version>
 		<spring-hateoas>2.0.0-M5</spring-hateoas>
 		<spring-plugin>3.0.0-M1</spring-plugin>
 		<servlet-api>5.0.0</servlet-api>
@@ -268,8 +269,7 @@
 
 			<properties>
 				<shared.resources>${project.build.directory}/shared-resources</shared.resources>
-				<generated-asciidoc-sources.directory>${project.build.directory}/generated-asciidoc-sources/source/
-				</generated-asciidoc-sources.directory>
+				<generated-asciidoc-sources.directory>${project.build.directory}/generated-asciidoc-sources/source/</generated-asciidoc-sources.directory>
 				<generated-docs.directory>${project.build.directory}/generated-docs</generated-docs.directory>
 				<maven.test.skip>true</maven.test.skip>
 				<aspectj.skip>true</aspectj.skip>
@@ -279,13 +279,6 @@
 			</properties>
 
 			<dependencies>
-				<dependency>
-					<groupId>io.spring.docresources</groupId>
-					<artifactId>spring-doc-resources</artifactId>
-					<version>0.2.5</version>
-					<type>zip</type>
-					<optional>true</optional>
-				</dependency>
 				<dependency>
 					<groupId>org.springframework.data.build</groupId>
 					<artifactId>spring-data-build-resources</artifactId>
@@ -317,20 +310,6 @@
 						<groupId>org.apache.maven.plugins</groupId>
 						<artifactId>maven-dependency-plugin</artifactId>
 						<executions>
-							<execution>
-								<id>unpack-doc-resources</id>
-								<goals>
-									<goal>unpack-dependencies</goal>
-								</goals>
-								<phase>generate-resources</phase>
-								<configuration>
-									<includeGroupIds>io.spring.docresources</includeGroupIds>
-									<includeArtifactIds>spring-doc-resources</includeArtifactIds>
-									<includeTypes>zip</includeTypes>
-									<excludeTransitive>true</excludeTransitive>
-									<outputDirectory>${generated-asciidoc-sources.directory}</outputDirectory>
-								</configuration>
-							</execution>
 							<execution>
 								<id>unpack-shared-resources</id>
 								<goals>
@@ -396,58 +375,20 @@
 							</execution>
 
 							<execution>
-								<id>create-generated-docs-resources</id>
-								<phase>process-resources</phase>
-								<configuration>
-									<target>
-										<copy failonerror="false" todir="${generated-asciidoc-sources.directory}/">
-											<fileset dir="${project.root}/src/main/asciidoc" includes="**/*.adoc"/>
-										</copy>
-										<copy failonerror="false" todir="${generated-asciidoc-sources.directory}/images/">
-											<fileset dir="${project.root}/src/main/asciidoc/images"/>
-										</copy>
-
-										<copy todir="${generated-docs.directory}">
-											<fileset dir="${generated-asciidoc-sources.directory}">
-												<include name="css/**"/>
-												<include name="js/**"/>
-											</fileset>
-										</copy>
-									</target>
-								</configuration>
-								<goals>
-									<goal>run</goal>
-								</goals>
-							</execution>
-
-							<execution>
 								<id>rename-reference-docs</id>
 								<phase>prepare-package</phase>
 								<configuration>
 									<target>
 
 										<!-- Copy files for the single-file HTML version -->
-										<copy failonerror="false" todir="${project.root}/target/site/reference/html/images">
-											<fileset dir="${generated-docs.directory}/images"/>
-										</copy>
-
-										<!-- Copy shared resources. Spring Data ones first to override the ones shared -->
-										<copy failonerror="false" todir="${project.root}/target/site/reference/html/">
-											<fileset dir="${shared.resources}">
+										<copy failonerror="false" todir="${project.root}/target/site/reference/html">
+											<fileset dir="${generated-docs.directory}">
+												<include name="img/**"/>
+												<include name="images/**"/>
 												<include name="css/**"/>
 												<include name="js/**"/>
+												<include name="**/*.html"/>
 											</fileset>
-										</copy>
-
-										<copy failonerror="false" todir="${project.root}/target/site/reference/html/">
-											<fileset dir="${generated-asciidoc-sources.directory}">
-												<include name="css/**"/>
-												<include name="js/**"/>
-											</fileset>
-										</copy>
-
-										<copy failonerror="false" todir="${project.root}/target/site/reference/html/">
-											<fileset dir="${generated-docs.directory}" includes="*.html"/>
 										</copy>
 
 										<!-- Copy and rename the Epub file -->
@@ -493,9 +434,8 @@
 										<goal>process-asciidoc</goal>
 									</goals>
 									<configuration>
-										<sourceDirectory>${generated-asciidoc-sources.directory}</sourceDirectory>
 										<sourceDocumentName>index.adoc</sourceDocumentName>
-										<backend>html5</backend>
+										<backend>spring-html</backend>
 										<outputDirectory>${generated-docs.directory}</outputDirectory>
 										<attributes>
 											<source-highlighter>highlight.js</source-highlighter>
@@ -504,7 +444,7 @@
 											<linkcss>true</linkcss>
 											<sectanchors>true</sectanchors>
 											<stylesdir>./css</stylesdir>
-											<stylesheet>spring.css</stylesheet>
+											<stylesheet>site.css</stylesheet>
 											<toc>left</toc>
 										</attributes>
 									</configuration>
@@ -532,6 +472,13 @@
 								</attributes>
 							</configuration>
 
+							<dependencies>
+								<dependency>
+									<groupId>io.spring.asciidoctor.backends</groupId>
+									<artifactId>spring-asciidoctor-backends</artifactId>
+									<version>${spring-asciidoctor-backends.version}</version>
+								</dependency>
+							</dependencies>
 						</plugin>
 
 						<!--
