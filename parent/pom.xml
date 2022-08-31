@@ -119,9 +119,9 @@
 		<kotlin-coroutines>1.6.3</kotlin-coroutines>
 		<logback>1.2.5</logback>
 		<lombok>1.18.20</lombok>
-		<micrometer>1.10.0-M3</micrometer>
-		<micrometer-tracing>1.0.0-M6</micrometer-tracing>
-		<micrometer-docs-generator>1.0.0-M5</micrometer-docs-generator>
+		<micrometer>1.10.0-SNAPSHOT</micrometer>
+		<micrometer-tracing>1.0.0-SNAPSHOT</micrometer-tracing>
+		<micrometer-docs-generator>1.0.0-SNAPSHOT</micrometer-docs-generator>
 		<mockito>4.6.1</mockito>
 		<mockk>1.12.4</mockk>
 		<querydsl>5.0.0</querydsl>
