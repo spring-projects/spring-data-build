@@ -138,9 +138,6 @@
 		<vavr>0.10.4</vavr>
 		<webbeans>2.0.27</webbeans>
 
-		<!-- OWB requires via XBean a newer ASM version -->
-		<webbeans.xbean>4.20</webbeans.xbean>
-
 		<!-- Used in asciidoc reference documentation -->
 		<releasetrain>2022.0.0-SNAPSHOT</releasetrain>
 
@@ -966,13 +963,6 @@
 						<artifactId>*</artifactId>
 					</exclusion>
 				</exclusions>
-			</dependency>
-
-			<dependency>
-				<groupId>org.apache.xbean</groupId>
-				<artifactId>xbean-asm9-shaded</artifactId>
-				<version>${webbeans.xbean}</version>
-				<scope>test</scope>
 			</dependency>
 
 		</dependencies>
