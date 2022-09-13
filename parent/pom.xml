@@ -269,7 +269,6 @@
 
 			<properties>
 				<shared.resources>${project.build.directory}/shared-resources</shared.resources>
-				<generated-asciidoc-sources.directory>${project.build.directory}/generated-asciidoc-sources/source/</generated-asciidoc-sources.directory>
 				<generated-docs.directory>${project.build.directory}/generated-docs</generated-docs.directory>
 				<maven.test.skip>true</maven.test.skip>
 				<aspectj.skip>true</aspectj.skip>
@@ -434,6 +433,7 @@
 										<goal>process-asciidoc</goal>
 									</goals>
 									<configuration>
+										<sourceDirectory>${project.root}/src/main/asciidoc</sourceDirectory>
 										<sourceDocumentName>index.adoc</sourceDocumentName>
 										<backend>spring-html</backend>
 										<outputDirectory>${generated-docs.directory}</outputDirectory>
@@ -471,14 +471,6 @@
 									<numbered>true</numbered>
 								</attributes>
 							</configuration>
-
-							<dependencies>
-								<dependency>
-									<groupId>io.spring.asciidoctor.backends</groupId>
-									<artifactId>spring-asciidoctor-backends</artifactId>
-									<version>${spring-asciidoctor-backends.version}</version>
-								</dependency>
-							</dependencies>
 						</plugin>
 
 						<!--
@@ -999,6 +991,23 @@
 					<groupId>org.asciidoctor</groupId>
 					<artifactId>asciidoctor-maven-plugin</artifactId>
 					<version>2.2.2</version>
+					<dependencies>
+						<dependency>
+							<groupId>org.jruby</groupId>
+							<artifactId>jruby</artifactId>
+							<version>9.3.7.0</version>
+						</dependency>
+						<dependency>
+							<groupId>org.asciidoctor</groupId>
+							<artifactId>asciidoctorj</artifactId>
+							<version>2.5.5</version>
+						</dependency>
+						<dependency>
+							<groupId>io.spring.asciidoctor.backends</groupId>
+							<artifactId>spring-asciidoctor-backends</artifactId>
+							<version>${spring-asciidoctor-backends.version}</version>
+						</dependency>
+					</dependencies>
 				</plugin>
 
 				<plugin>
