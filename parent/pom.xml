@@ -118,7 +118,7 @@
 		<kotlin-coroutines>1.6.4</kotlin-coroutines>
 		<logback>1.2.5</logback>
 		<lombok>1.18.20</lombok>
-		<micrometer>1.10.0-M5</micrometer>
+		<micrometer>1.10.0-M6</micrometer>
 		<micrometer-tracing>1.0.0-M8</micrometer-tracing>
 		<micrometer-docs-generator>1.0.0-M7</micrometer-docs-generator>
 		<mockito>4.8.0</mockito>
