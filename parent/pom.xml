@@ -127,7 +127,7 @@
 		<smallrye-mutiny>1.1.2</smallrye-mutiny>
 		<slf4j>1.7.32</slf4j>
 		<spring>5.3.23</spring>
-		<spring-hateoas>1.4.4</spring-hateoas>
+		<spring-hateoas>1.4.5</spring-hateoas>
 		<spring-plugin>2.0.0.RELEASE</spring-plugin>
 		<testcontainers>1.16.3</testcontainers>
 		<threetenbp>1.5.2</threetenbp>
