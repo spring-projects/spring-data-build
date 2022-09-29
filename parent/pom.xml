@@ -117,7 +117,7 @@
 		<junit5>5.9.0</junit5>
 		<kotlin>1.7.20-RC</kotlin>
 		<kotlin-coroutines>1.6.4</kotlin-coroutines>
-		<logback>1.2.5</logback>
+		<logback>1.4.1</logback>
 		<lombok>1.18.20</lombok>
 		<micrometer>1.10.0-M6</micrometer>
 		<micrometer-tracing>1.0.0-M8</micrometer-tracing>
@@ -129,7 +129,7 @@
 		<rxjava2>2.2.21</rxjava2>
 		<rxjava3>3.1.5</rxjava3>
 		<smallrye-mutiny>1.6.0</smallrye-mutiny>
-		<slf4j>1.7.32</slf4j>
+		<slf4j>2.0.2</slf4j>
 		<spring>6.0.0-M6</spring>
 		<spring-asciidoctor-backends.version>0.0.3</spring-asciidoctor-backends.version>
 		<spring-hateoas>2.0.0-M6</spring-hateoas>
