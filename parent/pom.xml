@@ -133,7 +133,7 @@
 		<spring>6.0.0-SNAPSHOT</spring>
 		<spring-asciidoctor-backends.version>0.0.3</spring-asciidoctor-backends.version>
 		<spring-hateoas>2.0.0-M6</spring-hateoas>
-		<spring-plugin>3.0.0-M2</spring-plugin>
+		<spring-plugin>3.0.0-RC1</spring-plugin>
 		<servlet-api>5.0.0</servlet-api>
 		<testcontainers>1.17.5</testcontainers>
 		<validation>3.0.0</validation>
