@@ -140,11 +140,20 @@
 		<vavr>0.10.4</vavr>
 		<webbeans>2.0.27</webbeans>
 
+		<!-- As used in the release notes -->
+		<releasetrain-main>2022.0</releasetrain-main>
 		<!-- Used in asciidoc reference documentation -->
-		<releasetrain>2022.0.0-SNAPSHOT</releasetrain>
+		<releasetrain>${releasetrain-main}.0-SNAPSHOT</releasetrain>
+		<!-- The Spring Data Release Train name. e.g. Turing -->
+		<releasetrain-name>Turing</releasetrain-name>
 
 		<!-- To be overridden by individual modules -->
+		<!-- The module name, e.g. Jpa or Jdbc -->
+		<simple-module-name/>
+		<!-- The full module name with segments separated by dots, e.g spring.data.jdbc -->
 		<java-module-name/>
+		<!-- The github repository where the code for the module resides. -->
+		<github-repo/>
 
 	</properties>
 
