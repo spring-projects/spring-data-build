@@ -101,7 +101,7 @@
 		<archunit>1.0.0</archunit>
 		<aspectj>1.9.9.1</aspectj>
 		<assertj>3.23.1</assertj>
-		<cdi>3.0.0</cdi>
+		<cdi>4.0.1</cdi>
 		<commons-io>2.5</commons-io>
 		<eclipse-collections>11.0.0</eclipse-collections>
 		<guava>19.0</guava>
