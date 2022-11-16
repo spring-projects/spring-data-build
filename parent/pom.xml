@@ -129,7 +129,7 @@
 		<rxjava3>3.1.5</rxjava3>
 		<smallrye-mutiny>1.6.0</smallrye-mutiny>
 		<slf4j>2.0.2</slf4j>
-		<spring>6.0.0-SNAPSHOT</spring>
+		<spring>6.0.0</spring>
 		<spring-asciidoctor-backends.version>0.0.3</spring-asciidoctor-backends.version>
 		<spring-hateoas>2.0.0-RC2</spring-hateoas>
 		<spring-plugin>3.0.0</spring-plugin>
@@ -740,7 +740,7 @@
 		<profile>
 			<id>spring6-next</id>
 			<properties>
-				<spring>6.0.0-SNAPSHOT</spring>
+				<spring>6.0.1-SNAPSHOT</spring>
 			</properties>
 			<repositories>
 				<repository>
