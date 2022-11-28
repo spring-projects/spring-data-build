@@ -9,6 +9,19 @@ This project adheres to the Contributor Covenant link:https://github.com/spring-
 By participating, you are expected to uphold this code.
 Please report unacceptable behavior to spring-code-of-conduct@pivotal.io.
 
+[[using-github-issues]]
+== Using GitHub Issues
+We use GitHub issues to track bugs and enhancements.
+If you have a general usage question please ask on https://stackoverflow.com[Stack Overflow].
+The Spring Data team and the broader community monitor the https://stackoverflow.com/tags/spring-data[`spring-data`] tag.
+
+If you are reporting a bug, please help to speed up problem diagnosis by providing as much information as possible.
+Ideally, that would include a small sample project that reproduces the problem.
+
+== Reporting Security Vulnerabilities
+If you think you have found a security vulnerability in Spring Data please *DO NOT* disclose it publicly until we've had a chance to fix it.
+Please don't report security vulnerabilities using GitHub issues, instead head over to https://spring.io/security-policy and learn how to disclose them responsibly.
+
 [[how-to-contribute]]
 == How to Contribute
 
