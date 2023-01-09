@@ -129,7 +129,7 @@
 		<spring>5.3.25-SNAPSHOT</spring>
 		<spring-hateoas>1.5.2</spring-hateoas>
 		<spring-plugin>2.0.0.RELEASE</spring-plugin>
-		<testcontainers>1.17.5</testcontainers>
+		<testcontainers>1.17.6</testcontainers>
 		<threetenbp>1.6.4</threetenbp>
 		<validation>1.1.0.Final</validation>
 		<vavr>0.10.4</vavr>
