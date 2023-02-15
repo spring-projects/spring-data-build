@@ -464,7 +464,8 @@
 									<projectVersion>${project.version}</projectVersion>
 									<aspectjVersion>${aspectj}</aspectjVersion>
 									<querydslVersion>${querydsl}</querydslVersion>
-									<springDocsUrl>https://docs.spring.io/spring-framework/docs/${spring}/reference/html</springDocsUrl>
+									<springDocsUrl>https://docs.spring.io/spring-framework/docs/${spring}/reference/html/</springDocsUrl>
+									<springJavadocUrl>https://docs.spring.io/spring-framework/docs/${spring}/javadoc-api/</springJavadocUrl>
 									<springVersion>${spring}</springVersion>
 									<releasetrainVersion>${releasetrain}</releasetrainVersion>
 									<allow-uri-read>true</allow-uri-read>
