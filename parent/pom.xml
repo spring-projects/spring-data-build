@@ -120,7 +120,7 @@
 		<logback>1.4.1</logback>
 		<lombok>1.18.20</lombok>
 		<micrometer>1.10.4</micrometer>
-		<micrometer-tracing>1.0.1</micrometer-tracing>
+		<micrometer-tracing>1.0.2</micrometer-tracing>
 		<mockito>5.1.1</mockito>
 		<mockk>1.13.4</mockk>
 		<querydsl>5.0.0</querydsl>
