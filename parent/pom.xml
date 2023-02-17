@@ -141,7 +141,7 @@
 		<webbeans>2.0.27</webbeans>
 
 		<!-- Used in asciidoc reference documentation -->
-		<releasetrain>2023.0.0-M1</releasetrain>
+		<releasetrain>2023.0.0-SNAPSHOT</releasetrain>
 
 		<!-- To be overridden by individual modules -->
 		<java-module-name/>
