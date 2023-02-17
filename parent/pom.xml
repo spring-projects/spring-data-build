@@ -274,7 +274,6 @@
 				<maven.test.skip>true</maven.test.skip>
 				<aspectj.skip>true</aspectj.skip>
 				<maven.install.skip>true</maven.install.skip>
-				<maven.deploy.skip>true</maven.deploy.skip>
 				<skipTests>true</skipTests>
 			</properties>
 
@@ -297,6 +296,14 @@
 						<groupId>org.jetbrains.kotlin</groupId>
 						<artifactId>kotlin-maven-plugin</artifactId>
 						<inherited>false</inherited>
+						<configuration>
+							<skip>true</skip>
+						</configuration>
+					</plugin>
+
+					<plugin>
+						<groupId>org.apache.maven.plugins</groupId>
+						<artifactId>maven-deploy-plugin</artifactId>
 						<configuration>
 							<skip>true</skip>
 						</configuration>
@@ -559,7 +566,6 @@
 				<maven.test.skip>true</maven.test.skip>
 				<aspectj.skip>true</aspectj.skip>
 				<maven.install.skip>true</maven.install.skip>
-				<maven.deploy.skip>true</maven.deploy.skip>
 				<skipTests>true</skipTests>
 			</properties>
 
@@ -582,6 +588,14 @@
 						<groupId>org.jetbrains.kotlin</groupId>
 						<artifactId>kotlin-maven-plugin</artifactId>
 						<inherited>false</inherited>
+						<configuration>
+							<skip>true</skip>
+						</configuration>
+					</plugin>
+
+					<plugin>
+						<groupId>org.apache.maven.plugins</groupId>
+						<artifactId>maven-deploy-plugin</artifactId>
 						<configuration>
 							<skip>true</skip>
 						</configuration>
@@ -1055,7 +1069,7 @@
 				<plugin>
 					<groupId>org.apache.maven.plugins</groupId>
 					<artifactId>maven-deploy-plugin</artifactId>
-					<version>3.0.0-M2</version>
+					<version>3.1.0</version>
 				</plugin>
 
 				<plugin>
@@ -1121,7 +1135,7 @@
 				<plugin>
 					<groupId>org.jfrog.buildinfo</groupId>
 					<artifactId>artifactory-maven-plugin</artifactId>
-					<version>3.4.0</version>
+					<version>3.5.1</version>
 				</plugin>
 
 			</plugins>
