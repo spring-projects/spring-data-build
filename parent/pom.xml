@@ -475,6 +475,7 @@
 									<springDocsUrl>https://docs.spring.io/spring-framework/docs/${spring}/reference/html/</springDocsUrl>
 									<springJavadocUrl>https://docs.spring.io/spring-framework/docs/${spring}/javadoc-api/</springJavadocUrl>
 									<springVersion>${spring}</springVersion>
+									<springHateoasVersion>${spring-hateoas}</springHateoasVersion>
 									<releasetrainVersion>${releasetrain}</releasetrainVersion>
 									<allow-uri-read>true</allow-uri-read>
 									<toclevels>4</toclevels>
