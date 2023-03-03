@@ -141,7 +141,7 @@
 		<webbeans>2.0.27</webbeans>
 
 		<!-- Used in asciidoc reference documentation -->
-		<releasetrain>2022.0.3-SNAPSHOT</releasetrain>
+		<releasetrain>2022.0.3</releasetrain>
 
 		<!-- To be overridden by individual modules -->
 		<java-module-name/>
@@ -281,7 +281,7 @@
 				<dependency>
 					<groupId>org.springframework.data.build</groupId>
 					<artifactId>spring-data-build-resources</artifactId>
-					<version>3.0.3-SNAPSHOT</version>
+					<version>3.0.3</version>
 					<type>zip</type>
 					<optional>true</optional>
 				</dependency>
