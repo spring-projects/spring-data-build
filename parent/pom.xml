@@ -116,14 +116,14 @@
 		<!-- Deprecated: Use junit-vintage-engine and JUnit 4 is included as transitive dependency -->
 		<junit>4.13.2</junit>
 		<junit5>5.9.2</junit5>
-		<kotlin>1.8.20</kotlin>
+		<kotlin>1.8.21</kotlin>
 		<kotlin-coroutines>1.6.4</kotlin-coroutines>
 		<logback>1.4.1</logback>
 		<lombok>1.18.20</lombok>
 		<micrometer>1.11.0-RC1</micrometer>
 		<micrometer-tracing>1.1.0-RC1</micrometer-tracing>
 		<mockito>5.2.0</mockito>
-		<mockk>1.13.4</mockk>
+		<mockk>1.13.5</mockk>
 		<querydsl>5.0.0</querydsl>
 		<reactor>2022.0.6</reactor>
 		<rxjava2>2.2.21</rxjava2>
