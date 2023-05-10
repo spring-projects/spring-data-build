@@ -130,7 +130,7 @@
 		<rxjava3>3.1.6</rxjava3>
 		<smallrye-mutiny>1.6.0</smallrye-mutiny>
 		<slf4j>2.0.2</slf4j>
-		<spring>6.0.9-SNAPSHOT</spring>
+		<spring>6.0.9</spring>
 		<spring-asciidoctor-backends.version>0.0.5</spring-asciidoctor-backends.version>
 		<spring-hateoas>2.1.0</spring-hateoas>
 		<spring-plugin>3.0.0</spring-plugin>
