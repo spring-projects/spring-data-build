@@ -263,11 +263,4 @@
 		<url>https://github.com/spring-projects/spring-data-build/issues</url>
 	</issueManagement>
 
-	<pluginRepositories>
-		<pluginRepository>
-			<id>spring-libs-release</id>
-			<url>https://repo.spring.io/libs-release</url>
-		</pluginRepository>
-	</pluginRepositories>
-
 </project>
