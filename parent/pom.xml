@@ -127,7 +127,7 @@
 		<rxjava3>3.1.6</rxjava3>
 		<smallrye-mutiny>1.4.0</smallrye-mutiny>
 		<slf4j>1.7.32</slf4j>
-		<spring>5.3.27</spring>
+		<spring>5.3.28</spring>
 		<spring-asciidoctor-backends.version>0.0.5</spring-asciidoctor-backends.version>
 		<spring-hateoas>1.5.4</spring-hateoas>
 		<spring-plugin>2.0.0.RELEASE</spring-plugin>
@@ -823,7 +823,7 @@
 		<profile>
 			<id>spring53-next</id>
 			<properties>
-				<spring>5.3.26-SNAPSHOT</spring>
+				<spring>5.3.29-SNAPSHOT</spring>
 			</properties>
 			<repositories>
 				<repository>
