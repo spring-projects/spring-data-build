@@ -1,0 +1,33 @@
+#parse("equalsHelper.vm")
+public boolean equals(##
+#if ($settings.generateFinalParameters)
+  final ##
+#end
+Object $paramName){
+#addEqualsPrologue()
+#if ($fields.size() > 0)
+
+  #addClassInstance()
+
+  #foreach($field in $fields)
+    #if ($field.primitive)
+      #addPrimitiveFieldComparison($field)
+    #elseif ($field.enum)
+      #addPrimitiveFieldComparison($field)
+    #else
+      #addFieldComparison($field)
+    #end
+  #end
+#end
+
+  return true;
+}
+##
+#macro(addPrimitiveFieldComparison $field)
+ if($field.accessor != ${classInstanceName}.$field.accessor) return false;
+#end
+##
+#macro(addFieldComparison $field)
+  if(!ObjectUtils.nullSafeEquals($field.accessor, ${classInstanceName}.$field.accessor)) { return false; }
+#end
+##
