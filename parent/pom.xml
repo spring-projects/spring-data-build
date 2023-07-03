@@ -127,7 +127,7 @@
 		<reactor>2022.0.8</reactor>
 		<rxjava2>2.2.21</rxjava2>
 		<rxjava3>3.1.6</rxjava3>
-		<smallrye-mutiny>1.6.0</smallrye-mutiny>
+		<smallrye-mutiny>1.9.0</smallrye-mutiny>
 		<slf4j>2.0.2</slf4j>
 		<spring>6.1.0-SNAPSHOT</spring>
 		<spring-asciidoctor-backends.version>0.0.5</spring-asciidoctor-backends.version>
