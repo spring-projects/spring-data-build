@@ -118,7 +118,6 @@
 		<kotlin>1.8.21</kotlin>
 		<kotlin-coroutines>1.7.2</kotlin-coroutines>
 		<logback>1.4.1</logback>
-		<lombok>1.18.28</lombok>
 		<micrometer>1.12.0-SNAPSHOT</micrometer>
 		<micrometer-tracing>1.1.2</micrometer-tracing>
 		<mockito>5.4.0</mockito>
@@ -979,14 +978,6 @@
 			<scope>test</scope>
 		</dependency>
 
-		<!-- Lombok -->
-		<dependency>
-			<groupId>org.projectlombok</groupId>
-			<artifactId>lombok</artifactId>
-			<version>${lombok}</version>
-			<scope>test</scope>
-		</dependency>
-
 	</dependencies>
 
 	<build>
@@ -1130,12 +1121,6 @@
 					<groupId>org.codehaus.mojo</groupId>
 					<artifactId>exec-maven-plugin</artifactId>
 					<version>3.1.0</version>
-				</plugin>
-
-				<plugin>
-					<groupId>org.projectlombok</groupId>
-					<artifactId>lombok-maven-plugin</artifactId>
-					<version>1.18.28.0</version>
 				</plugin>
 
 				<plugin>
