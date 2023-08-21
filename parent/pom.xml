@@ -130,6 +130,8 @@
 		<smallrye-mutiny>1.9.0</smallrye-mutiny>
 		<slf4j>2.0.2</slf4j>
 		<spring>6.1.0-M4</spring>
+		<antora.playbook>src/main/antora/antora-playbook.yml</antora.playbook>
+		<spring-antora>0.0.3</spring-antora>
 		<spring-asciidoctor-backends.version>0.0.7</spring-asciidoctor-backends.version>
 		<spring-hateoas>2.2.0-M1</spring-hateoas>
 		<spring-plugin>3.0.0</spring-plugin>
@@ -256,6 +258,118 @@
 						</dependencies>
 					</plugin>
 				</plugins>
+			</build>
+		</profile>
+
+		<profile>
+			<id>antora-process-resources</id>
+			<build>
+				<plugins>
+					<plugin>
+						<groupId>io.spring.maven.antora</groupId>
+						<artifactId>antora-component-version-maven-plugin</artifactId>
+						<executions>
+							<execution>
+								<goals>
+									<goal>antora-component-version</goal>
+								</goals>
+							</execution>
+						</executions>
+					</plugin>
+
+					<plugin>
+						<groupId>org.apache.maven.plugins</groupId>
+						<artifactId>maven-antrun-plugin</artifactId>
+						<executions>
+							<execution>
+								<id>export-properties</id>
+								<phase>generate-resources</phase>
+								<configuration>
+									<target>
+										<loadresource property="spring.short">
+											<concat>${spring}</concat>
+											<filterchain>
+												<replaceregex pattern="([\d]+\.[\d]+)(\..*)" replace="\1" />
+											</filterchain>
+										</loadresource>
+										<loadresource property="springdata.commons.short">
+											<concat>${springdata.commons}</concat>
+											<filterchain>
+												<replaceregex pattern="([\d]+\.[\d]+)(.*)" replace="\1" />
+											</filterchain>
+										</loadresource>
+										<loadresource property="springdata.commons.docs">
+											<concat>${springdata.commons}</concat>
+											<filterchain>
+												<replaceregex pattern="([\d]+\.[\d]+\.[\d]+)(.*)" replace="\1" />
+											</filterchain>
+										</loadresource>
+									</target>
+									<exportAntProperties>true</exportAntProperties>
+								</configuration>
+								<goals>
+									<goal>run</goal>
+								</goals>
+							</execution>
+						</executions>
+					</plugin>
+
+				</plugins>
+			</build>
+		</profile>
+
+		<profile>
+			<id>antora</id>
+
+			<properties>
+				<maven.main.skip>true</maven.main.skip>
+				<maven.test.skip>true</maven.test.skip>
+				<aspectj.skip>true</aspectj.skip>
+				<maven.install.skip>true</maven.install.skip>
+				<skipTests>true</skipTests>
+			</properties>
+			<build>
+
+				<plugins>
+					<!-- force-skip -->
+					<plugin>
+						<groupId>org.jetbrains.kotlin</groupId>
+						<artifactId>kotlin-maven-plugin</artifactId>
+						<inherited>false</inherited>
+						<configuration>
+							<skip>true</skip>
+						</configuration>
+					</plugin>
+
+					<plugin>
+						<groupId>org.apache.maven.plugins</groupId>
+						<artifactId>maven-deploy-plugin</artifactId>
+						<configuration>
+							<skip>true</skip>
+						</configuration>
+					</plugin>
+				</plugins>
+
+				<pluginManagement>
+					<plugins>
+						<plugin>
+							<groupId>io.spring.maven.antora</groupId>
+							<artifactId>antora-maven-plugin</artifactId>
+							<extensions>true</extensions>
+							<configuration>
+								<playbook>${antora.playbook}</playbook>
+							</configuration>
+							<executions>
+								<execution>
+									<goals>
+										<goal>antora</goal>
+									</goals>
+									<phase>compile</phase>
+								</execution>
+							</executions>
+						</plugin>
+					</plugins>
+				</pluginManagement>
 			</build>
 		</profile>
 
@@ -1019,6 +1133,18 @@
 				</plugin>
 
 				<plugin>
+					<groupId>io.spring.maven.antora</groupId>
+					<artifactId>antora-maven-plugin</artifactId>
+					<version>${spring-antora}</version>
+				</plugin>
+
+				<plugin>
+					<groupId>io.spring.maven.antora</groupId>
+					<artifactId>antora-component-version-maven-plugin</artifactId>
+					<version>${spring-antora}</version>
+				</plugin>
+
+				<plugin>
 					<groupId>org.apache.maven.plugins</groupId>
 					<artifactId>maven-antrun-plugin</artifactId>
 					<version>3.1.0</version>
@@ -1083,6 +1209,12 @@
 					<configuration>
 						<useSystemClassLoader>false</useSystemClassLoader>
 					</configuration>
+				</plugin>
+
+				<plugin>
+					<groupId>org.apache.maven.plugins</groupId>
+					<artifactId>maven-resources-plugin</artifactId>
+					<version>3.3.1</version>
 				</plugin>
 
 				<plugin>
