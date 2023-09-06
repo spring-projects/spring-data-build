@@ -1,5 +1,4 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+<?xml version="1.0" encoding="UTF-8" standalone="no"?><project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
 
 	<!--
 
@@ -136,7 +135,7 @@
 		<spring-hateoas>2.2.0-M1</spring-hateoas>
 		<spring-plugin>3.0.0</spring-plugin>
 		<servlet-api>6.0.0</servlet-api>
-		<testcontainers>1.18.3</testcontainers>
+		<testcontainers>1.19.0</testcontainers>
 		<validation>3.0.2</validation>
 		<vavr>0.10.4</vavr>
 		<webbeans>2.0.27</webbeans>
@@ -289,19 +288,19 @@
 										<loadresource property="spring.short">
 											<concat>${spring}</concat>
 											<filterchain>
-												<replaceregex pattern="([\d]+\.[\d]+)(\..*)" replace="\1" />
+												<replaceregex pattern="([\d]+\.[\d]+)(\..*)" replace="\1"/>
 											</filterchain>
 										</loadresource>
 										<loadresource property="springdata.commons.short">
 											<concat>${springdata.commons}</concat>
 											<filterchain>
-												<replaceregex pattern="([\d]+\.[\d]+)(.*)" replace="\1" />
+												<replaceregex pattern="([\d]+\.[\d]+)(.*)" replace="\1"/>
 											</filterchain>
 										</loadresource>
 										<loadresource property="springdata.commons.docs">
 											<concat>${springdata.commons}</concat>
 											<filterchain>
-												<replaceregex pattern="([\d]+\.[\d]+\.[\d]+)(.*)" replace="\1" />
+												<replaceregex pattern="([\d]+\.[\d]+\.[\d]+)(.*)" replace="\1"/>
 											</filterchain>
 										</loadresource>
 									</target>
