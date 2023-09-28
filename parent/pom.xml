@@ -1241,6 +1241,7 @@
 					<includes>
 						<include>**/*Tests.java</include>
 					</includes>
+					<excludes><exclude/></excludes>
 				</configuration>
 			</plugin>
 
@@ -1250,6 +1251,7 @@
 				<configuration>
 					<useFile>false</useFile>
 					<argLine>-Xverify:all</argLine>
+					<excludes><exclude/></excludes>
 				</configuration>
 			</plugin>
 
