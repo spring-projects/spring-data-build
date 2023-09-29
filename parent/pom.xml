@@ -139,7 +139,7 @@
 		<testcontainers>1.19.0</testcontainers>
 		<validation>3.0.2</validation>
 		<vavr>0.10.4</vavr>
-		<webbeans>2.0.27</webbeans>
+		<webbeans>4.0.0</webbeans>
 
 		<!-- Used in asciidoc reference documentation -->
 		<releasetrain>2023.1.0-SNAPSHOT</releasetrain>
@@ -980,63 +980,18 @@
 				<artifactId>jakarta.validation-api</artifactId>
 				<version>${validation}</version>
 			</dependency>
-
-			<!-- OpenWebBeans provides Jakarta EE Artifacts through a classifier -->
-
 			<dependency>
 				<groupId>org.apache.openwebbeans</groupId>
 				<artifactId>openwebbeans-se</artifactId>
-				<classifier>jakarta</classifier>
 				<version>${webbeans}</version>
 				<scope>test</scope>
-				<exclusions>
-					<exclusion>
-						<groupId>org.apache.openwebbeans</groupId>
-						<artifactId>*</artifactId>
-					</exclusion>
-					<exclusion>
-						<groupId>org.apache.geronimo.specs</groupId>
-						<artifactId>*</artifactId>
-					</exclusion>
-				</exclusions>
 			</dependency>
-
 			<dependency>
 				<groupId>org.apache.openwebbeans</groupId>
 				<artifactId>openwebbeans-spi</artifactId>
-				<classifier>jakarta</classifier>
 				<version>${webbeans}</version>
 				<scope>test</scope>
-				<exclusions>
-					<exclusion>
-						<groupId>org.apache.openwebbeans</groupId>
-						<artifactId>*</artifactId>
-					</exclusion>
-					<exclusion>
-						<groupId>org.apache.geronimo.specs</groupId>
-						<artifactId>*</artifactId>
-					</exclusion>
-				</exclusions>
 			</dependency>
-
-			<dependency>
-				<groupId>org.apache.openwebbeans</groupId>
-				<artifactId>openwebbeans-impl</artifactId>
-				<classifier>jakarta</classifier>
-				<version>${webbeans}</version>
-				<scope>test</scope>
-				<exclusions>
-					<exclusion>
-						<groupId>org.apache.openwebbeans</groupId>
-						<artifactId>*</artifactId>
-					</exclusion>
-					<exclusion>
-						<groupId>org.apache.geronimo.specs</groupId>
-						<artifactId>*</artifactId>
-					</exclusion>
-				</exclusions>
-			</dependency>
-
 		</dependencies>
 	</dependencyManagement>
 
