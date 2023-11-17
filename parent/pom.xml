@@ -135,7 +135,7 @@
 		<spring-hateoas>2.1.3</spring-hateoas>
 		<spring-plugin>3.0.0</spring-plugin>
 		<servlet-api>6.0.0</servlet-api>
-		<testcontainers>1.18.3</testcontainers>
+		<testcontainers>1.19.2</testcontainers>
 		<validation>3.0.2</validation>
 		<vavr>0.10.4</vavr>
 		<webbeans>2.0.27</webbeans>
