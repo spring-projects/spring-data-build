@@ -118,7 +118,7 @@
 		<junit5>5.10.1</junit5>
 		<kotlin>1.9.20</kotlin>
 		<kotlin-coroutines>1.7.3</kotlin-coroutines>
-		<logback>1.4.1</logback>
+		<logback>1.4.12</logback>
 		<micrometer>1.12.0</micrometer>
 		<micrometer-tracing>1.2.0</micrometer-tracing>
 		<mockito>5.5.0</mockito>
