@@ -142,7 +142,7 @@
 		<webbeans>4.0.1</webbeans>
 
 		<!-- Used in asciidoc reference documentation -->
-		<releasetrain>2023.1.1</releasetrain>
+		<releasetrain>2023.1.2-SNAPSHOT</releasetrain>
 
 		<!-- To be overridden by individual modules -->
 		<java-module-name/>
@@ -1424,8 +1424,20 @@
 	</build>
 
 	<repositories>
-		
-		
+		<repository>
+			<id>spring-snapshot</id>
+			<url>https://repo.spring.io/snapshot</url>
+			<snapshots>
+				<enabled>true</enabled>
+			</snapshots>
+			<releases>
+				<enabled>false</enabled>
+			</releases>
+		</repository>
+		<repository>
+			<id>spring-milestone</id>
+			<url>https://repo.spring.io/milestone</url>
+		</repository>
 	</repositories>
 
 </project>
