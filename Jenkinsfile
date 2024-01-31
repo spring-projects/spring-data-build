@@ -85,7 +85,7 @@ pipeline {
 								"-Dartifactory.password=${ARTIFACTORY_PSW} " +
 								"-Dartifactory.staging-repository=${p['artifactory.repository.snapshot']} " +
 								"-Dartifactory.build-name=spring-data-build " +
-								"-Dartifactory.build-number=spring-data-build-commercial-3.1.x-build-${BUILD_NUMBER} " +
+								"-Dartifactory.build-number=spring-data-build-${BRANCH_NAME}-build-${BUILD_NUMBER} " +
 								"-Dmaven.test.skip=true clean deploy -B -U"
 					}
 				}
