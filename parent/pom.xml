@@ -648,7 +648,7 @@
 										</deployProperties>
 										<buildInfo>
 											<!-- Retain only a single build -->
-											<buildName>Spring Data Docs ${dist.id} ${project.version}</buildName>
+											<buildName>${dist.id}-docs-${project.version}</buildName>
 											<buildRetentionCount>1</buildRetentionCount>
 										</buildInfo>
 										<publisher>
@@ -850,7 +850,7 @@
 										</deployProperties>
 										<buildInfo>
 											<!-- Retain only a single build -->
-											<buildName>Spring Data Schema ${dist.id} ${project.version}</buildName>
+											<buildName>${dist.id}-schema-${project.version}</buildName>
 											<buildRetentionCount>1</buildRetentionCount>
 										</buildInfo>
 										<publisher>
