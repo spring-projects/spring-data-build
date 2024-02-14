@@ -650,6 +650,7 @@
 											<!-- Retain only a single build -->
 											<buildName>${dist.id}-docs-${project.version}</buildName>
 											<buildRetentionCount>1</buildRetentionCount>
+											<buildUrl>{{BUILD_URL}}</buildUrl>
 										</buildInfo>
 										<publisher>
 											<contextUrl>{{artifactory.server}}</contextUrl>
@@ -852,6 +853,7 @@
 											<!-- Retain only a single build -->
 											<buildName>${dist.id}-schema-${project.version}</buildName>
 											<buildRetentionCount>1</buildRetentionCount>
+											<buildUrl>{{BUILD_URL}}</buildUrl>
 										</buildInfo>
 										<publisher>
 											<contextUrl>{{artifactory.server}}</contextUrl>
