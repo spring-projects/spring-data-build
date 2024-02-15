@@ -138,7 +138,7 @@
 		<testcontainers>1.19.5</testcontainers>
 		<validation>3.0.2</validation>
 		<vavr>0.10.4</vavr>
-		<webbeans>4.0.0</webbeans>
+		<webbeans>4.0.2</webbeans>
 
 		<!-- Used in asciidoc reference documentation -->
 		<releasetrain>2023.2.0-SNAPSHOT</releasetrain>
