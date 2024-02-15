@@ -124,7 +124,7 @@
 		<mockito>5.5.0</mockito>
 		<mockk>1.13.7</mockk>
 		<querydsl>5.1.0</querydsl>
-		<reactor>2023.0.3-SNAPSHOT</reactor>
+		<reactor>2023.0.3</reactor>
 		<rxjava2>2.2.21</rxjava2>
 		<rxjava3>3.1.8</rxjava3>
 		<smallrye-mutiny>1.10.0</smallrye-mutiny>
