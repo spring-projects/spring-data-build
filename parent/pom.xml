@@ -617,7 +617,6 @@
 										<descriptors>
 											<descriptor>${shared.resources}/assemblies/docs.xml</descriptor>
 										</descriptors>
-										<finalName>${dist.id}</finalName>
 										<appendAssemblyId>true</appendAssemblyId>
 									</configuration>
 								</execution>
@@ -1387,11 +1386,14 @@
 					<header>${project.name}</header>
 					<source>${source.level}</source>
 					<quiet>true</quiet>
-					<javadocVersion>1.8</javadocVersion>
 					<!-- copies doc-files subdirectory which contains image resources -->
 					<docfilessubdirs>true</docfilessubdirs>
 					<doclint>html,reference</doclint>
 					<links>
+						<link>https://docs.spring.io/spring/docs/${spring}/javadoc-api/</link>
+						<link>https://docs.spring.io/spring-data/commons/docs/current/api/</link>
+						<link>https://docs.spring.io/spring-data/keyvalue/docs/current/api/</link>
+						<link>https://docs.spring.io/spring-hateoas/docs/current/api/</link>
 						<link>https://docs.oracle.com/en/java/javase/17/docs/api/</link>
 					</links>
 				</configuration>
