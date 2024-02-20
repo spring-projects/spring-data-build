@@ -1069,29 +1069,6 @@
 			<plugins>
 
 				<plugin>
-					<groupId>org.asciidoctor</groupId>
-					<artifactId>asciidoctor-maven-plugin</artifactId>
-					<version>2.2.3</version>
-					<dependencies>
-						<dependency>
-							<groupId>org.jruby</groupId>
-							<artifactId>jruby</artifactId>
-							<version>9.3.7.0</version>
-						</dependency>
-						<dependency>
-							<groupId>org.asciidoctor</groupId>
-							<artifactId>asciidoctorj</artifactId>
-							<version>2.5.7</version>
-						</dependency>
-						<dependency>
-							<groupId>io.spring.asciidoctor.backends</groupId>
-							<artifactId>spring-asciidoctor-backends</artifactId>
-							<version>${spring-asciidoctor-backends.version}</version>
-						</dependency>
-					</dependencies>
-				</plugin>
-
-				<plugin>
 					<groupId>io.spring.maven.antora</groupId>
 					<artifactId>antora-maven-plugin</artifactId>
 					<version>${spring-antora}</version>
@@ -1112,13 +1089,13 @@
 				<plugin>
 					<groupId>org.apache.maven.plugins</groupId>
 					<artifactId>maven-assembly-plugin</artifactId>
-					<version>3.5.0</version>
+					<version>3.6.0</version>
 				</plugin>
 
 				<plugin>
 					<groupId>org.apache.maven.plugins</groupId>
 					<artifactId>maven-compiler-plugin</artifactId>
-					<version>3.11.0</version>
+					<version>3.12.1</version>
 					<configuration>
 						<forceJavacCompilerUse>true</forceJavacCompilerUse>
 						<parameters>true</parameters>
@@ -1128,7 +1105,7 @@
 				<plugin>
 					<groupId>org.apache.maven.plugins</groupId>
 					<artifactId>maven-checkstyle-plugin</artifactId>
-					<version>3.2.1</version>
+					<version>3.3.1</version>
 					<dependencies>
 						<dependency>
 							<groupId>com.puppycrawl.tools</groupId>
@@ -1146,7 +1123,7 @@
 				<plugin>
 					<groupId>org.apache.maven.plugins</groupId>
 					<artifactId>maven-dependency-plugin</artifactId>
-					<version>3.5.0</version>
+					<version>3.6.1</version>
 				</plugin>
 
 				<plugin>
@@ -1158,13 +1135,13 @@
 				<plugin>
 					<groupId>org.apache.maven.plugins</groupId>
 					<artifactId>maven-enforcer-plugin</artifactId>
-					<version>3.3.0</version>
+					<version>3.4.1</version>
 				</plugin>
 
 				<plugin>
 					<groupId>org.apache.maven.plugins</groupId>
 					<artifactId>maven-failsafe-plugin</artifactId>
-					<version>3.0.0</version>
+					<version>3.2.5</version>
 					<configuration>
 						<useSystemClassLoader>false</useSystemClassLoader>
 					</configuration>
@@ -1185,19 +1162,19 @@
 				<plugin>
 					<groupId>org.apache.maven.plugins</groupId>
 					<artifactId>maven-javadoc-plugin</artifactId>
-					<version>3.4.0</version>
+					<version>3.6.3</version>
 				</plugin>
 
 				<plugin>
 					<groupId>org.apache.maven.plugins</groupId>
 					<artifactId>maven-source-plugin</artifactId>
-					<version>3.2.1</version>
+					<version>3.3.0</version>
 				</plugin>
 
 				<plugin>
 					<groupId>org.apache.maven.plugins</groupId>
 					<artifactId>maven-surefire-plugin</artifactId>
-					<version>3.0.0</version>
+					<version>3.2.5</version>
 					<configuration>
 						<useSystemClassLoader>false</useSystemClassLoader>
 					</configuration>
@@ -1206,19 +1183,19 @@
 				<plugin>
 					<groupId>org.codehaus.mojo</groupId>
 					<artifactId>build-helper-maven-plugin</artifactId>
-					<version>3.3.0</version>
+					<version>3.5.0</version>
 				</plugin>
 
 				<plugin>
 					<groupId>org.codehaus.mojo</groupId>
 					<artifactId>exec-maven-plugin</artifactId>
-					<version>3.1.0</version>
+					<version>3.1.1</version>
 				</plugin>
 
 				<plugin>
 					<groupId>org.jfrog.buildinfo</groupId>
 					<artifactId>artifactory-maven-plugin</artifactId>
-					<version>3.6.1</version>
+					<version>3.6.2</version>
 				</plugin>
 
 			</plugins>
@@ -1411,7 +1388,7 @@
 						<configuration>
 							<rules>
 								<requireMavenVersion>
-									<version>3.5.0</version>
+									<version>3.9.0</version>
 								</requireMavenVersion>
 								<requireJavaVersion>
 									<version>17</version>
