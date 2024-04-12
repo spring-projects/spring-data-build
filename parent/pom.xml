@@ -133,7 +133,7 @@
 		<antora.playbook>src/main/antora/antora-playbook.yml</antora.playbook>
 		<spring-antora>0.0.3</spring-antora>
 		<spring-asciidoctor-backends.version>0.0.7</spring-asciidoctor-backends.version>
-		<spring-hateoas>2.2.1</spring-hateoas>
+		<spring-hateoas>2.2.2</spring-hateoas>
 		<spring-plugin>3.0.0</spring-plugin>
 		<servlet-api>6.0.0</servlet-api>
 		<testcontainers>1.19.7</testcontainers>
