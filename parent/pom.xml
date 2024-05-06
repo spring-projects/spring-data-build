@@ -108,7 +108,7 @@
 		<jackson>2.17.0</jackson>
 		<jakarta-annotation-api>2.0.0</jakarta-annotation-api>
 		<jaxb>3.0.1</jaxb>
-		<jacoco>0.8.11</jacoco>
+		<jacoco>0.8.12</jacoco>
 		<jmolecules>1.9.0</jmolecules>
 		<jmolecules-integration>0.17.0</jmolecules-integration>
 		<jsonpath>2.6.0</jsonpath>
