@@ -30,12 +30,14 @@ pipeline {
 			}
 			steps {
 				script {
-					docker.image(p['docker.java.main.image']).inside(p['docker.java.inside.basic']) {
-						sh 'MAVEN_OPTS="-Duser.name=' + "${p['jenkins.user.name']}" + ' -Duser.home=/tmp/jenkins-home" ' +
-							"DEVELOCITY_CACHE_USERNAME=${DEVELOCITY_CACHE_USR} " +
-							"DEVELOCITY_CACHE_PASSWORD=${DEVELOCITY_CACHE_PSW} " +
-							"GRADLE_ENTERPRISE_ACCESS_KEY=${DEVELOCITY_ACCESS_KEY} " +
-							"./mvnw -s settings.xml clean dependency:list verify -Dsort -B"
+					docker.withRegistry(p['docker.proxy.registry'], p['docker.proxy.credentials']) {
+						docker.image(p['docker.java.main.image']).inside(p['docker.java.inside.basic']) {
+							sh 'MAVEN_OPTS="-Duser.name=' + "${p['jenkins.user.name']}" + ' -Duser.home=/tmp/jenkins-home" ' +
+								"DEVELOCITY_CACHE_USERNAME=${DEVELOCITY_CACHE_USR} " +
+								"DEVELOCITY_CACHE_PASSWORD=${DEVELOCITY_CACHE_PSW} " +
+								"GRADLE_ENTERPRISE_ACCESS_KEY=${DEVELOCITY_ACCESS_KEY} " +
+								"./mvnw -s settings.xml clean dependency:list verify -Dsort -B"
+						}
 					}
 				}
 			}
@@ -62,12 +64,14 @@ pipeline {
 					}
 					steps {
 						script {
-							docker.image(p['docker.java.next.image']).inside(p['docker.java.inside.basic']) {
-								sh 'MAVEN_OPTS="-Duser.name=' + "${p['jenkins.user.name']}" + ' -Duser.home=/tmp/jenkins-home" ' +
-									"DEVELOCITY_CACHE_USERNAME=${DEVELOCITY_CACHE_USR} " +
-									"DEVELOCITY_CACHE_PASSWORD=${DEVELOCITY_CACHE_PSW} " +
-									"GRADLE_ENTERPRISE_ACCESS_KEY=${DEVELOCITY_ACCESS_KEY} " +
-									"./mvnw -s settings.xml clean dependency:list verify -Dsort -B"
+							docker.withRegistry(p['docker.proxy.registry'], p['docker.proxy.credentials']) {
+								docker.image(p['docker.java.next.image']).inside(p['docker.java.inside.basic']) {
+									sh 'MAVEN_OPTS="-Duser.name=' + "${p['jenkins.user.name']}" + ' -Duser.home=/tmp/jenkins-home" ' +
+										"DEVELOCITY_CACHE_USERNAME=${DEVELOCITY_CACHE_USR} " +
+										"DEVELOCITY_CACHE_PASSWORD=${DEVELOCITY_CACHE_PSW} " +
+										"GRADLE_ENTERPRISE_ACCESS_KEY=${DEVELOCITY_ACCESS_KEY} " +
+										"./mvnw -s settings.xml clean dependency:list verify -Dsort -B"
+								}
 							}
 						}
 					}
@@ -89,19 +93,21 @@ pipeline {
 
 			steps {
 				script {
-					docker.image(p['docker.java.main.image']).inside(p['docker.java.inside.basic']) {
-						sh 'MAVEN_OPTS="-Duser.name=' + "${p['jenkins.user.name']}" + ' -Duser.home=/tmp/jenkins-home" ' +
-								"DEVELOCITY_CACHE_USERNAME=${DEVELOCITY_CACHE_USR} " +
-								"DEVELOCITY_CACHE_PASSWORD=${DEVELOCITY_CACHE_PSW} " +
-								"GRADLE_ENTERPRISE_ACCESS_KEY=${DEVELOCITY_ACCESS_KEY} " +
-								"./mvnw -s settings.xml -Pci,artifactory " +
-								"-Dartifactory.server=${p['artifactory.url']} " +
-								"-Dartifactory.username=${ARTIFACTORY_USR} " +
-								"-Dartifactory.password=${ARTIFACTORY_PSW} " +
-								"-Dartifactory.staging-repository=${p['artifactory.repository.snapshot']} " +
-								"-Dartifactory.build-name=spring-data-build " +
-								"-Dartifactory.build-number=spring-data-build-${BRANCH_NAME}-build-${BUILD_NUMBER} " +
-								"-Dmaven.test.skip=true clean deploy -B -U"
+					docker.withRegistry(p['docker.proxy.registry'], p['docker.proxy.credentials']) {
+						docker.image(p['docker.java.main.image']).inside(p['docker.java.inside.basic']) {
+							sh 'MAVEN_OPTS="-Duser.name=' + "${p['jenkins.user.name']}" + ' -Duser.home=/tmp/jenkins-home" ' +
+									"DEVELOCITY_CACHE_USERNAME=${DEVELOCITY_CACHE_USR} " +
+									"DEVELOCITY_CACHE_PASSWORD=${DEVELOCITY_CACHE_PSW} " +
+									"GRADLE_ENTERPRISE_ACCESS_KEY=${DEVELOCITY_ACCESS_KEY} " +
+									"./mvnw -s settings.xml -Pci,artifactory " +
+									"-Dartifactory.server=${p['artifactory.url']} " +
+									"-Dartifactory.username=${ARTIFACTORY_USR} " +
+									"-Dartifactory.password=${ARTIFACTORY_PSW} " +
+									"-Dartifactory.staging-repository=${p['artifactory.repository.snapshot']} " +
+									"-Dartifactory.build-name=spring-data-build " +
+									"-Dartifactory.build-number=spring-data-build-${BRANCH_NAME}-build-${BUILD_NUMBER} " +
+									"-Dmaven.test.skip=true clean deploy -B -U"
+						}
 					}
 				}
 			}
