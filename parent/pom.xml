@@ -100,7 +100,7 @@
 		<apt>1.1.3</apt>
 		<archunit>1.2.0</archunit>
 		<aspectj>1.9.22.1</aspectj>
-		<assertj>3.25.3</assertj>
+		<assertj>3.26.0</assertj>
 		<cdi>4.0.1</cdi>
 		<commons-io>2.5</commons-io>
 		<eclipse-collections>11.0.0</eclipse-collections>
@@ -115,21 +115,21 @@
 		<jsonpath>2.6.0</jsonpath>
 		<!-- Deprecated: Use junit-vintage-engine and JUnit 4 is included as transitive dependency -->
 		<junit>4.13.2</junit>
-		<junit5>5.10.2</junit5>
+		<junit5>5.10.3</junit5>
 		<kotlin>1.9.24</kotlin>
 		<kotlin-coroutines>1.8.1</kotlin-coroutines>
 		<logback>1.4.13</logback>
-		<micrometer>1.13.1</micrometer>
-		<micrometer-tracing>1.3.1</micrometer-tracing>
+		<micrometer>1.14.0-M1</micrometer>
+		<micrometer-tracing>1.4.0-M1</micrometer-tracing>
 		<mockito>5.11.0</mockito>
 		<mockk>1.13.10</mockk>
 		<querydsl>5.1.0</querydsl>
-		<reactor>2023.0.7</reactor>
+		<reactor>2024.0.0-M4</reactor>
 		<rxjava2>2.2.21</rxjava2>
 		<rxjava3>3.1.8</rxjava3>
 		<smallrye-mutiny>1.10.0</smallrye-mutiny>
 		<slf4j>2.0.2</slf4j>
-		<spring>6.1.9</spring>
+		<spring>6.2.0-M6</spring>
 		<antora.playbook>src/main/antora/antora-playbook.yml</antora.playbook>
 		<spring-antora>0.0.3</spring-antora>
 		<spring-asciidoctor-backends.version>0.0.7</spring-asciidoctor-backends.version>
