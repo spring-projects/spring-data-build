@@ -132,6 +132,7 @@
 		<spring>6.1.9</spring>
 		<antora.playbook>src/main/antora/antora-playbook.yml</antora.playbook>
 		<spring-antora>0.0.3</spring-antora>
+		<maven-antora>1.0.0-alpha.4</maven-antora>
 		<spring-asciidoctor-backends.version>0.0.7</spring-asciidoctor-backends.version>
 		<spring-hateoas>2.3.1</spring-hateoas>
 		<spring-plugin>3.0.0</spring-plugin>
@@ -371,6 +372,22 @@
 								</execution>
 							</executions>
 						</plugin>
+						<plugin>
+							<groupId>org.antora</groupId>
+							<artifactId>antora-maven-plugin</artifactId>
+							<extensions>true</extensions>
+							<configuration>
+								<playbook>${antora.playbook}</playbook>
+							</configuration>
+							<executions>
+								<execution>
+									<goals>
+										<goal>antora</goal>
+									</goals>
+									<phase>compile</phase>
+								</execution>
+							</executions>
+						</plugin>
 					</plugins>
 				</pluginManagement>
 			</build>
@@ -489,6 +506,21 @@
 												<include name="**/*.jpg"/>
 											</fileset>
 											<flattenmapper/>
+										</copy>
+									</target>
+								</configuration>
+								<goals>
+									<goal>run</goal>
+								</goals>
+							</execution>
+
+							<execution>
+								<id>copy-javadoc</id>
+								<phase>package</phase>
+								<configuration>
+									<target>
+										<copy todir="${project.root}/target/antora/modules/ROOT/assets/attachments/api/java">
+											<fileset dir="${project.root}/target/site/apidocs" erroronmissingdir="true" />
 										</copy>
 									</target>
 								</configuration>
@@ -1072,6 +1104,12 @@
 					<groupId>io.spring.maven.antora</groupId>
 					<artifactId>antora-maven-plugin</artifactId>
 					<version>${spring-antora}</version>
+				</plugin>
+
+				<plugin>
+					<groupId>org.antora</groupId>
+					<artifactId>antora-maven-plugin</artifactId>
+					<version>${maven-antora}</version>
 				</plugin>
 
 				<plugin>
