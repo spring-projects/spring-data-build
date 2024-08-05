@@ -76,12 +76,10 @@ pipeline {
 				label 'data'
 			}
 			options { timeout(time: 20, unit: 'MINUTES') }
-
 			environment {
 				ARTIFACTORY = credentials("${p['artifactory.credentials']}")
 				DEVELOCITY_ACCESS_KEY = credentials("${p['develocity.access-key']}")
 			}
-
 			steps {
 				script {
 					docker.withRegistry(p['docker.proxy.registry'], p['docker.proxy.credentials']) {
