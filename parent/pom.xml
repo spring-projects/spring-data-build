@@ -121,7 +121,7 @@
 		<micrometer>1.13.2</micrometer>
 		<micrometer-tracing>1.3.2</micrometer-tracing>
 		<mockito>5.11.0</mockito>
-		<mockk>1.13.11</mockk>
+		<mockk>1.13.12</mockk>
 		<querydsl>5.1.0</querydsl>
 		<reactor>2023.0.9-SNAPSHOT</reactor>
 		<rxjava2>2.2.21</rxjava2>
