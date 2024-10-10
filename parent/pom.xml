@@ -120,7 +120,7 @@
 		<logback>1.4.13</logback>
 		<micrometer>1.14.0-M3</micrometer>
 		<micrometer-tracing>1.4.0-M3</micrometer-tracing>
-		<mockito>5.13.0</mockito>
+		<mockito>5.14.1</mockito>
 		<mockk>1.13.12</mockk>
 		<querydsl>5.1.0</querydsl>
 		<reactor>2024.0.0-M6</reactor>
