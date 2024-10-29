@@ -100,8 +100,6 @@
 						</executions>
 					</plugin>
 
-					<!-- Make sure we build on Java 8 with only release dependencies -->
-
 					<plugin>
 						<groupId>org.apache.maven.plugins</groupId>
 						<artifactId>maven-enforcer-plugin</artifactId>

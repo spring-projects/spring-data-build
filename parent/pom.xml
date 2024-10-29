@@ -112,6 +112,7 @@
 		<jacoco>0.8.12</jacoco>
 		<jmolecules>1.9.0</jmolecules>
 		<jmolecules-integration>0.21.0</jmolecules-integration>
+		<jmh>1.37</jmh>
 		<jsonpath>2.6.0</jsonpath>
 		<!-- Deprecated: Use junit-vintage-engine and JUnit 4 is included as transitive dependency -->
 		<junit>4.13.2</junit>
@@ -936,6 +937,24 @@
 			</repositories>
 		</profile>
 
+		<profile>
+			<id>jmh</id>
+			<dependencies>
+				<dependency>
+					<groupId>com.github.mp911de.microbenchmark-runner</groupId>
+					<artifactId>microbenchmark-runner-junit5</artifactId>
+					<version>0.4.0.RELEASE</version>
+					<scope>test</scope>
+				</dependency>
+			</dependencies>
+			<repositories>
+				<repository>
+					<id>jitpack.io</id>
+					<url>https://jitpack.io</url>
+				</repository>
+			</repositories>
+		</profile>
+
 	</profiles>
 
 	<dependencyManagement>
@@ -1025,6 +1044,12 @@
 				<version>${webbeans}</version>
 				<scope>test</scope>
 			</dependency>
+			<dependency>
+				<groupId>org.openjdk.jmh</groupId>
+				<artifactId>jmh-generator-annprocess</artifactId>
+				<scope>test</scope>
+				<version>${jmh}</version>
+			</dependency>
 		</dependencies>
 	</dependencyManagement>
 
@@ -1041,6 +1066,14 @@
 			<groupId>org.junit.vintage</groupId>
 			<artifactId>junit-vintage-engine</artifactId>
 			<scope>test</scope>
+		</dependency>
+
+		<!-- JMH -->
+		<dependency>
+			<groupId>org.openjdk.jmh</groupId>
+			<artifactId>jmh-core</artifactId>
+			<scope>test</scope>
+			<version>${jmh}</version>
 		</dependency>
 
 		<dependency>
@@ -1287,6 +1320,19 @@
 							</sourceDirs>
 						</configuration>
 					</execution>
+					<execution>
+						<id>jmh-compile</id>
+						<phase>test-compile</phase>
+						<goals>
+							<goal>test-compile</goal>
+						</goals>
+						<configuration>
+							<sourceDirs>
+								<sourceDir>${project.basedir}/src/jmh/kotlin</sourceDir>
+								<sourceDir>${project.basedir}/src/jmh/java</sourceDir>
+							</sourceDirs>
+						</configuration>
+					</execution>
 				</executions>
 			</plugin>
 
@@ -1377,6 +1423,18 @@
 				<groupId>org.codehaus.mojo</groupId>
 				<artifactId>build-helper-maven-plugin</artifactId>
 				<executions>
+					<execution>
+						<id>add-jmh-source</id>
+						<phase>generate-test-sources</phase>
+						<goals>
+							<goal>add-test-source</goal>
+						</goals>
+						<configuration>
+							<sources>
+								<source>${project.basedir}/src/jmh/java</source>
+							</sources>
+						</configuration>
+					</execution>
 					<execution>
 						<id>add-kotlin-source</id>
 						<phase>prepare-package</phase>
