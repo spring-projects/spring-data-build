@@ -138,6 +138,37 @@ Upgrading to 2.7 is *not allowed*.
 ** During the milestone phase of a new release train, upgrade to the latest version of a dependency unless compatibility with a former version is required.
 Upgrades to new major versions are allowed, too, but consider ways to support multiple major versions for one release train to allow a smoother transition.
 
+[[advanced.benchmarks]]
+=== Benchmarks
+
+We use JMH for micro-benchmarks.
+
+Our benchmarks are located in the `src/jmh/java` directory so that we compile these as part of our main build. To run benchmarks during development we leverage JUnit 5 and the https://github.com/mp911de/microbenchmark-runner[Microbenchmark Runner].
+Enable the `jmh` Maven Profile, add `@Testable` to the benchmark you want to run (of the benchmark class) and run it as it was a JUnit test right from your IDE.
+
+NOTE: Microbenchmark Runner is not a tool for running final benchmarks, rather it helps to quickly run benchmarks during development to reduce turnaround time.
+
+Benchmarks aren't ran during the build.
+
+JMH's Benchmark Generator (Annotation Processor) must be enabled in each module with the Maven Compiler, see the following example:
+
+[source,xml]
+----
+<plugin>
+    <groupId>org.apache.maven.plugins</groupId>
+    <artifactId>maven-compiler-plugin</artifactId>
+    <configuration>
+        <annotationProcessorPaths>
+            <path>
+                <groupId>org.openjdk.jmh</groupId>
+                <artifactId>jmh-generator-annprocess</artifactId>
+                <version>${jmh}</version>
+            </path>
+        </annotationProcessorPaths>
+    </configuration>
+</plugin>
+----
+
 [[advanced.change-tracking]]
 === Change tracking
 
@@ -192,7 +223,7 @@ Make sure you keep the original author when amending.
 curl $PULL_REQUEST_URL.patch | git am --ignore-whitespace
 ----
 
-* If the you merge back a feature branch and multiple developers contributed to that, try to rearrange to commits and squash the into a single commit per developer.
+* If you merge back a feature branch and multiple developers contributed to that, try to rearrange to commits and squash the into a single commit per developer.
 Combine the commit messages and edit them to make sense.
 * Before pushing the changes to the remote repository, amend the commit(s) to be pushed and add a reference to the pull request to them.
 This will cause the pull request UI in GitHub show and link those commits.
@@ -201,5 +232,5 @@ This will cause the pull request UI in GitHub show and link those commits.
 ----
 …
 
-Original pull request #??
+Original pull request: #??
 ----
