@@ -119,7 +119,7 @@
 		<junit5>5.10.5</junit5>
 		<kotlin>1.9.25</kotlin>
 		<kotlin-coroutines>1.8.1</kotlin-coroutines>
-		<logback>1.4.13</logback>
+		<logback>1.5.12</logback>
 		<micrometer>1.13.7</micrometer>
 		<micrometer-tracing>1.3.6</micrometer-tracing>
 		<mockito>5.12.0</mockito>
@@ -132,7 +132,7 @@
 		<slf4j>2.0.2</slf4j>
 		<spring>6.1.15</spring>
 		<antora.playbook>src/main/antora/antora-playbook.yml</antora.playbook>
-		<spring-antora>0.0.3</spring-antora>
+		<spring-antora>0.0.4</spring-antora>
 		<maven-antora>1.0.0-alpha.4</maven-antora>
 		<spring-asciidoctor-backends.version>0.0.7</spring-asciidoctor-backends.version>
 		<spring-hateoas>2.3.3</spring-hateoas>
@@ -521,7 +521,7 @@
 								<configuration>
 									<target>
 										<copy todir="${project.root}/target/antora/modules/ROOT/assets/attachments/api/java">
-											<fileset dir="${project.root}/target/site/apidocs" erroronmissingdir="true"/>
+											<fileset dir="${project.root}/target/reports/apidocs" erroronmissingdir="true"/>
 										</copy>
 									</target>
 								</configuration>
@@ -1160,13 +1160,13 @@
 				<plugin>
 					<groupId>org.apache.maven.plugins</groupId>
 					<artifactId>maven-assembly-plugin</artifactId>
-					<version>3.6.0</version>
+					<version>3.7.1</version>
 				</plugin>
 
 				<plugin>
 					<groupId>org.apache.maven.plugins</groupId>
 					<artifactId>maven-compiler-plugin</artifactId>
-					<version>3.12.1</version>
+					<version>3.13.0</version>
 					<configuration>
 						<forceJavacCompilerUse>true</forceJavacCompilerUse>
 						<parameters>true</parameters>
@@ -1176,12 +1176,12 @@
 				<plugin>
 					<groupId>org.apache.maven.plugins</groupId>
 					<artifactId>maven-checkstyle-plugin</artifactId>
-					<version>3.3.1</version>
+					<version>3.6.0</version>
 					<dependencies>
 						<dependency>
 							<groupId>com.puppycrawl.tools</groupId>
 							<artifactId>checkstyle</artifactId>
-							<version>10.9.3</version>
+							<version>10.20.1</version>
 						</dependency>
 						<dependency>
 							<groupId>io.spring.nohttp</groupId>
@@ -1194,25 +1194,25 @@
 				<plugin>
 					<groupId>org.apache.maven.plugins</groupId>
 					<artifactId>maven-dependency-plugin</artifactId>
-					<version>3.6.1</version>
+					<version>3.8.1</version>
 				</plugin>
 
 				<plugin>
 					<groupId>org.apache.maven.plugins</groupId>
 					<artifactId>maven-deploy-plugin</artifactId>
-					<version>3.1.1</version>
+					<version>3.1.3</version>
 				</plugin>
 
 				<plugin>
 					<groupId>org.apache.maven.plugins</groupId>
 					<artifactId>maven-enforcer-plugin</artifactId>
-					<version>3.4.1</version>
+					<version>3.5.0</version>
 				</plugin>
 
 				<plugin>
 					<groupId>org.apache.maven.plugins</groupId>
 					<artifactId>maven-failsafe-plugin</artifactId>
-					<version>3.2.5</version>
+					<version>3.5.2</version>
 					<configuration>
 						<useSystemClassLoader>false</useSystemClassLoader>
 					</configuration>
@@ -1227,25 +1227,25 @@
 				<plugin>
 					<groupId>org.apache.maven.plugins</groupId>
 					<artifactId>maven-jar-plugin</artifactId>
-					<version>3.3.0</version>
+					<version>3.4.2</version>
 				</plugin>
 
 				<plugin>
 					<groupId>org.apache.maven.plugins</groupId>
 					<artifactId>maven-javadoc-plugin</artifactId>
-					<version>3.6.3</version>
+					<version>3.11.1</version>
 				</plugin>
 
 				<plugin>
 					<groupId>org.apache.maven.plugins</groupId>
 					<artifactId>maven-source-plugin</artifactId>
-					<version>3.3.0</version>
+					<version>3.3.1</version>
 				</plugin>
 
 				<plugin>
 					<groupId>org.apache.maven.plugins</groupId>
 					<artifactId>maven-surefire-plugin</artifactId>
-					<version>3.2.5</version>
+					<version>3.5.2</version>
 					<configuration>
 						<useSystemClassLoader>false</useSystemClassLoader>
 					</configuration>
@@ -1254,13 +1254,13 @@
 				<plugin>
 					<groupId>org.codehaus.mojo</groupId>
 					<artifactId>build-helper-maven-plugin</artifactId>
-					<version>3.5.0</version>
+					<version>3.6.0</version>
 				</plugin>
 
 				<plugin>
 					<groupId>org.codehaus.mojo</groupId>
 					<artifactId>exec-maven-plugin</artifactId>
-					<version>3.1.1</version>
+					<version>3.5.0</version>
 				</plugin>
 
 				<plugin>
