@@ -144,7 +144,7 @@
 		<webbeans>4.0.3</webbeans>
 
 		<!-- Used in asciidoc reference documentation -->
-		<releasetrain>2025.0.0-SNAPSHOT</releasetrain>
+		<releasetrain>2025.1.0-SNAPSHOT</releasetrain>
 
 		<!-- To be overridden by individual modules -->
 		<java-module-name/>
