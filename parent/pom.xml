@@ -119,7 +119,7 @@
 		<kotlin>1.9.25</kotlin>
 		<kotlin-coroutines>1.8.1</kotlin-coroutines>
 		<logback>1.5.12</logback>
-		<micrometer>1.13.7</micrometer>
+		<micrometer>1.13.9</micrometer>
 		<micrometer-tracing>1.3.7</micrometer-tracing>
 		<mockito>5.12.0</mockito>
 		<mockk>1.13.13</mockk>
