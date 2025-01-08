@@ -95,7 +95,8 @@
 		<source.level>17</source.level>
 		<dist.id>${project.artifactId}</dist.id>
 		<jacoco.destfile>${project.build.directory}/jacoco.exec</jacoco.destfile>
-		<kotlin.api.target>1.7</kotlin.api.target>
+		<kotlin.api.target>2.1</kotlin.api.target>
+		<kotlin.jvm.target>17</kotlin.jvm.target>
 
 		<apt>1.1.3</apt>
 		<archunit>1.3.0</archunit>
@@ -117,8 +118,8 @@
 		<!-- Deprecated: Use junit-vintage-engine and JUnit 4 is included as transitive dependency -->
 		<junit>4.13.2</junit>
 		<junit5>5.12.0</junit5>
-		<kotlin>1.9.25</kotlin>
-		<kotlin-coroutines>1.9.0</kotlin-coroutines>
+		<kotlin>2.1.0</kotlin>
+		<kotlin-coroutines>1.10.1</kotlin-coroutines>
 		<logback>1.5.12</logback>
 		<micrometer>1.15.0-M3</micrometer>
 		<micrometer-tracing>1.5.0-M3</micrometer-tracing>
@@ -1287,6 +1288,8 @@
 				<configuration>
 					<apiVersion>${kotlin.api.target}</apiVersion>
 					<languageVersion>${kotlin.api.target}</languageVersion>
+					<jvmTarget>${kotlin.jvm.target}</jvmTarget>
+					<javaParameters>true</javaParameters>
 					<args>
 						<arg>-Xjsr305=strict</arg>
 						<arg>-Xsuppress-version-warnings</arg>
