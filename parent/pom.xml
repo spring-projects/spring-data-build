@@ -132,7 +132,7 @@
 		<rxjava3>3.1.10</rxjava3>
 		<smallrye-mutiny>1.10.0</smallrye-mutiny>
 		<slf4j>2.0.2</slf4j>
-		<spring>6.2.7</spring>
+		<spring>7.0.0-SNAPSHOT</spring>
 		<antora.playbook>src/main/antora/antora-playbook.yml</antora.playbook>
 		<spring-antora>0.0.4</spring-antora>
 		<maven-antora>1.0.0-alpha.4</maven-antora>
