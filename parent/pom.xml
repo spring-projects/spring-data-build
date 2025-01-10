@@ -97,7 +97,7 @@
 		<kotlin.api.target>1.7</kotlin.api.target>
 
 		<apt>1.1.3</apt>
-		<archunit>1.2.0</archunit>
+		<archunit>1.3.0</archunit>
 		<aspectj>1.9.22.1</aspectj>
 		<assertj>3.27.2</assertj>
 		<cdi>4.0.1</cdi>
