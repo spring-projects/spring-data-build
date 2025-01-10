@@ -68,7 +68,7 @@ Amend the date range in the Apache license header if needed.
 For new types, add the license header (copy from another file and set the current year only).
 7. Make sure you follow the <<commit-messages>> guidelines.
 8. Make sure you provide your full name and an email address registered with your GitHub account.
-If you're a first-time submitter, make sure you have signed the https://cla.pivotal.io/sign/spring[Contributor License Agreement].
+All commits must include a __Signed-off-by__ trailer at the end of each commit message to indicate that the contributor agrees to the Developer Certificate of Origin.
 9. You may sign your commits with a GPG key.
 As we generally cherry-pick commits for merging, it can happen that your signature is replaced by a signature from a maintainer that pushes your changes to the target branches.
 
@@ -208,7 +208,8 @@ For methods consisting of more than one line of code, have a blank line after th
 * Be polite.
 It might be the first time someone contributes to an OpenSource project so we should forgive violations to the contribution guidelines.
 Use some gut feeling to find out in how far it makes sense to ask the reporter to fix stuff or just go ahead and add a polishing commit yourself.
-* Before we accept a non-trivial patch or pull request we will need you to https://cla.pivotal.io/sign/spring[sign the Contributor License Agreement].
+* All commits must include a __Signed-off-by__ trailer at the end of each commit message to indicate that the contributor agrees to the Developer Certificate of Origin.
+For additional details, please refer to the blog post https://spring.io/blog/2025/01/06/hello-dco-goodbye-cla-simplifying-contributions-to-spring[Hello DCO, Goodbye CLA: Simplifying Contributions to Spring].
 Signing the contributor’s agreement does not grant anyone commit rights to the main repository, but it does mean that we can accept your contributions, and you will get an author credit if we do.
 If you forget to do so, you'll be reminded when you submit a pull request.
 * Before merging stuff back into `main`, make sure you rebase the branch.
