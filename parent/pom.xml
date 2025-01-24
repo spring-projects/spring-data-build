@@ -121,10 +121,10 @@
 		<kotlin>2.1.0</kotlin>
 		<kotlin-coroutines>1.10.1</kotlin-coroutines>
 		<logback>1.5.12</logback>
-		<micrometer>1.15.0-M3</micrometer>
-		<micrometer-tracing>1.5.0-M3</micrometer-tracing>
-		<mockito>5.16.0</mockito>
-		<mockk>1.13.17</mockk>
+		<micrometer>1.14.3</micrometer>
+		<micrometer-tracing>1.4.2</micrometer-tracing>
+		<mockito>5.15.2</mockito>
+		<mockk>1.13.14</mockk>
 		<querydsl>5.1.0</querydsl>
 		<reactor>2024.0.4</reactor>
 		<rxjava2>2.2.21</rxjava2>
