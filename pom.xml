@@ -209,7 +209,7 @@
 						<plugin>
 							<groupId>org.sonatype.plugins</groupId>
 							<artifactId>nexus-staging-maven-plugin</artifactId>
-							<version>1.7.0</version>
+							<version>1.6.8</version>
 							<extensions>true</extensions>
 							<configuration>
 								<serverId>sonatype</serverId>
@@ -217,6 +217,13 @@
 								<autoReleaseAfterClose>false</autoReleaseAfterClose>
 								<keepStagingRepositoryOnFailure>true</keepStagingRepositoryOnFailure>
 							</configuration>
+							<dependencies>
+								<dependency>
+									<groupId>com.thoughtworks.xstream</groupId>
+									<artifactId>xstream</artifactId>
+									<version>1.4.15</version>
+								</dependency>
+							</dependencies>
 						</plugin>
 					</plugins>
 
