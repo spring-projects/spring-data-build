@@ -262,7 +262,7 @@
 								<compilerArgs>
 									<arg>-XDcompilePolicy=simple</arg>
 									<arg>--should-stop=ifError=FLOW</arg>
-									<arg>-Xplugin:ErrorProne -XepDisableAllChecks -Xep:NullAway:ERROR -XepOpt:NullAway:OnlyNullMarked=true -XepOpt:NullAway:CustomContractAnnotations=org.springframework.lang.Contract</arg>
+									<arg>-Xplugin:ErrorProne -XepDisableAllChecks -Xep:NullAway:ERROR -XepOpt:NullAway:OnlyNullMarked=true -XepOpt:NullAway:TreatGeneratedAsUnannotated=true -XepOpt:NullAway:CustomContractAnnotations=org.springframework.lang.Contract</arg>
 								</compilerArgs>
 								</configuration>
 							</execution>
