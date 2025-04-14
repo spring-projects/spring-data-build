@@ -120,7 +120,7 @@
 		<!-- Deprecated: Use junit-vintage-engine and JUnit 4 is included as transitive dependency -->
 		<junit>4.13.2</junit>
 		<junit5>5.12.2</junit5>
-		<kotlin>2.1.0</kotlin>
+		<kotlin>2.1.20</kotlin>
 		<kotlin-coroutines>1.10.1</kotlin-coroutines>
 		<logback>1.5.12</logback>
 		<micrometer>1.15.0-SNAPSHOT</micrometer>
