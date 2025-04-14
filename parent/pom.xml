@@ -1,5 +1,4 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+<?xml version="1.0" encoding="UTF-8" standalone="no"?><project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
 
 	<!--
 
@@ -122,7 +121,7 @@
 		<logback>1.5.12</logback>
 		<micrometer>1.15.0-M3</micrometer>
 		<micrometer-tracing>1.5.0-M3</micrometer-tracing>
-		<mockito>5.16.0</mockito>
+		<mockito>5.17.0</mockito>
 		<mockk>1.13.17</mockk>
 		<querydsl>5.1.0</querydsl>
 		<reactor>2024.0.5-SNAPSHOT</reactor>
