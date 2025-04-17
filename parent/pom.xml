@@ -140,7 +140,7 @@
 		<maven-antora>1.0.0-alpha.4</maven-antora>
 		<spring-asciidoctor-backends.version>0.0.7</spring-asciidoctor-backends.version>
 		<spring-hateoas>3.0.0-SNAPSHOT</spring-hateoas>
-		<spring-plugin>4.0.0-SNAPSHOT</spring-plugin>
+		<spring-plugin>4.0.0-M1</spring-plugin>
 		<servlet-api>6.0.0</servlet-api>
 		<testcontainers>1.20.6</testcontainers>
 		<validation>3.0.2</validation>
