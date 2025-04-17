@@ -1526,7 +1526,7 @@
 					<docfilessubdirs>true</docfilessubdirs>
 					<doclint>html,reference</doclint>
 					<links>
-						<link>https://docs.spring.io/spring-framework/docs/${spring}/javadoc-api/</link>
+						<link>https://docs.spring.io/spring-framework/docs/7.0.0-M3/javadoc-api/</link>
 						<link>https://docs.spring.io/spring-data/commons/docs/current/api/</link>
 						<link>https://docs.spring.io/spring-data/keyvalue/docs/current/api/</link>
 						<link>https://docs.spring.io/spring-hateoas/docs/current/api/</link>
