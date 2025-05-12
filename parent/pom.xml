@@ -113,7 +113,7 @@
 		<jaxb>3.0.1</jaxb>
 		<jacoco>0.8.13</jacoco>
 		<jmolecules>1.9.0</jmolecules>
-		<jmolecules-integration>0.21.0</jmolecules-integration>
+		<jmolecules-integration>0.26.0</jmolecules-integration>
 		<jmh>1.37</jmh>
 		<jsonpath>2.6.0</jsonpath>
 		<!-- Deprecated: Use junit-vintage-engine and JUnit 4 is included as transitive dependency -->
