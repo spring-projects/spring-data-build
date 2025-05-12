@@ -1295,7 +1295,7 @@
 				<plugin>
 					<groupId>org.apache.maven.plugins</groupId>
 					<artifactId>maven-javadoc-plugin</artifactId>
-					<version>3.11.1</version>
+					<version>3.11.2</version>
 				</plugin>
 
 				<plugin>
@@ -1522,6 +1522,18 @@
 					<header>${project.name}</header>
 					<source>${source.level}</source>
 					<quiet>true</quiet>
+					<tags>
+						<tag>
+							<name>soundtrack</name>
+							<placement>X</placement>
+							<head></head>
+						</tag>
+						<tag>
+							<name>currentBook</name>
+							<placement>X</placement>
+							<head></head>
+						</tag>
+					</tags>
 					<!-- copies doc-files subdirectory which contains image resources -->
 					<docfilessubdirs>true</docfilessubdirs>
 					<doclint>html,reference</doclint>
