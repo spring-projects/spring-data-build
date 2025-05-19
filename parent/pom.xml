@@ -1521,7 +1521,7 @@
 					<locale>en_US</locale>
 					<breakiterator>true</breakiterator>
 					<header>${project.name}</header>
-					<source>${source.level}</source>
+					<release>${source.level}</release>
 					<quiet>true</quiet>
 					<tags>
 						<tag>
