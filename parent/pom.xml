@@ -1522,6 +1522,7 @@
 					<breakiterator>true</breakiterator>
 					<header>${project.name}</header>
 					<release>${source.level}</release>
+					<legacyMode>true</legacyMode> <!-- don't even get me started on module-path -->
 					<quiet>true</quiet>
 					<tags>
 						<tag>
