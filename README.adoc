@@ -1,4 +1,4 @@
-= Spring Data Build Infrastructure image:https://jenkins.spring.io/buildStatus/icon?job=spring-data-build%2Fmain&subject=Build[link=https://jenkins.spring.io/view/SpringData/job/spring-data-build/] image:https://img.shields.io/badge/Revved%20up%20by-Develocity-06A0CE?logo=Gradle&labelColor=02303A["Revved up by Develocity", link="https://ge.spring.io/scans?search.rootProjectNames=Spring Data Build"]
+= Spring Data Build Infrastructure image:https://img.shields.io/badge/Revved%20up%20by-Develocity-06A0CE?logo=Gradle&labelColor=02303A["Revved up by Develocity", link="https://ge.spring.io/scans?search.rootProjectNames=Spring Data Build"]
 
 This repository contains common infrastructure to be used by Spring Data modules that build with Maven. It consists of a _resources_ project that bundles up resources that are needed during the build CSS for reference documentation generation and JavaDoc. The second project is _parent_ that can be used as parent project to pre-configure core dependencies, properties, reference documentation generation and most important of all the appropriate distribution assembly.
 
@@ -65,7 +65,7 @@ As an example have a look at the build of https://github.com/spring-projects/spr
 
 === Multi project setup
 
-A multi module setup requires slightly more setup and some structure being set up.
+A multi-module setup requires slightly more setup and some structure being set up.
 
 * The root `pom.xml` needs to configure the `project.type` property to `multi`.
 * Asciidoc documentation sources need to be in the root project.
@@ -83,7 +83,7 @@ As an example have a look at the build of https://github.com/spring-projects/spr
 == Additional build profiles
 
 * `ci` - Packages the JavaDoc as JAR for distribution (needs to be active on the CI server to make sure we distribute JavaDoc as JAR).
-* `distribute` - Creates Asciidoc documentation.
+* `antora` - Creates Antora documentation.
 * `distribute-schema` - Creates schema file distribution.
 * `spring…-next` - Configures the Spring version to be used to be the next Spring Framework snapshot version.
 
