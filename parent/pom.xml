@@ -110,6 +110,7 @@
 		<guava>31.1-jre</guava>
 		<hamcrest>1.3</hamcrest>
 		<jackson>2.19.0</jackson>
+		<jackson3>3.0.0-rc4</jackson3>
 		<jakarta-annotation-api>2.0.0</jakarta-annotation-api>
 		<jaxb>3.0.1</jaxb>
 		<jacoco>0.8.13</jacoco>
@@ -990,17 +991,9 @@
 		<profile>
 			<id>jackson-next</id>
 			<properties>
-				<jackson>2.15.2</jackson>
+				<jackson>2.19.0</jackson>
+				<jackson3>3.0.0</jackson3>
 			</properties>
-			<repositories>
-				<repository>
-					<id>spring-snapshot</id>
-					<url>https://repo.spring.io/snapshot</url>
-					<snapshots>
-						<enabled>true</enabled>
-					</snapshots>
-				</repository>
-			</repositories>
 		</profile>
 
 		<profile>
@@ -1070,6 +1063,13 @@
 				<groupId>com.fasterxml.jackson</groupId>
 				<artifactId>jackson-bom</artifactId>
 				<version>${jackson}</version>
+				<type>pom</type>
+				<scope>import</scope>
+			</dependency>
+			<dependency>
+				<groupId>tools.jackson</groupId>
+				<artifactId>jackson-bom</artifactId>
+				<version>${jackson3}</version>
 				<type>pom</type>
 				<scope>import</scope>
 			</dependency>
