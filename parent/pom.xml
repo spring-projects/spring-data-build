@@ -95,7 +95,7 @@
 		<source.level>17</source.level>
 		<dist.id>${project.artifactId}</dist.id>
 		<jacoco.destfile>${project.build.directory}/jacoco.exec</jacoco.destfile>
-		<kotlin.api.target>2.1</kotlin.api.target>
+		<kotlin.api.target>2.2</kotlin.api.target>
 		<kotlin.jvm.target>17</kotlin.jvm.target>
 
 		<apt>1.1.3</apt>
@@ -120,7 +120,7 @@
 		<jsonpath>2.6.0</jsonpath>
 		<junit5>5.12.2</junit5>
 		<junit-pioneer>2.3.0</junit-pioneer>
-		<kotlin>2.1.20</kotlin>
+		<kotlin>2.2.0</kotlin>
 		<kotlin-coroutines>1.10.2</kotlin-coroutines>
 		<logback>1.5.12</logback>
 		<microbenchmark>0.5.0.RELEASE</microbenchmark>
@@ -1355,6 +1355,7 @@
 						<arg>-Xjsr305=strict</arg>
 						<arg>-Xsuppress-version-warnings</arg>
 						<arg>-opt-in=kotlin.RequiresOptIn</arg>
+						<arg>-Xannotation-default-target=param-property</arg>
 					</args>
 				</configuration>
 				<executions>
