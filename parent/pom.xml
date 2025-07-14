@@ -124,8 +124,8 @@
 		<kotlin-coroutines>1.10.2</kotlin-coroutines>
 		<logback>1.5.12</logback>
 		<microbenchmark>0.6.0.RELEASE</microbenchmark>
-		<micrometer>1.15.1</micrometer>
-		<micrometer-tracing>1.5.1</micrometer-tracing>
+		<micrometer>1.15.2</micrometer>
+		<micrometer-tracing>1.5.2</micrometer-tracing>
 		<mockito>5.17.0</mockito>
 		<mockk>1.14.2</mockk>
 		<nullaway>0.12.4</nullaway>
