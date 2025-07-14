@@ -142,7 +142,7 @@
 		<spring-hateoas>3.0.0-M3</spring-hateoas>
 		<spring-plugin>4.0.0-M1</spring-plugin>
 		<servlet-api>6.0.0</servlet-api>
-		<testcontainers>1.21.0</testcontainers>
+		<testcontainers>1.21.3</testcontainers>
 		<validation>3.0.2</validation>
 		<vavr>0.10.5</vavr>
 		<webbeans>4.0.3</webbeans>
