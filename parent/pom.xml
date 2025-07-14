@@ -126,7 +126,7 @@
 		<micrometer>1.15.2</micrometer>
 		<micrometer-tracing>1.5.2</micrometer-tracing>
 		<mockito>5.18.0</mockito>
-		<mockk>1.14.2</mockk>
+		<mockk>1.14.4</mockk>
 		<nullaway>0.12.4</nullaway>
 		<querydsl>5.1.0</querydsl>
 		<reactor>2025.0.0-SNAPSHOT</reactor>
