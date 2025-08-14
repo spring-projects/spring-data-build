@@ -131,7 +131,7 @@
 		<rxjava3>3.1.11</rxjava3>
 		<smallrye-mutiny>1.10.0</smallrye-mutiny>
 		<slf4j>2.0.2</slf4j>
-		<spring>6.2.9</spring>
+		<spring>6.2.10</spring>
 		<antora.playbook>src/main/antora/antora-playbook.yml</antora.playbook>
 		<spring-antora>0.0.4</spring-antora>
 		<maven-antora>1.0.0-alpha.4</maven-antora>
@@ -909,7 +909,7 @@
 		<profile>
 			<id>spring6-next</id>
 			<properties>
-				<spring>6.2.10-SNAPSHOT</spring>
+				<spring>6.2.11-SNAPSHOT</spring>
 			</properties>
 			<repositories>
 				<repository>
