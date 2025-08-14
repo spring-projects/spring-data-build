@@ -367,7 +367,7 @@
 										<loadresource property="springdata.commons.docs">
 											<concat>${springdata.commons}</concat>
 											<filterchain>
-												<replaceregex pattern="([\d]+\.[\d]+\.[\d]+)(.*)" replace="\1"/>
+												<replaceregex pattern="([\d]+\.[\d]+)(.*)" replace="\1"/>
 											</filterchain>
 										</loadresource>
 										<tstamp>
