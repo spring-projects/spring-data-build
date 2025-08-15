@@ -137,6 +137,8 @@
 		<slf4j>2.0.2</slf4j>
 		<spring>7.0.0-M8</spring>
 		<antora.playbook>src/main/antora/antora-playbook.yml</antora.playbook>
+		<documentation.baseurl>https://docs.spring.io</documentation.baseurl>
+		<documentation.spring-javadoc-url>${documentation.baseurl}/spring-framework/docs/${spring}/javadoc-api</documentation.spring-javadoc-url>
 		<spring-antora>0.0.4</spring-antora>
 		<maven-antora>1.0.0-alpha.4</maven-antora>
 		<spring-asciidoctor-backends.version>0.0.7</spring-asciidoctor-backends.version>
@@ -356,7 +358,7 @@
 										<loadresource property="spring.short">
 											<concat>${spring}</concat>
 											<filterchain>
-												<replaceregex pattern="([\d]+\.[\d]+)(\..*)" replace="\1"/>
+												<replaceregex pattern="([\d]+\.[\d]+)(.*)" replace="\1"/>
 											</filterchain>
 										</loadresource>
 										<loadresource property="springdata.commons.short">
@@ -368,7 +370,7 @@
 										<loadresource property="springdata.commons.docs">
 											<concat>${springdata.commons}</concat>
 											<filterchain>
-												<replaceregex pattern="([\d]+\.[\d]+)(.*)" replace="\1"/>
+												<replaceregex pattern="([\d]+\.[\d]+\.[\d]+)(.*)" replace="\1"/>
 											</filterchain>
 										</loadresource>
 										<tstamp>
@@ -686,8 +688,8 @@
 									<projectVersion>${project.version}</projectVersion>
 									<aspectjVersion>${aspectj}</aspectjVersion>
 									<querydslVersion>${querydsl}</querydslVersion>
-									<springDocsUrl>https://docs.spring.io/spring-framework/docs/${spring}/reference/html/</springDocsUrl>
-									<springJavadocUrl>https://docs.spring.io/spring-framework/docs/${spring}/javadoc-api/</springJavadocUrl>
+									<springDocsUrl>${antora.baseurl}/spring-framework/reference/${spring}</springDocsUrl>
+									<springJavadocUrl>${antora.spring-javadoc-url}/</springJavadocUrl>
 									<springVersion>${spring}</springVersion>
 									<springHateoasVersion>${spring-hateoas}</springHateoasVersion>
 									<releasetrainVersion>${releasetrain}</releasetrainVersion>
@@ -1558,10 +1560,10 @@
 					<docfilessubdirs>true</docfilessubdirs>
 					<doclint>html,reference</doclint>
 					<links>
-						<link>https://docs.spring.io/spring-framework/docs/${spring}/javadoc-api/</link>
-						<link>https://docs.spring.io/spring-data/commons/docs/current/api/</link>
-						<link>https://docs.spring.io/spring-data/keyvalue/docs/current/api/</link>
-						<link>https://docs.spring.io/spring-hateoas/docs/current/api/</link>
+						<link>${documentation.spring-javadoc-url}</link>
+						<link>${documentation.baseurl}/spring-data/commons/docs/current/api/</link>
+						<link>${documentation.baseurl}/spring-data/keyvalue/docs/current/api/</link>
+						<link>${documentation.baseurl}/spring-hateoas/docs/current/api/</link>
 						<link>https://projectreactor.io/docs/core/release/api/</link>
 						<link>https://www.reactive-streams.org/reactive-streams-1.0.4-javadoc/</link>
 						<link>https://reactivex.io/RxJava/3.x/javadoc/</link>
