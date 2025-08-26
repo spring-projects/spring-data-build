@@ -115,7 +115,7 @@
 		<jaxb>3.0.1</jaxb>
 		<jacoco>0.8.13</jacoco>
 		<jmolecules>1.9.0</jmolecules>
-		<jmolecules-integration>0.26.0</jmolecules-integration>
+		<jmolecules-integration>0.29.0-SNAPSHOT</jmolecules-integration>
 		<jmh>1.37</jmh>
 		<jsonpath>2.6.0</jsonpath>
 		<junit5>5.13.1</junit5>
@@ -1602,6 +1602,16 @@
 		<repository>
 			<id>spring-snapshot</id>
 			<url>https://repo.spring.io/snapshot</url>
+			<snapshots>
+				<enabled>true</enabled>
+			</snapshots>
+			<releases>
+				<enabled>false</enabled>
+			</releases>
+		</repository>
+		<repository>
+			<id>central-snapshot</id>
+			<url>https://central.sonatype.com/repository/maven-snapshots/</url>
 			<snapshots>
 				<enabled>true</enabled>
 			</snapshots>
