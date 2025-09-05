@@ -13,7 +13,7 @@
 	Preconfigures the following:
 
 	- Logging dependencies: SLF4j + Commons Logging bridge and Logback as test dependency
-	- Test dependencies: JUnit 5 / Mockito
+	- Test dependencies: JUnit / Mockito
 	- Dependency versions for commonly used dependencies
 
 	-->
@@ -127,7 +127,7 @@
 		<microbenchmark>1.0.0-RC1</microbenchmark>
 		<micrometer>1.16.0-M2</micrometer>
 		<micrometer-tracing>1.6.0-M2</micrometer-tracing>
-		<mockito>5.18.0</mockito>
+		<mockito>5.19.0</mockito>
 		<mockk>1.14.5</mockk>
 		<nullaway>0.12.4</nullaway>
 		<querydsl>5.1.0</querydsl>
