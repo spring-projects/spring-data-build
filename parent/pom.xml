@@ -118,12 +118,13 @@
 		<jmolecules-integration>0.29.0</jmolecules-integration>
 		<jmh>1.37</jmh>
 		<jsonpath>2.6.0</jsonpath>
-		<junit5>5.13.1</junit5>
+		<junit>6.0.0-RC2</junit>
+		<junit5>${junit}</junit5>
 		<junit-pioneer>2.3.0</junit-pioneer>
 		<kotlin>2.2.0</kotlin>
 		<kotlin-coroutines>1.10.2</kotlin-coroutines>
 		<logback>1.5.12</logback>
-		<microbenchmark>0.6.0.RELEASE</microbenchmark>
+		<microbenchmark>1.0.0-RC1</microbenchmark>
 		<micrometer>1.16.0-M2</micrometer>
 		<micrometer-tracing>1.6.0-M2</micrometer-tracing>
 		<mockito>5.18.0</mockito>
@@ -1001,7 +1002,7 @@
 			<dependencies>
 				<dependency>
 					<groupId>com.github.mp911de.microbenchmark-runner</groupId>
-					<artifactId>microbenchmark-runner-junit5</artifactId>
+					<artifactId>microbenchmark-runner-junit</artifactId>
 					<version>${microbenchmark}</version>
 					<scope>test</scope>
 				</dependency>
@@ -1094,7 +1095,7 @@
 			<dependency>
 				<groupId>org.junit</groupId>
 				<artifactId>junit-bom</artifactId>
-				<version>${junit5}</version>
+				<version>${junit}</version>
 				<type>pom</type>
 				<scope>import</scope>
 			</dependency>
