@@ -135,7 +135,7 @@
 		<rxjava3>3.1.11</rxjava3>
 		<smallrye-mutiny>1.10.0</smallrye-mutiny>
 		<slf4j>2.0.2</slf4j>
-		<spring>7.0.0-SNAPSHOT</spring>
+		<spring>7.0.0-M9</spring>
 		<antora.playbook>src/main/antora/antora-playbook.yml</antora.playbook>
 		<documentation.baseurl>https://docs.spring.io</documentation.baseurl>
 		<documentation.spring-javadoc-url>${documentation.baseurl}/spring-framework/docs/${spring}/javadoc-api</documentation.spring-javadoc-url>
