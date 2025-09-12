@@ -120,7 +120,7 @@
 		<junit>6.0.0-RC2</junit>
 		<junit5>${junit}</junit5>
 		<junit-pioneer>2.3.0</junit-pioneer>
-		<kotlin>2.2.10</kotlin>
+		<kotlin>2.2.20</kotlin>
 		<kotlin-coroutines>1.10.2</kotlin-coroutines>
 		<logback>1.5.12</logback>
 		<microbenchmark>1.0.0-RC1</microbenchmark>
