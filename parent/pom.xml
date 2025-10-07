@@ -109,8 +109,8 @@
 		<errorprone>2.36.0</errorprone>
 		<guava>31.1-jre</guava>
 		<hamcrest>1.3</hamcrest>
-		<jackson>2.20.0-rc1</jackson>
-		<jackson3>3.0.0-rc9</jackson3>
+		<jackson>2.20.0</jackson>
+		<jackson3>3.0.0</jackson3>
 		<jakarta-annotation-api>2.0.0</jakarta-annotation-api>
 		<jaxb>3.0.1</jaxb>
 		<jacoco>0.8.13</jacoco>
@@ -992,7 +992,7 @@
 		<profile>
 			<id>jackson-next</id>
 			<properties>
-				<jackson>2.19.0</jackson>
+				<jackson>2.20.0</jackson>
 				<jackson3>3.0.0</jackson3>
 			</properties>
 		</profile>
