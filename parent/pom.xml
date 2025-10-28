@@ -123,7 +123,7 @@
 		<junit-pioneer>2.3.0</junit-pioneer>
 		<kotlin>2.2.20</kotlin>
 		<kotlin-coroutines>1.10.2</kotlin-coroutines>
-		<logback>1.5.12</logback>
+		<logback>1.5.20</logback>
 		<microbenchmark>1.0.0</microbenchmark>
 		<micrometer>1.16.0-RC1</micrometer>
 		<micrometer-tracing>1.6.0-RC1</micrometer-tracing>
@@ -135,7 +135,7 @@
 		<rxjava2>2.2.21</rxjava2>
 		<rxjava3>3.1.12</rxjava3>
 		<smallrye-mutiny>1.10.0</smallrye-mutiny>
-		<slf4j>2.0.2</slf4j>
+		<slf4j>2.0.17</slf4j>
 		<spring>7.0.0-RC1</spring>
 		<antora.playbook>src/main/antora/antora-playbook.yml</antora.playbook>
 		<documentation.baseurl>https://docs.spring.io</documentation.baseurl>
