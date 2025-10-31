@@ -154,11 +154,9 @@
 	</properties>
 
 	<profiles>
-
 		<profile>
 
 			<!-- Profile to be run on the CI server, JARs JavaDocs -->
-
 			<id>ci</id>
 
 			<build>
@@ -214,20 +212,19 @@
 
 				</plugins>
 			</build>
-
 		</profile>
 
-
-		<!--
-			Profile to be run before a release is executed, currently does the following:
-
-			- Prevents third-party snapshot dependencies in projects
-		-->
-
 		<profile>
+			<!--
+				Profile to be run before a release is executed, currently does the following:
+
+				- Prevents third-party snapshot dependencies in projects
+			-->
 			<id>pre-release</id>
+
 			<build>
 				<plugins>
+
 					<plugin>
 						<groupId>org.apache.maven.plugins</groupId>
 						<artifactId>maven-enforcer-plugin</artifactId>
@@ -261,14 +258,18 @@
 							</dependency>
 						</dependencies>
 					</plugin>
+
 				</plugins>
 			</build>
 		</profile>
 
 		<profile>
+
 			<id>antora-process-resources</id>
+
 			<build>
 				<plugins>
+
 					<plugin>
 						<groupId>io.spring.maven.antora</groupId>
 						<artifactId>antora-component-version-maven-plugin</artifactId>
@@ -326,6 +327,7 @@
 		</profile>
 
 		<profile>
+
 			<id>antora</id>
 
 			<properties>
@@ -335,9 +337,10 @@
 				<maven.install.skip>true</maven.install.skip>
 				<skipTests>true</skipTests>
 			</properties>
-			<build>
 
+			<build>
 				<plugins>
+
 					<!-- force-skip -->
 					<plugin>
 						<groupId>org.jetbrains.kotlin</groupId>
@@ -355,10 +358,12 @@
 							<skip>true</skip>
 						</configuration>
 					</plugin>
+
 				</plugins>
 
 				<pluginManagement>
 					<plugins>
+
 						<plugin>
 							<groupId>io.spring.maven.antora</groupId>
 							<artifactId>antora-maven-plugin</artifactId>
@@ -375,6 +380,7 @@
 								</execution>
 							</executions>
 						</plugin>
+
 						<plugin>
 							<groupId>org.antora</groupId>
 							<artifactId>antora-maven-plugin</artifactId>
@@ -391,6 +397,7 @@
 								</execution>
 							</executions>
 						</plugin>
+
 					</plugins>
 				</pluginManagement>
 			</build>
@@ -401,7 +408,6 @@
 			<!--
 				Profile to be activated when building the docs artifacts.
 			-->
-
 			<id>distribute</id>
 
 			<properties>
@@ -424,7 +430,6 @@
 			</dependencies>
 
 			<build>
-
 				<plugins>
 
 					<!-- force-skip -->
@@ -448,7 +453,6 @@
 					<!--
 						Unpacks the content of spring-data-build-resources into the shared resources folder.
 					-->
-
 					<plugin>
 						<groupId>org.apache.maven.plugins</groupId>
 						<artifactId>maven-dependency-plugin</artifactId>
@@ -473,7 +477,6 @@
 					<!--
 						Configures JavaDoc generation.
 					-->
-
 					<plugin>
 						<groupId>org.apache.maven.plugins</groupId>
 						<artifactId>maven-javadoc-plugin</artifactId>
@@ -579,7 +582,6 @@
 						<!--
 							Asciidoctor
 						-->
-
 						<plugin>
 							<groupId>org.asciidoctor</groupId>
 							<artifactId>asciidoctor-maven-plugin</artifactId>
@@ -659,7 +661,6 @@
 						</plugin>
 
 						<!-- Deploy to Artifactory -->
-
 						<plugin>
 							<groupId>org.jfrog.buildinfo</groupId>
 							<artifactId>artifactory-maven-plugin</artifactId>
@@ -698,10 +699,10 @@
 								</execution>
 							</executions>
 						</plugin>
+
 					</plugins>
 				</pluginManagement>
 			</build>
-
 		</profile>
 
 		<profile>
@@ -709,7 +710,6 @@
 			<!--
 				Profile to be activated when building the schema artifacts.
 			-->
-
 			<id>distribute-schema</id>
 
 			<properties>
@@ -732,7 +732,6 @@
 			</dependencies>
 
 			<build>
-
 				<plugins>
 
 					<!-- force-skip -->
@@ -756,7 +755,6 @@
 					<!--
 						Unpacks the content of spring-data-build-resources into the shared resources folder.
 					-->
-
 					<plugin>
 						<groupId>org.apache.maven.plugins</groupId>
 						<artifactId>maven-dependency-plugin</artifactId>
@@ -783,7 +781,6 @@
 						Depended on by the site.xml assembly descriptor.
 						Conditional execution if schemas are present.
 					-->
-
 					<plugin>
 						<groupId>org.apache.maven.plugins</groupId>
 						<artifactId>maven-antrun-plugin</artifactId>
@@ -862,7 +859,6 @@
 					<plugins>
 
 						<!-- Deploy to Artifactory -->
-
 						<plugin>
 							<groupId>org.jfrog.buildinfo</groupId>
 							<artifactId>artifactory-maven-plugin</artifactId>
@@ -901,6 +897,7 @@
 								</execution>
 							</executions>
 						</plugin>
+
 					</plugins>
 				</pluginManagement>
 			</build>
@@ -908,10 +905,12 @@
 		</profile>
 
 		<profile>
+
 			<id>spring6-next</id>
 			<properties>
 				<spring>6.2.11-SNAPSHOT</spring>
 			</properties>
+
 			<repositories>
 				<repository>
 					<id>spring-snapshot</id>
@@ -924,7 +923,9 @@
 		</profile>
 
 		<profile>
+
 			<id>jackson-next</id>
+
 			<properties>
 				<jackson>2.15.2</jackson>
 			</properties>
@@ -940,7 +941,9 @@
 		</profile>
 
 		<profile>
+
 			<id>jmh</id>
+
 			<dependencies>
 				<dependency>
 					<groupId>com.github.mp911de.microbenchmark-runner</groupId>
@@ -949,6 +952,7 @@
 					<scope>test</scope>
 				</dependency>
 			</dependencies>
+
 			<repositories>
 				<repository>
 					<id>jitpack.io</id>
@@ -1132,7 +1136,6 @@
 		-->
 
 		<pluginManagement>
-
 			<plugins>
 
 				<plugin>
@@ -1272,7 +1275,6 @@
 				</plugin>
 
 			</plugins>
-
 		</pluginManagement>
 
 		<plugins>
@@ -1296,6 +1298,7 @@
 					</args>
 				</configuration>
 				<executions>
+
 					<execution>
 						<id>compile</id>
 						<phase>compile</phase>
@@ -1309,6 +1312,7 @@
 							</sourceDirs>
 						</configuration>
 					</execution>
+
 					<execution>
 						<id>test-compile</id>
 						<phase>test-compile</phase>
@@ -1322,6 +1326,7 @@
 							</sourceDirs>
 						</configuration>
 					</execution>
+
 					<execution>
 						<id>jmh-compile</id>
 						<phase>test-compile</phase>
@@ -1335,6 +1340,7 @@
 							</sourceDirs>
 						</configuration>
 					</execution>
+
 				</executions>
 			</plugin>
 
@@ -1346,14 +1352,17 @@
 					<target>${source.level}</target>
 				</configuration>
 				<executions>
+
 					<execution>
 						<id>default-compile</id>
 						<phase>none</phase>
 					</execution>
+
 					<execution>
 						<id>default-testCompile</id>
 						<phase>none</phase>
 					</execution>
+
 					<execution>
 						<id>java-compile</id>
 						<phase>compile</phase>
@@ -1361,6 +1370,7 @@
 							<goal>compile</goal>
 						</goals>
 					</execution>
+
 					<execution>
 						<id>java-test-compile</id>
 						<phase>test-compile</phase>
@@ -1368,6 +1378,7 @@
 							<goal>testCompile</goal>
 						</goals>
 					</execution>
+
 				</executions>
 			</plugin>
 
@@ -1425,6 +1436,7 @@
 				<groupId>org.codehaus.mojo</groupId>
 				<artifactId>build-helper-maven-plugin</artifactId>
 				<executions>
+
 					<execution>
 						<id>add-jmh-source</id>
 						<phase>generate-test-sources</phase>
@@ -1437,6 +1449,7 @@
 							</sources>
 						</configuration>
 					</execution>
+
 					<execution>
 						<id>add-kotlin-source</id>
 						<phase>prepare-package</phase>
@@ -1449,6 +1462,7 @@
 							</sources>
 						</configuration>
 					</execution>
+
 				</executions>
 			</plugin>
 
