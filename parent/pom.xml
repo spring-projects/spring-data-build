@@ -105,7 +105,7 @@
 		<eclipse-collections>11.0.0</eclipse-collections>
 		<guava>31.1-jre</guava>
 		<hamcrest>1.3</hamcrest>
-		<jackson>2.18.4.1</jackson>
+		<jackson>2.18.5</jackson>
 		<jakarta-annotation-api>2.0.0</jakarta-annotation-api>
 		<jaxb>3.0.1</jaxb>
 		<jacoco>0.8.14</jacoco>
