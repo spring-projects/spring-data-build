@@ -131,7 +131,7 @@
 		<mockk>1.14.6</mockk>
 		<nullaway>0.12.4</nullaway>
 		<querydsl>5.1.0</querydsl>
-		<reactor>2025.0.0-SNAPSHOT</reactor>
+		<reactor>2025.0.0</reactor>
 		<rxjava2>2.2.21</rxjava2>
 		<rxjava3>3.1.12</rxjava3>
 		<smallrye-mutiny>1.10.0</smallrye-mutiny>
