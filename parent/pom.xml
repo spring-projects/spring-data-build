@@ -142,7 +142,7 @@
 		<spring-antora>0.0.4</spring-antora>
 		<maven-antora>1.0.0-alpha.4</maven-antora>
 		<spring-asciidoctor-backends.version>0.0.7</spring-asciidoctor-backends.version>
-		<spring-hateoas>3.0.0-RC2</spring-hateoas>
+		<spring-hateoas>3.0.0</spring-hateoas>
 		<spring-plugin>4.0.0</spring-plugin>
 		<servlet-api>6.0.0</servlet-api>
 		<testcontainers>2.0.1</testcontainers>
