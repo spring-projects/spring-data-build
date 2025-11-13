@@ -131,7 +131,7 @@
 		<rxjava3>3.1.12</rxjava3>
 		<smallrye-mutiny>1.10.0</smallrye-mutiny>
 		<slf4j>2.0.17</slf4j>
-		<spring>6.2.12</spring>
+		<spring>6.2.13</spring>
 		<antora.playbook>src/main/antora/antora-playbook.yml</antora.playbook>
 		<documentation.baseurl>https://docs.spring.io</documentation.baseurl>
 		<documentation.spring-javadoc-url>${documentation.baseurl}/spring-framework/docs/${spring}/javadoc-api</documentation.spring-javadoc-url>
