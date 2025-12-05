@@ -18,7 +18,9 @@ If you have a general usage question, please ask on https://stackoverflow.com[St
 The Spring Data team and the broader community monitor the https://stackoverflow.com/tags/spring-data[`spring-data`] tag.
 
 If you are reporting a bug, please help to speed up problem diagnosis by providing as much information as possible.
-Ideally, that would include a small sample project that reproduces the problem.
+For non-trivial bugs provide a [Minimimal Reproducable Example](https://stackoverflow.com/help/minimal-reproducible-example), preferable as a Github repository. Make sure to include the database, either as an in memory database or if that is not possible using [Testcontainers](https://www.testcontainers.org/).
+The preferred build tool is Maven.
+The preferred language is Java.
 
 == Reporting Security Vulnerabilities
 
