@@ -18,10 +18,11 @@ If you have a general usage question, please ask on https://stackoverflow.com[St
 The Spring Data team and the broader community monitor the https://stackoverflow.com/tags/spring-data[`spring-data`] tag.
 
 If you are reporting a bug, please help to speed up problem diagnosis by providing as much information as possible.
-For non-trivial bugs provide a [Minimimal Reproducable Example](https://stackoverflow.com/help/minimal-reproducible-example), preferable as a Github repository. Make sure to include the database, either as an in memory database or if that is not possible using [Testcontainers](https://www.testcontainers.org/).
+For non-trivial bugs provide a [Minimimal Reproducable Example](https://stackoverflow.com/help/minimal-reproducible-example), preferable as a GitHub repository. Make sure to include the database, either as an in memory database or if that is not possible using [Testcontainers](https://www.testcontainers.org/).
 The preferred build tool is Maven.
 The preferred language is Java.
 
+[[security-vulnerabilities]]
 == Reporting Security Vulnerabilities
 
 If you think you have found a security vulnerability in Spring Data, please *DO NOT* disclose it publicly until we've had a chance to fix it.
@@ -29,12 +30,6 @@ Please don't report security vulnerabilities using GitHub issues, instead head o
 
 [[how-to-contribute]]
 == How to Contribute
-
-[[security-vulnerabilities]]
-=== Reporting Security Vulnerabilities
-
-If you think you have found a security vulnerability in Spring Data, please **DO NOT** disclose it publicly until we’ve had a chance to fix it.
-Please don’t report security vulnerabilities using GitHub issues, instead head over to https://pivotal.io/security and learn how to disclose them responsibly.
 
 [[discuss]]
 === Discuss
@@ -122,14 +117,17 @@ Related tickets #??? (optionally refer to related tickets)
 
 === Use of AI
 
-It is ok to use AI to help you shape your contribution.
+LLM's have an answer to almost every input.
+With the emergence of AI, we are evaluating the value of contributions that were created with the help of AI.
+It is not about generating code, we can craft a prompt ourselves after all.
+It is about nuanced balancing of implications and deep understanding of the problem at hand that eventually can result in creating
+code.
 We (hopefully) can't tell the difference anyway.
-You are still responsible for everything you commit, push, submit, or otherwise contribute to this project.
+You are still responsible for everything you commit, push, submit, or otherwise contribute to this project, including that you have not infringed any copyrights.
 
-Unfortunately, we lately encountered an increased amount of contribution where we could tell the difference.
-These suffered from extreme cases of "AI slop".
-Descriptions that could have been a handful sentences stretched for pages and pages.
-Sifting through such documents to find the relevant information is extremely tiring and frustrating.
+Unfortunately, we lately encountered an increased amount of high-content low-quality contributions that is considered AI slop.
+Descriptions that could have been a few sentences stretched for pages and pages.
+Sifting through such prose to find the relevant information is extremely tiring and frustrating.
 
 We will close and reject such contributions with a simple comment and will not engage in further discussion.
 You may, however, create a new PR or issue in a terser format.
@@ -164,7 +162,7 @@ Upgrades to new major versions are allowed, too, but consider ways to support mu
 We use JMH for micro-benchmarks.
 
 Our benchmarks are located in the `src/jmh/java` directory so that we compile these as part of our main build.
-To run benchmarks during development, we leverage JUnit 6 and the https://github.com/mp911de/microbenchmark-runner[Microbenchmark Runner].
+To run benchmarks during development, we leverage JUnit and the https://github.com/mp911de/microbenchmark-runner[Microbenchmark Runner].
 Enable the `jmh` Maven Profile, add `@Testable` to the benchmark you want to run (of the benchmark class) and run it as it was a JUnit test right from your IDE.
 
 NOTE: Microbenchmark Runner is not a tool for running final benchmarks, rather it helps to quickly run benchmarks during development to reduce turnaround time.
