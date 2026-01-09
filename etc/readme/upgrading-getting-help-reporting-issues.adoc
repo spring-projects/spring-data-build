@@ -1,0 +1,29 @@
+[[upgrading]]
+== Upgrading
+
+Instructions for how to upgrade from earlier versions of Spring Data are provided on the project https://github.com/spring-projects/spring-data-commons/wiki[wiki].
+Follow the links in the https://github.com/spring-projects/spring-data-commons/wiki#release-notes[release notes section] to find the version that you want to upgrade to.
+
+[[getting-help]]
+== Getting Help
+
+Having trouble with Spring Data? We’d love to help!
+
+* Check the
+${documentation.reference}[reference documentation], and ${documentation.reference}api/java/[Javadocs].
+* Learn the Spring basics - Spring Data builds on Spring Framework, check the https://spring.io[spring.io] web-site for a wealth of reference documentation.
+If you are just starting out with Spring, try one of the https://spring.io/guides[guides].
+* If you are upgrading, check out the ${project.github.url}/releases[GitHub releases] and the ${project.github.url}/wiki#release-notes[release notes] for "`new and noteworthy`" features.
+* Report bugs with ${project.full-name} at ${project.github.url}/issues[GitHub Issues].
+
+[[reporting-issues]]
+== Reporting Issues
+
+Spring Data uses GitHub as issue tracking system to record bugs and feature requests. If you want to raise an issue, please follow the recommendations below:
+
+* Before you log a bug, please search the
+${project.github.url}/issues[issue tracker] to see if someone has already reported the problem.
+* If the issue doesn’t already exist, ${project.github.url}/issues/new[create a new issue].
+* Please provide as much information as possible with the issue report, we like to know the version of Spring Data that you are using and JVM version.
+* If you need to paste code, or include a stack trace use Markdown +++```+++ escapes before and after your text.
+* Please create a test-case or project that replicates the issue. Attach a link to your code or a compressed file containing your code.

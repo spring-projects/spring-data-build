@@ -1,0 +1,12 @@
+[[building-from-source]]
+== Building from Source
+
+include::https://raw.githubusercontent.com/spring-projects/spring-data-build/refs/heads/main/etc/readme/building-source-intro.adoc[]
+
+[source,bash]
+----
+ $ ./mvnw clean install
+----
+
+include::https://raw.githubusercontent.com/spring-projects/spring-data-build/refs/heads/main/etc/readme/building-source-outro.adoc[]
+

@@ -1,0 +1,30 @@
+[[maven-configuration]]
+=== Maven configuration
+
+Add the Maven dependency:
+
+[source,xml]
+----
+<dependency>
+  <groupId>org.springframework.data</groupId>
+  <artifactId>${project.artifactId}</artifactId>
+  <version>${version}</version>
+</dependency>
+----
+
+If you'd rather like the latest snapshots of the upcoming major version, use our Maven snapshot repository and declare the appropriate dependency version.
+
+[source,xml]
+----
+<dependency>
+  <groupId>org.springframework.data</groupId>
+  <artifactId>${project.artifactId}</artifactId>
+  <version>${version}-SNAPSHOT</version>
+</dependency>
+
+<repository>
+  <id>spring-snapshot</id>
+  <name>Spring Snapshot Repository</name>
+  <url>https://repo.spring.io/snapshot</url>
+</repository>
+----

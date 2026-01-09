@@ -1,0 +1,15 @@
+ifndef::antora-output[]
+:antora-output: target/site/index.html
+endif::[]
+
+[[building-documentation]]
+=== Building reference documentation
+
+Building the documentation builds also the project without running tests.
+
+[source,bash]
+----
+ $ ./mvnw clean install -Pantora
+----
+
+The generated documentation is available from `{antora-output}`.
