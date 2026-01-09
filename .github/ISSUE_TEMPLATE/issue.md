@@ -31,6 +31,12 @@ diagnose the problem and to verify that we have fixed it.
 Please start by describing the problem that you are trying to solve. There may already
 be a solution, or there may be a way to solve it that you hadn't considered.
 
+The more effort you put into describing your concern, the easier it will be for us to
+review and accept them and the more likely we are to do so quickly.
+Keep your description focused and avoid excessive summarization or bloated explanations
+so that we can quickly understand the essence of your request.
+
+
 TIP: You can always edit your issue if it isn't formatted correctly.
      See https://guides.github.com/features/mastering-markdown 
 -->

@@ -10,17 +10,24 @@ This project adheres to the Contributor Covenant link:https://github.com/spring-
 By participating, you are expected to uphold this code.
 Please report unacceptable behavior to spring-code-of-conduct@pivotal.io.
 
+Our community is based on mutual respect and consideration. We are using English as the common language for communication.
+If English is not your native language, don't be afraid to ask for help in case you have difficulties expressing yourself.
+
+We are establishing these rules to communicate effectively:
+
+* Be respectful and considerate.
+* When reaching out to us, the more effort you put into describing your concern, the easier it will be for us to review it and the more likely we are able to do so quickly.
+* Keep your description focused and avoid excessive summarization or bloated explanations so that we can understand the essence of your request without working through walls of text.
+
 [[using-github-issues]]
 == Using GitHub Issues
 
 We use GitHub issues to track bugs and enhancements.
-If you have a general usage question, please ask on https://stackoverflow.com[Stack Overflow].
-The Spring Data team and the broader community monitor the https://stackoverflow.com/tags/spring-data[`spring-data`] tag.
+If you have a general usage question, please ask on https://stackoverflow.com/tags/spring-data[`spring-data`].
 
 If you are reporting a bug, please help to speed up problem diagnosis by providing as much information as possible.
 For non-trivial bugs provide a [Minimimal Reproducable Example](https://stackoverflow.com/help/minimal-reproducible-example), preferable as a GitHub repository. Make sure to include the database, either as an in memory database or if that is not possible using [Testcontainers](https://www.testcontainers.org/).
-The preferred build tool is Maven.
-The preferred language is Java.
+The preferred build tool is Maven and our preferred language for bug reports is Java.
 
 [[security-vulnerabilities]]
 == Reporting Security Vulnerabilities
@@ -114,23 +121,6 @@ Original pull request #?? (can be omitted when there's no ticket using Closes #?
 Closes #?? (optionally close tickets)
 Related tickets #??? (optionally refer to related tickets)
 ----
-
-=== Use of AI
-
-LLM's have an answer to almost every input.
-With the emergence of AI, we are evaluating the value of contributions that were created with the help of AI.
-It is not about generating code, we can craft a prompt ourselves after all.
-It is about nuanced balancing of implications and deep understanding of the problem at hand that eventually can result in creating
-code.
-We (hopefully) can't tell the difference anyway.
-You are still responsible for everything you commit, push, submit, or otherwise contribute to this project, including that you have not infringed any copyrights.
-
-Unfortunately, we lately encountered an increased amount of high-content low-quality contributions that is considered AI slop.
-Descriptions that could have been a few sentences stretched for pages and pages.
-Sifting through such prose to find the relevant information is extremely tiring and frustrating.
-
-We will close and reject such contributions with a simple comment and will not engage in further discussion.
-You may, however, create a new PR or issue in a terser format.
 
 [[advanced]]
 == Advanced

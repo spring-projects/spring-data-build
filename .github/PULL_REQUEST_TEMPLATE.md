@@ -28,6 +28,11 @@ please describe the new functionality and why you believe it's useful. If your p
 request relates to any existing issues, please reference them by using the issue number
 prefixed with #.
 
+The more effort you put into describing your concern, the easier it will be for us to
+review and accept them and the more likely we are to do so quickly.
+Keep your description focused and avoid excessive summarization or bloated explanations
+so that we can quickly understand the essence of your request.
+
 A brief description of what else to consider, make sure that:
 - You have read the [Spring Data contribution guidelines](https://github.com/spring-projects/spring-data-build/blob/master/CONTRIBUTING.adoc).
 - You use the code formatters provided [here](https://github.com/spring-projects/spring-data-build/tree/master/etc/ide) and have them applied to your changes. 
