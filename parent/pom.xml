@@ -146,7 +146,7 @@
 		<servlet-api>6.0.0</servlet-api>
 		<testcontainers>2.0.2</testcontainers>
 		<validation>3.0.2</validation>
-		<vavr>0.10.5</vavr>
+		<vavr>0.11.0</vavr>
 		<webbeans>4.0.3</webbeans>
 
 		<!-- Used in asciidoc reference documentation -->
