@@ -8,7 +8,7 @@
 	<parent>
 		<groupId>org.springframework.data.build</groupId>
 		<artifactId>spring-data-build</artifactId>
-		<version>4.0.2-SNAPSHOT</version>
+		<version>4.0.2</version>
 		<relativePath>../pom.xml</relativePath>
 	</parent>
 
