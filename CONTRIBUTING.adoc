@@ -26,7 +26,7 @@ We use GitHub issues to track bugs and enhancements.
 If you have a general usage question, please ask on https://stackoverflow.com/tags/spring-data[`spring-data`].
 
 If you are reporting a bug, please help to speed up problem diagnosis by providing as much information as possible.
-For non-trivial bugs provide a [Minimimal Reproducable Example](https://stackoverflow.com/help/minimal-reproducible-example), preferable as a GitHub repository. Make sure to include the database, either as an in memory database or if that is not possible using [Testcontainers](https://www.testcontainers.org/).
+For non-trivial bugs provide a https://stackoverflow.com/help/minimal-reproducible-example[Minimal Reproducable Example], preferably as a GitHub repository. Make sure to include the database, either as an in memory database or if that is not possible using https://www.testcontainers.org/[Testcontainers].
 The preferred build tool is Maven and our preferred language for bug reports is Java.
 
 [[security-vulnerabilities]]
@@ -205,10 +205,10 @@ Using the GitHub issue number in the commit message will allow us to keep track 
 === Source Code style
 
 This section contains some stuff that the IDE formatters do not enforce.
-Try to keep track of those as well
+Try to keep track of those as well.
 
-* Make sure, your IDE uses `.*` imports for all static ones.
-* Eclipse users should activate Save Actions to format sources on save, organize imports and also enable the standard set of
+* Make sure your IDE uses `.*` imports for all static ones.
+* Eclipse users should activate Save Actions to format sources on save, organize imports and also enable the standard set of profiles
 * For methods only consisting of a single line, don't use any blank lines around the line of code.
 For methods consisting of more than one line of code, have a blank line after the method signature.
 * You can find IDE settings to import at https://github.com/spring-projects/spring-data-build/tree/main/etc/ide[`etc/ide`].
@@ -217,7 +217,7 @@ For methods consisting of more than one line of code, have a blank line after th
 
 * Be polite.
 It might be the first time someone contributes to an OpenSource project, so we should forgive violations to the contribution guidelines.
-Use some gut feeling to find out in how far it makes sense to ask the reporter to fix stuff or just go ahead and add a polishing commit yourself.
+Use some gut feeling to find out whether it makes sense to ask the reporter to fix stuff or just go ahead and add a polishing commit yourself.
 * All commits must include a __Signed-off-by__ trailer at the end of each commit message to indicate that the contributor agrees to the Developer Certificate of Origin.
 For additional details, please refer to the blog post https://spring.io/blog/2025/01/06/hello-dco-goodbye-cla-simplifying-contributions-to-spring[Hello DCO, Goodbye CLA: Simplifying Contributions to Spring].
 Signing the contributor’s agreement does not grant anyone commit rights to the main repository, but it does mean that we can accept your contributions, and you will get an author credit if we do.
@@ -234,7 +234,7 @@ Make sure you keep the original author when amending.
 curl $PULL_REQUEST_URL.patch | git am --ignore-whitespace
 ----
 
-* If you merge back a feature branch and multiple developers contributed to that, try to rearrange to commits and squash them into a single commit per developer.
+* If you merge back a feature branch and multiple developers contributed to that, try to rearrange the commits and squash them into a single commit per developer.
 Combine the commit messages and edit them to make sense.
 * Before pushing the changes to the remote repository, amend the commit(s) to be pushed and add a reference to the pull request to them.
 This will cause the pull request UI in GitHub to show and link those commits.
