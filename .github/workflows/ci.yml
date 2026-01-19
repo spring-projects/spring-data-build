@@ -10,17 +10,18 @@ jobs:
   build-java:
     strategy:
       matrix:
-        java-version: [ 'main', 'next' ]
+        java-version: [ base, main ]
     name: Build project
     runs-on: ubuntu-latest
     steps:
+      - uses: actions/checkout@v6
       - name: Setup Java and Maven
         uses: spring-projects/spring-data-release/actions/setup-maven@main
         with:
           java-version: ${{ matrix.java-version }}
           develocity-access-key: '${{ secrets.DEVELOCITY_ACCESS_KEY }}'
       - name: Build
-        run: ./mvnw -B -U clean verify
+        run: ./mvnw -Dsort -B -U clean dependency:list verify
       - name: Test Summary
         uses: test-summary/action@v2.2
         with:
