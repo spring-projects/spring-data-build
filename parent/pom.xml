@@ -5,8 +5,8 @@
 
 	Global parent pom.xml for Spring Data modules to inherit from.
 
-	- Shared resources are pulled in from the spring-data-build-resources dependency (images, CSS, XSLTs for documentation generation)
-	- Renders reference documentation from Asciidoctor file named index.adoc within src/main/asciidoc
+	- Shared resources are pulled in from the spring-data-build-resources dependency (schema distribution)
+	- Renders reference documentation from Antora within src/main/antora
 	- In the "distribute" profile, an assembly is generated:
 	  - one to be uploaded to static.springsource.org (incl. javadoc (browsable), reference docs as described before)
 
