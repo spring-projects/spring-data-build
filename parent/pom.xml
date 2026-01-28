@@ -137,7 +137,7 @@
 		<documentation.baseurl>https://docs.spring.io</documentation.baseurl>
 		<documentation.spring-javadoc-url>${documentation.baseurl}/spring-framework/docs/${spring}/javadoc-api</documentation.spring-javadoc-url>
 		<spring-antora>0.0.4</spring-antora>
-		<maven-antora>1.0.0-alpha.4</maven-antora>
+		<maven-antora>1.0.0-alpha.5</maven-antora>
 		<spring-asciidoctor-backends.version>0.0.7</spring-asciidoctor-backends.version>
 		<spring-hateoas>2.5.1</spring-hateoas>
 		<spring-plugin>3.0.0</spring-plugin>
@@ -1140,12 +1140,6 @@
 			<plugins>
 
 				<plugin>
-					<groupId>io.spring.maven.antora</groupId>
-					<artifactId>antora-maven-plugin</artifactId>
-					<version>${spring-antora}</version>
-				</plugin>
-
-				<plugin>
 					<groupId>org.antora</groupId>
 					<artifactId>antora-maven-plugin</artifactId>
 					<version>${maven-antora}</version>
@@ -1160,19 +1154,19 @@
 				<plugin>
 					<groupId>org.apache.maven.plugins</groupId>
 					<artifactId>maven-antrun-plugin</artifactId>
-					<version>3.1.0</version>
+					<version>3.2.0</version>
 				</plugin>
 
 				<plugin>
 					<groupId>org.apache.maven.plugins</groupId>
 					<artifactId>maven-assembly-plugin</artifactId>
-					<version>3.7.1</version>
+					<version>3.8.0</version>
 				</plugin>
 
 				<plugin>
 					<groupId>org.apache.maven.plugins</groupId>
 					<artifactId>maven-compiler-plugin</artifactId>
-					<version>3.13.0</version>
+					<version>3.14.1</version>
 					<configuration>
 						<forceJavacCompilerUse>true</forceJavacCompilerUse>
 						<parameters>true</parameters>
@@ -1200,25 +1194,25 @@
 				<plugin>
 					<groupId>org.apache.maven.plugins</groupId>
 					<artifactId>maven-dependency-plugin</artifactId>
-					<version>3.8.1</version>
+					<version>3.9.0</version>
 				</plugin>
 
 				<plugin>
 					<groupId>org.apache.maven.plugins</groupId>
 					<artifactId>maven-deploy-plugin</artifactId>
-					<version>3.1.3</version>
+					<version>3.1.4</version>
 				</plugin>
 
 				<plugin>
 					<groupId>org.apache.maven.plugins</groupId>
 					<artifactId>maven-enforcer-plugin</artifactId>
-					<version>3.5.0</version>
+					<version>3.6.2</version>
 				</plugin>
 
 				<plugin>
 					<groupId>org.apache.maven.plugins</groupId>
 					<artifactId>maven-failsafe-plugin</artifactId>
-					<version>3.5.2</version>
+					<version>3.5.4</version>
 					<configuration>
 						<useSystemClassLoader>false</useSystemClassLoader>
 					</configuration>
@@ -1227,31 +1221,31 @@
 				<plugin>
 					<groupId>org.apache.maven.plugins</groupId>
 					<artifactId>maven-resources-plugin</artifactId>
-					<version>3.3.1</version>
+					<version>3.4.0</version>
 				</plugin>
 
 				<plugin>
 					<groupId>org.apache.maven.plugins</groupId>
 					<artifactId>maven-jar-plugin</artifactId>
-					<version>3.4.2</version>
+					<version>3.5.0</version>
 				</plugin>
 
 				<plugin>
 					<groupId>org.apache.maven.plugins</groupId>
 					<artifactId>maven-javadoc-plugin</artifactId>
-					<version>3.11.1</version>
+					<version>3.12.0</version>
 				</plugin>
 
 				<plugin>
 					<groupId>org.apache.maven.plugins</groupId>
 					<artifactId>maven-source-plugin</artifactId>
-					<version>3.3.1</version>
+					<version>3.4.0</version>
 				</plugin>
 
 				<plugin>
 					<groupId>org.apache.maven.plugins</groupId>
 					<artifactId>maven-surefire-plugin</artifactId>
-					<version>3.5.2</version>
+					<version>3.5.4</version>
 					<configuration>
 						<useSystemClassLoader>false</useSystemClassLoader>
 					</configuration>
@@ -1260,13 +1254,13 @@
 				<plugin>
 					<groupId>org.codehaus.mojo</groupId>
 					<artifactId>build-helper-maven-plugin</artifactId>
-					<version>3.6.0</version>
+					<version>3.6.1</version>
 				</plugin>
 
 				<plugin>
 					<groupId>org.codehaus.mojo</groupId>
 					<artifactId>exec-maven-plugin</artifactId>
-					<version>3.5.0</version>
+					<version>3.6.3</version>
 				</plugin>
 
 				<plugin>
