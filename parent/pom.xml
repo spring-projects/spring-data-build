@@ -125,7 +125,7 @@
 		<microbenchmark>1.0.0</microbenchmark>
 		<micrometer>1.17.0-M1</micrometer>
 		<micrometer-tracing>1.7.0-M2</micrometer-tracing>
-		<mockito>5.20.0</mockito>
+		<mockito>5.21.0</mockito>
 		<mockk>1.14.7</mockk>
 		<nullaway>0.13.1</nullaway>
 		<querydsl>5.1.0</querydsl>
