@@ -1,0 +1,43 @@
+name: Get the CI environment config
+
+description: 'Loads the CI environment configuration into outputs'
+
+outputs:
+  ci-properties:
+    description: 'CI Properties'
+    value: ${{ steps.load-ci-properties.outputs.config }}
+  java-main:
+    description: 'Main Java Version'
+    value: ${{ fromJSON(steps.load-ci-properties.outputs.config).java.main }}
+  java-next:
+    description: 'Next Java Version'
+    value: ${{ fromJSON(steps.load-ci-properties.outputs.config).java.next }}
+  java-dist:
+    description: 'Java Distribution'
+    value: ${{ fromJSON(steps.load-ci-properties.outputs.config).java.dist }}
+
+runs:
+  using: composite
+  steps:
+    - name: Load CI Properties
+      id: load-ci-properties
+      shell: bash
+      run: |
+        if [[ -f "config.json" ]]; then
+          CONFIG_JSON_PATH="./config.json"
+        elif [[ -f ".github/config.json" ]]; then
+          CONFIG_JSON_PATH=".github/config.json"
+        elif [[ -f "ci/config.json" ]]; then
+          CONFIG_JSON_PATH="ci/config.json"
+        else
+          CONFIG_JSON_PATH="${{ github.action_path }}/config.json"
+        fi
+        echo "CONFIG_JSON=$(jq -c . < ${CONFIG_JSON_PATH})" >> $GITHUB_ENV
+        echo "config=$(jq -c . < ${CONFIG_JSON_PATH})" >> $GITHUB_OUTPUT
+    - name: Set Env Variables
+      shell: bash
+      run: |
+        echo "JAVA_MAIN=${{ fromJSON(steps.load-ci-properties.outputs.config).java.main }}" >> "$GITHUB_ENV"
+        echo "JAVA_NEXT=${{ fromJSON(steps.load-ci-properties.outputs.config).java.next }}" >> "$GITHUB_ENV"
+        echo "JAVA_DIST=${{ fromJSON(steps.load-ci-properties.outputs.config).java.dist }}" >> "$GITHUB_ENV"
+        echo "BUILD_USER_NAME=${{ fromJSON(steps.load-ci-properties.outputs.config).build.username }}" >> "$GITHUB_ENV"

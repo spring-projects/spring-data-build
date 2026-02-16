@@ -1,0 +1,37 @@
+name: 'Setup Java JDK and Maven for Develocity usage'
+description: 'Set up a version of the Java JDK and add the command-line tools to the PATH and prepare MAVEN_OPTS environment for Develocity usage'
+
+inputs:
+  java-version:
+    description: 'The Java version to set up. Takes main, next, or a whole or semver Java version.'
+    required: false
+    default: 'main'
+  develocity-access-key:
+    description: 'Develocity access key. Should be set to a secret containing the Develocity Access key.'
+    required: false
+
+runs:
+  using: composite
+  steps:
+    - uses: spring-projects/spring-data-build/actions/setup-java@4.0.x
+      with:
+        java-version: '${{ inputs.java-version }}'
+    - name: Maven Repository Cache
+      uses: actions/cache@v5.0.2
+      with:
+        path: |
+          ~/.m2/repository
+          ~/.m2/wrapper
+        key: ${{ runner.os }}-maven-${{ hashFiles('**/pom.xml') }}
+        restore-keys: |
+          ${{ runner.os }}-maven
+    - name: Setup Develocity Maven Capturing
+      uses: gradle/develocity-actions/setup-maven@1d6b56bc8352f11400f1d802d627dee852b3e946 #v2.1
+      with:
+        develocity-url: 'https://ge.spring.io'
+        develocity-access-key: '${{ inputs.develocity-access-key }}'
+        add-pr-comment: false
+    - name: Set Env Variables
+      shell: bash
+      run: |
+        echo "MAVEN_OPTS=-Duser.name=${{ env.BUILD_USER_NAME }} ${{ env.MAVEN_OPTS }}" >> "$GITHUB_ENV"
