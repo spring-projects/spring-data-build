@@ -1,0 +1,58 @@
+name: 'Artifactory Deploy'
+description: 'Deploy artifacts to Artifactory'
+
+inputs:
+  context-url:
+    description: 'URI of the Artifactory server'
+    required: false
+    default: 'https://repo.spring.io'
+  username:
+    description: 'Artifactory username'
+    required: true
+  password:
+    description: 'Artifactory password'
+    required: true
+  build-name:
+    description: 'Name of the build'
+    required: true
+  build-uri:
+    description: 'URI of the build that produced the artifacts that are to be deployed'
+    required: false
+    default: "${{ format('{0}/{1}/actions/runs/{2}', github.server_url, github.repository, github.run_id) }}"
+  project:
+    description: 'Project in which build info should be stored'
+    required: false
+    default: ''
+  repository:
+    description: 'Artifactory repository to which the artifacts should be deployed'
+    required: false
+    default: 'libs-snapshot-local'
+  skip-tests:
+    description: 'Whether to skip tests during deployment'
+    required: false
+    default: 'false'
+  additional-options:
+    description: 'Additional Maven options to pass during deployment'
+    required: false
+    default: ''
+runs:
+  using: composite
+  steps:
+    - shell: bash
+      run: |
+        ./mvnw -s settings.xml -Pci,artifactory ${{inputs.additional-options}} \
+        -Dartifactory.server="${{inputs.context-url}}" \
+        -Dartifactory.username="${{inputs.username}}" \
+        -Dartifactory.password="${{inputs.password}}" \
+        -Dartifactory.staging-repository="${{inputs.repository}}" \
+        -Dartifactory.project="${{inputs.project}}" \
+        -Dartifactory.build-name="${{inputs.build-name}}" \
+        -Dartifactory.build-number="${{format('{0}-{1}-build-{2}', inputs.build-name, (github.head_ref || github.ref_name), github.run_number )}}" \
+        -DBUILD_URL="${{inputs.build-uri}}" \
+        -Dmaven.test.skip=${{inputs.skip-tests}} -U -B\
+        clean deploy
+    - name: Test Summary
+      uses: spring-projects/spring-data-build/actions/test-summary@3.5.x
+      with:
+        paths: '**/TEST-*.xml'
+      if: always()
