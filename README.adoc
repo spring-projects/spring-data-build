@@ -21,8 +21,6 @@ Shared resources are pulled in from the `spring-data-build-resources` dependency
 - notice.txt
 + reference -> Asciidoc generated reference documentation
   + html
-  + pdf
-  + epub
 + api -> JavaDoc
 ----
 
@@ -47,7 +45,7 @@ If the client project is a project consisting of a single project only all that 
 </parent>
 ----
 
-Be sure to adapt the version number to the latest release version. The second and already last step of the setup is to activate the assembly and asciidoctor plugin in the build section:
+Be sure to adapt the version number to the latest release version. The second and already last step of the setup is to activate the assembly and Antora plugin in the build section:
 
 [source,xml]
 ----
@@ -56,8 +54,8 @@ Be sure to adapt the version number to the latest release version. The second an
 	<artifactId>maven-assembly-plugin</artifactId>
 </plugin>
 <plugin>
-	<groupId>org.asciidoctor</groupId>
-	<artifactId>asciidoctor-maven-plugin</artifactId>
+	<groupId>org.antora</groupId>
+	<artifactId>antora-maven-plugin</artifactId>
 </plugin>
 ----
 
@@ -68,7 +66,7 @@ As an example have a look at the build of https://github.com/spring-projects/spr
 A multi-module setup requires slightly more setup and some structure being set up.
 
 * The root `pom.xml` needs to configure the `project.type` property to `multi`.
-* Asciidoc documentation sources need to be in the root project.
+* Antora documentation sources need to be in the root project (`src/main/antora`).
 * The assembly needs to be build in a dedicated sub-module (e.g. `distribution`), declare the assembly plugin (see single project setup) in that submodule and reconfigure the `project.root` property in that module to `${basedir}/..`.
 * Configure `${dist.id}` in the root project to the basic artifact id (e.g. `spring-data-mongodb`) as this will serve as file name for distribution artifacts, static resources etc. It will default to the artifact id and thus usually resolve to a `…-parent` if not configured properly.
 
@@ -78,12 +76,13 @@ As an example have a look at the build of https://github.com/spring-projects/spr
 
 * Goals to execute `clean (dependency:tree) install -Pci` to run the build
 * Goals to execute `clean deploy -Pci,artifactory` to deploy artifacts to Artifactory
-* A nightly build can then use `clean (dependency:tree) deploy -Pdistribute` to publish reference documentation
+* A nightly build can then use `clean (dependency:tree) deploy -Pantora` to publish reference documentation
 
 == Additional build profiles
 
 * `ci` - Packages the JavaDoc as JAR for distribution (needs to be active on the CI server to make sure we distribute JavaDoc as JAR).
 * `antora` - Creates Antora documentation.
+* `distribute` - Creates Javadoc file distribution.
 * `distribute-schema` - Creates schema file distribution.
 * `spring…-next` - Configures the Spring version to be used to be the next Spring Framework snapshot version.
 

@@ -3,11 +3,11 @@ description: 'Initialize a MongoDB server looking up a configuration managed ver
 
 inputs:
   version:
-    description: 'The desired MongoDB Server version'
+    description: 'Desired MongoDB Server version'
     required: false
     default: 'latest'
   replica-set:
-    description: 'Replica Set Name (if not provided Mongo will be started as a standalone instance)'
+    description: 'Replica Set name (if not provided Mongo will be started as a standalone instance)'
     default: ''
     required: false
 

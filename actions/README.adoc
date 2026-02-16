@@ -1,0 +1,259 @@
+= Spring Data GitHub Actions
+
+This directory contains GitHub Actions for Spring Data projects.
+These actions are used in the CI/CD pipelines of Spring Data projects and can be reused in your own workflows.
+
+== Architecture Design
+
+Actions are designed with daily project maintenance in mind meaning that general configuration of Java and Database versions is provided by an environmental input that can be derived from the action version itself.
+
+[verse]
+It should be easy to maintain the project: Upgrade the Java Version for all branches of a release train.
+
+Generally, Spring projects follow a lifecycle of which the current development version resides on the `main` branch.
+After a GA release, we create a new service branch (`major.minor.x` such as `2.3.x`) as basis for service releases.
+The newly created branch captures the configuration design such as the Java baseline (for compatibility testing) and the Java version used to build the actual artifact.
+Depending on versions, the Java versions could consist of a main version and a next version (for compatibility testing).
+
+== Reusable Actions
+
+=== `maven-build` Action
+
+Composite Action to run a Maven build and publish test results. Requires Java to be set up beforehand, ideally using `setup-java` or `setup-maven`.
+This action activates usage of a `settings.xml` file if it is present in the current working directory (typically the repository root).
+
+.Usage
+====
+[source,yaml]
+----
+- uses: spring-data/spring-data-build/actions/maven-build@main
+  with:
+    # Maven build command. Defaults to the verify goal
+    # Default: './mvnw -Dsort -B -U -Pci clean dependency:list verify'
+    run: ''
+
+    # Additional Maven options to apply during the build. Useful if you want to keep the default command but add additional options.
+    # The final command to run will be constructed as follows: `${{ inputs.run }} ${ADDITIONAL_MAVEN_OPTS} ${{ inputs.additional-options }}`
+    # Default: ''
+    additional-options: ''
+----
+====
+
+*Inputs:*
+
+* `run`: Maven build command. Defaults to the `clean dependency:list verify` goal.
+* `additional-options`: Additional Maven options to apply during the build. Useful if you want to keep the default command but add additional options.
+
+*Outputs:*
+(none)
+
+=== `maven-artifactory-deploy` Action
+
+Composite Action to run a Maven deployment build deploying artifacts to Artifactory and publish test results. Requires Java to be set up beforehand, ideally using `setup-java` or `setup-maven`.
+This action activates usage of a `settings.xml` file if it is present in the current working directory (typically the repository root).
+
+.Usage
+====
+[source,yaml]
+----
+- uses: spring-data/spring-data-build/actions/maven-artifactory-deploy@main
+  with:
+    # URI of the Artifactory server.
+    # Default: 'https://repo.spring.io'
+    context-url: ''
+
+    # Artifactory username.
+    # Required
+    username: ''
+
+    # Artifactory password.
+    # Required
+    password: ''
+
+    # Name of the build to publish to Artifactory.
+    # Required
+    build-name: ''
+
+    # Build URI.
+    # Default: '${{ format('{0}/{1}/actions/runs/{2}', github.server_url, github.repository, github.run_id) }}'
+    build-uri: ''
+
+    # BuildInfo Project in which build info should be stored.
+    # Default: ''
+    project: ''
+
+    # Artifactory repository to which the artifacts should be deployed.
+    # Default: 'libs-snapshot-local'
+    repository: ''
+
+    # Whether to skip tests during deployment
+    # Default: 'false'
+    skip-tests: ''
+
+    # Additional Maven options to apply during the build. Useful if you want to keep the default command but add additional options.
+    # The final command to run will be constructed as follows: `${{ inputs.run }} ${ADDITIONAL_MAVEN_OPTS} ${{ inputs.additional-options }}`
+    # Default: ''
+    additional-options: ''
+----
+====
+
+=== `setup-mongodb` Action
+
+Composite Action to start a MongoDB server using `docker` and expose its port `27017` at `localhost` to the current action run.
+Server versions are resolved through `env-config` and can be overridden by providing the `mongo-version` input. The action also supports starting a MongoDB server in replica set mode by providing a `replica-set` name.
+
+.Usage
+====
+[source,yaml]
+----
+- uses: spring-data/spring-data-build/actions/setup-mongodb@main
+  with:
+    # MongoDB version number. Can be a symbolic version such as '6' or 'latest'
+    mongo-version: ''
+
+    # Name of the replica set to start. If not provided, a standalone MongoDB server will be started.
+    # Default: ''
+    replica-set: ''
+----
+====
+
+*Inputs:*
+
+* `mongo-version`: MongoDB version number. Can be a symbolic version such as `6` or `latest`
+* `replica-set`: Name of the replica set to start. If not provided, a standalone MongoDB server will be started.
+
+*Outputs:*
+(none)
+
+== Building Blocks
+
+=== `env-config` Action
+
+Loads the CI environment configuration into outputs.
+The action obtains the configuration from a https://github.com/spring-projects/spring-data-build/blob/main/actions/env-config/config.json[`config.json`].
+
+The file can be located at one of the following locations (searched in order):
+
+* Repository root (`config.json`)
+* `.github` directory (`.github/config.json`)
+* `ci` directory (`ci/config.json`)
+* Within the `env-config` action (recommended for a single config source across one release train to avoid duplication and maintenance overhead in each branch)
+
+.Usage
+====
+[source,yaml]
+----
+- uses: spring-data/spring-data-build/actions/env-config@main
+----
+====
+
+*Inputs:*
+(none)
+
+*Outputs:*
+
+* `ci-properties`: JSON content of the `config.json` file
+* `java-main`: Main Java version (`.java.main`)
+* `java-next`: Next Java version (`.java.next`)
+* `java-dist`: Java Distribution (`.java.dist`)
+
+*Sets the following Environment Variables:*
+
+* `JAVA_MAIN`
+* `JAVA_NEXT`
+* `JAVA_DIST`
+* `BUILD_USER_NAME` (`.build.username`)
+
+=== `setup-java` Action
+
+Installs Java using the https://github.com/actions/setup-java[`actions/setup-java`] allowing symbolic names derived from `env-config`.
+
+.Usage
+====
+[source,yaml]
+----
+- uses: spring-data/spring-data-build/actions/setup-java@main
+  with:
+    # The Java version to set up. Takes main, next, latest, or a whole or semver Java version.
+    # Default: 'main'
+    java-version: ''
+----
+====
+
+*Inputs:*
+
+* `java-version`: The Java version to set up.
+Takes `main`, `next`, `latest`, or a whole or semver Java version.
+Default: `main`
+
+*Outputs:*
+(none)
+
+=== `setup-maven` Action
+
+Installs Java using the https://github.com/gradle/develocity-actions/tree/main/setup-maven[`gradle/develocity-actions/setup-maven`] and `setup-java` actions allowing symbolic names derived from `env-config`.
+This action also sets up a persistent Cache for Maven dependencies and plugins to avoid downloading them on every GitHub action run.
+
+.Usage
+====
+[source,yaml]
+----
+- uses: spring-data/spring-data-build/actions/setup-maven@main
+  with:
+    # The Java version to set up. Takes main, next, latest, or a whole or semver Java version.
+    # Default: 'main'
+    java-version: ''
+
+    # Develocity Access Key to publish build scans to Develocity. Can remain empty if you don't want to publish build scans.
+    # Default: ''
+    develocity-access-key: ''
+----
+====
+
+*Inputs:*
+
+* `java-version`: The Java version to set up.
+Takes `main`, `next`, `latest`, or a whole or semver Java version.
+Default: `main`
+* `develocity-access-key`: Develocity Access Key to publish build scans to Develocity.
+Can remain empty if you don't want to publish build scans.
+
+*Outputs:*
+(none)
+
+*Sets the following Environment Variables:*
+
+* `MAVEN_OPTS` containing the build username and Maven extension to capture build metrics.
+
+=== `test-summary` Action
+
+Publish a Test Summary.
+Local copy of https://github.com/test-summary/action
+
+.Usage
+====
+[source,yaml]
+----
+- uses: spring-data/spring-data-build/actions/test-summary@main
+  with:
+    # Path(s) to test output file(s) to analyze
+    paths: ''
+
+    # File to write with rendered output.
+    # Default: ''
+    output: ''
+
+    # Types of tests to show in the results table.
+    # Default: ''
+    show: ''
+----
+====
+
+*Inputs:*
+
+* `paths`: Path(s) to test output file(s) to analyze
+* `output`: File to write with rendered output.
+* `show`: Types of tests to show in the results table.
+
+*Outputs:*
+(none)
