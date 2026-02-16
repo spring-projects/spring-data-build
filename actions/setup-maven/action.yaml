@@ -17,7 +17,7 @@ runs:
       with:
         java-version: '${{ inputs.java-version }}'
     - name: Maven Repository Cache
-      uses: actions/cache@v5.0.2
+      uses: actions/cache@v5.0.3
       with:
         path: |
           ~/.m2/repository
