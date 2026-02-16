@@ -1,0 +1,28 @@
+name: 'Maven Build'
+description: 'Build a project with Maven'
+
+inputs:
+  run:
+    description: 'Maven build command. Defaults to the verify goal'
+    required: false
+    default: './mvnw -Dsort -B -U -Pci clean dependency:list verify'
+  additional-options:
+    description: 'Additional Maven options to apply during the build'
+    required: false
+    default: ''
+
+runs:
+  using: composite
+  steps:
+    - shell: bash
+      run: |
+        ADDITIONAL_MAVEN_OPTS=""
+        if [[ -f "settings.xml" ]]; then
+          ADDITIONAL_MAVEN_OPTS="-s settings.xml"
+        fi
+        ${{ inputs.run }} ${ADDITIONAL_MAVEN_OPTS} ${{ inputs.additional-options }}
+    - name: Test Summary
+      uses: spring-projects/spring-data-build/actions/test-summary@main
+      with:
+        paths: '**/TEST-*.xml'
+      if: always()

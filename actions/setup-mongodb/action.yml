@@ -1,0 +1,47 @@
+name: Setup and Start MongoDB
+description: 'Initialize a MongoDB server looking up a configuration managed version pointing to a dedicated revision'
+
+inputs:
+  version:
+    description: 'The desired MongoDB Server version'
+    required: false
+    default: 'latest'
+  replica-set:
+    description: 'Replica Set Name (if not provided Mongo will be started as a standalone instance)'
+    default: ''
+    required: false
+
+runs:
+  using: composite
+  steps:
+    - uses: spring-projects/spring-data-build/actions/env-config@main
+      id: ci-properties
+      name: Load CI properties
+    - name: Mongo Version
+      id: determine-mongo-version
+      shell: bash
+      run: |
+        MONGODB_VERSION=$(echo ${CONFIG_JSON} | jq -r '.database.mongodb["${{ inputs.version }}"]')
+        if [[ -z "${MONGODB_VERSION}" ]] || [[ "${MONGODB_VERSION}" == "null" ]]; then
+          MONGODB_VERSION='${{inputs.version}}'
+        fi
+        echo "MONGODB_VERSION=${MONGODB_VERSION}" >> $GITHUB_OUTPUT
+    - name: Start MongoDB Standalone
+      shell: bash
+      if: ${{ inputs.replica-set == '' }}
+      run: docker run --rm -d -p 27017:27017 --name mongo mongo:'${{ steps.determine-mongo-version.outputs.MONGODB_VERSION }}' --bind_ip_all
+    - name: Start MongoDB Replica Set
+      id: start-mongodb-replica-set
+      shell: bash
+      if: ${{ inputs.replica-set != '' }}
+      run: |
+        docker run --rm -d -p 27017:27017 --name mongo mongo:'${{ steps.determine-mongo-version.outputs.MONGODB_VERSION }}' --replSet ${{ inputs.replica-set }} --bind_ip_all
+        MONGO_CONTAINER_ADDR=$(docker inspect -f '{{range.NetworkSettings.Networks}}{{.IPAddress}}{{end}}' mongo)
+        echo "MONGO_CONTAINER_ADDR=${MONGO_CONTAINER_ADDR}" >> $GITHUB_OUTPUT
+    - name: Initialize MongoDB Replica Set
+      shell: bash
+      if: ${{ inputs.replica-set != '' }}
+      run: |
+        sleep 5 # Give mongo a chance to start up
+        docker run --rm mongo:'${{ steps.determine-mongo-version.outputs.MONGODB_VERSION }}' mongosh --host ${{ steps.start-mongodb-replica-set.outputs.MONGO_CONTAINER_ADDR }} --eval 'rs.initiate({_id: "${{ inputs.replica-set }}", members: [{_id: 0, host: "${{ steps.start-mongodb-replica-set.outputs.MONGO_CONTAINER_ADDR }}:27017"}]})'
+
