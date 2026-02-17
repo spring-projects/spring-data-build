@@ -16,10 +16,12 @@ runs:
     - name: Check if Java version is pre-configured
       id: check-java-version
       shell: bash
+      env:
+        JAVA_VERSION_INPUT: '${{ inputs.java-version }}'
       run: |
         # Example: check if a JSON field meets a condition
-        PRECONFIGURED_JAVA_VERSION_EXISTS=$([[ "${{ inputs.java-version }}" =~ ^[a-z0-9\\.]+$ ]] && echo ${CONFIG_JSON} | jq -r '.java | has("${{ inputs.java-version }}")')
-        PRECONFIGURED_JAVA_VERSION=$([[ "${{ inputs.java-version }}" =~ ^[a-z0-9\\.]+$ ]] && echo ${CONFIG_JSON} | jq -r '.java.${{ inputs.java-version }}')
+        PRECONFIGURED_JAVA_VERSION_EXISTS=$([[ "${JAVA_VERSION_INPUT}" =~ ^[a-z0-9\\.]+$ ]] && echo ${CONFIG_JSON} | jq -r ".java | has(\"${JAVA_VERSION_INPUT}\")")
+        PRECONFIGURED_JAVA_VERSION=$([[ "${JAVA_VERSION_INPUT}" =~ ^[a-z0-9\\.]+$ ]] && echo ${CONFIG_JSON} | jq -r ".java.${JAVA_VERSION_INPUT}")
         echo "PRECONFIGURED_JAVA_VERSION_EXISTS=$PRECONFIGURED_JAVA_VERSION_EXISTS" >> $GITHUB_OUTPUT
         echo "PRECONFIGURED_JAVA_VERSION=$PRECONFIGURED_JAVA_VERSION" >> $GITHUB_OUTPUT
     - uses: actions/setup-java@v5.2.0

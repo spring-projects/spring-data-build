@@ -20,28 +20,39 @@ runs:
     - name: Mongo Version
       id: determine-mongo-version
       shell: bash
+      env:
+        INPUT_VERSION: '${{ inputs.version }}'
       run: |
-        MONGODB_VERSION=$(echo ${CONFIG_JSON} | jq -r '.database.mongodb["${{ inputs.version }}"]')
+        MONGODB_VERSION=$(echo "${CONFIG_JSON}" | jq -r ".database.mongodb[\"${INPUT_VERSION}\"]")
         if [[ -z "${MONGODB_VERSION}" ]] || [[ "${MONGODB_VERSION}" == "null" ]]; then
-          MONGODB_VERSION='${{inputs.version}}'
+          MONGODB_VERSION="${INPUT_VERSION}"
         fi
         echo "MONGODB_VERSION=${MONGODB_VERSION}" >> $GITHUB_OUTPUT
     - name: Start MongoDB Standalone
       shell: bash
+      env:
+        MONGODB_VERSION: '${{ steps.determine-mongo-version.outputs.MONGODB_VERSION }}'
       if: ${{ inputs.replica-set == '' }}
-      run: docker run --rm -d -p 27017:27017 --name mongo mongo:'${{ steps.determine-mongo-version.outputs.MONGODB_VERSION }}' --bind_ip_all
+      run: docker run --rm -d -p 27017:27017 --name mongo "mongo:${MONGODB_VERSION}" --bind_ip_all
     - name: Start MongoDB Replica Set
       id: start-mongodb-replica-set
       shell: bash
+      env:
+        MONGODB_VERSION: '${{ steps.determine-mongo-version.outputs.MONGODB_VERSION }}'
+        RS: '${{ inputs.replica-set }}'
       if: ${{ inputs.replica-set != '' }}
       run: |
-        docker run --rm -d -p 27017:27017 --name mongo mongo:'${{ steps.determine-mongo-version.outputs.MONGODB_VERSION }}' --replSet ${{ inputs.replica-set }} --bind_ip_all
+        docker run --rm -d -p 27017:27017 --name mongo "mongo:${MONGODB_VERSION}" --replSet "${RS}" --bind_ip_all
         MONGO_CONTAINER_ADDR=$(docker inspect -f '{{range.NetworkSettings.Networks}}{{.IPAddress}}{{end}}' mongo)
         echo "MONGO_CONTAINER_ADDR=${MONGO_CONTAINER_ADDR}" >> $GITHUB_OUTPUT
     - name: Initialize MongoDB Replica Set
       shell: bash
+      env:
+        MONGODB_VERSION: '${{ steps.determine-mongo-version.outputs.MONGODB_VERSION }}'
+        MONGO_CONTAINER_ADDR: '${{ steps.start-mongodb-replica-set.outputs.MONGO_CONTAINER_ADDR }}'
+        RS: '${{ inputs.replica-set }}'
       if: ${{ inputs.replica-set != '' }}
       run: |
         sleep 5 # Give mongo a chance to start up
-        docker run --rm mongo:'${{ steps.determine-mongo-version.outputs.MONGODB_VERSION }}' mongosh --host ${{ steps.start-mongodb-replica-set.outputs.MONGO_CONTAINER_ADDR }} --eval 'rs.initiate({_id: "${{ inputs.replica-set }}", members: [{_id: 0, host: "${{ steps.start-mongodb-replica-set.outputs.MONGO_CONTAINER_ADDR }}:27017"}]})'
+        docker run --rm mongo:${MONGODB_VERSION} mongosh --host "${MONGO_CONTAINER_ADDR}" --eval "rs.initiate({_id: \"${RS}\", members: [{_id: 0, host: \"${MONGO_CONTAINER_ADDR}:27017\"}]})"
 
