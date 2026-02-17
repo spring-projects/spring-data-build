@@ -39,21 +39,32 @@ runs:
   using: composite
   steps:
     - shell: bash
+      env:
+        CONTEXT_URL: '${{ inputs.context-url }}'
+        USERNAME: '${{ inputs.username }}'
+        PASSWORD: '${{ inputs.password }}'
+        REPOSITORY: '${{ inputs.repository }}'
+        PROJECT: '${{ inputs.project }}'
+        BUILD_NAME: '${{ inputs.build-name }}'
+        BUILD_URI: '${{ inputs.build-uri }}'
+        SKIP_TESTS: '${{ inputs.skip-tests }}'
+        ADDITIONAL_OPTIONS: '${{ inputs.additional-options }}'
+        BUILD_NUMBER: ${{ format('{0}-{1}-build-{2}', inputs.build-name, (github.head_ref || github.ref_name), github.run_number ) }}
       run: |
         ADDITIONAL_MAVEN_OPTS=""
         if [[ -f "settings.xml" ]]; then
           ADDITIONAL_MAVEN_OPTS="-s settings.xml"
         fi
-        ./mvnw ${ADDITIONAL_MAVEN_OPTS} -Pci,artifactory ${{inputs.additional-options}} \
-        -Dartifactory.server="${{inputs.context-url}}" \
-        -Dartifactory.username="${{inputs.username}}" \
-        -Dartifactory.password="${{inputs.password}}" \
-        -Dartifactory.staging-repository="${{inputs.repository}}" \
-        -Dartifactory.project="${{inputs.project}}" \
-        -Dartifactory.build-name="${{inputs.build-name}}" \
-        -Dartifactory.build-number="${{format('{0}-{1}-build-{2}', inputs.build-name, (github.head_ref || github.ref_name), github.run_number )}}" \
-        -DBUILD_URL="${{inputs.build-uri}}" \
-        -Dmaven.test.skip=${{inputs.skip-tests}} -U -B\
+        ./mvnw ${ADDITIONAL_MAVEN_OPTS} -Pci,artifactory ${ADDITIONAL_OPTIONS} \
+        -Dartifactory.server="${CONTEXT_URL}" \
+        -Dartifactory.username="${USERNAME}" \
+        -Dartifactory.password="${PASSWORD}" \
+        -Dartifactory.staging-repository="${REPOSITORY}" \
+        -Dartifactory.project="${PROJECT}" \
+        -Dartifactory.build-name="${BUILD_NAME}" \
+        -Dartifactory.build-number="${BUILD_NUMBER}" \
+        -DBUILD_URL="${BUILD_URI}" \
+        -Dmaven.test.skip=${SKIP_TESTS} -U -B\
         clean deploy
     - name: Test Summary
       uses: spring-projects/spring-data-build/actions/test-summary@main

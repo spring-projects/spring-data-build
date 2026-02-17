@@ -16,15 +16,28 @@ runs:
     - uses: spring-projects/spring-data-build/actions/setup-java@main
       with:
         java-version: '${{ inputs.java-version }}'
+    - name: Determine Development line
+      id: determine-dev-line
+      shell: bash
+      run: |
+        DEV_LINE=""
+        if [[ -f "pom.xml" ]]; then
+          DEV_LINE=$(python3 -c "import sys, re, xml.etree.ElementTree as ET; [print(re.search(r'((\d+)\.(\d+))\.', e.text).group(1)) for e in ET.parse(sys.stdin).findall('./{http://maven.apache.org/POM/4.0.0}version')]" < pom.xml)
+        fi
+        if [[ "DEV_LINE" == "" ]]; then
+            DEV_LINE="x.y"
+        fi
+        echo "DEV_LINE=${DEV_LINE}" >> $GITHUB_OUTPUT
     - name: Maven Repository Cache
       uses: actions/cache@v5.0.3
       with:
         path: |
           ~/.m2/repository
           ~/.m2/wrapper
-        key: ${{ runner.os }}-maven-${{ hashFiles('**/pom.xml') }}
+        key: ${{ runner.os }}-maven-${{ steps.determine-dev-line.outputs.DEV_LINE }}-${{ github.job }}-${{ hashFiles('**/pom.xml') }}
         restore-keys: |
-          ${{ runner.os }}-maven
+          ${{ runner.os }}-maven-${{ steps.determine-dev-line.outputs.DEV_LINE }}-${{ github.job }}-
+          ${{ runner.os }}-maven-
     - name: Setup Develocity Maven Capturing
       uses: gradle/develocity-actions/setup-maven@1d6b56bc8352f11400f1d802d627dee852b3e946 #v2.1
       with:
@@ -33,5 +46,8 @@ runs:
         add-pr-comment: false
     - name: Set Env Variables
       shell: bash
+      env:
+        BUILD_USER_NAME: ${{ env.BUILD_USER_NAME }}
+        ORIG_MAVEN_OPTS: ${{ env.MAVEN_OPTS }}
       run: |
-        echo "MAVEN_OPTS=-Duser.name=${{ env.BUILD_USER_NAME }} ${{ env.MAVEN_OPTS }}" >> "$GITHUB_ENV"
+        echo "MAVEN_OPTS=-Duser.name=${BUILD_USER_NAME} ${ORIG_MAVEN_OPTS}" >> "$GITHUB_ENV"

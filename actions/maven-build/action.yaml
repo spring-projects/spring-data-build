@@ -15,12 +15,15 @@ runs:
   using: composite
   steps:
     - shell: bash
+      env:
+        MAVEN_RUN: '${{ inputs.run }}'
+        ADDITIONAL_OPTIONS: '${{ inputs.additional-options }}'
       run: |
         ADDITIONAL_MAVEN_OPTS=""
         if [[ -f "settings.xml" ]]; then
           ADDITIONAL_MAVEN_OPTS="-s settings.xml"
         fi
-        ${{ inputs.run }} ${ADDITIONAL_MAVEN_OPTS} ${{ inputs.additional-options }}
+        ${MAVEN_RUN} ${ADDITIONAL_MAVEN_OPTS} ${ADDITIONAL_OPTIONS}
     - name: Test Summary
       uses: spring-projects/spring-data-build/actions/test-summary@main
       with:
