@@ -137,6 +137,8 @@
 		<slf4j>2.0.17</slf4j>
 		<spring>7.0.3</spring>
 		<antora.playbook>src/main/antora/antora-playbook.yml</antora.playbook>
+		<antora-javadoc-artifactId>${project.artifactId}</antora-javadoc-artifactId>
+		<antora.javadoc-artifactId>${antora-javadoc-artifactId}</antora.javadoc-artifactId>
 		<documentation.baseurl>https://docs.spring.io</documentation.baseurl>
 		<documentation.spring-javadoc-url>${documentation.baseurl}/spring-framework/docs/${spring}/javadoc-api</documentation.spring-javadoc-url>
 		<spring-antora>0.0.4</spring-antora>
@@ -393,6 +395,27 @@
 								</goals>
 							</execution>
 						</executions>
+					</plugin>
+
+					<plugin>
+						<groupId>org.apache.maven.plugins</groupId>
+						<artifactId>maven-dependency-plugin</artifactId>
+						<configuration>
+							<artifactItems>
+								<artifactItem>
+									<groupId>${project.groupId}</groupId>
+									<artifactId>${antora.javadoc-artifactId}</artifactId>
+									<version>${project.version}</version>
+									<classifier>javadoc</classifier>
+									<type>jar</type>
+									<overWrite>true</overWrite>
+									<outputDirectory>${project.build.directory}/antora/modules/ROOT/assets/attachments/api/java</outputDirectory>
+								</artifactItem>
+							</artifactItems>
+							<overWriteReleases>true</overWriteReleases>
+							<overWriteSnapshots>true</overWriteSnapshots>
+							<overWriteIfNewer>true</overWriteIfNewer>
+						</configuration>
 					</plugin>
 
 				</plugins>
