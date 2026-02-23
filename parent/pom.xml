@@ -1489,6 +1489,7 @@
 				<artifactId>maven-javadoc-plugin</artifactId>
 				<configuration>
 					<locale>en_US</locale>
+					<legacyMode>true</legacyMode>
 					<breakiterator>true</breakiterator>
 					<header>${project.name}</header>
 					<source>${source.level}</source>
