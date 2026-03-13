@@ -131,7 +131,7 @@
 		<rxjava3>3.1.12</rxjava3>
 		<smallrye-mutiny>1.10.0</smallrye-mutiny>
 		<slf4j>2.0.17</slf4j>
-		<spring>6.2.15</spring>
+		<spring>6.2.17</spring>
 		<antora.playbook>src/main/antora/antora-playbook.yml</antora.playbook>
 		<antora-javadoc-artifactId>${project.artifactId}</antora-javadoc-artifactId>
 		<antora.javadoc-artifactId>${antora-javadoc-artifactId}</antora.javadoc-artifactId>
