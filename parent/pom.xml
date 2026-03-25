@@ -114,10 +114,10 @@
 		<jakarta-annotation-api>2.0.0</jakarta-annotation-api>
 		<jaxb>3.0.1</jaxb>
 		<jacoco>0.8.14</jacoco>
-		<jmolecules>2025.0.0</jmolecules>
+		<jmolecules>2025.0.2</jmolecules>
 		<jmh>1.37</jmh>
 		<jsonpath>2.6.0</jsonpath>
-		<junit>6.0.0</junit>
+		<junit>6.0.3</junit>
 		<junit5>${junit}</junit5>
 		<junit-pioneer>2.3.0</junit-pioneer>
 		<kotlin>2.3.20-RC3</kotlin>
@@ -126,7 +126,7 @@
 		<microbenchmark>1.0.0</microbenchmark>
 		<micrometer>1.17.0-M3</micrometer>
 		<micrometer-tracing>1.7.0-M4</micrometer-tracing>
-		<mockito>5.22.0</mockito>
+		<mockito>5.23.0</mockito>
 		<mockk>1.14.9</mockk>
 		<nullaway>0.13.1</nullaway>
 		<querydsl>5.1.0</querydsl>
@@ -1353,7 +1353,7 @@
 				<plugin>
 					<groupId>org.apache.maven.plugins</groupId>
 					<artifactId>maven-compiler-plugin</artifactId>
-					<version>3.14.1</version>
+					<version>3.15.0</version>
 					<configuration>
 						<parameters>true</parameters>
 					</configuration>
@@ -1380,7 +1380,7 @@
 				<plugin>
 					<groupId>org.apache.maven.plugins</groupId>
 					<artifactId>maven-dependency-plugin</artifactId>
-					<version>3.9.0</version>
+					<version>3.10.0</version>
 				</plugin>
 
 				<plugin>
@@ -1398,7 +1398,7 @@
 				<plugin>
 					<groupId>org.apache.maven.plugins</groupId>
 					<artifactId>maven-failsafe-plugin</artifactId>
-					<version>3.5.4</version>
+					<version>3.5.5</version>
 					<configuration>
 						<useSystemClassLoader>false</useSystemClassLoader>
 					</configuration>
@@ -1413,7 +1413,7 @@
 				<plugin>
 					<groupId>org.apache.maven.plugins</groupId>
 					<artifactId>maven-resources-plugin</artifactId>
-					<version>3.4.0</version>
+					<version>3.5.0</version>
 				</plugin>
 
 				<plugin>
@@ -1437,7 +1437,7 @@
 				<plugin>
 					<groupId>org.apache.maven.plugins</groupId>
 					<artifactId>maven-surefire-plugin</artifactId>
-					<version>3.5.4</version>
+					<version>3.5.5</version>
 					<configuration>
 						<useSystemClassLoader>false</useSystemClassLoader>
 					</configuration>
