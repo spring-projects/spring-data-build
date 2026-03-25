@@ -102,7 +102,7 @@
 		<aspectj>1.9.25.1</aspectj>
 		<assertj>3.27.7</assertj>
 		<awaitility>4.3.0</awaitility>
-		<cdi>4.0.1</cdi>
+		<cdi>4.1.0</cdi>
 		<commons-io>2.5</commons-io>
 		<eclipse-collections>11.0.0</eclipse-collections>
 		<errorprone>2.46.0</errorprone>
@@ -145,9 +145,9 @@
 		<spring-asciidoctor-backends.version>0.0.7</spring-asciidoctor-backends.version>
 		<spring-hateoas>3.1.0-M1</spring-hateoas>
 		<spring-plugin>4.0.0</spring-plugin>
-		<servlet-api>6.0.0</servlet-api>
+		<servlet-api>6.1.0</servlet-api>
 		<testcontainers>2.0.4</testcontainers>
-		<validation>3.0.2</validation>
+		<validation>3.1.1</validation>
 		<vavr>0.11.0</vavr>
 		<webbeans>4.0.3</webbeans>
 
