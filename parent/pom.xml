@@ -123,7 +123,7 @@
 		<kotlin-coroutines>1.10.2</kotlin-coroutines>
 		<logback>1.5.32</logback>
 		<microbenchmark>1.0.0</microbenchmark>
-		<micrometer>1.17.0-SNAPSHOT</micrometer>
+		<micrometer>1.17.0-RC1</micrometer>
 		<micrometer-tracing>1.7.0-SNAPSHOT</micrometer-tracing>
 		<mockito>5.23.0</mockito>
 		<mockk>1.14.9</mockk>
