@@ -121,7 +121,7 @@
 		<junit-pioneer>2.3.0</junit-pioneer>
 		<kotlin>2.3.21</kotlin>
 		<kotlin-coroutines>1.10.2</kotlin-coroutines>
-		<logback>1.5.32</logback>
+		<logback>1.5.34</logback>
 		<microbenchmark>1.0.0</microbenchmark>
 		<micrometer>1.17.0-SNAPSHOT</micrometer>
 		<micrometer-tracing>1.7.0-SNAPSHOT</micrometer-tracing>
