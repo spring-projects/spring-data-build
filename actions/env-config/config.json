@@ -1,9 +1,9 @@
 {
   "java": {
-    "base": "17.0.17",
-    "main": "17.0.17",
-    "next": "24.0.2",
-    "latest": "25.0.1",
+    "base": "17.0.19",
+    "main": "17.0.19",
+    "next": "25.0.3",
+    "latest": "26.0.1",
     "dist": "temurin"
   },
   "database": {
