@@ -10,6 +10,10 @@ inputs:
     description: 'Additional Maven options to apply during the build'
     required: false
     default: ''
+  settings-xml:
+    description: 'Settings.xml to use during the build'
+    required: false
+    default: ''
 
 runs:
   using: composite
@@ -18,7 +22,12 @@ runs:
       env:
         MAVEN_RUN: '${{ inputs.run }}'
         ADDITIONAL_OPTIONS: '${{ inputs.additional-options }}'
+        SETTINGS_XML: '${{ inputs.settings-xml }}'
       run: |
+        if [[ -n "${SETTINGS_XML}" ]]; then
+          echo "::notice::Writing provided settings-xml input to settings.xml"
+          echo "${SETTINGS_XML}" > settings.xml
+        fi
         ADDITIONAL_MAVEN_OPTS=""
         if [[ -f "settings.xml" ]]; then
           ADDITIONAL_MAVEN_OPTS="-s settings.xml"

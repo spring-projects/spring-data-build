@@ -22,5 +22,9 @@ jobs:
         uses: spring-projects/spring-data-build/actions/maven-artifactory-deploy@main
         with:
           build-name: 'spring-data-build'
+          context-url: '${{ vars.ARTIFACTORY_CONTEXT_URL }}'
+          repository: '${{ vars.ARTIFACTORY_REPOSITORY }}'
+          project: '${{ vars.ARTIFACTORY_PROJECT }}'
           username: '${{ secrets.ARTIFACTORY_USERNAME }}'
           password: '${{ secrets.ARTIFACTORY_PASSWORD }}'
+          settings-xml: '${{ vars.SETTINGS_XML }}'
