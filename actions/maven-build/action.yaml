@@ -34,7 +34,7 @@ runs:
         fi
         ${MAVEN_RUN} ${ADDITIONAL_MAVEN_OPTS} ${ADDITIONAL_OPTIONS}
     - name: Test Summary
-      uses: spring-projects/spring-data-build/actions/test-summary@main
+      uses: spring-projects/spring-data-build/actions/test-summary@4.1.x
       with:
         paths: '**/TEST-*.xml'
       if: always()

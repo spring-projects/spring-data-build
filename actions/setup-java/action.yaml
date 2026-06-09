@@ -10,7 +10,7 @@ inputs:
 runs:
   using: composite
   steps:
-    - uses: spring-projects/spring-data-build/actions/env-config@main
+    - uses: spring-projects/spring-data-build/actions/env-config@4.1.x
       id: ci-properties
       name: Load CI properties
     - name: Check if Java version is pre-configured

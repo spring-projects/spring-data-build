@@ -13,7 +13,7 @@ inputs:
 runs:
   using: composite
   steps:
-    - uses: spring-projects/spring-data-build/actions/setup-java@main
+    - uses: spring-projects/spring-data-build/actions/setup-java@4.1.x
       with:
         java-version: '${{ inputs.java-version }}'
     - name: Determine Development line
