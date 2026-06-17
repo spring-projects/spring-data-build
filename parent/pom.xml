@@ -140,6 +140,7 @@
 		<antora-javadoc-artifactId>${project.artifactId}</antora-javadoc-artifactId>
 		<antora.javadoc-artifactId>${antora-javadoc-artifactId}</antora.javadoc-artifactId>
 		<documentation.baseurl>https://docs.spring.io</documentation.baseurl>
+		<documentation.spring-reference-url>${documentation.baseurl}/spring-framework/reference</documentation.spring-reference-url>
 		<documentation.spring-javadoc-url>${documentation.baseurl}/spring-framework/docs/${spring}/javadoc-api</documentation.spring-javadoc-url>
 		<spring-antora>0.0.4</spring-antora>
 		<maven-antora>1.0.0-alpha.5</maven-antora>
@@ -482,6 +483,7 @@
 							<artifactId>antora-maven-plugin</artifactId>
 							<extensions>true</extensions>
 							<configuration>
+								<nodeVersion>24.15</nodeVersion>
 								<playbook>${antora.playbook}</playbook>
 							</configuration>
 							<executions>
