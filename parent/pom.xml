@@ -120,6 +120,7 @@
 		<junit>6.0.3</junit>
 		<junit5>${junit}</junit5>
 		<junit-pioneer>2.3.0</junit-pioneer>
+		<jspecify.version>1.0.0</jspecify.version>
 		<kotlin>2.3.21</kotlin>
 		<kotlin-coroutines>1.10.2</kotlin-coroutines>
 		<logback>1.5.34</logback>
@@ -130,18 +131,13 @@
 		<mockk>1.14.11</mockk>
 		<nullaway>0.13.1</nullaway>
 		<querydsl>5.1.0</querydsl>
+		<reactive-streams>1.0.4</reactive-streams>
 		<reactor>2025.0.6</reactor>
 		<rxjava2>2.2.21</rxjava2>
 		<rxjava3>3.1.12</rxjava3>
 		<smallrye-mutiny>3.1.1</smallrye-mutiny>
 		<slf4j>2.0.18</slf4j>
 		<spring>7.0.8</spring>
-		<antora.playbook>src/main/antora/antora-playbook.yml</antora.playbook>
-		<antora-javadoc-artifactId>${project.artifactId}</antora-javadoc-artifactId>
-		<antora.javadoc-artifactId>${antora-javadoc-artifactId}</antora.javadoc-artifactId>
-		<documentation.baseurl>https://docs.spring.io</documentation.baseurl>
-		<documentation.spring-reference-url>${documentation.baseurl}/spring-framework/reference</documentation.spring-reference-url>
-		<documentation.spring-javadoc-url>${documentation.baseurl}/spring-framework/docs/${spring}/javadoc-api</documentation.spring-javadoc-url>
 		<spring-antora>0.0.4</spring-antora>
 		<maven-antora>1.0.0-alpha.5</maven-antora>
 		<spring-asciidoctor-backends.version>0.0.7</spring-asciidoctor-backends.version>
@@ -159,6 +155,31 @@
 		<!-- To be overridden by individual modules -->
 		<java-module-name/>
 
+		<!-- Documentation -->
+		<!-- @formatter:off -->
+		<antora.playbook>src/main/antora/antora-playbook.yml</antora.playbook>
+		<antora-javadoc-artifactId>${project.artifactId}</antora-javadoc-artifactId>
+		<antora.javadoc-artifactId>${antora-javadoc-artifactId}</antora.javadoc-artifactId>
+
+		<documentation.baseurl>https://docs.spring.io</documentation.baseurl>
+		<documentation.spring-reference-url>${documentation.baseurl}/spring-framework/reference</documentation.spring-reference-url>
+		<documentation.spring-javadoc-url>${documentation.baseurl}/spring-framework/docs/${spring}/javadoc-api</documentation.spring-javadoc-url>
+		<documentation.reactor-javadoc-url>https://projectreactor.io/docs/core/release/api</documentation.reactor-javadoc-url>
+		<documentation.reactive-streams-javadoc-url>https://www.reactive-streams.org/reactive-streams-${reactive-streams}-javadoc</documentation.reactive-streams-javadoc-url>
+		<documentation.rxjava3-javadoc-url>https://reactivex.io/RxJava/3.x/javadoc/${rxjava3}</documentation.rxjava3-javadoc-url>
+		<documentation.jackson2-core-javadoc-url>https://javadoc.io/doc/com.fasterxml.jackson.core/jackson-core/${jackson}</documentation.jackson2-core-javadoc-url>
+		<documentation.jackson2-databind-javadoc-url>https://javadoc.io/doc/com.fasterxml.jackson.core/jackson-databind/${jackson}</documentation.jackson2-databind-javadoc-url>
+		<documentation.jackson3-databind-javadoc-url>https://javadoc.io/doc/tools.jackson.core/jackson-databind/${jackson3}</documentation.jackson3-databind-javadoc-url>
+		<documentation.jspecify-javadoc-url>https://jspecify.dev/docs/api/</documentation.jspecify-javadoc-url>
+		<documentation.spring-hateoas-javadoc-url>${documentation.baseurl}/spring-hateoas/docs/current/api</documentation.spring-hateoas-javadoc-url>
+		<documentation.micrometer-javadoc-url>https://javadoc.io/doc/io.micrometer/micrometer-core/${micrometer}</documentation.micrometer-javadoc-url>
+		<documentation.micrometer-observation-javadoc-url>https://javadoc.io/doc/io.micrometer/micrometer-observation/${micrometer}</documentation.micrometer-observation-javadoc-url>
+		<documentation.micrometer-tracing-javadoc-url>https://javadoc.io/doc/io.micrometer/micrometer-tracing/${micrometer-tracing}</documentation.micrometer-tracing-javadoc-url>
+		<javadoc.offline-links.directory>${project.build.directory}/javadoc-offline-links</javadoc.offline-links.directory>
+
+		<!-- Enabled only in CI and distribute profiles -->
+		<javadoc.offline-links.skip>true</javadoc.offline-links.skip>
+		<!-- @formatter:on -->
 	</properties>
 
 	<profiles>
@@ -166,6 +187,10 @@
 
 			<!-- Profile to be run on the CI server, JARs JavaDocs -->
 			<id>ci</id>
+
+			<properties>
+				<javadoc.offline-links.skip>false</javadoc.offline-links.skip>
+			</properties>
 
 			<build>
 				<plugins>
@@ -511,6 +536,7 @@
 			<properties>
 				<shared.resources>${project.build.directory}/shared-resources</shared.resources>
 				<generated-docs.directory>${project.build.directory}/generated-docs</generated-docs.directory>
+				<javadoc.offline-links.skip>false</javadoc.offline-links.skip>
 				<maven.test.skip>true</maven.test.skip>
 				<aspectj.skip>true</aspectj.skip>
 				<maven.install.skip>true</maven.install.skip>
@@ -1471,6 +1497,285 @@
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-dependency-plugin</artifactId>
+				<executions>
+					<execution>
+						<id>unpack-javadoc-offline-links</id>
+						<phase>generate-resources</phase>
+						<goals>
+							<goal>unpack</goal>
+						</goals>
+						<configuration>
+							<skip>${javadoc.offline-links.skip}</skip>
+							<markersDirectory>
+								${project.build.directory}/javadoc-offline-links-markers
+							</markersDirectory>
+							<includes>element-list,package-list</includes>
+							<artifactItems>
+								<artifactItem>
+									<groupId>org.springframework</groupId>
+									<artifactId>spring-aop</artifactId>
+									<classifier>javadoc</classifier>
+									<type>jar</type>
+									<outputDirectory>
+										${javadoc.offline-links.directory}/spring-aop
+									</outputDirectory>
+								</artifactItem>
+								<artifactItem>
+									<groupId>org.springframework</groupId>
+									<artifactId>spring-beans</artifactId>
+									<classifier>javadoc</classifier>
+									<type>jar</type>
+									<outputDirectory>
+										${javadoc.offline-links.directory}/spring-beans
+									</outputDirectory>
+								</artifactItem>
+								<artifactItem>
+									<groupId>org.springframework</groupId>
+									<artifactId>spring-context</artifactId>
+									<classifier>javadoc</classifier>
+									<type>jar</type>
+									<outputDirectory>
+										${javadoc.offline-links.directory}/spring-context
+									</outputDirectory>
+								</artifactItem>
+								<artifactItem>
+									<groupId>org.springframework</groupId>
+									<artifactId>spring-context-support</artifactId>
+									<classifier>javadoc</classifier>
+									<type>jar</type>
+									<outputDirectory>
+										${javadoc.offline-links.directory}/spring-context-support
+									</outputDirectory>
+								</artifactItem>
+								<artifactItem>
+									<groupId>org.springframework</groupId>
+									<artifactId>spring-core</artifactId>
+									<classifier>javadoc</classifier>
+									<type>jar</type>
+									<outputDirectory>
+										${javadoc.offline-links.directory}/spring-core
+									</outputDirectory>
+								</artifactItem>
+								<artifactItem>
+									<groupId>org.springframework</groupId>
+									<artifactId>spring-expression</artifactId>
+									<classifier>javadoc</classifier>
+									<type>jar</type>
+									<outputDirectory>
+										${javadoc.offline-links.directory}/spring-expression
+									</outputDirectory>
+								</artifactItem>
+								<artifactItem>
+									<groupId>org.springframework</groupId>
+									<artifactId>spring-jdbc</artifactId>
+									<classifier>javadoc</classifier>
+									<type>jar</type>
+									<outputDirectory>
+										${javadoc.offline-links.directory}/spring-jdbc
+									</outputDirectory>
+								</artifactItem>
+								<artifactItem>
+									<groupId>org.springframework</groupId>
+									<artifactId>spring-messaging</artifactId>
+									<classifier>javadoc</classifier>
+									<type>jar</type>
+									<outputDirectory>
+										${javadoc.offline-links.directory}/spring-messaging
+									</outputDirectory>
+								</artifactItem>
+								<artifactItem>
+									<groupId>org.springframework</groupId>
+									<artifactId>spring-orm</artifactId>
+									<classifier>javadoc</classifier>
+									<type>jar</type>
+									<outputDirectory>
+										${javadoc.offline-links.directory}/spring-orm
+									</outputDirectory>
+								</artifactItem>
+								<artifactItem>
+									<groupId>org.springframework</groupId>
+									<artifactId>spring-oxm</artifactId>
+									<classifier>javadoc</classifier>
+									<type>jar</type>
+									<outputDirectory>
+										${javadoc.offline-links.directory}/spring-oxm
+									</outputDirectory>
+								</artifactItem>
+								<artifactItem>
+									<groupId>org.springframework</groupId>
+									<artifactId>spring-r2dbc</artifactId>
+									<classifier>javadoc</classifier>
+									<type>jar</type>
+									<outputDirectory>
+										${javadoc.offline-links.directory}/spring-r2dbc
+									</outputDirectory>
+								</artifactItem>
+								<artifactItem>
+									<groupId>org.springframework</groupId>
+									<artifactId>spring-test</artifactId>
+									<classifier>javadoc</classifier>
+									<type>jar</type>
+									<outputDirectory>
+										${javadoc.offline-links.directory}/spring-test
+									</outputDirectory>
+								</artifactItem>
+								<artifactItem>
+									<groupId>org.springframework</groupId>
+									<artifactId>spring-tx</artifactId>
+									<classifier>javadoc</classifier>
+									<type>jar</type>
+									<outputDirectory>
+										${javadoc.offline-links.directory}/spring-tx
+									</outputDirectory>
+								</artifactItem>
+								<artifactItem>
+									<groupId>org.springframework</groupId>
+									<artifactId>spring-web</artifactId>
+									<classifier>javadoc</classifier>
+									<type>jar</type>
+									<outputDirectory>
+										${javadoc.offline-links.directory}/spring-web
+									</outputDirectory>
+								</artifactItem>
+								<artifactItem>
+									<groupId>org.springframework</groupId>
+									<artifactId>spring-webflux</artifactId>
+									<classifier>javadoc</classifier>
+									<type>jar</type>
+									<outputDirectory>
+										${javadoc.offline-links.directory}/spring-webflux
+									</outputDirectory>
+								</artifactItem>
+								<artifactItem>
+									<groupId>org.springframework</groupId>
+									<artifactId>spring-webmvc</artifactId>
+									<classifier>javadoc</classifier>
+									<type>jar</type>
+									<outputDirectory>
+										${javadoc.offline-links.directory}/spring-webmvc
+									</outputDirectory>
+								</artifactItem>
+								<artifactItem>
+									<groupId>org.springframework</groupId>
+									<artifactId>spring-websocket</artifactId>
+									<classifier>javadoc</classifier>
+									<type>jar</type>
+									<outputDirectory>
+										${javadoc.offline-links.directory}/spring-websocket
+									</outputDirectory>
+								</artifactItem>
+								<artifactItem>
+									<groupId>org.springframework.hateoas</groupId>
+									<artifactId>spring-hateoas</artifactId>
+									<version>${spring-hateoas}</version>
+									<classifier>javadoc</classifier>
+									<type>jar</type>
+									<outputDirectory>
+										${javadoc.offline-links.directory}/spring-hateoas
+									</outputDirectory>
+								</artifactItem>
+								<artifactItem>
+									<groupId>io.projectreactor</groupId>
+									<artifactId>reactor-core</artifactId>
+									<classifier>javadoc</classifier>
+									<type>jar</type>
+									<outputDirectory>
+										${javadoc.offline-links.directory}/reactor-core
+									</outputDirectory>
+								</artifactItem>
+								<artifactItem>
+									<groupId>org.reactivestreams</groupId>
+									<artifactId>reactive-streams</artifactId>
+									<version>${reactive-streams}</version>
+									<classifier>javadoc</classifier>
+									<type>jar</type>
+									<outputDirectory>
+										${javadoc.offline-links.directory}/reactive-streams
+									</outputDirectory>
+								</artifactItem>
+								<artifactItem>
+									<groupId>io.reactivex.rxjava3</groupId>
+									<artifactId>rxjava</artifactId>
+									<version>${rxjava3}</version>
+									<classifier>javadoc</classifier>
+									<type>jar</type>
+									<outputDirectory>
+										${javadoc.offline-links.directory}/rxjava3
+									</outputDirectory>
+								</artifactItem>
+								<artifactItem>
+									<groupId>com.fasterxml.jackson.core</groupId>
+									<artifactId>jackson-core</artifactId>
+									<version>${jackson}</version>
+									<classifier>javadoc</classifier>
+									<type>jar</type>
+									<outputDirectory>
+										${javadoc.offline-links.directory}/jackson2-core
+									</outputDirectory>
+								</artifactItem>
+								<artifactItem>
+									<groupId>com.fasterxml.jackson.core</groupId>
+									<artifactId>jackson-databind</artifactId>
+									<version>${jackson}</version>
+									<classifier>javadoc</classifier>
+									<type>jar</type>
+									<outputDirectory>
+										${javadoc.offline-links.directory}/jackson2-databind
+									</outputDirectory>
+								</artifactItem>
+								<artifactItem>
+									<groupId>tools.jackson.core</groupId>
+									<artifactId>jackson-databind</artifactId>
+									<classifier>javadoc</classifier>
+									<type>jar</type>
+									<outputDirectory>
+										${javadoc.offline-links.directory}/jackson3-databind
+									</outputDirectory>
+								</artifactItem>
+								<artifactItem>
+									<groupId>org.jspecify</groupId>
+									<artifactId>jspecify</artifactId>
+									<version>${jspecify.version}</version>
+									<classifier>javadoc</classifier>
+									<type>jar</type>
+									<outputDirectory>
+										${javadoc.offline-links.directory}/jspecify
+									</outputDirectory>
+								</artifactItem>
+								<artifactItem>
+									<groupId>io.micrometer</groupId>
+									<artifactId>micrometer-core</artifactId>
+									<classifier>javadoc</classifier>
+									<type>jar</type>
+									<outputDirectory>
+										${javadoc.offline-links.directory}/micrometer-core
+									</outputDirectory>
+								</artifactItem>
+								<artifactItem>
+									<groupId>io.micrometer</groupId>
+									<artifactId>micrometer-observation</artifactId>
+									<classifier>javadoc</classifier>
+									<type>jar</type>
+									<outputDirectory>
+										${javadoc.offline-links.directory}/micrometer-observation
+									</outputDirectory>
+								</artifactItem>
+								<artifactItem>
+									<groupId>io.micrometer</groupId>
+									<artifactId>micrometer-tracing</artifactId>
+									<classifier>javadoc</classifier>
+									<type>jar</type>
+									<outputDirectory>
+										${javadoc.offline-links.directory}/micrometer-tracing
+									</outputDirectory>
+								</artifactItem>
+							</artifactItems>
+							<overWriteReleases>true</overWriteReleases>
+							<overWriteSnapshots>true</overWriteSnapshots>
+							<overWriteIfNewer>true</overWriteIfNewer>
+						</configuration>
+					</execution>
+				</executions>
 			</plugin>
 
 			<plugin>
@@ -1683,16 +1988,164 @@
 					<!-- copies doc-files subdirectory which contains image resources -->
 					<docfilessubdirs>true</docfilessubdirs>
 					<doclint>html,reference</doclint>
+					<detectJavaApiLink>false</detectJavaApiLink>
+					<detectLinks>false</detectLinks>
 					<links>
-						<link>${documentation.spring-javadoc-url}</link>
 						<link>${documentation.baseurl}/spring-data/commons/docs/current/api/</link>
 						<link>${documentation.baseurl}/spring-data/keyvalue/docs/current/api/</link>
-						<link>${documentation.baseurl}/spring-hateoas/docs/current/api/</link>
-						<link>https://projectreactor.io/docs/core/release/api/</link>
-						<link>https://www.reactive-streams.org/reactive-streams-1.0.4-javadoc/</link>
-						<link>https://reactivex.io/RxJava/3.x/javadoc/</link>
-						<link>https://docs.oracle.com/en/java/javase/17/docs/api/</link>
 					</links>
+					<offlineLinks>
+						<offlineLink>
+							<url>${documentation.spring-javadoc-url}</url>
+							<location>${javadoc.offline-links.directory}/spring-aop
+							</location>
+						</offlineLink>
+						<offlineLink>
+							<url>${documentation.spring-javadoc-url}</url>
+							<location>${javadoc.offline-links.directory}/spring-beans
+							</location>
+						</offlineLink>
+						<offlineLink>
+							<url>${documentation.spring-javadoc-url}</url>
+							<location>${javadoc.offline-links.directory}/spring-context
+							</location>
+						</offlineLink>
+						<offlineLink>
+							<url>${documentation.spring-javadoc-url}</url>
+							<location>
+								${javadoc.offline-links.directory}/spring-context-support
+							</location>
+						</offlineLink>
+						<offlineLink>
+							<url>${documentation.spring-javadoc-url}</url>
+							<location>${javadoc.offline-links.directory}/spring-core
+							</location>
+						</offlineLink>
+						<offlineLink>
+							<url>${documentation.spring-javadoc-url}</url>
+							<location>
+								${javadoc.offline-links.directory}/spring-expression
+							</location>
+						</offlineLink>
+						<offlineLink>
+							<url>${documentation.spring-javadoc-url}</url>
+							<location>${javadoc.offline-links.directory}/spring-jdbc
+							</location>
+						</offlineLink>
+						<offlineLink>
+							<url>${documentation.spring-javadoc-url}</url>
+							<location>
+								${javadoc.offline-links.directory}/spring-messaging
+							</location>
+						</offlineLink>
+						<offlineLink>
+							<url>${documentation.spring-javadoc-url}</url>
+							<location>${javadoc.offline-links.directory}/spring-orm
+							</location>
+						</offlineLink>
+						<offlineLink>
+							<url>${documentation.spring-javadoc-url}</url>
+							<location>${javadoc.offline-links.directory}/spring-oxm
+							</location>
+						</offlineLink>
+						<offlineLink>
+							<url>${documentation.spring-javadoc-url}</url>
+							<location>${javadoc.offline-links.directory}/spring-r2dbc
+							</location>
+						</offlineLink>
+						<offlineLink>
+							<url>${documentation.spring-javadoc-url}</url>
+							<location>${javadoc.offline-links.directory}/spring-test
+							</location>
+						</offlineLink>
+						<offlineLink>
+							<url>${documentation.spring-javadoc-url}</url>
+							<location>${javadoc.offline-links.directory}/spring-tx
+							</location>
+						</offlineLink>
+						<offlineLink>
+							<url>${documentation.spring-javadoc-url}</url>
+							<location>${javadoc.offline-links.directory}/spring-web
+							</location>
+						</offlineLink>
+						<offlineLink>
+							<url>${documentation.spring-javadoc-url}</url>
+							<location>${javadoc.offline-links.directory}/spring-webflux
+							</location>
+						</offlineLink>
+						<offlineLink>
+							<url>${documentation.spring-javadoc-url}</url>
+							<location>${javadoc.offline-links.directory}/spring-webmvc
+							</location>
+						</offlineLink>
+						<offlineLink>
+							<url>${documentation.spring-javadoc-url}</url>
+							<location>
+								${javadoc.offline-links.directory}/spring-websocket
+							</location>
+						</offlineLink>
+						<offlineLink>
+							<url>${documentation.spring-hateoas-javadoc-url}</url>
+							<location>
+								${javadoc.offline-links.directory}/spring-hateoas
+							</location>
+						</offlineLink>
+						<offlineLink>
+							<url>${documentation.reactor-javadoc-url}</url>
+							<location>${javadoc.offline-links.directory}/reactor-core
+							</location>
+						</offlineLink>
+						<offlineLink>
+							<url>${documentation.reactive-streams-javadoc-url}</url>
+							<location>
+								${javadoc.offline-links.directory}/reactive-streams
+							</location>
+						</offlineLink>
+						<offlineLink>
+							<url>${documentation.rxjava3-javadoc-url}</url>
+							<location>${javadoc.offline-links.directory}/rxjava3
+							</location>
+						</offlineLink>
+						<offlineLink>
+							<url>${documentation.jackson2-core-javadoc-url}</url>
+							<location>${javadoc.offline-links.directory}/jackson2-core
+							</location>
+						</offlineLink>
+						<offlineLink>
+							<url>${documentation.jackson2-databind-javadoc-url}</url>
+							<location>
+								${javadoc.offline-links.directory}/jackson2-databind
+							</location>
+						</offlineLink>
+						<offlineLink>
+							<url>${documentation.jackson3-databind-javadoc-url}</url>
+							<location>
+								${javadoc.offline-links.directory}/jackson3-databind
+							</location>
+						</offlineLink>
+						<offlineLink>
+							<url>${documentation.jspecify-javadoc-url}</url>
+							<location>${javadoc.offline-links.directory}/jspecify
+							</location>
+						</offlineLink>
+						<offlineLink>
+							<url>${documentation.micrometer-javadoc-url}</url>
+							<location>${javadoc.offline-links.directory}/micrometer-core
+							</location>
+						</offlineLink>
+						<offlineLink>
+							<url>${documentation.micrometer-observation-javadoc-url}</url>
+							<location>
+								${javadoc.offline-links.directory}/micrometer-observation
+							</location>
+						</offlineLink>
+						<offlineLink>
+							<url>${documentation.micrometer-tracing-javadoc-url}</url>
+							<location>
+								${javadoc.offline-links.directory}/micrometer-tracing
+							</location>
+						</offlineLink>
+					</offlineLinks>
 				</configuration>
 			</plugin>
 
