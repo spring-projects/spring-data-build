@@ -103,7 +103,7 @@
 					<plugin>
 						<groupId>org.apache.maven.plugins</groupId>
 						<artifactId>maven-enforcer-plugin</artifactId>
-						<version>3.6.2</version>
+						<version>3.6.3</version>
 						<executions>
 							<execution>
 								<id>enforce-release-rules</id>
@@ -151,7 +151,7 @@
 						<plugin>
 							<groupId>org.jfrog.buildinfo</groupId>
 							<artifactId>artifactory-maven-plugin</artifactId>
-							<version>3.7.0</version>
+							<version>3.7.1</version>
 							<executions>
 								<execution>
 									<id>build-info</id>
