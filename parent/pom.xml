@@ -1891,8 +1891,8 @@
 					<detectJavaApiLink>false</detectJavaApiLink>
 					<detectLinks>false</detectLinks>
 					<links>
-						<link>${documentation.baseurl}/spring-data/commons/docs/current/api/</link>
-						<link>${documentation.baseurl}/spring-data/keyvalue/docs/current/api/</link>
+						<link>${documentation.baseurl}/spring-data/commons/reference/api/java/</link>
+						<link>${documentation.baseurl}/spring-data/keyvalue/reference/api/java/</link>
 					</links>
 					<offlineLinks>
 						<offlineLink>
