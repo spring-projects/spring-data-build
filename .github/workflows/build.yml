@@ -1,0 +1,47 @@
+name: Manual Maven Steps for CI
+
+on:
+  pull_request:
+    branches:
+      - main
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  checks: write
+  pull-requests: write
+
+jobs:
+  manual:
+    runs-on: ubuntu-24.04
+
+    strategy:
+      fail-fast: false
+      matrix:
+        java: [17, 21]
+
+    steps:
+      - name: Checkout Source Code
+        uses: actions/checkout@v5
+
+      - name: Setup Java
+        uses: actions/setup-java@v5
+        with:
+          distribution: temurin
+          java-version: ${{ matrix.java }}
+          cache: maven
+
+      - name: Build Project
+        run: mvn ${{ vars.GOAL }}
+
+      - name: Publish Test Results
+        uses: EnricoMi/publish-unit-test-result-action@v2
+        with:
+          files: |
+            **/target/surefire-reports/*.xml
+
+      - name: Upload Packaged JAR
+        uses: actions/upload-artifact@v4
+        with:
+          name: spring-petclinic-${{ matrix.java }}.jar
+          path: '**/target/*.jar'
