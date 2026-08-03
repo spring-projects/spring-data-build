@@ -690,12 +690,6 @@
 							</execution>
 
 						</executions>
-
-					</plugin>
-
-					<plugin>
-						<groupId>org.jfrog.buildinfo</groupId>
-						<artifactId>artifactory-maven-plugin</artifactId>
 					</plugin>
 
 				</plugins>
@@ -783,47 +777,6 @@
 								</execution>
 							</executions>
 						</plugin>
-
-						<!-- Deploy to Artifactory -->
-						<plugin>
-							<groupId>org.jfrog.buildinfo</groupId>
-							<artifactId>artifactory-maven-plugin</artifactId>
-							<executions>
-								<execution>
-									<id>deploy-docs</id>
-									<goals>
-										<goal>publish</goal>
-									</goals>
-									<phase>deploy</phase>
-									<configuration>
-										<artifactory>
-											<includeEnvVars>false</includeEnvVars>
-										</artifactory>
-										<deployProperties>
-											<zip.name>${dist.id}</zip.name>
-											<zip.displayname>${dist.id}</zip.displayname>
-											<zip.deployed>false</zip.deployed>
-											<zip.type>docs</zip.type>
-										</deployProperties>
-										<buildInfo>
-											<!-- Retain only a single build -->
-											<buildName>${dist.id}-docs-${project.version}</buildName>
-											<buildRetentionCount>1</buildRetentionCount>
-											<buildUrl>{{BUILD_URL}}</buildUrl>
-										</buildInfo>
-										<publisher>
-											<contextUrl>{{artifactory.server}}</contextUrl>
-											<username>{{artifactory.username}}</username>
-											<password>{{artifactory.password}}</password>
-											<repoKey>{{artifactory.distribution-repository}}</repoKey>
-											<snapshotRepoKey>{{artifactory.distribution-repository}}</snapshotRepoKey>
-											<includePatterns>*-docs.zip</includePatterns>
-										</publisher>
-									</configuration>
-								</execution>
-							</executions>
-						</plugin>
-
 					</plugins>
 				</pluginManagement>
 			</build>
@@ -971,59 +924,7 @@
 							</execution>
 						</executions>
 					</plugin>
-
-					<plugin>
-						<groupId>org.jfrog.buildinfo</groupId>
-						<artifactId>artifactory-maven-plugin</artifactId>
-					</plugin>
-
 				</plugins>
-
-				<pluginManagement>
-					<plugins>
-
-						<!-- Deploy to Artifactory -->
-						<plugin>
-							<groupId>org.jfrog.buildinfo</groupId>
-							<artifactId>artifactory-maven-plugin</artifactId>
-							<executions>
-								<execution>
-									<id>deploy-schema</id>
-									<goals>
-										<goal>publish</goal>
-									</goals>
-									<phase>deploy</phase>
-									<configuration>
-										<artifactory>
-											<includeEnvVars>false</includeEnvVars>
-										</artifactory>
-										<deployProperties>
-											<zip.name>${dist.id}</zip.name>
-											<zip.displayname>${dist.id}</zip.displayname>
-											<zip.deployed>false</zip.deployed>
-											<zip.type>schema</zip.type>
-										</deployProperties>
-										<buildInfo>
-											<!-- Retain only a single build -->
-											<buildName>${dist.id}-schema-${project.version}</buildName>
-											<buildRetentionCount>1</buildRetentionCount>
-											<buildUrl>{{BUILD_URL}}</buildUrl>
-										</buildInfo>
-										<publisher>
-											<contextUrl>{{artifactory.server}}</contextUrl>
-											<username>{{artifactory.username}}</username>
-											<password>{{artifactory.password}}</password>
-											<repoKey>{{artifactory.distribution-repository}}</repoKey>
-											<snapshotRepoKey>{{artifactory.distribution-repository}}</snapshotRepoKey>
-											<includePatterns>*-schema.zip</includePatterns>
-										</publisher>
-									</configuration>
-								</execution>
-							</executions>
-						</plugin>
-
-					</plugins>
-				</pluginManagement>
 			</build>
 
 		</profile>

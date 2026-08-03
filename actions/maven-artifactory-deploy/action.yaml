@@ -3,14 +3,17 @@ description: 'Deploy artifacts to Artifactory'
 
 inputs:
   context-url:
-    description: 'URI of the Artifactory server'
+    description: 'URI of the Artifactory server. Overrides artifactory.server'
     required: false
+    default: ''
   username:
-    description: 'Artifactory username'
-    required: true
+    description: 'Artifactory username. Overrides artifactory.username. Prefer settings-xml'
+    required: false
+    default: ''
   password:
-    description: 'Artifactory password'
-    required: true
+    description: 'Artifactory password. Overrides artifactory.password. Prefer settings-xml'
+    required: false
+    default: ''
   build-name:
     description: 'Name of the build'
     required: true
@@ -19,11 +22,13 @@ inputs:
     required: false
     default: "${{ format('{0}/{1}/actions/runs/{2}', github.server_url, github.repository, github.run_id) }}"
   project:
-    description: 'BuildInfo Project in which build info should be stored'
+    description: 'BuildInfo Project in which build info should be stored. Overrides artifactory.project'
     required: false
+    default: ''
   repository:
-    description: 'Artifactory repository to which the artifacts should be deployed'
+    description: 'Artifactory repository to which the artifacts should be deployed. Overrides artifactory.staging-repository'
     required: false
+    default: ''
   skip-tests:
     description: 'Whether to skip tests during deployment'
     required: false
@@ -40,34 +45,90 @@ inputs:
 runs:
   using: composite
   steps:
-    - shell: bash
+    - name: Check project version
+      shell: bash
+      run: |
+        PROJECT_VERSION=$(python3 -c "import sys, xml.etree.ElementTree as ET; ns='{http://maven.apache.org/POM/4.0.0}'; r=ET.parse(sys.stdin).getroot(); print((r.findtext(ns+'version') or r.findtext(ns+'parent/'+ns+'version') or '').strip())" < pom.xml)
+        if [[ -z "${PROJECT_VERSION}" ]]; then
+          echo "::warning::Unable to determine the project version from pom.xml"
+        elif [[ "${PROJECT_VERSION}" != *-SNAPSHOT ]]; then
+          echo "::error::Project version ${PROJECT_VERSION} is not a snapshot"
+          exit 1
+        fi
+    - name: Rewrite SNAPSHOT versions
+      if: ${{ startsWith(github.head_ref || github.ref_name, 'release/') && !endsWith(inputs.build-name, '-commercial') }}
+      shell: bash
       env:
-        CONTEXT_URL: "${{ inputs.context-url || 'https://repo.spring.io' }}"
+        BRANCH: '${{ github.head_ref || github.ref_name }}'
+      run: |
+        echo "::notice::Rewriting -SNAPSHOT versions to -INTERNAL-SNAPSHOT for release branch ${BRANCH}"
+
+        find . -name pom.xml -not -path '*/target/*' -print0 \
+          | xargs -0 sed -i -e 's/-INTERNAL-SNAPSHOT/-SNAPSHOT/g' -e 's/-SNAPSHOT/-INTERNAL-SNAPSHOT/g'
+
+        grep -hoE '[^<>]+-INTERNAL-SNAPSHOT' pom.xml | sort -u | sed 's/^/  /' \
+          || echo "::notice::no -SNAPSHOT versions found, nothing rewritten"
+    - name: Write settings.xml
+      if: ${{ inputs.settings-xml != '' }}
+      shell: bash
+      env:
+        SETTINGS_XML: '${{ inputs.settings-xml }}'
+      run: |
+        echo "::notice::Writing provided settings-xml input to settings.xml"
+        echo "${SETTINGS_XML}" > settings.xml
+    - name: Deploy to Artifactory
+      shell: bash
+      env:
+        CONTEXT_URL: '${{ inputs.context-url }}'
         USERNAME: '${{ inputs.username }}'
         PASSWORD: '${{ inputs.password }}'
-        REPOSITORY: "${{ inputs.repository || 'libs-snapshot-local' }}"
+        REPOSITORY: '${{ inputs.repository }}'
         PROJECT: '${{ inputs.project }}'
         BUILD_NAME: '${{ inputs.build-name }}'
         BUILD_URI: '${{ inputs.build-uri }}'
         SKIP_TESTS: '${{ inputs.skip-tests }}'
         ADDITIONAL_OPTIONS: '${{ inputs.additional-options }}'
-        SETTINGS_XML: '${{ inputs.settings-xml }}'
         BUILD_NUMBER: ${{ format('{0}-{1}-build-{2}', inputs.build-name, (github.head_ref || github.ref_name), github.run_number ) }}
       run: |
-        if [[ -n "${SETTINGS_XML}" ]]; then
-          echo "::notice::Writing provided settings-xml input to settings.xml"
-          echo "${SETTINGS_XML}" > settings.xml
-        fi
-        ADDITIONAL_MAVEN_OPTS=""
+        ADDITIONAL_MAVEN_OPTS=()
         if [[ -f "settings.xml" ]]; then
-          ADDITIONAL_MAVEN_OPTS="-s settings.xml"
+          ADDITIONAL_MAVEN_OPTS+=("-s" "settings.xml")
+
+          UNRESOLVED=()
+          while read -r name; do
+            if [[ -z "${!name:-}" ]]; then
+              UNRESOLVED+=("${name}")
+            fi
+          done < <(grep -oE '\$\{env\.[A-Za-z_][A-Za-z0-9_]*\}' settings.xml | sed -E 's/^\$\{env\.(.*)\}$/\1/' | sort -u)
+          if [[ ${#UNRESOLVED[@]} -gt 0 ]]; then
+            if [[ -n "${USERNAME}" && -n "${PASSWORD}" ]]; then
+              echo "::notice::settings.xml Using explicit username/password inputs."
+            else
+              echo "::error::settings.xml references environment variables that are unset or empty: ${UNRESOLVED[*]}"
+              exit 1
+            fi
+          fi
         fi
-        ./mvnw ${ADDITIONAL_MAVEN_OPTS} -Pci,artifactory ${ADDITIONAL_OPTIONS} \
-        -Dartifactory.server="${CONTEXT_URL}" \
-        -Dartifactory.username="${USERNAME}" \
-        -Dartifactory.password="${PASSWORD}" \
-        -Dartifactory.staging-repository="${REPOSITORY}" \
-        -Dartifactory.project="${PROJECT}" \
+
+        MAVEN_LOGGING_OPTS=()
+        if [[ "${RUNNER_DEBUG}" == "1" || "${ACTIONS_STEP_DEBUG}" == "true" ]]; then
+          echo "::notice::transfer-progress enabled"
+        else
+          MAVEN_LOGGING_OPTS+=(--no-transfer-progress)
+        fi
+
+        # Only pass the artifactory.* system properties that were actually supplied. A system
+        # property takes precedence over settings.xml, so passing an empty one would silently
+        # override the value settings.xml contributes.
+        ARTIFACTORY_OPTS=()
+        if [[ -n "${CONTEXT_URL}" ]]; then ARTIFACTORY_OPTS+=("-Dartifactory.server=${CONTEXT_URL}"); fi
+        if [[ -n "${USERNAME}" ]]; then ARTIFACTORY_OPTS+=("-Dartifactory.username=${USERNAME}"); fi
+        if [[ -n "${PASSWORD}" ]]; then ARTIFACTORY_OPTS+=("-Dartifactory.password=${PASSWORD}"); fi
+        if [[ -n "${REPOSITORY}" ]]; then ARTIFACTORY_OPTS+=("-Dartifactory.staging-repository=${REPOSITORY}"); fi
+        if [[ -n "${PROJECT}" ]]; then ARTIFACTORY_OPTS+=("-Dartifactory.project=${PROJECT}"); fi
+
+        ./mvnw "${ADDITIONAL_MAVEN_OPTS[@]}" "${MAVEN_LOGGING_OPTS[@]}" -Pci,artifactory ${ADDITIONAL_OPTIONS} \
+        "${ARTIFACTORY_OPTS[@]}" \
         -Dartifactory.build-name="${BUILD_NAME}" \
         -Dartifactory.build-number="${BUILD_NUMBER}" \
         -DBUILD_URL="${BUILD_URI}" \
