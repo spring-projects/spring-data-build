@@ -18,21 +18,33 @@ inputs:
 runs:
   using: composite
   steps:
-    - shell: bash
+    - name: Write settings.xml
+      if: ${{ inputs.settings-xml != '' }}
+      shell: bash
+      env:
+        SETTINGS_XML: '${{ inputs.settings-xml }}'
+      run: |
+        echo "::notice::Writing provided settings-xml input to settings.xml"
+        echo "${SETTINGS_XML}" > settings.xml
+    - name: Run Maven build
+      shell: bash
       env:
         MAVEN_RUN: '${{ inputs.run }}'
         ADDITIONAL_OPTIONS: '${{ inputs.additional-options }}'
-        SETTINGS_XML: '${{ inputs.settings-xml }}'
       run: |
-        if [[ -n "${SETTINGS_XML}" ]]; then
-          echo "::notice::Writing provided settings-xml input to settings.xml"
-          echo "${SETTINGS_XML}" > settings.xml
-        fi
-        ADDITIONAL_MAVEN_OPTS=""
+        ADDITIONAL_MAVEN_OPTS=()
         if [[ -f "settings.xml" ]]; then
-          ADDITIONAL_MAVEN_OPTS="-s settings.xml"
+          ADDITIONAL_MAVEN_OPTS+=("-s" "settings.xml")
         fi
-        ${MAVEN_RUN} ${ADDITIONAL_MAVEN_OPTS} ${ADDITIONAL_OPTIONS}
+
+        MAVEN_LOGGING_OPTS=()
+        if [[ "${RUNNER_DEBUG}" == "1" || "${ACTIONS_STEP_DEBUG}" == "true" ]]; then
+          echo "::notice::transfer-progress enabled"
+        else
+          MAVEN_LOGGING_OPTS+=(--no-transfer-progress)
+        fi
+
+        ${MAVEN_RUN} "${ADDITIONAL_MAVEN_OPTS[@]}" "${MAVEN_LOGGING_OPTS[@]}" ${ADDITIONAL_OPTIONS}
     - name: Test Summary
       uses: spring-projects/spring-data-build/actions/test-summary@main
       with:
