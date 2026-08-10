@@ -14,6 +14,8 @@ This project is governed by the link:https://github.com/spring-projects/.github/
 
 The parent project configures the following aspects of the project build:
 
+The `notice.txt` and `license.txt` files from `${project.root}/src/main/resources` are included in binary and source JARs under `META-INF`.
+
 Shared resources are pulled in from the `spring-data-build-resources` dependency (images, CSS, JavaScript). Renders reference documentation from Asciidoc file named `index.adoc` within `src/asciidoc`. In the `distribute` profile, two assemblies are generated: A ZIP to be uploaded to docs.spring.io (incl. javadoc (browsable), reference docs as described before) with the following content:
 
 [source]
