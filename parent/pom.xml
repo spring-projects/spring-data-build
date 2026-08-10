@@ -1,5 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+<?xml version="1.0" encoding="UTF-8" standalone="no"?><project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
 
 	<!--
 
@@ -125,7 +124,7 @@
 		<kotlin-coroutines>1.10.2</kotlin-coroutines>
 		<logback>1.5.34</logback>
 		<microbenchmark>1.0.0</microbenchmark>
-		<micrometer>1.17.0</micrometer>
+		<micrometer>1.17.1-SNAPSHOT</micrometer>
 		<micrometer-tracing>1.7.0</micrometer-tracing>
 		<mockito>5.23.0</mockito>
 		<mockk>1.14.11</mockk>
