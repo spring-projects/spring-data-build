@@ -146,7 +146,7 @@
 		<testcontainers>2.0.5</testcontainers>
 		<validation>3.1.1</validation>
 		<vavr>0.11.0</vavr>
-		<webbeans>4.0.3</webbeans>
+		<webbeans>4.1.1</webbeans>
 
 		<!-- Used in asciidoc reference documentation -->
 		<releasetrain>2026.1.0-SNAPSHOT</releasetrain>
