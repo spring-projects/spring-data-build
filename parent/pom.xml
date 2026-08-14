@@ -131,7 +131,7 @@
 		<nullaway>0.13.1</nullaway>
 		<querydsl>5.1.0</querydsl>
 		<reactive-streams>1.0.4</reactive-streams>
-		<reactor>2025.0.7-SNAPSHOT</reactor>
+		<reactor>2025.0.7</reactor>
 		<rxjava2>2.2.21</rxjava2>
 		<rxjava3>3.1.12</rxjava3>
 		<smallrye-mutiny>1.10.0</smallrye-mutiny>
