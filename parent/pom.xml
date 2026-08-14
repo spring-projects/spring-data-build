@@ -125,7 +125,7 @@
 		<logback>1.5.38</logback>
 		<microbenchmark>1.0.0</microbenchmark>
 		<micrometer>1.17.1</micrometer>
-		<micrometer-tracing>1.7.1-SNAPSHOT</micrometer-tracing>
+		<micrometer-tracing>1.7.1</micrometer-tracing>
 		<mockito>5.23.0</mockito>
 		<mockk>1.14.11</mockk>
 		<nullaway>0.13.1</nullaway>
