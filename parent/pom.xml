@@ -1,4 +1,5 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?><project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
 
 	<!--
 
@@ -25,7 +26,7 @@
 	<parent>
 		<groupId>org.springframework.data.build</groupId>
 		<artifactId>spring-data-build</artifactId>
-		<version>4.1.1-SNAPSHOT</version>
+		<version>4.1.1</version>
 		<relativePath>../pom.xml</relativePath>
 	</parent>
 
@@ -149,7 +150,7 @@
 		<webbeans>4.0.3</webbeans>
 
 		<!-- Used in asciidoc reference documentation -->
-		<releasetrain>2026.0.1-SNAPSHOT</releasetrain>
+		<releasetrain>2026.0.1</releasetrain>
 
 		<!-- To be overridden by individual modules -->
 		<java-module-name/>
@@ -546,7 +547,7 @@
 				<dependency>
 					<groupId>org.springframework.data.build</groupId>
 					<artifactId>spring-data-build-resources</artifactId>
-					<version>4.1.1-SNAPSHOT</version>
+					<version>4.1.1</version>
 					<type>zip</type>
 					<optional>true</optional>
 				</dependency>
@@ -801,7 +802,7 @@
 				<dependency>
 					<groupId>org.springframework.data.build</groupId>
 					<artifactId>spring-data-build-resources</artifactId>
-					<version>4.1.1-SNAPSHOT</version>
+					<version>4.1.1</version>
 					<type>zip</type>
 					<optional>true</optional>
 				</dependency>
@@ -1917,18 +1918,15 @@
 					<offlineLinks>
 						<offlineLink>
 							<url>${documentation.spring-javadoc-url}</url>
-							<location>${javadoc.offline-links.directory}/spring-aop
-							</location>
+							<location>${javadoc.offline-links.directory}/spring-aop</location>
 						</offlineLink>
 						<offlineLink>
 							<url>${documentation.spring-javadoc-url}</url>
-							<location>${javadoc.offline-links.directory}/spring-beans
-							</location>
+							<location>${javadoc.offline-links.directory}/spring-beans</location>
 						</offlineLink>
 						<offlineLink>
 							<url>${documentation.spring-javadoc-url}</url>
-							<location>${javadoc.offline-links.directory}/spring-context
-							</location>
+							<location>${javadoc.offline-links.directory}/spring-context</location>
 						</offlineLink>
 						<offlineLink>
 							<url>${documentation.spring-javadoc-url}</url>
@@ -1938,8 +1936,7 @@
 						</offlineLink>
 						<offlineLink>
 							<url>${documentation.spring-javadoc-url}</url>
-							<location>${javadoc.offline-links.directory}/spring-core
-							</location>
+							<location>${javadoc.offline-links.directory}/spring-core</location>
 						</offlineLink>
 						<offlineLink>
 							<url>${documentation.spring-javadoc-url}</url>
@@ -1949,8 +1946,7 @@
 						</offlineLink>
 						<offlineLink>
 							<url>${documentation.spring-javadoc-url}</url>
-							<location>${javadoc.offline-links.directory}/spring-jdbc
-							</location>
+							<location>${javadoc.offline-links.directory}/spring-jdbc</location>
 						</offlineLink>
 						<offlineLink>
 							<url>${documentation.spring-javadoc-url}</url>
@@ -1960,43 +1956,35 @@
 						</offlineLink>
 						<offlineLink>
 							<url>${documentation.spring-javadoc-url}</url>
-							<location>${javadoc.offline-links.directory}/spring-orm
-							</location>
+							<location>${javadoc.offline-links.directory}/spring-orm</location>
 						</offlineLink>
 						<offlineLink>
 							<url>${documentation.spring-javadoc-url}</url>
-							<location>${javadoc.offline-links.directory}/spring-oxm
-							</location>
+							<location>${javadoc.offline-links.directory}/spring-oxm</location>
 						</offlineLink>
 						<offlineLink>
 							<url>${documentation.spring-javadoc-url}</url>
-							<location>${javadoc.offline-links.directory}/spring-r2dbc
-							</location>
+							<location>${javadoc.offline-links.directory}/spring-r2dbc</location>
 						</offlineLink>
 						<offlineLink>
 							<url>${documentation.spring-javadoc-url}</url>
-							<location>${javadoc.offline-links.directory}/spring-test
-							</location>
+							<location>${javadoc.offline-links.directory}/spring-test</location>
 						</offlineLink>
 						<offlineLink>
 							<url>${documentation.spring-javadoc-url}</url>
-							<location>${javadoc.offline-links.directory}/spring-tx
-							</location>
+							<location>${javadoc.offline-links.directory}/spring-tx</location>
 						</offlineLink>
 						<offlineLink>
 							<url>${documentation.spring-javadoc-url}</url>
-							<location>${javadoc.offline-links.directory}/spring-web
-							</location>
+							<location>${javadoc.offline-links.directory}/spring-web</location>
 						</offlineLink>
 						<offlineLink>
 							<url>${documentation.spring-javadoc-url}</url>
-							<location>${javadoc.offline-links.directory}/spring-webflux
-							</location>
+							<location>${javadoc.offline-links.directory}/spring-webflux</location>
 						</offlineLink>
 						<offlineLink>
 							<url>${documentation.spring-javadoc-url}</url>
-							<location>${javadoc.offline-links.directory}/spring-webmvc
-							</location>
+							<location>${javadoc.offline-links.directory}/spring-webmvc</location>
 						</offlineLink>
 						<offlineLink>
 							<url>${documentation.spring-javadoc-url}</url>
@@ -2012,8 +2000,7 @@
 						</offlineLink>
 						<offlineLink>
 							<url>${documentation.reactor-javadoc-url}</url>
-							<location>${javadoc.offline-links.directory}/reactor-core
-							</location>
+							<location>${javadoc.offline-links.directory}/reactor-core</location>
 						</offlineLink>
 						<offlineLink>
 							<url>${documentation.reactive-streams-javadoc-url}</url>
@@ -2023,13 +2010,11 @@
 						</offlineLink>
 						<offlineLink>
 							<url>${documentation.rxjava3-javadoc-url}</url>
-							<location>${javadoc.offline-links.directory}/rxjava3
-							</location>
+							<location>${javadoc.offline-links.directory}/rxjava3</location>
 						</offlineLink>
 						<offlineLink>
 							<url>${documentation.jackson2-core-javadoc-url}</url>
-							<location>${javadoc.offline-links.directory}/jackson2-core
-							</location>
+							<location>${javadoc.offline-links.directory}/jackson2-core</location>
 						</offlineLink>
 						<offlineLink>
 							<url>${documentation.jackson2-databind-javadoc-url}</url>
@@ -2045,13 +2030,11 @@
 						</offlineLink>
 						<offlineLink>
 							<url>${documentation.jspecify-javadoc-url}</url>
-							<location>${javadoc.offline-links.directory}/jspecify
-							</location>
+							<location>${javadoc.offline-links.directory}/jspecify</location>
 						</offlineLink>
 						<offlineLink>
 							<url>${documentation.micrometer-javadoc-url}</url>
-							<location>${javadoc.offline-links.directory}/micrometer-core
-							</location>
+							<location>${javadoc.offline-links.directory}/micrometer-core</location>
 						</offlineLink>
 						<offlineLink>
 							<url>${documentation.micrometer-observation-javadoc-url}</url>
@@ -2096,20 +2079,8 @@
 	</build>
 
 	<repositories>
-		<repository>
-			<id>spring-snapshot</id>
-			<url>https://repo.spring.io/snapshot</url>
-			<snapshots>
-				<enabled>true</enabled>
-			</snapshots>
-			<releases>
-				<enabled>false</enabled>
-			</releases>
-		</repository>
-		<repository>
-			<id>spring-milestone</id>
-			<url>https://repo.spring.io/milestone</url>
-		</repository>
+		
+		
 	</repositories>
 
 </project>
