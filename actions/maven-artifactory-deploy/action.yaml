@@ -135,7 +135,7 @@ runs:
         -Dmaven.test.skip=${SKIP_TESTS} -U -B\
         clean deploy
     - name: Test Summary
-      uses: spring-projects/spring-data-build/actions/test-summary@main
+      uses: spring-projects/spring-data-build/actions/test-summary@bea433eede5cb4d98cf3677b91ec49260503d25e
       with:
         paths: '**/TEST-*.xml'
       if: always()
