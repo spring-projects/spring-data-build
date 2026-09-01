@@ -24,13 +24,13 @@ runs:
         PRECONFIGURED_JAVA_VERSION=$([[ "${JAVA_VERSION_INPUT}" =~ ^[a-z0-9\\.]+$ ]] && echo ${CONFIG_JSON} | jq -r ".java.${JAVA_VERSION_INPUT}")
         echo "PRECONFIGURED_JAVA_VERSION_EXISTS=$PRECONFIGURED_JAVA_VERSION_EXISTS" >> $GITHUB_OUTPUT
         echo "PRECONFIGURED_JAVA_VERSION=$PRECONFIGURED_JAVA_VERSION" >> $GITHUB_OUTPUT
-    - uses: actions/setup-java@v5.2.0
+    - uses: actions/setup-java@dd06d9cba3e5552c54d9f8ea23572deb30010f7c # v6.0.0
       id: install-preconfigured-java-version
       if: ${{ steps.check-java-version.outputs.PRECONFIGURED_JAVA_VERSION_EXISTS == 'true' }}
       with:
         java-version: '${{ steps.check-java-version.outputs.PRECONFIGURED_JAVA_VERSION }}'
         distribution: '${{ env.JAVA_DIST }}'
-    - uses: actions/setup-java@v5.2.0
+    - uses: actions/setup-java@dd06d9cba3e5552c54d9f8ea23572deb30010f7c # v6.0.0
       id: install-custom-java-version
       if: ${{ steps.check-java-version.outputs.PRECONFIGURED_JAVA_VERSION_EXISTS == 'false' }}
       with:
