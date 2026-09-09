@@ -120,7 +120,7 @@
 		<junit5>${junit}</junit5>
 		<junit-pioneer>2.3.0</junit-pioneer>
 		<jspecify.version>1.0.0</jspecify.version>
-		<kotlin>2.4.10</kotlin>
+		<kotlin>2.4.20</kotlin>
 		<kotlin-coroutines>1.11.0</kotlin-coroutines>
 		<logback>1.6.3</logback>
 		<microbenchmark>1.0.0</microbenchmark>
