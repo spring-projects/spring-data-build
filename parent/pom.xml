@@ -116,7 +116,7 @@
 		<jmolecules>2025.0.2</jmolecules>
 		<jmh>1.37</jmh>
 		<jsonpath>2.6.0</jsonpath>
-		<junit>6.0.3</junit>
+		<junit>6.1.3</junit>
 		<junit5>${junit}</junit5>
 		<junit-pioneer>2.3.0</junit-pioneer>
 		<jspecify.version>1.0.0</jspecify.version>
