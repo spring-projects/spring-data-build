@@ -457,6 +457,7 @@
 				<aspectj.skip>true</aspectj.skip>
 				<maven.install.skip>true</maven.install.skip>
 				<skipTests>true</skipTests>
+				<skipITs>true</skipITs>
 			</properties>
 
 			<build>
@@ -540,6 +541,7 @@
 				<aspectj.skip>true</aspectj.skip>
 				<maven.install.skip>true</maven.install.skip>
 				<skipTests>true</skipTests>
+				<skipITs>true</skipITs>
 			</properties>
 
 			<dependencies>
@@ -795,6 +797,7 @@
 				<aspectj.skip>true</aspectj.skip>
 				<maven.install.skip>true</maven.install.skip>
 				<skipTests>true</skipTests>
+				<skipITs>true</skipITs>
 			</properties>
 
 			<dependencies>
