@@ -1,9 +1,10 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?><project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
 
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>org.springframework.data.build</groupId>
 	<artifactId>spring-data-build</artifactId>
-	<version>4.2.0-SNAPSHOT</version>
+	<version>4.2.0-M2</version>
 	<packaging>pom</packaging>
 
 	<name>Spring Data Build</name>
@@ -70,8 +71,7 @@
 
 	<scm>
 		<url>https://github.com/spring-projects/spring-data-build</url>
-		<connection>scm:git:git://github.com/spring-projects/spring-data-build.git
-		</connection>
+		<connection>scm:git:git://github.com/spring-projects/spring-data-build.git</connection>
 		<developerConnection>
 			scm:git:ssh://git@github.com:spring-projects/spring-data-build.git
 		</developerConnection>
@@ -83,7 +83,7 @@
 	</issueManagement>
 
 	<properties>
-		<project.build.outputTimestamp>2099-12-31T23:59:59Z</project.build.outputTimestamp>
+		<project.build.outputTimestamp>2026-09-21T00:00:00Z</project.build.outputTimestamp>
 	</properties>
 
 	<profiles>
