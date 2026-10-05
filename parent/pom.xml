@@ -122,7 +122,7 @@
 		<jspecify.version>1.0.0</jspecify.version>
 		<kotlin>2.4.20</kotlin>
 		<kotlin-coroutines>1.11.0</kotlin-coroutines>
-		<logback>1.6.3</logback>
+		<logback>1.6.5</logback>
 		<microbenchmark>1.0.0</microbenchmark>
 		<micrometer>1.18.0-M2</micrometer>
 		<micrometer-tracing>1.8.0-M2</micrometer-tracing>
