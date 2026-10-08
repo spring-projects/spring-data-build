@@ -1,0 +1,71 @@
+name: 'Setup POM Version'
+description: 'Determines the project version and rewrites -SNAPSHOT versions to -INTERNAL-SNAPSHOT for non-commercial release branch builds'
+
+inputs:
+  pom-file:
+    description: 'POM file to read the project version from'
+    required: false
+    default: 'pom.xml'
+  commercial:
+    description: 'Whether this is a commercial build.'
+    required: false
+    default: 'false'
+
+outputs:
+  version:
+    description: 'Project version, after any rewrite'
+    value: '${{ steps.setup.outputs.version }}'
+  snapshot:
+    description: 'Whether the project version is a snapshot version'
+    value: '${{ steps.setup.outputs.snapshot }}'
+  ci:
+    description: 'Whether the project version is eligible for a regular CI build. False for non-snapshots and for rewritten -INTERNAL-SNAPSHOT versions'
+    value: '${{ steps.setup.outputs.ci }}'
+
+runs:
+  using: composite
+  steps:
+    - name: Setup POM version
+      id: setup
+      shell: bash
+      env:
+        POM_FILE: '${{ inputs.pom-file }}'
+        COMMERCIAL: '${{ inputs.commercial }}'
+        BRANCH: '${{ github.head_ref || github.ref_name }}'
+      run: |
+        read_version() {
+          python3 -c "import sys, xml.etree.ElementTree as ET; ns='{http://maven.apache.org/POM/4.0.0}'; r=ET.parse(sys.stdin).getroot(); print((r.findtext(ns+'version') or r.findtext(ns+'parent/'+ns+'version') or '').strip())" < "${POM_FILE}"
+        }
+
+        VERSION=$(read_version)
+        if [[ -z "${VERSION}" ]]; then
+          echo "::error::Unable to determine the project version from ${POM_FILE}"
+          exit 1
+        fi
+
+        SNAPSHOT=true
+        if [[ "${VERSION}" != *-SNAPSHOT ]]; then
+          SNAPSHOT=false
+          echo "::warning::Project version ${VERSION} is not a snapshot"
+        elif [[ "${BRANCH}" == release/* && "${COMMERCIAL}" != "true" ]]; then
+          echo "::notice::Rewriting -SNAPSHOT versions to -INTERNAL-SNAPSHOT for release branch ${BRANCH}"
+
+          find . -name pom.xml -not -path '*/target/*' -print0 \
+            | xargs -0 sed -i -e 's/-INTERNAL-SNAPSHOT/-SNAPSHOT/g' -e 's/-SNAPSHOT/-INTERNAL-SNAPSHOT/g'
+
+          VERSION=$(read_version)
+          grep -rhoE '[^<>]+-INTERNAL-SNAPSHOT' --include=pom.xml . | sort -u | sed 's/^/  /'
+        fi
+
+        CI=true
+        if [[ "${SNAPSHOT}" == "false" || "${VERSION}" == *-INTERNAL-SNAPSHOT ]]; then
+          CI=false
+        fi
+
+        echo "::notice::Project version ${VERSION} (snapshot=${SNAPSHOT}, ci=${CI})"
+
+        {
+          echo "version=${VERSION}"
+          echo "snapshot=${SNAPSHOT}"
+          echo "ci=${CI}"
+        } >> "${GITHUB_OUTPUT}"
