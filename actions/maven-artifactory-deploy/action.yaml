@@ -33,6 +33,10 @@ inputs:
     description: 'Whether to skip tests during deployment'
     required: false
     default: 'false'
+  goal:
+    description: 'Maven deployment goal'
+    required: false
+    default: 'deploy'
   additional-options:
     description: 'Additional Maven options to pass during deployment'
     required: false
@@ -42,34 +46,27 @@ inputs:
     required: false
     default: ''
 
+outputs:
+  version:
+    description: 'Effective project version'
+    value: '${{ steps.pom-version.outputs.version }}'
+  snapshot:
+    description: 'Whether the project version is a snapshot version'
+    value: '${{ steps.pom-version.outputs.snapshot }}'
+  ci:
+    description: 'Whether the project version is eligible for a regular CI build'
+    value: '${{ steps.pom-version.outputs.ci }}'
+
 runs:
   using: composite
   steps:
-    - name: Check project version
-      shell: bash
-      run: |
-        PROJECT_VERSION=$(python3 -c "import sys, xml.etree.ElementTree as ET; ns='{http://maven.apache.org/POM/4.0.0}'; r=ET.parse(sys.stdin).getroot(); print((r.findtext(ns+'version') or r.findtext(ns+'parent/'+ns+'version') or '').strip())" < pom.xml)
-        if [[ -z "${PROJECT_VERSION}" ]]; then
-          echo "::warning::Unable to determine the project version from pom.xml"
-        elif [[ "${PROJECT_VERSION}" != *-SNAPSHOT ]]; then
-          echo "::error::Project version ${PROJECT_VERSION} is not a snapshot"
-          exit 1
-        fi
-    - name: Rewrite SNAPSHOT versions
-      if: ${{ startsWith(github.head_ref || github.ref_name, 'release/') && !endsWith(inputs.build-name, '-commercial') }}
-      shell: bash
-      env:
-        BRANCH: '${{ github.head_ref || github.ref_name }}'
-      run: |
-        echo "::notice::Rewriting -SNAPSHOT versions to -INTERNAL-SNAPSHOT for release branch ${BRANCH}"
-
-        find . -name pom.xml -not -path '*/target/*' -print0 \
-          | xargs -0 sed -i -e 's/-INTERNAL-SNAPSHOT/-SNAPSHOT/g' -e 's/-SNAPSHOT/-INTERNAL-SNAPSHOT/g'
-
-        grep -hoE '[^<>]+-INTERNAL-SNAPSHOT' pom.xml | sort -u | sed 's/^/  /' \
-          || echo "::notice::no -SNAPSHOT versions found, nothing rewritten"
+    - name: Setup POM version
+      id: pom-version
+      uses: spring-projects/spring-data-build/actions/setup-pom-version@main
+      with:
+        commercial: ${{ endsWith(inputs.build-name, '-commercial') }}
     - name: Write settings.xml
-      if: ${{ inputs.settings-xml != '' }}
+      if: ${{ inputs.settings-xml != '' && steps.pom-version.outputs.snapshot == 'true' }}
       shell: bash
       env:
         SETTINGS_XML: '${{ inputs.settings-xml }}'
@@ -77,6 +74,7 @@ runs:
         echo "::notice::Writing provided settings-xml input to settings.xml"
         echo "${SETTINGS_XML}" > settings.xml
     - name: Deploy to Artifactory
+      if: ${{ steps.pom-version.outputs.snapshot == 'true' }}
       shell: bash
       env:
         CONTEXT_URL: '${{ inputs.context-url }}'
@@ -87,6 +85,7 @@ runs:
         BUILD_NAME: '${{ inputs.build-name }}'
         BUILD_URI: '${{ inputs.build-uri }}'
         SKIP_TESTS: '${{ inputs.skip-tests }}'
+        GOAL: '${{ inputs.goal }}'
         ADDITIONAL_OPTIONS: '${{ inputs.additional-options }}'
         BUILD_NUMBER: ${{ format('{0}-{1}-build-{2}', inputs.build-name, (github.head_ref || github.ref_name), github.run_number ) }}
       run: |
@@ -133,9 +132,9 @@ runs:
         -Dartifactory.build-number="${BUILD_NUMBER}" \
         -DBUILD_URL="${BUILD_URI}" \
         -Dmaven.test.skip=${SKIP_TESTS} -U -B\
-        clean deploy
+        clean ${GOAL}
     - name: Test Summary
       uses: spring-projects/spring-data-build/actions/test-summary@4.1.x
       with:
         paths: '**/TEST-*.xml'
-      if: always()
+      if: ${{ always() && steps.pom-version.outputs.snapshot == 'true' }}
