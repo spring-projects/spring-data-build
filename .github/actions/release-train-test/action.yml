@@ -18,4 +18,4 @@ runs:
           MAVEN_LOGGING_OPTS+=(--no-transfer-progress)
         fi
 
-        ./mvnw --batch-mode "${MAVEN_LOGGING_OPTS[@]}" --settings release-train-settings.xml clean verify --activate-profiles releaseTrain,release,ci -Dgpg.skip
+        ./mvnw --batch-mode "${MAVEN_LOGGING_OPTS[@]}" --settings release-train-settings.xml clean verify --activate-profiles releaseTrain,release,ci -Dgpg.skip -Ddevelocity.cache.remote.enabled=false
