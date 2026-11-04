@@ -39,7 +39,7 @@ runs:
           ${{ runner.os }}-maven-${{ steps.determine-dev-line.outputs.DEV_LINE }}-${{ github.job }}-
           ${{ runner.os }}-maven-
     - name: Setup Develocity Maven Capturing
-      uses: gradle/develocity-actions/setup-maven@f852d93dada312948b1ba533226c28e05d756866 # v2.4
+      uses: gradle/develocity-actions/setup-maven@b8f7a85ff7bd4e08e804f3e5331e5c48b2e6eb17 # v2.6
       with:
         develocity-url: 'https://ge.spring.io'
         develocity-access-key: '${{ inputs.develocity-access-key }}'
