@@ -112,7 +112,7 @@
 		<jackson3>3.1.8</jackson3>
 		<jakarta-annotation-api>3.0.0</jakarta-annotation-api>
 		<jaxb>3.0.1</jaxb>
-		<jacoco>0.8.15</jacoco>
+		<jacoco>0.8.16</jacoco>
 		<jmolecules>2025.0.2</jmolecules>
 		<jmh>1.37</jmh>
 		<jsonpath>2.6.0</jsonpath>
