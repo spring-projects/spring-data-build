@@ -127,7 +127,7 @@
 		<micrometer>1.18.0-SNAPSHOT</micrometer>
 		<micrometer-tracing>1.8.0-SNAPSHOT</micrometer-tracing>
 		<mockito>5.24.0</mockito>
-		<mockk>1.14.11</mockk>
+		<mockk>1.14.12</mockk>
 		<nullaway>0.13.1</nullaway>
 		<querydsl>5.1.0</querydsl>
 		<reactive-streams>1.0.4</reactive-streams>
