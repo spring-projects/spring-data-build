@@ -62,7 +62,7 @@ runs:
   steps:
     - name: Setup POM version
       id: pom-version
-      uses: spring-projects/spring-data-build/actions/setup-pom-version@main
+      uses: spring-projects/spring-data-build/actions/setup-pom-version@4.2.x
       with:
         commercial: ${{ endsWith(inputs.build-name, '-commercial') }}
     - name: Write settings.xml
@@ -134,7 +134,7 @@ runs:
         -Dmaven.test.skip=${SKIP_TESTS} -U -B\
         clean ${GOAL}
     - name: Test Summary
-      uses: spring-projects/spring-data-build/actions/test-summary@main
+      uses: spring-projects/spring-data-build/actions/test-summary@4.2.x
       with:
         paths: '**/TEST-*.xml'
       if: ${{ always() && steps.pom-version.outputs.snapshot == 'true' }}
