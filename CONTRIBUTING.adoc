@@ -19,6 +19,12 @@ We are establishing these rules to communicate effectively:
 * When reaching out to us, the more effort you put into describing your concern, the easier it will be for us to review it and the more likely we are able to do so quickly.
 * Keep your description focused and avoid excessive summarization or bloated explanations so that we can understand the essence of your request without working through walls of text.
 
+[[using-ai-agents]]
+== Using AI Agents
+
+*We accept contributions created with the help of AI coding agents, but they must be carefully reviewed by a human who remains accountable for the quality of the contribution.*
+Contributions submitted by GitHub accounts controlled by autonomous AI bots are forbidden and will result in permanent bans.
+
 [[using-github-issues]]
 == Using GitHub Issues
 
