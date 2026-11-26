@@ -22,7 +22,7 @@ We are establishing these rules to communicate effectively:
 [[using-ai-agents]]
 == Using AI Agents
 
-*We accept contributions created with the help of AI coding agents, but they must be carefully reviewed by a human who remains accountable for the quality of the contribution.*
+*We accept contributions created with the help of AI coding agents, provided you have reviewed and understood them. You, the submitter, are accountable for the contribution.*
 Contributions submitted by GitHub accounts controlled by autonomous AI bots are forbidden and will result in permanent bans.
 
 [[using-github-issues]]
